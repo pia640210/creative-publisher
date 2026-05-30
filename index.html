@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>創意出版社</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC",sans-serif;background:#f5f2ed;color:#1a1a1a;font-size:16px;line-height:1.7}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+nav{background:#fff;border-bottom:1px solid #e8e0d0;padding:18px 48px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.nav-logo{font-family:Georgia,serif;font-size:18px;font-weight:500;letter-spacing:0.04em;color:#1a1a1a}
+.nav-links{display:flex;gap:28px}
+.nav-links a{font-size:14px;color:#666;transition:color 0.2s}
+.nav-links a:hover{color:#BA7517}
+
+/* HERO */
+.hero{background:#fff9f0;padding:72px 48px 60px;border-bottom:1px solid #e8e0d0}
+.hero-inner{max-width:720px;margin:0 auto}
+.hero-tag{font-size:11px;letter-spacing:0.12em;color:#854F0B;background:#FAEEDA;padding:4px 14px;border-radius:20px;display:inline-block;margin-bottom:20px}
+.hero h1{font-family:Georgia,serif;font-size:38px;font-weight:500;line-height:1.4;color:#1a1a1a;margin-bottom:16px}
+.hero p{font-size:15px;color:#666;line-height:1.9;max-width:480px;margin-bottom:32px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn-primary{font-size:14px;padding:11px 26px;background:#BA7517;color:#FAEEDA;border:none;border-radius:8px;cursor:pointer;transition:background 0.2s}
+.btn-primary:hover{background:#9a6010}
+.btn-outline{font-size:14px;padding:11px 26px;background:transparent;color:#1a1a1a;border:1px solid #ccc;border-radius:8px;cursor:pointer;transition:border-color 0.2s}
+.btn-outline:hover{border-color:#BA7517;color:#BA7517}
+
+/* SECTIONS */
+.section{padding:52px 48px;border-bottom:1px solid #e8e0d0;background:#fff}
+.section:nth-child(even){background:#fcfaf7}
+.section-inner{max-width:900px;margin:0 auto}
+.sec-label{font-size:11px;letter-spacing:0.1em;color:#999;margin-bottom:8px;text-transform:none}
+.sec-title{font-family:Georgia,serif;font-size:22px;font-weight:500;color:#1a1a1a;margin-bottom:6px}
+.sec-sub{font-size:14px;color:#888;margin-bottom:28px}
+
+/* BOOKS */
+.cat-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.cat-tab{font-size:12px;padding:5px 14px;border-radius:20px;border:1px solid #ddd;color:#666;background:transparent;cursor:pointer;transition:all 0.2s}
+.cat-tab:hover,.cat-tab.active{background:#FAEEDA;color:#633806;border-color:#EF9F27}
+.books-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+@media(max-width:700px){.books-grid{grid-template-columns:repeat(3,1fr)}}
+.book-card{background:#f5f2ed;border-radius:8px;overflow:hidden;cursor:pointer;transition:transform 0.2s}
+.book-card:hover{transform:translateY(-3px)}
+.book-cover{width:100%;aspect-ratio:3/4;object-fit:cover;display:block}
+.book-meta{padding:8px 10px}
+.book-meta p{font-size:12px;color:#444;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:500}
+.book-meta span{font-size:11px;color:#999}
+
+/* ABOUT */
+.about-row{display:grid;grid-template-columns:88px 1fr;gap:28px;align-items:start}
+.avatar{width:88px;height:88px;border-radius:50%;background:#FAEEDA;display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-size:28px;color:#854F0B;flex-shrink:0}
+.about-text h3{font-family:Georgia,serif;font-size:20px;font-weight:500;color:#1a1a1a;margin-bottom:8px}
+.about-text p{font-size:14px;color:#555;line-height:1.9}
+.tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.skill-tag{font-size:12px;padding:4px 12px;border-radius:20px;background:#f5f2ed;color:#666;border:1px solid #e0d8cc}
+
+/* ACTIVITY */
+.activity-card{border:1px solid #e8e0d0;border-radius:12px;padding:28px 32px;background:#fff}
+.act-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:18px;gap:16px}
+.act-title{font-family:Georgia,serif;font-size:18px;font-weight:500;color:#1a1a1a;margin-bottom:6px}
+.act-time{font-size:13px;color:#888}
+.act-badge{font-size:11px;padding:4px 12px;border-radius:20px;background:#E1F5EE;color:#085041;white-space:nowrap;flex-shrink:0}
+.act-reasons{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
+.act-reasons li{font-size:14px;color:#555;line-height:1.75;padding-left:20px;position:relative}
+.act-reasons li::before{content:"—";position:absolute;left:0;color:#bbb}
+.pricing-opts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;max-width:400px}
+.pricing-opt{padding:16px 18px;border-radius:8px;border:1px solid #ddd}
+.pricing-opt.featured{border-color:#EF9F27;background:#FFFBF2}
+.pricing-opt .opt-label{font-size:12px;color:#888;margin-bottom:6px}
+.pricing-opt .opt-price{font-size:22px;font-weight:500;color:#1a1a1a}
+.pricing-opt .opt-note{font-size:12px;color:#aaa;margin-top:4px}
+.pricing-opt.featured .opt-note{color:#854F0B}
+.act-cta{display:inline-block;font-size:14px;padding:11px 24px;background:#BA7517;color:#FAEEDA;border:none;border-radius:8px;cursor:pointer;transition:background 0.2s}
+.act-cta:hover{background:#9a6010}
+
+/* NEW BOOK BANNER */
+.new-book-banner{background:#FAEEDA;border-bottom:1px solid #e8c87a;padding:16px 48px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.new-book-banner p{font-size:14px;color:#633806}
+.new-book-banner strong{font-weight:500}
+.new-book-banner a{font-size:13px;padding:7px 18px;background:#BA7517;color:#FAEEDA;border-radius:6px;white-space:nowrap}
+
+/* NEWSLETTER */
+.newsletter{background:#fff9f0;padding:52px 48px;text-align:center;border-top:1px solid #e8e0d0}
+.newsletter p{font-size:14px;color:#888;margin-bottom:6px}
+.newsletter h3{font-family:Georgia,serif;font-size:20px;margin-bottom:24px;color:#1a1a1a}
+.nl-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.nl-row input{font-size:14px;padding:10px 18px;border:1px solid #ddd;border-radius:8px;background:#fff;color:#1a1a1a;width:240px}
+.nl-row input:focus{outline:none;border-color:#BA7517}
+.nl-row button{font-size:14px;padding:10px 22px;background:#BA7517;color:#FAEEDA;border:none;border-radius:8px;cursor:pointer}
+.nl-row button:hover{background:#9a6010}
+
+/* FOOTER */
+footer{background:#fff;padding:28px 48px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #e8e0d0}
+footer p{font-size:13px;color:#aaa}
+.footer-links{display:flex;gap:20px}
+.footer-links a{font-size:13px;color:#aaa;transition:color 0.2s}
+.footer-links a:hover{color:#BA7517}
+</style>
+</head>
+<body>
+
+<div class="new-book-banner">
+  <p><strong>【新書預購】</strong>《自己站起來》預購優惠至 6 月 10 日，原價 380 元，預購價 <strong>300 元</strong></p>
+  <a href="preorder.html">立即預購 →</a>
+</div>
+
+<nav>
+  <div class="nav-logo">創意出版社</div>
+  <div class="nav-links">
+    <a href="#books">書目</a>
+    <a href="#about">關於顧問</a>
+    <a href="#activity">品書時間</a>
+    <a href="purchase.html">購書</a>
+    <a href="contact.html">聯絡</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">陳海倫顧問著作出版</div>
+    <h1>讓生活的智慧<br>安靜地落在你手中</h1>
+    <p>創意出版社專注出版陳海倫顧問關於自我成長、婚姻、溝通與生活管理的系列著作，三十餘本，字字有重量。</p>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="document.getElementById('books').scrollIntoView({behavior:'smooth'})">瀏覽書目</button>
+      <button class="btn-outline" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">認識顧問</button>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="books">
+  <div class="section-inner">
+    <div class="sec-label">精選書目</div>
+    <div class="sec-title">每一本，都是一段陪伴</div>
+    <div class="sec-sub">自我探索、婚姻、溝通、生活指導，二十年深耕</div>
+    <div class="cat-tabs">
+      <div class="cat-tab active" data-cat="all">全部</div>
+      <div class="cat-tab" data-cat="自我探索">自我探索</div>
+      <div class="cat-tab" data-cat="生活指導">生活指導</div>
+      <div class="cat-tab" data-cat="婚姻">婚姻</div>
+      <div class="cat-tab" data-cat="兩性">兩性</div>
+      <div class="cat-tab" data-cat="溝通">溝通</div>
+      <div class="cat-tab" data-cat="親子">親子</div>
+    </div>
+    <div class="books-grid" id="booksGrid">
+      <div class="book-card" data-cat="自我探索"><img class="book-cover" src="images/自己站起來.png" alt="自己站起來"><div class="book-meta"><p>自己站起來</p><span>自我探索</span></div></div>
+      <div class="book-card" data-cat="自我探索"><img class="book-cover" src="images/做自己.jpg" alt="做自己"><div class="book-meta"><p>做自己</p><span>自我探索</span></div></div>
+      <div class="book-card" data-cat="自我探索"><img class="book-cover" src="images/我是如何失敗的.jpg" alt="我是如何失敗的"><div class="book-meta"><p>我是如何失敗的</p><span>自我探索</span></div></div>
+      <div class="book-card" data-cat="自我探索"><img class="book-cover" src="images/夢想與妄想.jpg" alt="夢想與妄想"><div class="book-meta"><p>夢想與妄想</p><span>自我探索</span></div></div>
+      <div class="book-card" data-cat="自我探索"><img class="book-cover" src="images/築夢者之書.jpg" alt="築夢者之書"><div class="book-meta"><p>築夢者之書</p><span>自我探索</span></div></div>
+      <div class="book-card" data-cat="生活指導"><img class="book-cover" src="images/生活藝術家.jpg" alt="生活藝術家"><div class="book-meta"><p>生活藝術家</p><span>生活指導</span></div></div>
+      <div class="book-card" data-cat="生活指導"><img class="book-cover" src="images/陳顧問時間.jpg" alt="陳顧問時間"><div class="book-meta"><p>陳顧問時間</p><span>生活指導</span></div></div>
+      <div class="book-card" data-cat="生活指導"><img class="book-cover" src="images/人生必修10堂課.jpg" alt="人生必修10堂課"><div class="book-meta"><p>人生必修10堂課</p><span>生活指導</span></div></div>
+      <div class="book-card" data-cat="生活指導"><img class="book-cover" src="images/今天你幾歲.jpg" alt="今天你幾歲"><div class="book-meta"><p>今天你幾歲？</p><span>生活指導</span></div></div>
+      <div class="book-card" data-cat="生活指導"><img class="book-cover" src="images/如何撒嬌.jpg" alt="如何撒嬌"><div class="book-meta"><p>如何撒嬌</p><span>生活指導</span></div></div>
+      <div class="book-card" data-cat="親子"><img class="book-cover" src="images/如何愛你的父母.jpg" alt="如何愛你的父母"><div class="book-meta"><p>如何愛你的父母</p><span>親子</span></div></div>
+      <div class="book-card" data-cat="婚姻"><img class="book-cover" src="images/離婚黑皮書.jpg" alt="離婚黑皮書"><div class="book-meta"><p>離婚黑皮書</p><span>婚姻</span></div></div>
+      <div class="book-card" data-cat="婚姻"><img class="book-cover" src="images/遊走刀鋒的外遇.jpg" alt="遊走刀鋒的外遇"><div class="book-meta"><p>遊走刀鋒的外遇</p><span>婚姻</span></div></div>
+      <div class="book-card" data-cat="婚姻"><img class="book-cover" src="images/有情人.jpg" alt="有情人"><div class="book-meta"><p>有情人</p><span>婚姻</span></div></div>
+      <div class="book-card" data-cat="婚姻"><img class="book-cover" src="images/世紀大媒婆.jpg" alt="世紀大媒婆"><div class="book-meta"><p>世紀大媒婆</p><span>婚姻</span></div></div>
+      <div class="book-card" data-cat="婚姻"><img class="book-cover" src="images/新娘訓練班.jpg" alt="新娘訓練班"><div class="book-meta"><p>新娘訓練班</p><span>婚姻</span></div></div>
+      <div class="book-card" data-cat="兩性"><img class="book-cover" src="images/尋情歷險坊.jpg" alt="尋情歷險坊"><div class="book-meta"><p>尋情歷險坊</p><span>兩性</span></div></div>
+      <div class="book-card" data-cat="兩性"><img class="book-cover" src="images/敗犬站起來.jpg" alt="敗犬站起來"><div class="book-meta"><p>敗犬站起來</p><span>兩性</span></div></div>
+      <div class="book-card" data-cat="兩性"><img class="book-cover" src="images/追愛.jpg" alt="追愛"><div class="book-meta"><p>追愛</p><span>兩性</span></div></div>
+      <div class="book-card" data-cat="溝通"><img class="book-cover" src="images/說話的藝術.jpg" alt="說話的藝術"><div class="book-meta"><p>說話的藝術</p><span>溝通</span></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="about">
+  <div class="section-inner">
+    <div class="sec-label">關於顧問</div>
+    <div class="about-row">
+      <div class="avatar">倫</div>
+      <div class="about-text">
+        <h3>陳海倫顧問</h3>
+        <p>擁有二十年跨國經營與顧問經驗，曾於日本、印度、新加坡、美國等地推廣品格教育與生活成功管理學。著有三十餘部作品，亦曾製作並主持北美衛視《陳顧問時間》節目。</p>
+        <div class="tag-row">
+          <span class="skill-tag">品格教育</span>
+          <span class="skill-tag">情緒管理</span>
+          <span class="skill-tag">生活管理</span>
+          <span class="skill-tag">企業經營</span>
+          <span class="skill-tag">溝通與行銷</span>
+          <span class="skill-tag">演講</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="activity">
+  <div class="section-inner">
+    <div class="sec-label">固定活動</div>
+    <div class="sec-title">心橋精選品書時間</div>
+    <div class="sec-sub">每週三晚上 19:30–20:30・線上進行</div>
+    <div class="activity-card">
+      <div class="act-header">
+        <div>
+          <div class="act-title">為什麼你需要品書時間？</div>
+          <div class="act-time">每週三 19:30–20:30・線上・不需預先讀書</div>
+        </div>
+        <span class="act-badge">持續招募中</span>
+      </div>
+      <ul class="act-reasons">
+        <li>相信閱讀有好處，卻很難培養習慣——這裡提供你持續的責任感。</li>
+        <li>工作繁忙、視野漸窄——書籍主題極度生活化，幫你重新找回方向。</li>
+        <li>想建立不功利的人際關係——這裡是情緒連結的朋友圈。</li>
+        <li>想加強言辭表達——安全空間讓你練習討論，學習更有效地對話。</li>
+      </ul>
+      <div class="pricing-opts">
+        <div class="pricing-opt">
+          <div class="opt-label">單場</div>
+          <div class="opt-price">NT$300</div>
+          <div class="opt-note">彈性參與</div>
+        </div>
+        <div class="pricing-opt featured">
+          <div class="opt-label">十場組合</div>
+          <div class="opt-price">NT$3,000</div>
+          <div class="opt-note">共 12 場・多送兩場</div>
+        </div>
+      </div>
+      <a class="act-cta" href="https://hellenchentruegroup.com/optin/heartbridge-book-club/" target="_blank">了解並加入 →</a>
+    </div>
+  </div>
+</div>
+
+<div class="newsletter">
+  <p>加入我們</p>
+  <h3>收到新書消息與活動通知</h3>
+  <div class="nl-row">
+    <input type="email" placeholder="你的電子信箱" />
+    <button>訂閱</button>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 創意出版社</p>
+  <div class="footer-links">
+    <a href="purchase.html">購書說明</a>
+    <a href="contact.html">聯絡我們</a>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.cat-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    const cat = tab.dataset.cat;
+    document.querySelectorAll('.book-card').forEach(card => {
+      card.style.display = (cat === 'all' || card.dataset.cat === cat) ? 'block' : 'none';
+    });
+  });
+});
+</script>
+</body>
+</html>
