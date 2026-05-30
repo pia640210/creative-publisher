@@ -98,6 +98,24 @@ footer p{font-size:13px;color:#aaa}
 .footer-links{display:flex;gap:20px}
 .footer-links a{font-size:13px;color:#aaa;transition:color 0.2s}
 .footer-links a:hover{color:#BA7517}
+
+/* SERIES BADGE */
+.book-card.series{position:relative}
+.series-badge{position:absolute;top:8px;right:8px;background:#BA7517;color:#FAEEDA;font-size:10px;padding:2px 8px;border-radius:20px;z-index:1}
+
+/* MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:1000;align-items:center;justify-content:center;padding:20px}
+.modal-overlay.open{display:flex}
+.modal{background:#fff;border-radius:16px;max-width:700px;width:100%;max-height:90vh;overflow-y:auto;padding:36px}
+.modal-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:28px}
+.modal-title{font-family:Georgia,serif;font-size:20px;font-weight:500;color:#1a1a1a}
+.modal-sub{font-size:13px;color:#888;margin-top:4px}
+.modal-close{background:none;border:none;font-size:24px;color:#aaa;cursor:pointer;line-height:1;padding:0 4px}
+.modal-close:hover{color:#1a1a1a}
+.series-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.series-cover{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:8px;display:block;margin-bottom:12px}
+.series-item h4{font-size:14px;font-weight:500;color:#1a1a1a;margin-bottom:8px}
+.series-item p{font-size:12px;color:#666;line-height:1.8}
 </style>
 </head>
 <body>
@@ -151,7 +169,7 @@ footer p{font-size:13px;color:#aaa}
       <div class="book-card" data-cat="自我探索"><img class="book-cover" src="images/夢想與妄想.jpg" alt="夢想與妄想"><div class="book-meta"><p>夢想與妄想</p><span>自我探索</span></div></div>
       <div class="book-card" data-cat="自我探索"><img class="book-cover" src="images/築夢者之書.jpg" alt="築夢者之書"><div class="book-meta"><p>築夢者之書</p><span>自我探索</span></div></div>
       <div class="book-card" data-cat="生活指導"><img class="book-cover" src="images/生活藝術家.jpg" alt="生活藝術家"><div class="book-meta"><p>生活藝術家</p><span>生活指導</span></div></div>
-      <div class="book-card" data-cat="生活指導"><img class="book-cover" src="images/陳顧問時間.jpg" alt="陳顧問時間"><div class="book-meta"><p>陳顧問時間</p><span>生活指導</span></div></div>
+      <div class="book-card series" data-cat="生活指導" onclick="openModal('chenModal')"><span class="series-badge">系列 3 冊</span><img class="book-cover" src="images/陳顧問時間3.jpg" alt="陳顧問時間"><div class="book-meta"><p>陳顧問時間</p><span>生活指導・系列</span></div></div>
       <div class="book-card" data-cat="生活指導"><img class="book-cover" src="images/人生必修10堂課.jpg" alt="人生必修10堂課"><div class="book-meta"><p>人生必修10堂課</p><span>生活指導</span></div></div>
       <div class="book-card" data-cat="生活指導"><img class="book-cover" src="images/今天你幾歲.jpg" alt="今天你幾歲"><div class="book-meta"><p>今天你幾歲？</p><span>生活指導</span></div></div>
       <div class="book-card" data-cat="生活指導"><img class="book-cover" src="images/如何撒嬌.jpg" alt="如何撒嬌"><div class="book-meta"><p>如何撒嬌</p><span>生活指導</span></div></div>
@@ -164,7 +182,7 @@ footer p{font-size:13px;color:#aaa}
       <div class="book-card" data-cat="兩性"><img class="book-cover" src="images/尋情歷險坊.jpg" alt="尋情歷險坊"><div class="book-meta"><p>尋情歷險坊</p><span>兩性</span></div></div>
       <div class="book-card" data-cat="兩性"><img class="book-cover" src="images/敗犬站起來.jpg" alt="敗犬站起來"><div class="book-meta"><p>敗犬站起來</p><span>兩性</span></div></div>
       <div class="book-card" data-cat="兩性"><img class="book-cover" src="images/追愛.jpg" alt="追愛"><div class="book-meta"><p>追愛</p><span>兩性</span></div></div>
-      <div class="book-card" data-cat="溝通"><img class="book-cover" src="images/說話的藝術.jpg" alt="說話的藝術"><div class="book-meta"><p>說話的藝術</p><span>溝通</span></div></div>
+      <div class="book-card series" data-cat="溝通" onclick="openModal('artModal')"><span class="series-badge">系列 3 冊</span><img class="book-cover" src="images/說話的藝術1.jpg" alt="說話的藝術"><div class="book-meta"><p>說話的藝術</p><span>溝通・系列</span></div></div>
     </div>
   </div>
 </div>
@@ -243,6 +261,66 @@ footer p{font-size:13px;color:#aaa}
   </div>
 </footer>
 
+<!-- 陳顧問時間 Modal -->
+<div class="modal-overlay" id="chenModal" onclick="closeModalOutside(event,'chenModal')">
+  <div class="modal">
+    <div class="modal-header">
+      <div>
+        <div class="modal-title">陳顧問時間</div>
+        <div class="modal-sub">系列三冊・陳海倫 著</div>
+      </div>
+      <button class="modal-close" onclick="closeModal('chenModal')">✕</button>
+    </div>
+    <div class="series-grid">
+      <div class="series-item">
+        <img class="series-cover" src="images/陳顧問時間1.jpg" alt="陳顧問時間1">
+        <h4>陳顧問時間 1</h4>
+        <p>很多問題的答案要看問問題的人怎麼問。作者將被諮詢的真實案例收錄成書，讓你發現不同的人問一樣的問題，可能得到不一樣的解答——因為每個人都有屬於自己的答案。</p>
+      </div>
+      <div class="series-item">
+        <img class="series-cover" src="images/陳顧問時間2.jpg" alt="陳顧問時間2">
+        <h4>陳顧問時間 2</h4>
+        <p>解決大問題，獲得大幸福；解決小問題，獲得小幸福；沒問題的人，也不會有幸福。人生的重點，不在於你沒問題，而在於你有沒有能力面對問題。</p>
+      </div>
+      <div class="series-item">
+        <img class="series-cover" src="images/陳顧問時間3.jpg" alt="陳顧問時間3">
+        <h4>陳顧問時間 3</h4>
+        <p>提供許多Q&A，協助讀者訓練思考邏輯，分辨哪些是自己的問題，哪些是別人的問題。有時候只要一句話，就足以改變了你的一生！</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 說話的藝術 Modal -->
+<div class="modal-overlay" id="artModal" onclick="closeModalOutside(event,'artModal')">
+  <div class="modal">
+    <div class="modal-header">
+      <div>
+        <div class="modal-title">說話的藝術</div>
+        <div class="modal-sub">系列三冊・陳海倫 著</div>
+      </div>
+      <button class="modal-close" onclick="closeModal('artModal')">✕</button>
+    </div>
+    <div class="series-grid">
+      <div class="series-item">
+        <img class="series-cover" src="images/說話的藝術1.jpg" alt="說話的藝術1">
+        <h4>說話的藝術 1</h4>
+        <p>在關鍵時刻，講對一句話可以救回一條命，說錯一句話，隨時都要了你的命！作者以二十年以上專業諮詢經歷，分享說話這門功課最寶貴的起點。</p>
+      </div>
+      <div class="series-item">
+        <img class="series-cover" src="images/說話的藝術2.jpg" alt="說話的藝術2">
+        <h4>說話的藝術 2</h4>
+        <p>技巧再高，不能超過真正要表達的心意。本冊深入各種說話練習，包括口齒、聲音語調、肢體語言，乃至心靈與精神層面必須克服的部分。</p>
+      </div>
+      <div class="series-item">
+        <img class="series-cover" src="images/說話的藝術3.jpg" alt="說話的藝術3">
+        <h4>說話的藝術 3</h4>
+        <p>特別著重各種狀況與面對不同對象的說話技巧，涵蓋職場、演講、談判等特殊場合。每個人都要找出屬於自己的說話格調——這是值得終生學習的功課。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
 document.querySelectorAll('.cat-tab').forEach(tab => {
   tab.addEventListener('click', () => {
@@ -254,6 +332,9 @@ document.querySelectorAll('.cat-tab').forEach(tab => {
     });
   });
 });
+function openModal(id){document.getElementById(id).classList.add('open');document.body.style.overflow='hidden';}
+function closeModal(id){document.getElementById(id).classList.remove('open');document.body.style.overflow='';}
+function closeModalOutside(e,id){if(e.target===document.getElementById(id))closeModal(id);}
 </script>
 </body>
 </html>
