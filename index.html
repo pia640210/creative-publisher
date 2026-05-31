@@ -3,13 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>創意出版社</title>
+<title>創意出版社 — 陳海倫顧問著作出版</title>
+<meta name="description" content="創意出版社專注出版陳海倫顧問關於自我成長、婚姻、溝通與生活管理的系列著作，三十餘本，字字有重量。">
+<meta property="og:title" content="創意出版社 — 陳海倫顧問著作出版">
+<meta property="og:description" content="陳海倫顧問三十餘部著作，涵蓋自我探索、婚姻、溝通、生活指導。立即瀏覽書目、預購新書。">
+<meta property="og:image" content="images/自己站起來.png">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:"Noto Sans TC",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f5f2ed;color:#1a1a1a;font-size:16px;line-height:1.7}
+body{font-family:"Noto Sans TC",-apple-system,BlinkMacSystemFont,sans-serif;background:#f5f2ed;color:#1a1a1a;font-size:16px;line-height:1.7}
 a{text-decoration:none;color:inherit}
 
 /* NAV */
@@ -18,27 +23,49 @@ nav{background:#fff;border-bottom:1px solid #e8e0d0;padding:18px 48px;display:fl
 .nav-links{display:flex;gap:28px}
 .nav-links a{font-size:14px;color:#666;transition:color 0.2s}
 .nav-links a:hover{color:#BA7517}
+@media(max-width:600px){.nav-links{gap:14px}.nav-links a{font-size:13px}nav{padding:14px 16px}}
+
+/* PREORDER BANNER */
+.new-book-banner{background:#FAEEDA;border-bottom:1px solid #e8c87a;padding:14px 48px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.new-book-banner p{font-size:14px;color:#633806}
+.new-book-banner strong{font-weight:500}
+.new-book-banner a{font-size:13px;padding:7px 18px;background:#BA7517;color:#FAEEDA;border-radius:6px;white-space:nowrap;flex-shrink:0}
+@media(max-width:600px){.new-book-banner{padding:12px 16px;flex-wrap:wrap}.new-book-banner p{font-size:13px}}
 
 /* HERO */
-.hero{background:#fff9f0;padding:72px 48px 60px;border-bottom:1px solid #e8e0d0}
-.hero-inner{max-width:720px;margin:0 auto}
+.hero{background:#fff9f0;padding:56px 48px 48px;border-bottom:1px solid #e8e0d0}
+.hero-inner{max-width:800px;margin:0 auto}
 .hero-tag{font-size:11px;letter-spacing:0.12em;color:#854F0B;background:#FAEEDA;padding:4px 14px;border-radius:20px;display:inline-block;margin-bottom:20px}
-.hero h1{font-family:Georgia,serif;font-size:38px;font-weight:500;line-height:1.4;color:#1a1a1a;margin-bottom:16px}
-.hero p{font-size:15px;color:#666;line-height:1.9;max-width:480px;margin-bottom:32px}
-.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
-.btn-primary{font-size:14px;padding:11px 26px;background:#BA7517;color:#FAEEDA;border:none;border-radius:8px;cursor:pointer;transition:background 0.2s}
+.hero h1{font-family:Georgia,serif;font-size:36px;font-weight:500;line-height:1.4;color:#1a1a1a;margin-bottom:16px}
+.hero p{font-size:15px;color:#666;line-height:1.9;max-width:500px;margin-bottom:32px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px}
+.btn-primary{font-size:14px;padding:12px 24px;background:#BA7517;color:#FAEEDA;border:none;border-radius:8px;cursor:pointer;transition:background 0.2s}
 .btn-primary:hover{background:#9a6010}
-.btn-outline{font-size:14px;padding:11px 26px;background:transparent;color:#1a1a1a;border:1px solid #ccc;border-radius:8px;cursor:pointer;transition:border-color 0.2s}
+.btn-outline{font-size:14px;padding:12px 24px;background:transparent;color:#1a1a1a;border:1px solid #ccc;border-radius:8px;cursor:pointer;transition:all 0.2s}
 .btn-outline:hover{border-color:#BA7517;color:#BA7517}
+.quick-links{display:flex;gap:10px;flex-wrap:wrap}
+.quick-link{font-size:13px;padding:7px 16px;border-radius:20px;background:#fff;border:1px solid #e0d8cc;color:#555;transition:all 0.2s;cursor:pointer}
+.quick-link:hover{border-color:#BA7517;color:#BA7517}
+@media(max-width:600px){.hero{padding:36px 16px 32px}.hero h1{font-size:26px}}
+
+/* TESTIMONIALS */
+.testimonials{background:#fff;padding:44px 48px;border-bottom:1px solid #e8e0d0}
+.testimonials-inner{max-width:900px;margin:0 auto}
+.test-label{font-size:11px;letter-spacing:0.1em;color:#999;margin-bottom:20px}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.test-card{background:#fff9f0;border-radius:10px;padding:18px 20px;border-left:3px solid #EF9F27}
+.test-card p{font-size:14px;color:#555;line-height:1.8;font-style:italic;margin-bottom:10px}
+.test-card span{font-size:12px;color:#999}
+@media(max-width:700px){.test-grid{grid-template-columns:1fr;gap:12px}.testimonials{padding:32px 16px}}
 
 /* SECTIONS */
 .section{padding:52px 48px;border-bottom:1px solid #e8e0d0;background:#fff}
 .section:nth-child(even){background:#fcfaf7}
-@media(max-width:700px){.section{padding:36px 16px}}
 .section-inner{max-width:900px;margin:0 auto}
-.sec-label{font-size:11px;letter-spacing:0.1em;color:#999;margin-bottom:8px;text-transform:none}
+.sec-label{font-size:11px;letter-spacing:0.1em;color:#999;margin-bottom:8px}
 .sec-title{font-family:Georgia,serif;font-size:22px;font-weight:500;color:#1a1a1a;margin-bottom:6px}
 .sec-sub{font-size:14px;color:#888;margin-bottom:28px}
+@media(max-width:600px){.section{padding:36px 16px}}
 
 /* BOOKS */
 .cat-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
@@ -47,15 +74,17 @@ nav{background:#fff;border-bottom:1px solid #e8e0d0;padding:18px 48px;display:fl
 .books-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
 @media(max-width:700px){.books-grid{grid-template-columns:repeat(3,1fr);gap:10px}}
 @media(max-width:400px){.books-grid{grid-template-columns:repeat(2,1fr);gap:8px}}
-.book-card{background:#f5f2ed;border-radius:8px;overflow:hidden;cursor:pointer;transition:transform 0.2s}
+.book-card{background:#f5f2ed;border-radius:8px;overflow:hidden;cursor:pointer;transition:transform 0.2s;position:relative}
 .book-card:hover{transform:translateY(-3px)}
 .book-cover{width:100%;aspect-ratio:3/4;object-fit:cover;display:block}
 .book-meta{padding:8px 10px}
-.book-meta p{font-size:12px;color:#444;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:500}
-.book-meta span{font-size:11px;color:#999}
+.book-meta p{font-size:11px;color:#444;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:500}
+.book-tagline{font-size:10px;color:#BA7517;margin-top:2px;line-height:1.4;white-space:normal}
+.series-badge{position:absolute;top:8px;right:8px;background:#BA7517;color:#FAEEDA;font-size:10px;padding:2px 8px;border-radius:20px;z-index:1}
 
 /* ABOUT */
-.about-row{display:grid;grid-template-columns:88px 1fr;gap:28px;align-items:start}
+.about-row{display:grid;grid-template-columns:110px 1fr;gap:28px;align-items:start}
+@media(max-width:500px){.about-row{grid-template-columns:80px 1fr;gap:16px}}
 .avatar{width:110px;height:110px;border-radius:50%;object-fit:cover;object-position:center top;flex-shrink:0;border:3px solid #FAEEDA}
 .about-text h3{font-family:Georgia,serif;font-size:20px;font-weight:500;color:#1a1a1a;margin-bottom:8px}
 .about-text p{font-size:14px;color:#555;line-height:1.9}
@@ -81,12 +110,6 @@ nav{background:#fff;border-bottom:1px solid #e8e0d0;padding:18px 48px;display:fl
 .act-cta{display:inline-block;font-size:14px;padding:11px 24px;background:#BA7517;color:#FAEEDA;border:none;border-radius:8px;cursor:pointer;transition:background 0.2s}
 .act-cta:hover{background:#9a6010}
 
-/* NEW BOOK BANNER */
-.new-book-banner{background:#FAEEDA;border-bottom:1px solid #e8c87a;padding:16px 48px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.new-book-banner p{font-size:14px;color:#633806}
-.new-book-banner strong{font-weight:500}
-.new-book-banner a{font-size:13px;padding:7px 18px;background:#BA7517;color:#FAEEDA;border-radius:6px;white-space:nowrap}
-
 /* NEWSLETTER */
 .newsletter{background:#fff9f0;padding:52px 48px;text-align:center;border-top:1px solid #e8e0d0}
 .newsletter p{font-size:14px;color:#888;margin-bottom:6px}
@@ -95,7 +118,6 @@ nav{background:#fff;border-bottom:1px solid #e8e0d0;padding:18px 48px;display:fl
 .nl-row input{font-size:14px;padding:10px 18px;border:1px solid #ddd;border-radius:8px;background:#fff;color:#1a1a1a;width:240px}
 .nl-row input:focus{outline:none;border-color:#BA7517}
 .nl-row button{font-size:14px;padding:10px 22px;background:#BA7517;color:#FAEEDA;border:none;border-radius:8px;cursor:pointer}
-.nl-row button:hover{background:#9a6010}
 
 /* FOOTER */
 footer{background:#fff;padding:28px 48px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #e8e0d0}
@@ -103,31 +125,62 @@ footer p{font-size:13px;color:#aaa}
 .footer-links{display:flex;gap:20px}
 .footer-links a{font-size:13px;color:#aaa;transition:color 0.2s}
 .footer-links a:hover{color:#BA7517}
+@media(max-width:600px){footer{padding:20px 16px;flex-direction:column;gap:12px;text-align:center}}
 
-/* SERIES BADGE */
-.book-card.series{position:relative}
-.series-badge{position:absolute;top:8px;right:8px;background:#BA7517;color:#FAEEDA;font-size:10px;padding:2px 8px;border-radius:20px;z-index:1}
-
-/* MODAL */
-.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:1000;align-items:center;justify-content:center;padding:20px}
+/* BOOK MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:1000;align-items:center;justify-content:center;padding:16px}
 .modal-overlay.open{display:flex}
-.modal{background:#fff;border-radius:16px;max-width:700px;width:100%;max-height:90vh;overflow-y:auto;padding:36px}
-.modal-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:28px}
-.modal-title{font-family:Georgia,serif;font-size:20px;font-weight:500;color:#1a1a1a}
-.modal-sub{font-size:13px;color:#888;margin-top:4px}
-.modal-close{background:none;border:none;font-size:24px;color:#aaa;cursor:pointer;line-height:1;padding:0 4px}
-.modal-close:hover{color:#1a1a1a}
-.series-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.modal{background:#fff;border-radius:16px;max-width:680px;width:100%;max-height:92vh;overflow-y:auto}
+.modal-top{padding:28px 28px 0}
+.modal-header{display:flex;gap:20px;align-items:flex-start;margin-bottom:20px}
+.modal-cover{width:90px;border-radius:6px;flex-shrink:0;box-shadow:0 4px 12px rgba(0,0,0,0.1)}
+.modal-info{flex:1}
+.modal-info h2{font-family:Georgia,serif;font-size:20px;font-weight:500;color:#1a1a1a;margin-bottom:4px}
+.modal-cat{font-size:12px;color:#BA7517;margin-bottom:10px}
+.modal-tagline{font-size:14px;color:#555;line-height:1.8;font-style:italic}
+.modal-close-btn{position:absolute;top:16px;right:16px;background:none;border:none;font-size:22px;color:#aaa;cursor:pointer}
+.modal-close-btn:hover{color:#1a1a1a}
+.modal-top{position:relative}
+
+/* TABS */
+.modal-tabs{display:flex;border-bottom:1px solid #e8e0d0;padding:0 28px;margin-bottom:0}
+.modal-tab{font-size:13px;padding:12px 16px;color:#888;cursor:pointer;border-bottom:2px solid transparent;transition:all 0.2s}
+.modal-tab.active{color:#BA7517;border-bottom-color:#BA7517}
+.modal-tab-content{display:none;padding:24px 28px 28px}
+.modal-tab-content.active{display:block}
+
+/* BUY BUTTONS */
+.buy-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.buy-link{font-size:13px;padding:9px 18px;border-radius:8px;border:1px solid #ddd;color:#1a1a1a;transition:all 0.2s}
+.buy-link:hover{border-color:#BA7517;color:#BA7517}
+.buy-link.primary{background:#BA7517;color:#FAEEDA;border-color:#BA7517}
+.buy-link.primary:hover{background:#9a6010}
+
+/* REVIEW */
+.review-form{margin-top:16px}
+.review-form textarea{width:100%;padding:12px;border:1px solid #ddd;border-radius:8px;font-size:14px;font-family:inherit;resize:vertical;min-height:80px;color:#1a1a1a}
+.review-form textarea:focus{outline:none;border-color:#BA7517}
+.review-form input{width:100%;padding:10px 12px;border:1px solid #ddd;border-radius:8px;font-size:14px;font-family:inherit;margin-top:8px;color:#1a1a1a}
+.review-form button{margin-top:10px;font-size:13px;padding:9px 20px;background:#BA7517;color:#FAEEDA;border:none;border-radius:8px;cursor:pointer}
+.reviews-list{display:flex;flex-direction:column;gap:12px;margin-top:16px}
+.review-item{background:#f5f2ed;border-radius:8px;padding:14px 16px}
+.review-item p{font-size:14px;color:#444;line-height:1.8;margin-bottom:6px}
+.review-item span{font-size:12px;color:#999}
+
+/* SERIES MODAL */
+.series-modal .modal{max-width:760px}
+.series-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;padding:24px 28px 28px}
+.series-item{}
 .series-cover{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:8px;display:block;margin-bottom:12px}
-.series-item h4{font-size:14px;font-weight:500;color:#1a1a1a;margin-bottom:8px}
-.series-item p{font-size:12px;color:#666;line-height:1.8}
+.series-item h4{font-size:15px;font-weight:500;color:#1a1a1a;margin-bottom:8px}
+.series-item p{font-size:13px;color:#666;line-height:1.8}
 </style>
 </head>
 <body>
 
 <div class="new-book-banner">
-  <p><strong>【新書預購】</strong>《自己站起來》預購優惠至 6 月 10 日，原價 380 元，預購價 <strong>300 元</strong></p>
-  <a href="preorder.html">立即預購 →</a>
+  <p><strong>【新書預購】</strong>《自己站起來》優惠至 6 月 10 日，原價 380 元，預購價 <strong>NT$300</strong></p>
+  <a href="preorder.html">預購《自己站起來》→</a>
 </div>
 
 <nav>
@@ -147,8 +200,35 @@ footer p{font-size:13px;color:#aaa}
     <h1>讓生活的智慧<br>安靜地落在你手中</h1>
     <p>創意出版社專注出版陳海倫顧問關於自我成長、婚姻、溝通與生活管理的系列著作，三十餘本，字字有重量。</p>
     <div class="hero-btns">
-      <button class="btn-primary" onclick="document.getElementById('books').scrollIntoView({behavior:'smooth'})">瀏覽書目</button>
-      <button class="btn-outline" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">認識顧問</button>
+      <button class="btn-primary" onclick="document.getElementById('books').scrollIntoView({behavior:'smooth'})">看全部出版作品</button>
+      <button class="btn-outline" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">從這一本認識陳海倫</button>
+      <a href="preorder.html" class="btn-primary" style="display:inline-flex;align-items:center">預購《自己站起來》</a>
+    </div>
+    <div class="quick-links">
+      <span class="quick-link" onclick="document.getElementById('books').scrollIntoView({behavior:'smooth'})">📚 全部書目</span>
+      <a href="purchase.html" class="quick-link">🛒 哪裡購買</a>
+      <a href="preorder.html" class="quick-link">🆕 新書預購</a>
+      <span class="quick-link" onclick="document.getElementById('activity').scrollIntoView({behavior:'smooth'})">📖 品書時間</span>
+    </div>
+  </div>
+</div>
+
+<div class="testimonials">
+  <div class="testimonials-inner">
+    <div class="test-label">讀者這樣說</div>
+    <div class="test-grid">
+      <div class="test-card">
+        <p>「這本書，陪我走過很艱難的那段日子。每次重讀，都有不一樣的感受。」</p>
+        <span>讀者 · 台北</span>
+      </div>
+      <div class="test-card">
+        <p>「陳顧問很多話都很直接，但也常常讓我想很久。那種直接，是我需要的。」</p>
+        <span>讀者 · 高雄</span>
+      </div>
+      <div class="test-card">
+        <p>「本來只是陪朋友來看看，後來自己讀得比他還勤。沒想到對我幫助這麼大。」</p>
+        <span>讀者 · 台中</span>
+      </div>
     </div>
   </div>
 </div>
@@ -168,26 +248,96 @@ footer p{font-size:13px;color:#aaa}
       <div class="cat-tab" data-cat="親子">親子</div>
     </div>
     <div class="books-grid" id="booksGrid">
-      <div class="book-card" data-cat="自我探索"><img class="book-cover" src="images/自己站起來.png" alt="自己站起來"><div class="book-meta"><p>自己站起來</p><span>自我探索</span></div></div>
-      <div class="book-card" data-cat="自我探索"><img class="book-cover" src="images/做自己.jpg" alt="做自己"><div class="book-meta"><p>做自己</p><span>自我探索</span></div></div>
-      <div class="book-card" data-cat="自我探索"><img class="book-cover" src="images/我是如何失敗的.jpg" alt="我是如何失敗的"><div class="book-meta"><p>我是如何失敗的</p><span>自我探索</span></div></div>
-      <div class="book-card" data-cat="自我探索"><img class="book-cover" src="images/夢想與妄想.jpg" alt="夢想與妄想"><div class="book-meta"><p>夢想與妄想</p><span>自我探索</span></div></div>
-      <div class="book-card" data-cat="自我探索"><img class="book-cover" src="images/築夢者之書.jpg" alt="築夢者之書"><div class="book-meta"><p>築夢者之書</p><span>自我探索</span></div></div>
-      <div class="book-card" data-cat="生活指導"><img class="book-cover" src="images/生活藝術家.jpg" alt="生活藝術家"><div class="book-meta"><p>生活藝術家</p><span>生活指導</span></div></div>
-      <div class="book-card series" data-cat="生活指導" onclick="openModal('chenModal')"><span class="series-badge">系列 3 冊</span><img class="book-cover" src="images/陳顧問時間3.jpg" alt="陳顧問時間"><div class="book-meta"><p>陳顧問時間</p><span>生活指導・系列</span></div></div>
-      <div class="book-card" data-cat="生活指導"><img class="book-cover" src="images/人生必修10堂課.jpg" alt="人生必修10堂課"><div class="book-meta"><p>人生必修10堂課</p><span>生活指導</span></div></div>
-      <div class="book-card" data-cat="生活指導"><img class="book-cover" src="images/今天你幾歲.jpg" alt="今天你幾歲"><div class="book-meta"><p>今天你幾歲？</p><span>生活指導</span></div></div>
-      <div class="book-card" data-cat="生活指導"><img class="book-cover" src="images/如何撒嬌.jpg" alt="如何撒嬌"><div class="book-meta"><p>如何撒嬌</p><span>生活指導</span></div></div>
-      <div class="book-card" data-cat="親子"><img class="book-cover" src="images/如何愛你的父母.jpg" alt="如何愛你的父母"><div class="book-meta"><p>如何愛你的父母</p><span>親子</span></div></div>
-      <div class="book-card" data-cat="婚姻"><img class="book-cover" src="images/離婚黑皮書.jpg" alt="離婚黑皮書"><div class="book-meta"><p>離婚黑皮書</p><span>婚姻</span></div></div>
-      <div class="book-card" data-cat="婚姻"><img class="book-cover" src="images/遊走刀鋒的外遇.jpg" alt="遊走刀鋒的外遇"><div class="book-meta"><p>遊走刀鋒的外遇</p><span>婚姻</span></div></div>
-      <div class="book-card" data-cat="婚姻"><img class="book-cover" src="images/有情人.jpg" alt="有情人"><div class="book-meta"><p>有情人</p><span>婚姻</span></div></div>
-      <div class="book-card" data-cat="婚姻"><img class="book-cover" src="images/世紀大媒婆.jpg" alt="世紀大媒婆"><div class="book-meta"><p>世紀大媒婆</p><span>婚姻</span></div></div>
-      <div class="book-card" data-cat="婚姻"><img class="book-cover" src="images/新娘訓練班.jpg" alt="新娘訓練班"><div class="book-meta"><p>新娘訓練班</p><span>婚姻</span></div></div>
-      <div class="book-card" data-cat="兩性"><img class="book-cover" src="images/尋情歷險坊.jpg" alt="尋情歷險坊"><div class="book-meta"><p>尋情歷險坊</p><span>兩性</span></div></div>
-      <div class="book-card" data-cat="兩性"><img class="book-cover" src="images/敗犬站起來.jpg" alt="敗犬站起來"><div class="book-meta"><p>敗犬站起來</p><span>兩性</span></div></div>
-      <div class="book-card" data-cat="兩性"><img class="book-cover" src="images/追愛.jpg" alt="追愛"><div class="book-meta"><p>追愛</p><span>兩性</span></div></div>
-      <div class="book-card series" data-cat="溝通" onclick="openModal('artModal')"><span class="series-badge">系列 3 冊</span><img class="book-cover" src="images/說話的藝術1.jpg" alt="說話的藝術"><div class="book-meta"><p>說話的藝術</p><span>溝通・系列</span></div></div>
+
+      <div class="book-card" data-cat="自我探索" onclick="openBook('ziji')">
+        <img class="book-cover" src="images/自己站起來.png" alt="自己站起來">
+        <div class="book-meta"><p>自己站起來</p><div class="book-tagline">當人生卡住時最值得翻的一本</div></div>
+      </div>
+      <div class="book-card" data-cat="自我探索" onclick="openBook('zuoji')">
+        <img class="book-cover" src="images/做自己.jpg" alt="做自己">
+        <div class="book-meta"><p>做自己</p><div class="book-tagline">唯有做自己，生命才有色彩</div></div>
+      </div>
+      <div class="book-card" data-cat="自我探索" onclick="openBook('shibai')">
+        <img class="book-cover" src="images/我是如何失敗的.jpg" alt="我是如何失敗的">
+        <div class="book-meta"><p>我是如何失敗的</p><div class="book-tagline">失敗不可怕，不知道為何失敗才可怕</div></div>
+      </div>
+      <div class="book-card" data-cat="自我探索" onclick="openBook('mengxiang')">
+        <img class="book-cover" src="images/夢想與妄想.jpg" alt="夢想與妄想">
+        <div class="book-meta"><p>夢想與妄想</p><div class="book-tagline">你的夢想，還是妄想？</div></div>
+      </div>
+      <div class="book-card" data-cat="自我探索" onclick="openBook('zhumeng')">
+        <img class="book-cover" src="images/築夢者之書.jpg" alt="築夢者之書">
+        <div class="book-meta"><p>築夢者之書</p><div class="book-tagline">把白日夢扭轉成現實的方法</div></div>
+      </div>
+
+      <div class="book-card" data-cat="生活指導" onclick="openBook('shenghuo')">
+        <img class="book-cover" src="images/生活藝術家.jpg" alt="生活藝術家">
+        <div class="book-meta"><p>生活藝術家</p><div class="book-tagline">活著，只為了美</div></div>
+      </div>
+      <div class="book-card series" data-cat="生活指導" onclick="openModal('chenModal')">
+        <span class="series-badge">系列 3 冊</span>
+        <img class="book-cover" src="images/陳顧問時間3.jpg" alt="陳顧問時間">
+        <div class="book-meta"><p>陳顧問時間</p><div class="book-tagline">人生有沒有顧問，差很多</div></div>
+      </div>
+      <div class="book-card" data-cat="生活指導" onclick="openBook('rensheng10')">
+        <img class="book-cover" src="images/人生必修10堂課.jpg" alt="人生必修10堂課">
+        <div class="book-meta"><p>人生必修10堂課</p><div class="book-tagline">學校沒教的最重要的課</div></div>
+      </div>
+      <div class="book-card" data-cat="生活指導" onclick="openBook('jingtian')">
+        <img class="book-cover" src="images/今天你幾歲.jpg" alt="今天你幾歲">
+        <div class="book-meta"><p>今天你幾歲？</p><div class="book-tagline">你的年齡，由你決定</div></div>
+      </div>
+      <div class="book-card" data-cat="生活指導" onclick="openBook('sajiao')">
+        <img class="book-cover" src="images/如何撒嬌.jpg" alt="如何撒嬌">
+        <div class="book-meta"><p>如何撒嬌</p><div class="book-tagline">讓生命更精彩的秘密</div></div>
+      </div>
+
+      <div class="book-card" data-cat="親子" onclick="openBook('fumu')">
+        <img class="book-cover" src="images/如何愛你的父母.jpg" alt="如何愛你的父母">
+        <div class="book-meta"><p>如何愛你的父母</p><div class="book-tagline">大人後才開始學的親子課</div></div>
+      </div>
+
+      <div class="book-card" data-cat="婚姻" onclick="openBook('lihun')">
+        <img class="book-cover" src="images/離婚黑皮書.jpg" alt="離婚黑皮書">
+        <div class="book-meta"><p>離婚黑皮書</p><div class="book-tagline">懂離，才能真正擁有婚姻</div></div>
+      </div>
+      <div class="book-card" data-cat="婚姻" onclick="openBook('waiyou')">
+        <img class="book-cover" src="images/遊走刀鋒的外遇.jpg" alt="遊走刀鋒的外遇">
+        <div class="book-meta"><p>遊走刀鋒的外遇</p><div class="book-tagline">了解外遇，才能預防外遇</div></div>
+      </div>
+      <div class="book-card series" data-cat="婚姻" onclick="openModal('youqingModal')">
+        <span class="series-badge">系列 2 冊</span>
+        <img class="book-cover" src="images/有情人.jpg" alt="有情人">
+        <div class="book-meta"><p>有情人</p><div class="book-tagline">玩真的，還是玩假的？</div></div>
+      </div>
+      <div class="book-card" data-cat="婚姻" onclick="openBook('meipo')">
+        <img class="book-cover" src="images/世紀大媒婆.jpg" alt="世紀大媒婆">
+        <div class="book-meta"><p>世紀大媒婆</p><div class="book-tagline">戀愛，是結婚以後的事</div></div>
+      </div>
+      <div class="book-card" data-cat="婚姻" onclick="openBook('xinliang')">
+        <img class="book-cover" src="images/新娘訓練班.jpg" alt="新娘訓練班">
+        <div class="book-meta"><p>新娘訓練班</p><div class="book-tagline">女人一生中最重要的課程</div></div>
+      </div>
+
+      <div class="book-card" data-cat="兩性" onclick="openBook('xunqing')">
+        <img class="book-cover" src="images/尋情歷險坊.jpg" alt="尋情歷險坊">
+        <div class="book-meta"><p>尋情歷險坊</p><div class="book-tagline">找出感情上的盲點</div></div>
+      </div>
+      <div class="book-card" data-cat="兩性" onclick="openBook('baiquan')">
+        <img class="book-cover" src="images/敗犬站起來.jpg" alt="敗犬站起來">
+        <div class="book-meta"><p>敗犬站起來</p><div class="book-tagline">勇敢踏出那道門檻</div></div>
+      </div>
+      <div class="book-card" data-cat="兩性" onclick="openBook('zhuiai')">
+        <img class="book-cover" src="images/追愛.jpg" alt="追愛">
+        <div class="book-meta"><p>追愛</p><div class="book-tagline">一輩子談戀愛的哲學</div></div>
+      </div>
+
+      <div class="book-card series" data-cat="溝通" onclick="openModal('artModal')">
+        <span class="series-badge">系列 3 冊</span>
+        <img class="book-cover" src="images/說話的藝術1.jpg" alt="說話的藝術">
+        <div class="book-meta"><p>說話的藝術</p><div class="book-tagline">想把話說進人心的人</div></div>
+      </div>
+
     </div>
   </div>
 </div>
@@ -266,67 +416,208 @@ footer p{font-size:13px;color:#aaa}
   </div>
 </footer>
 
-<!-- 陳顧問時間 Modal -->
-<div class="modal-overlay" id="chenModal" onclick="closeModalOutside(event,'chenModal')">
-  <div class="modal">
-    <div class="modal-header">
-      <div>
-        <div class="modal-title">陳顧問時間</div>
-        <div class="modal-sub">系列三冊・陳海倫 著</div>
-      </div>
-      <button class="modal-close" onclick="closeModal('chenModal')">✕</button>
-    </div>
-    <div class="series-grid">
-      <div class="series-item">
-        <img class="series-cover" src="images/陳顧問時間1.jpg" alt="陳顧問時間1">
-        <h4>陳顧問時間 1</h4>
-        <p>很多問題的答案要看問問題的人怎麼問。作者將被諮詢的真實案例收錄成書，讓你發現不同的人問一樣的問題，可能得到不一樣的解答——因為每個人都有屬於自己的答案。</p>
-      </div>
-      <div class="series-item">
-        <img class="series-cover" src="images/陳顧問時間2.jpg" alt="陳顧問時間2">
-        <h4>陳顧問時間 2</h4>
-        <p>解決大問題，獲得大幸福；解決小問題，獲得小幸福；沒問題的人，也不會有幸福。人生的重點，不在於你沒問題，而在於你有沒有能力面對問題。</p>
-      </div>
-      <div class="series-item">
-        <img class="series-cover" src="images/陳顧問時間3.jpg" alt="陳顧問時間3">
-        <h4>陳顧問時間 3</h4>
-        <p>提供許多Q&A，協助讀者訓練思考邏輯，分辨哪些是自己的問題，哪些是別人的問題。有時候只要一句話，就足以改變了你的一生！</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- 說話的藝術 Modal -->
-<div class="modal-overlay" id="artModal" onclick="closeModalOutside(event,'artModal')">
-  <div class="modal">
-    <div class="modal-header">
-      <div>
-        <div class="modal-title">說話的藝術</div>
-        <div class="modal-sub">系列三冊・陳海倫 著</div>
-      </div>
-      <button class="modal-close" onclick="closeModal('artModal')">✕</button>
-    </div>
-    <div class="series-grid">
-      <div class="series-item">
-        <img class="series-cover" src="images/說話的藝術1.jpg" alt="說話的藝術1">
-        <h4>說話的藝術 1</h4>
-        <p>在關鍵時刻，講對一句話可以救回一條命，說錯一句話，隨時都要了你的命！作者以二十年以上專業諮詢經歷，分享說話這門功課最寶貴的起點。</p>
-      </div>
-      <div class="series-item">
-        <img class="series-cover" src="images/說話的藝術2.jpg" alt="說話的藝術2">
-        <h4>說話的藝術 2</h4>
-        <p>技巧再高，不能超過真正要表達的心意。本冊深入各種說話練習，包括口齒、聲音語調、肢體語言，乃至心靈與精神層面必須克服的部分。</p>
-      </div>
-      <div class="series-item">
-        <img class="series-cover" src="images/說話的藝術3.jpg" alt="說話的藝術3">
-        <h4>說話的藝術 3</h4>
-        <p>特別著重各種狀況與面對不同對象的說話技巧，涵蓋職場、演講、談判等特殊場合。每個人都要找出屬於自己的說話格調——這是值得終生學習的功課。</p>
-      </div>
-    </div>
-  </div>
-</div>
-
+<!-- ===== BOOK MODALS ===== -->
 <script>
+const books = {
+  ziji: {
+    title:"自己站起來", cat:"自我探索", img:"images/自己站起來.png",
+    tagline:"獻給每一位正在學習「獨立」的自己。",
+    desc:"人生最難的，不是沒有人幫，而是有一天你終於發現：很多路，必須由你自己走；很多情緒，必須由你承擔；所有的選擇，終究也只能由你負責。這本書，陪你走過學習獨立的每一步。",
+    price:"NT$300（預購優惠至 6 月 10 日，原價 NT$380）",
+    preorder:"preorder.html"
+  },
+  zuoji: {
+    title:"做自己", cat:"自我探索", img:"images/做自己.jpg",
+    tagline:"唯有做自己，生命才會有色彩。",
+    desc:"每個人都有獨一無二的色彩，也應該擁有自己的意願。本書詳細解釋為什麼你一定要「做自己」，以及該如何去「做自己」——這條路完全量身訂做，由你自己決定。",
+    price:"NT$380"
+  },
+  shibai: {
+    title:"我是如何失敗的", cat:"自我探索", img:"images/我是如何失敗的.jpg",
+    tagline:"失敗不可怕，可怕的是不知道為何失敗。",
+    desc:"以人生每個十年做一個階段，檢查出軌跟正軌的定位。知道什麼時候做什麼事情是對的，也就很清楚知道什麼樣的情況是失敗的。這本書讓你找到逆轉人生的起點。",
+    price:"NT$380"
+  },
+  mengxiang: {
+    title:"夢想與妄想", cat:"自我探索", img:"images/夢想與妄想.jpg",
+    tagline:"完成夢想就像爬山，路不只一條。",
+    desc:"每個人心裡夢寐以求的東西，是夢想，也有可能是妄想。為什麼完成不了夢想？因為違反了「天理」。這本書裡，全都會告訴你。",
+    price:"NT$380"
+  },
+  zhumeng: {
+    title:"築夢者之書", cat:"自我探索", img:"images/築夢者之書.jpg",
+    tagline:"夢想並不分尊卑大小。",
+    desc:"由「生、命、夢、想、產、品、創、造、圓、滿」十個字切入，讓你明白築夢者為什麼要進步成長。每個築夢者心中都有一個不願妥協的執著——這本書讓你把白日夢扭轉成現實。",
+    price:"NT$380"
+  },
+  shenghuo: {
+    title:"生活藝術家", cat:"生活指導", img:"images/生活藝術家.jpg",
+    tagline:"活著，只為了美。",
+    desc:"身為一個生活藝術家，作者倡導每一個人去享受生活，用藝術的態度跟眼光去看待人生。二十七個章節，深入探討如何讓生活更精彩——不是曲高和寡，而是融入生命裡的藝術。",
+    price:"NT$380"
+  },
+  rensheng10: {
+    title:"人生必修10堂課", cat:"生活指導", img:"images/人生必修10堂課.jpg",
+    tagline:"這些課，學校不會教你。",
+    desc:"提供深入淺出的基本課程，每個章節都是一堂有趣的哲學。這些主題都是你平常會思考的範圍——不管你現在是否很有成就，這本書都會對你有相當大的幫助，也會帶來很多意外的驚喜。",
+    price:"NT$380"
+  },
+  jingtian: {
+    title:"今天你幾歲？永齡長春", cat:"生活指導", img:"images/今天你幾歲.jpg",
+    tagline:"你的年齡，完全由你主導。",
+    desc:"你到底幾歲，並不是身分證上登記的歲數。你看起來的模樣跟實際的體力、精神狀態，完全是你可以主導的。結合身心靈的方式訓練，讓你越來越有價值。",
+    price:"NT$380"
+  },
+  sajiao: {
+    title:"如何撒嬌", cat:"生活指導", img:"images/如何撒嬌.jpg",
+    tagline:"讓生命更精彩的秘密。",
+    desc:"人與人之間最好的相處方式，就是讓彼此「舒服」，而最好的方法就是「撒嬌」。這本書告訴你撒嬌有什麼好處、該如何撒嬌，也讓你知道你為何不敢撒嬌。",
+    price:"NT$450"
+  },
+  fumu: {
+    title:"如何愛你的父母", cat:"親子", img:"images/如何愛你的父母.jpg",
+    tagline:"大人以後才開始學的親子課。",
+    desc:"從為人子女的角度探討親子關係，如何冰釋彼此間的誤解，在自己的能力範圍內盡全力去愛自己的父母。你對父母了解有多深，將影響到愛他們的意願及深度。",
+    price:"NT$380"
+  },
+  lihun: {
+    title:"離婚黑皮書", cat:"婚姻", img:"images/離婚黑皮書.jpg",
+    tagline:"有捨，才有得。能離，才能合。",
+    desc:"用樂觀、輕鬆、科學的態度來探討離婚這件事。既然你能結，就能夠離。當你可以坦然面對「失去」的時候，你才可以真正的「擁有」。",
+    price:"NT$380"
+  },
+  waiyou: {
+    title:"遊走刀鋒的外遇", cat:"婚姻", img:"images/遊走刀鋒的外遇.jpg",
+    tagline:"了解外遇，才能預防外遇。",
+    desc:"外遇，是婚姻中一個非常大的感情陷阱。這本書藉由對外遇的探討跟了解，減少它對於生活中的威脅，把它發生的機率降到最低。這是婚姻裡面無法避免的話題，不可能不去面對。",
+    price:"NT$380"
+  },
+  meipo: {
+    title:"世紀大媒婆", cat:"婚姻", img:"images/世紀大媒婆.jpg",
+    tagline:"戀愛，是結婚以後的事。",
+    desc:"作者多年來促成對對幸福佳偶，成為「作媒」這門藝術的專家，並且有一套獨特的婚姻哲學。為什麼婚姻不好，人生不會真正好？這本書給你答案。",
+    price:"NT$380"
+  },
+  xinliang: {
+    title:"新娘訓練班", cat:"婚姻", img:"images/新娘訓練班.jpg",
+    tagline:"女人一生中最重要的課程。",
+    desc:"「新娘訓練班」讓單身者對於「嫁娶」有了方向，也增加許多信心。這本書的目的，是讓在尋求婚姻這條路的人有個參考，讓大家對婚姻更有希望，有美夢成真的可能。",
+    price:"NT$380"
+  },
+  xunqing: {
+    title:"尋情歷險坊", cat:"兩性", img:"images/尋情歷險坊.jpg",
+    tagline:"找出你感情上從未發現的盲點。",
+    desc:"許多人對愛情、婚姻存在著許多迷思，經過《尋情歷險坊》的開導之後，異口同聲都說希望能夠早個十年認識陳顧問，人生就會不一樣。",
+    price:"NT$380"
+  },
+  baiquan: {
+    title:"敗犬站起來", cat:"兩性", img:"images/敗犬站起來.jpg",
+    tagline:"勇敢踏出那道門檻。",
+    desc:"許多人把自己關在一個自己設計的監牢裡，不斷眺望著幸福的彼端，卻怎樣都沒辦法踏上那條康莊大道。這本書，專門討論這些人到底發生了什麼事情。",
+    price:"NT$380"
+  },
+  zhuiai: {
+    title:"追愛", cat:"兩性", img:"images/追愛.jpg",
+    tagline:"一輩子談戀愛的哲學。",
+    desc:"追愛，就是遊戲。追到了你愛的人，是為了之後的感情要繼續經營下去。這本書，提倡談一輩子戀愛的哲學——找到目標，不斷努力，經歷困難，堅持到成功為止。",
+    price:"NT$380"
+  }
+};
+
+const storeBtns = `
+  <div class="buy-links">
+    <a class="buy-link" href="https://reurl.cc/Q2A6Wq" target="_blank">博客來</a>
+    <a class="buy-link" href="https://reurl.cc/Z23j1A" target="_blank">三民書局</a>
+    <a class="buy-link" href="https://reurl.cc/K2YrX9" target="_blank">金石堂</a>
+    <a class="buy-link" href="https://reurl.cc/A9mR0Q" target="_blank">iRead 灰熊愛讀書</a>
+    <a class="buy-link primary" href="tel:0287122800">來電訂購 02-8712-2800</a>
+  </div>`;
+
+function openBook(id) {
+  const b = books[id];
+  if (!b) return;
+  const reviewsKey = 'reviews_' + id;
+  const stored = JSON.parse(localStorage.getItem(reviewsKey) || '[]');
+  const reviewsHtml = stored.length
+    ? stored.map(r => `<div class="review-item"><p>${r.text}</p><span>${r.name} · ${r.date}</span></div>`).join('')
+    : '<p style="color:#aaa;font-size:13px">還沒有讀者心得，成為第一個分享的人吧！</p>';
+
+  const preorderBtn = b.preorder ? `<a class="buy-link primary" href="${b.preorder}">預購優惠 →</a>` : '';
+  document.getElementById('bookModalContent').innerHTML = `
+    <div class="modal-top">
+      <button class="modal-close-btn" onclick="closeModal('bookModal')">✕</button>
+      <div class="modal-header">
+        <img class="modal-cover" src="${b.img}" alt="${b.title}">
+        <div class="modal-info">
+          <h2>${b.title}</h2>
+          <div class="modal-cat">${b.cat}</div>
+          <div class="modal-tagline">${b.tagline}</div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-tabs">
+      <div class="modal-tab active" onclick="switchTab(this,'tab-intro-${id}')">書籍介紹</div>
+      <div class="modal-tab" onclick="switchTab(this,'tab-buy-${id}')">購書資訊</div>
+      <div class="modal-tab" onclick="switchTab(this,'tab-review-${id}')">讀者心得</div>
+    </div>
+    <div id="tab-intro-${id}" class="modal-tab-content active">
+      <p style="font-size:14px;color:#555;line-height:1.9">${b.desc}</p>
+      <p style="margin-top:12px;font-size:13px;color:#888">定價：${b.price}</p>
+    </div>
+    <div id="tab-buy-${id}" class="modal-tab-content">
+      <p style="font-size:14px;color:#555;margin-bottom:4px">可透過以下管道購買：</p>
+      ${storeBtns}
+      ${preorderBtn}
+      <p style="font-size:12px;color:#aaa;margin-top:12px">轉帳購書：玉山銀行 808 · 0406-940-003763 · 請來電告知末五碼</p>
+    </div>
+    <div id="tab-review-${id}" class="modal-tab-content">
+      <div class="reviews-list" id="reviewsList-${id}">${reviewsHtml}</div>
+      <div class="review-form" style="margin-top:20px;border-top:1px solid #e8e0d0;padding-top:16px">
+        <p style="font-size:13px;font-weight:500;margin-bottom:10px">分享你的讀後感</p>
+        <textarea id="reviewText-${id}" placeholder="寫下這本書對你的影響或感受…"></textarea>
+        <input id="reviewName-${id}" placeholder="你的名字（選填）">
+        <button onclick="submitReview('${id}')">送出心得</button>
+      </div>
+    </div>`;
+  document.getElementById('bookModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function submitReview(id) {
+  const text = document.getElementById('reviewText-' + id).value.trim();
+  const name = document.getElementById('reviewName-' + id).value.trim() || '匿名讀者';
+  if (!text) return;
+  const key = 'reviews_' + id;
+  const stored = JSON.parse(localStorage.getItem(key) || '[]');
+  const date = new Date().toLocaleDateString('zh-TW');
+  stored.unshift({text, name, date});
+  localStorage.setItem(key, JSON.stringify(stored));
+  document.getElementById('reviewsList-' + id).innerHTML =
+    stored.map(r => `<div class="review-item"><p>${r.text}</p><span>${r.name} · ${r.date}</span></div>`).join('');
+  document.getElementById('reviewText-' + id).value = '';
+  document.getElementById('reviewName-' + id).value = '';
+}
+
+function switchTab(el, tabId) {
+  const modal = el.closest('.modal');
+  modal.querySelectorAll('.modal-tab').forEach(t => t.classList.remove('active'));
+  modal.querySelectorAll('.modal-tab-content').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById(tabId).classList.add('active');
+}
+
+function openModal(id) {
+  document.getElementById(id).classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(id) {
+  document.getElementById(id).classList.remove('open');
+  document.body.style.overflow = '';
+}
+function closeModalOutside(e, id) {
+  if (e.target === document.getElementById(id)) closeModal(id);
+}
+
 document.querySelectorAll('.cat-tab').forEach(tab => {
   tab.addEventListener('click', () => {
     document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
@@ -337,9 +628,143 @@ document.querySelectorAll('.cat-tab').forEach(tab => {
     });
   });
 });
-function openModal(id){document.getElementById(id).classList.add('open');document.body.style.overflow='hidden';}
-function closeModal(id){document.getElementById(id).classList.remove('open');document.body.style.overflow='';}
-function closeModalOutside(e,id){if(e.target===document.getElementById(id))closeModal(id);}
 </script>
+
+<!-- Book modal container -->
+<div class="modal-overlay" id="bookModal" onclick="closeModalOutside(event,'bookModal')">
+  <div class="modal" id="bookModalContent"></div>
+</div>
+
+<!-- 陳顧問時間 Series Modal -->
+<div class="modal-overlay" id="chenModal" onclick="closeModalOutside(event,'chenModal')">
+  <div class="modal series-modal">
+    <div class="modal-top">
+      <button class="modal-close-btn" onclick="closeModal('chenModal')">✕</button>
+      <div class="modal-header" style="padding-bottom:0">
+        <div class="modal-info">
+          <h2 style="font-family:Georgia,serif;font-size:20px">陳顧問時間</h2>
+          <div class="modal-cat" style="color:#BA7517;font-size:12px;margin-top:4px">系列三冊・陳海倫 著</div>
+        </div>
+      </div>
+    </div>
+    <div class="series-grid" style="grid-template-columns:repeat(3,1fr)">
+      <div class="series-item">
+        <img class="series-cover" src="images/陳顧問時間1.jpg" alt="陳顧問時間1">
+        <h4>陳顧問時間 1</h4>
+        <p>很多問題的答案要看問問題的人怎麼問。作者將被諮詢的真實案例收錄成書，讓你發現不同的人問一樣的問題，可能得到不一樣的解答——因為每個人都有屬於自己的答案。</p>
+        <div class="buy-links" style="margin-top:12px;flex-wrap:wrap;gap:6px">
+          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/Q2A6Wq" target="_blank">博客來</a>
+          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/Z23j1A" target="_blank">三民</a>
+          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/K2YrX9" target="_blank">金石堂</a>
+        </div>
+      </div>
+      <div class="series-item">
+        <img class="series-cover" src="images/陳顧問時間2.jpg" alt="陳顧問時間2">
+        <h4>陳顧問時間 2</h4>
+        <p>解決大問題，獲得大幸福；解決小問題，獲得小幸福；沒問題的人，也不會有幸福。人生的重點，不在於你沒問題，而在於你有沒有能力面對問題。</p>
+        <div class="buy-links" style="margin-top:12px;flex-wrap:wrap;gap:6px">
+          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/Q2A6Wq" target="_blank">博客來</a>
+          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/Z23j1A" target="_blank">三民</a>
+          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/K2YrX9" target="_blank">金石堂</a>
+        </div>
+      </div>
+      <div class="series-item">
+        <img class="series-cover" src="images/陳顧問時間3.jpg" alt="陳顧問時間3">
+        <h4>陳顧問時間 3</h4>
+        <p>提供許多Q&A，協助讀者訓練思考邏輯，分辨哪些是自己的問題，哪些是別人的問題。有時候只要一句話，就足以改變了你的一生！</p>
+        <div class="buy-links" style="margin-top:12px;flex-wrap:wrap;gap:6px">
+          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/Q2A6Wq" target="_blank">博客來</a>
+          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/Z23j1A" target="_blank">三民</a>
+          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/K2YrX9" target="_blank">金石堂</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 說話的藝術 Series Modal -->
+<div class="modal-overlay" id="artModal" onclick="closeModalOutside(event,'artModal')">
+  <div class="modal series-modal">
+    <div class="modal-top">
+      <button class="modal-close-btn" onclick="closeModal('artModal')">✕</button>
+      <div class="modal-header" style="padding-bottom:0">
+        <div class="modal-info">
+          <h2 style="font-family:Georgia,serif;font-size:20px">說話的藝術</h2>
+          <div class="modal-cat" style="color:#BA7517;font-size:12px;margin-top:4px">系列三冊・陳海倫 著</div>
+        </div>
+      </div>
+    </div>
+    <div class="series-grid" style="grid-template-columns:repeat(3,1fr)">
+      <div class="series-item">
+        <img class="series-cover" src="images/說話的藝術1.jpg" alt="說話的藝術1">
+        <h4>說話的藝術 1</h4>
+        <p>在關鍵時刻，講對一句話可以救回一條命，說錯一句話，隨時都要了你的命！作者以二十年以上專業諮詢經歷，分享說話這門功課最寶貴的起點。</p>
+        <div class="buy-links" style="margin-top:12px;flex-wrap:wrap;gap:6px">
+          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/Q2A6Wq" target="_blank">博客來</a>
+          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/Z23j1A" target="_blank">三民</a>
+          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/K2YrX9" target="_blank">金石堂</a>
+        </div>
+      </div>
+      <div class="series-item">
+        <img class="series-cover" src="images/說話的藝術2.jpg" alt="說話的藝術2">
+        <h4>說話的藝術 2</h4>
+        <p>技巧再高，不能超過真正要表達的心意。本冊深入各種說話練習，包括口齒、聲音語調、肢體語言，乃至心靈與精神層面必須克服的部分。</p>
+        <div class="buy-links" style="margin-top:12px;flex-wrap:wrap;gap:6px">
+          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/Q2A6Wq" target="_blank">博客來</a>
+          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/Z23j1A" target="_blank">三民</a>
+          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/K2YrX9" target="_blank">金石堂</a>
+        </div>
+      </div>
+      <div class="series-item">
+        <img class="series-cover" src="images/說話的藝術3.jpg" alt="說話的藝術3">
+        <h4>說話的藝術 3</h4>
+        <p>特別著重各種狀況與面對不同對象的說話技巧，涵蓋職場、演講、談判等特殊場合。每個人都要找出屬於自己的說話格調——這是值得終生學習的功課。</p>
+        <div class="buy-links" style="margin-top:12px;flex-wrap:wrap;gap:6px">
+          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/Q2A6Wq" target="_blank">博客來</a>
+          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/Z23j1A" target="_blank">三民</a>
+          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/K2YrX9" target="_blank">金石堂</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 有情人 Series Modal -->
+<div class="modal-overlay" id="youqingModal" onclick="closeModalOutside(event,'youqingModal')">
+  <div class="modal series-modal">
+    <div class="modal-top">
+      <button class="modal-close-btn" onclick="closeModal('youqingModal')">✕</button>
+      <div class="modal-header" style="padding-bottom:0">
+        <div class="modal-info">
+          <h2 style="font-family:Georgia,serif;font-size:20px">有情人</h2>
+          <div class="modal-cat" style="color:#BA7517;font-size:12px;margin-top:4px">系列兩冊・陳海倫 著</div>
+        </div>
+      </div>
+    </div>
+    <div class="series-grid" style="grid-template-columns:repeat(2,1fr)">
+      <div class="series-item">
+        <img class="series-cover" src="images/有情人.jpg" alt="有情人1">
+        <h4>有情人 1｜玩真的，還是玩假的？</h4>
+        <p>除了處理結婚的課題，還延伸到兩性之間的範圍。對還沒結婚的人，這本書的目的很簡單，就是要你鼓起勇氣去結婚。藉著這本書，你可以解決許多感情上的問題，找到感情幸福的真諦！</p>
+        <div class="buy-links" style="margin-top:12px;flex-wrap:wrap;gap:6px">
+          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/Q2A6Wq" target="_blank">博客來</a>
+          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/Z23j1A" target="_blank">三民</a>
+          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/K2YrX9" target="_blank">金石堂</a>
+        </div>
+      </div>
+      <div class="series-item">
+        <img class="series-cover" src="images/有情人2.jpg" alt="有情人2">
+        <h4>有情人 II｜婚姻大解碼</h4>
+        <p>延續前一本的主題，讓你更進一步瞭解婚姻，有機會真正知道你所有想知道的事。如果對愛情的真相了解甚少，你當然會失敗。這本書讓你慢慢抽絲剝繭，找到愛情的真相。</p>
+        <div class="buy-links" style="margin-top:12px;flex-wrap:wrap;gap:6px">
+          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/Q2A6Wq" target="_blank">博客來</a>
+          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/Z23j1A" target="_blank">三民</a>
+          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/K2YrX9" target="_blank">金石堂</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
