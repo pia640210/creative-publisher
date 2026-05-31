@@ -34,6 +34,7 @@ nav{background:#fff;border-bottom:1px solid #e8e0d0;padding:18px 48px;display:fl
 /* SECTIONS */
 .section{padding:52px 48px;border-bottom:1px solid #e8e0d0;background:#fff}
 .section:nth-child(even){background:#fcfaf7}
+@media(max-width:700px){.section{padding:36px 16px}}
 .section-inner{max-width:900px;margin:0 auto}
 .sec-label{font-size:11px;letter-spacing:0.1em;color:#999;margin-bottom:8px;text-transform:none}
 .sec-title{font-family:Georgia,serif;font-size:22px;font-weight:500;color:#1a1a1a;margin-bottom:6px}
@@ -44,7 +45,8 @@ nav{background:#fff;border-bottom:1px solid #e8e0d0;padding:18px 48px;display:fl
 .cat-tab{font-size:12px;padding:5px 14px;border-radius:20px;border:1px solid #ddd;color:#666;background:transparent;cursor:pointer;transition:all 0.2s}
 .cat-tab:hover,.cat-tab.active{background:#FAEEDA;color:#633806;border-color:#EF9F27}
 .books-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
-@media(max-width:700px){.books-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:700px){.books-grid{grid-template-columns:repeat(3,1fr);gap:10px}}
+@media(max-width:400px){.books-grid{grid-template-columns:repeat(2,1fr);gap:8px}}
 .book-card{background:#f5f2ed;border-radius:8px;overflow:hidden;cursor:pointer;transition:transform 0.2s}
 .book-card:hover{transform:translateY(-3px)}
 .book-cover{width:100%;aspect-ratio:3/4;object-fit:cover;display:block}
@@ -257,7 +259,7 @@ footer p{font-size:13px;color:#aaa}
 </div>
 
 <footer>
-  <p>© 2025 創意出版社</p>
+  <p>© 2026 創意出版社</p>
   <div class="footer-links">
     <a href="purchase.html">購書說明</a>
     <a href="contact.html">聯絡我們</a>
