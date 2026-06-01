@@ -3,12 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>創意出版社 — 陳海倫顧問著作出版</title>
-<meta name="description" content="創意出版社專注出版陳海倫顧問關於自我成長、婚姻、溝通與生活管理的系列著作，三十餘本，字字有重量。">
-<meta property="og:title" content="創意出版社 — 陳海倫顧問著作出版">
-<meta property="og:description" content="陳海倫顧問三十餘部著作，涵蓋自我探索、婚姻、溝通、生活指導。立即瀏覽書目、預購新書。">
+<title>創意出版社｜陳海倫顧問作品・自己站起來新書預購</title>
+<meta name="description" content="創意出版社長期出版陳海倫顧問作品，涵蓋成長、婚姻、溝通與生活管理。最新《自己站起來》預購中。">
+<meta property="og:title" content="創意出版社｜陳海倫顧問作品・自己站起來新書預購">
+<meta property="og:description" content="創意出版社長期出版陳海倫顧問作品，涵蓋成長、婚姻、溝通與生活管理。最新《自己站起來》預購中。">
 <meta property="og:image" content="images/自己站起來.png">
 <meta property="og:type" content="website">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {"@type":"Organization","name":"創意出版社","url":"https://pia640210.github.io/creative-publisher/","telephone":"+886-2-8712-2800","address":{"@type":"PostalAddress","streetAddress":"復興北路178號2樓","addressLocality":"台北市","addressCountry":"TW"}},
+    {"@type":"Book","name":"自己站起來","author":{"@type":"Person","name":"陳海倫"},"publisher":{"@type":"Organization","name":"創意出版社"},"inLanguage":"zh-TW","offers":{"@type":"Offer","price":"300","priceCurrency":"TWD","availability":"https://schema.org/PreOrder"}}
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
@@ -83,9 +92,10 @@ nav{background:#fff;border-bottom:1px solid #e8e0d0;padding:18px 48px;display:fl
 .series-badge{position:absolute;top:8px;right:8px;background:#BA7517;color:#FAEEDA;font-size:10px;padding:2px 8px;border-radius:20px;z-index:1}
 
 /* ABOUT */
-.about-row{display:grid;grid-template-columns:110px 1fr;gap:28px;align-items:start}
-@media(max-width:500px){.about-row{grid-template-columns:80px 1fr;gap:16px}}
-.avatar{width:110px;height:110px;border-radius:50%;object-fit:cover;object-position:center top;flex-shrink:0;border:3px solid #FAEEDA}
+.about-row{display:grid;grid-template-columns:130px 1fr;gap:28px;align-items:start}
+@media(max-width:500px){.about-row{grid-template-columns:92px 1fr;gap:16px}}
+.avatar{width:130px;height:130px;border-radius:50%;object-fit:cover;object-position:center;flex-shrink:0;border:3px solid #FAEEDA}
+@media(max-width:500px){.avatar{width:92px;height:92px}}
 .about-text h3{font-family:Georgia,serif;font-size:20px;font-weight:500;color:#1a1a1a;margin-bottom:8px}
 .about-text p{font-size:14px;color:#555;line-height:1.9}
 .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
@@ -113,7 +123,7 @@ nav{background:#fff;border-bottom:1px solid #e8e0d0;padding:18px 48px;display:fl
 /* NEWSLETTER */
 .newsletter{background:#fff9f0;padding:52px 48px;text-align:center;border-top:1px solid #e8e0d0}
 .newsletter p{font-size:14px;color:#888;margin-bottom:6px}
-.newsletter h3{font-family:Georgia,serif;font-size:20px;margin-bottom:24px;color:#1a1a1a}
+.newsletter h3{font-family:Georgia,serif;font-size:20px;margin-bottom:8px;color:#1a1a1a}
 .nl-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
 .nl-row input{font-size:14px;padding:10px 18px;border:1px solid #ddd;border-radius:8px;background:#fff;color:#1a1a1a;width:240px}
 .nl-row input:focus{outline:none;border-color:#BA7517}
@@ -138,8 +148,8 @@ footer p{font-size:13px;color:#aaa}
 .modal-info h2{font-family:Georgia,serif;font-size:20px;font-weight:500;color:#1a1a1a;margin-bottom:4px}
 .modal-cat{font-size:12px;color:#BA7517;margin-bottom:10px}
 .modal-tagline{font-size:14px;color:#555;line-height:1.8;font-style:italic}
-.modal-close-btn{position:absolute;top:16px;right:16px;background:none;border:none;font-size:22px;color:#aaa;cursor:pointer}
-.modal-close-btn:hover{color:#1a1a1a}
+.modal-close-btn{position:absolute;top:10px;right:10px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.94);border:1px solid #e8e0d0;border-radius:50%;font-size:20px;line-height:1;color:#666;cursor:pointer;z-index:1010;box-shadow:0 2px 8px rgba(0,0,0,0.12)}
+.modal-close-btn:hover{color:#1a1a1a;background:#fff}
 .modal-top{position:relative}
 
 /* TABS */
@@ -186,12 +196,29 @@ footer p{font-size:13px;color:#aaa}
 .series-editor-label{font-size:12px;color:#999;margin-bottom:8px;letter-spacing:0.05em}
 .series-editor .editor-rec{margin-bottom:8px}
 .series-editor .editor-rec:last-child{margin-bottom:0}
+.about-personal{margin-top:12px;font-size:14px;color:#555;line-height:1.9}
+.newsletter .nl-sub{font-size:13px;color:#999;margin-bottom:24px;line-height:1.7}
+.bundle-note{display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:#FFFBF2;border:1px solid #EF9F27;border-radius:10px;padding:12px 16px;margin:18px 0 4px;font-size:13px;color:#633806;line-height:1.7}
+.bundle-tag{font-size:11px;font-weight:600;color:#fff;background:#BA7517;border-radius:6px;padding:3px 10px;white-space:nowrap}
+.bundle-note a{color:#BA7517;text-decoration:underline}
+.recommend{background:#fff}
+.recommend-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px}
+@media(max-width:640px){.recommend-grid{grid-template-columns:1fr;gap:14px}}
+.recommend-card{display:flex;gap:16px;align-items:center;border:1px solid #e8e0d0;border-radius:12px;padding:16px;cursor:pointer;background:#fff9f0;transition:all 0.2s}
+.recommend-card:hover{border-color:#EF9F27;box-shadow:0 6px 20px rgba(0,0,0,0.08);transform:translateY(-2px)}
+.recommend-card img{width:60px;height:86px;object-fit:cover;border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,0.15);flex-shrink:0}
+.rc-info{min-width:0}
+.rc-num{display:inline-block;font-size:11px;font-weight:600;color:#854F0B;background:#FAEEDA;border-radius:50%;width:20px;height:20px;line-height:20px;text-align:center;margin-bottom:6px}
+.rc-info p{font-size:15px;font-weight:600;color:#1a1a1a;margin:0 0 2px}
+.rc-tag{font-size:12px;color:#888;line-height:1.5}
+.recommend-more{text-align:center;margin-top:22px;font-size:13px;color:#BA7517;cursor:pointer}
+.recommend-more:hover{text-decoration:underline}
 </style>
 </head>
 <body>
 
 <div class="new-book-banner">
-  <p><strong>【新書預購】</strong>《自己站起來》優惠至 2026 年 6 月 10 日，原價 380 元，預購價 <strong>NT$300</strong></p>
+  <p><strong>【新書預購】</strong>《自己站起來》——一本寫給正在整理人生的人。預購優惠至 2026/6/10，預購價 <strong>NT$300</strong>（原價 380）</p>
   <a href="preorder.html">預購《自己站起來》→</a>
 </div>
 
@@ -245,11 +272,38 @@ footer p{font-size:13px;color:#aaa}
   </div>
 </div>
 
+<div class="section recommend" id="start-here">
+  <div class="section-inner">
+    <div class="sec-label">新手必看</div>
+    <div class="sec-title">📘 第一次認識陳海倫，從這三本開始</div>
+    <div class="sec-sub">不知道從哪讀起？這三本是最好的入口。</div>
+    <div class="recommend-grid">
+      <div class="recommend-card" onclick="openBook('ziji')">
+        <img src="images/自己站起來.png" alt="自己站起來">
+        <div class="rc-info"><span class="rc-num">1</span><p>自己站起來</p><div class="rc-tag">當人生卡住時最值得翻的一本</div></div>
+      </div>
+      <div class="recommend-card" onclick="openBook('zuoji')">
+        <img src="images/做自己.jpg" alt="做自己">
+        <div class="rc-info"><span class="rc-num">2</span><p>做自己</p><div class="rc-tag">唯有做自己，生命才有色彩</div></div>
+      </div>
+      <div class="recommend-card" onclick="openModal('artModal')">
+        <img src="images/說話的藝術1.jpg" alt="說話的藝術">
+        <div class="rc-info"><span class="rc-num">3</span><p>說話的藝術</p><div class="rc-tag">講對話讓你上天堂，說錯話讓你見閻王</div></div>
+      </div>
+    </div>
+    <div class="recommend-more" onclick="document.getElementById('books').scrollIntoView({behavior:'smooth'})">看完整書牆 ↓</div>
+  </div>
+</div>
+
 <div class="section" id="books">
   <div class="section-inner">
     <div class="sec-label">精選書目</div>
     <div class="sec-title">每一本，都是一段陪伴</div>
     <div class="sec-sub">自我探索、婚姻、溝通、生活指導，二十年深耕</div>
+    <div class="bundle-note">
+      <span class="bundle-tag">套書優惠</span>
+      <span>任選 3 本 <strong>NT$1,000</strong>（單本原價 380）｜《說話的藝術》全 3 冊 <strong>NT$1,100</strong>。訂購請來電或見<a href="purchase.html">購書說明</a>。</span>
+    </div>
     <div class="cat-tabs">
       <div class="cat-tab active" data-cat="all">全部</div>
       <div class="cat-tab" data-cat="自我探索">自我探索</div>
@@ -362,6 +416,7 @@ footer p{font-size:13px;color:#aaa}
       <div class="about-text">
         <h3>陳海倫顧問</h3>
         <p>擁有二十年跨國經營與顧問經驗，曾於日本、印度、新加坡、美國等地推廣品格教育與生活成功管理學。著有三十餘部作品，亦曾製作並主持北美衛視《陳顧問時間》節目。</p>
+        <p class="about-personal">她最在意的，不只是讓人理解道理，而是真正走出屬於自己的改變。</p>
         <div class="tag-row">
           <span class="skill-tag">品格教育</span>
           <span class="skill-tag">情緒管理</span>
@@ -406,14 +461,15 @@ footer p{font-size:13px;color:#aaa}
           <div class="opt-note">共 12 場・多送兩場</div>
         </div>
       </div>
-      <a class="act-cta" href="https://hellenchentruegroup.com/optin/heartbridge-book-club/" target="_blank">了解並加入 →</a>
+      <a class="act-cta" href="https://hellenchentruegroup.com/optin/heartbridge-book-club/" target="_blank">看看這週品哪一本 →</a>
     </div>
   </div>
 </div>
 
 <div class="newsletter">
-  <p>加入我們</p>
+  <p>每月一封・隨時可取消</p>
   <h3>收到新書消息與活動通知</h3>
+  <p class="nl-sub">新書出版、品書時間、最新活動，第一時間通知你。</p>
   <div class="nl-row">
     <input type="email" placeholder="你的電子信箱" />
     <button>訂閱</button>
