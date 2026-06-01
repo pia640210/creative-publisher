@@ -32,7 +32,8 @@ nav{background:#fff;border-bottom:1px solid #e8e0d0;padding:18px 48px;display:fl
 .nav-links{display:flex;gap:28px}
 .nav-links a{font-size:14px;color:#666;transition:color 0.2s}
 .nav-links a:hover{color:#BA7517}
-@media(max-width:600px){.nav-links{gap:14px}.nav-links a{font-size:13px}nav{padding:14px 16px}}
+.nav-toggle{display:none;background:none;border:none;font-size:24px;color:#1a1a1a;cursor:pointer;line-height:1;padding:2px 6px}
+@media(max-width:600px){nav{padding:14px 16px;flex-wrap:wrap}.nav-toggle{display:block}.nav-links{display:none;flex-direction:column;gap:0;width:100%;margin-top:8px}.nav-links.open{display:flex}.nav-links a{font-size:15px;padding:12px 2px;border-top:1px solid #f0ebe3}}
 
 /* PREORDER BANNER */
 .new-book-banner{background:#FAEEDA;border-bottom:1px solid #e8c87a;padding:14px 48px;display:flex;align-items:center;justify-content:space-between;gap:16px}
@@ -201,6 +202,17 @@ footer p{font-size:13px;color:#aaa}
 .bundle-note{display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:#FFFBF2;border:1px solid #EF9F27;border-radius:10px;padding:12px 16px;margin:18px 0 4px;font-size:13px;color:#633806;line-height:1.7}
 .bundle-tag{font-size:11px;font-weight:600;color:#fff;background:#BA7517;border-radius:6px;padding:3px 10px;white-space:nowrap}
 .bundle-note a{color:#BA7517;text-decoration:underline}
+.buy-note-mini{font-size:11px;color:#993C1D;margin-top:6px}
+.about-role{font-size:13px;color:#BA7517;font-weight:500;margin-bottom:14px}
+.about-highlights{display:flex;gap:28px;flex-wrap:wrap;margin:18px 0}
+.ah{display:flex;flex-direction:column}
+.ah-num{font-family:Georgia,serif;font-size:24px;color:#1a1a1a;font-weight:500;line-height:1}
+.ah-label{font-size:12px;color:#888;margin-top:4px}
+.about-extra{font-size:13px;color:#777;line-height:1.9;margin-top:4px}
+.situation-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:20px}
+.situation-label{font-size:13px;color:#888}
+.situation-row button{font-size:13px;padding:8px 16px;border-radius:20px;border:1px solid #EF9F27;background:#fff;color:#854F0B;cursor:pointer;transition:all 0.2s}
+.situation-row button:hover{background:#FAEEDA}
 .recommend{background:#fff}
 .recommend-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px}
 @media(max-width:640px){.recommend-grid{grid-template-columns:1fr;gap:14px}}
@@ -224,10 +236,11 @@ footer p{font-size:13px;color:#aaa}
 
 <nav>
   <div class="nav-logo">創意出版社</div>
-  <div class="nav-links">
-    <a href="#books">書目</a>
-    <a href="#about">關於顧問</a>
-    <a href="#activity">品書時間</a>
+  <button class="nav-toggle" aria-label="開啟選單" onclick="toggleNav()">☰</button>
+  <div class="nav-links" id="navLinks">
+    <a href="#books" onclick="closeNav()">書目</a>
+    <a href="#about" onclick="closeNav()">關於作者</a>
+    <a href="#activity" onclick="closeNav()">品書時間</a>
     <a href="purchase.html">購書</a>
     <a href="contact.html">聯絡</a>
   </div>
@@ -277,6 +290,13 @@ footer p{font-size:13px;color:#aaa}
     <div class="sec-label">新手必看</div>
     <div class="sec-title">📘 第一次認識陳海倫，從這三本開始</div>
     <div class="sec-sub">不知道從哪讀起？這三本是最好的入口。</div>
+    <div class="situation-row">
+      <span class="situation-label">或依你現在的狀況：</span>
+      <button onclick="openBook('ziji')">想重新整理自己</button>
+      <button onclick="openModal('youqingModal')">婚姻・感情卡住</button>
+      <button onclick="openModal('artModal')">想把話說好</button>
+      <button onclick="openBook('fumu')">想改善親子關係</button>
+    </div>
     <div class="recommend-grid">
       <div class="recommend-card" onclick="openBook('ziji')">
         <img src="images/自己站起來.png" alt="自己站起來">
@@ -302,7 +322,7 @@ footer p{font-size:13px;color:#aaa}
     <div class="sec-sub">自我探索、婚姻、溝通、生活指導，二十年深耕</div>
     <div class="bundle-note">
       <span class="bundle-tag">套書優惠</span>
-      <span>任選 3 本 <strong>NT$1,000</strong>（單本原價 380）｜《說話的藝術》全 3 冊 <strong>NT$1,100</strong>。訂購請來電或見<a href="purchase.html">購書說明</a>。</span>
+      <span>任選 3 本 <strong>NT$1,000</strong>（單本原價 380，僅限向出版社直接購買）｜《說話的藝術》全 3 冊 <strong>NT$1,100</strong>。訂購請來電 (02) 8712-2800 或見<a href="purchase.html">購書說明</a>。</span>
     </div>
     <div class="cat-tabs">
       <div class="cat-tab active" data-cat="all">全部</div>
@@ -410,13 +430,20 @@ footer p{font-size:13px;color:#aaa}
 
 <div class="section" id="about">
   <div class="section-inner">
-    <div class="sec-label">關於顧問</div>
+    <div class="sec-label">關於作者</div>
     <div class="about-row">
-      <img class="avatar" src="images/陳海倫.jpg" alt="陳海倫顧問" />
+      <img class="avatar" src="images/陳海倫.jpg" alt="陳海倫" />
       <div class="about-text">
-        <h3>陳海倫顧問</h3>
-        <p>擁有二十年跨國經營與顧問經驗，曾於日本、印度、新加坡、美國等地推廣品格教育與生活成功管理學。著有三十餘部作品，亦曾製作並主持北美衛視《陳顧問時間》節目。</p>
-        <p class="about-personal">她最在意的，不只是讓人理解道理，而是真正走出屬於自己的改變。</p>
+        <h3>陳海倫</h3>
+        <div class="about-role">國際管理顧問・演講者・暢銷作家｜心橋顧問公司總裁</div>
+        <p>長年投入品格教育、企業管理、婚姻與親子教育、溝通訓練與情緒管理，擁有超過三十年的跨國經營與顧問經驗。足跡遍及日本、印度、新加坡、美國與臺灣，協助無數個人、家庭與企業，在工作、關係與人生各階段建立更清晰的方向。</p>
+        <div class="about-highlights">
+          <div class="ah"><span class="ah-num">200+</span><span class="ah-label">亞・美・歐媒體專訪</span></div>
+          <div class="ah"><span class="ah-num">30+</span><span class="ah-label">年跨國顧問經驗</span></div>
+          <div class="ah"><span class="ah-num">30+</span><span class="ah-label">部著作</span></div>
+        </div>
+        <p class="about-extra">著作《世紀大媒婆》曾於美國最大連鎖書店 Barnes &amp; Noble 榮登多項暢銷榜首；作媒故事亦被記錄於得獎紀錄片《尋情歷險記》，於多個國際影展放映。她也曾製作並主持北美衛視《陳顧問時間》。</p>
+        <p class="about-personal">對她而言，寫作不只是傳遞觀念，而是一種陪伴與實踐——她最在意的，不只是讓人理解一個道理，而是真正找到自己的力量，在現實生活裡一步一步走出屬於自己的改變。</p>
         <div class="tag-row">
           <span class="skill-tag">品格教育</span>
           <span class="skill-tag">情緒管理</span>
@@ -503,6 +530,7 @@ const books = {
   zuoji: {
     title:"做自己", cat:"自我探索", img:"images/做自己.jpg",
     tagline:"唯有做自己，生命才會有色彩。",
+    links:[["三民書局", "https://www.sanmin.com.tw/product/index/003622744"], ["iRead 灰熊愛讀書", "https://www.iread.com.tw/Detail/ProdDetail/B000232344?biztype=2"], ["博客來", "https://www.books.com.tw/products/0010575902?loc=P_0005_009"]],
     editor:[
       "「做自己」三個字人人會說，卻很少有人說得清楚為什麼重要、又該怎麼做——這本書把它一步步拆解開來。",
       "適合在人群裡漸漸找不到自己、又希望持續進步的人：它不是教你任性，而是教你拿捏進退的分寸。",
@@ -515,6 +543,7 @@ const books = {
   shibai: {
     title:"我是如何失敗的", cat:"自我探索", img:"images/我是如何失敗的.jpg",
     tagline:"失敗不可怕，可怕的是不知道為何失敗。",
+    links:[["三民書局", "https://www.sanmin.com.tw/product/index/001682731"], ["iRead 灰熊愛讀書", "https://www.iread.com.tw/Detail/ProdDetail/B000156628?biztype=2"], ["博客來", "https://www.books.com.tw/products/0010505323?loc=P_0005_015"], ["金石堂", "https://www.kingstone.com.tw/basic/2011770812869/?lid=book_publish_press_all_12635"]],
     editor:[
       "作者以自己真實的失敗當借鏡，而不是高高在上講道理——這份坦白，是本書最難得的地方。",
       "全書用「人生每十年一個階段」來檢查自己走在正軌還是出軌，給你一張清楚的人生定位表。",
@@ -532,6 +561,7 @@ const books = {
   mengxiang: {
     title:"夢想與妄想", cat:"自我探索", img:"images/夢想與妄想.jpg",
     tagline:"完成夢想就像爬山，路不只一條。",
+    links:[["三民書局", "https://www.sanmin.com.tw/product/index/005064143"]],
     editor:[
       "在喊「勇敢追夢」的書海裡，這本書反過來先幫你分清楚：你心裡那個，是夢想，還是妄想？",
       "作者把「為什麼總是完成不了夢想」講得很直白——很多時候，是一開始就走歪了。",
@@ -544,6 +574,7 @@ const books = {
   zhumeng: {
     title:"築夢者之書", cat:"自我探索", img:"images/築夢者之書.jpg",
     tagline:"夢想並不分尊卑大小。",
+    links:[["三民書局", "https://www.sanmin.com.tw/product/index/006864836"], ["iRead 灰熊愛讀書", "https://www.iread.com.tw/Detail/ProdDetail/B001173829?biztype=2"], ["博客來", "https://www.books.com.tw/products/0011043381?loc=P_0005_003"]],
     editor:[
       "從「生、命、夢、想、產、品、創、造、圓、滿」十個字切入，用十種角度帶你看懂築夢這回事。",
       "它提醒每個築夢者：光有不願妥協的執著還不夠，沒有基本功當地基，夢想就只是空中樓閣。",
@@ -556,6 +587,7 @@ const books = {
   shenghuo: {
     title:"生活藝術家", cat:"生活指導", img:"images/生活藝術家.jpg",
     tagline:"活著，只為了美。",
+    links:[["三民書局", "https://www.sanmin.com.tw/product/index/002561728"], ["iRead 灰熊愛讀書", "https://www.iread.com.tw/Detail/ProdDetail/B000167157?biztype=2"], ["博客來", "https://www.books.com.tw/products/0010513191?loc=P_0005_014"], ["金石堂", "https://www.kingstone.com.tw/basic/2011770826484/?lid=book_publish_press_all_12635"]],
     editor:[
       "這不是一本談高雅藝術的書，而是把「生活本身」當成創作：當你創造的密度夠高，日子就成了藝術。",
       "全書二十七個章節，從聊天、烹飪、戀愛到進退取捨，把生活的每個面向都拆給你看。",
@@ -571,6 +603,7 @@ const books = {
   rensheng10: {
     title:"人生必修10堂課", cat:"生活指導", img:"images/人生必修10堂課.jpg",
     tagline:"這些課，學校不會教你。",
+    links:[["三民書局", "https://www.sanmin.com.tw/product/index/004388970"], ["iRead 灰熊愛讀書", "https://www.iread.com.tw/Detail/ProdDetail/B000276331?biztype=1"], ["博客來", "https://www.books.com.tw/products/0010629848?loc=P_0005_007"]],
     editor:[
       "書名說得直白：這十堂課，學校不教、爸媽不會教、老闆更不會告訴你。",
       "每一章都是一堂深入淺出的生活哲學，可以自己讀，也很適合找朋友一起討論。",
@@ -583,6 +616,7 @@ const books = {
   jingtian: {
     title:"今天你幾歲？永齡長春", cat:"生活指導", img:"images/今天你幾歲.jpg",
     tagline:"你的年齡，完全由你主導。",
+    links:[["三民書局", "https://www.sanmin.com.tw/product/index/012064084"], ["iRead 灰熊愛讀書", "https://www.iread.com.tw/Detail/ProdDetail/B000770800?biztype=1"], ["博客來", "https://www.books.com.tw/products/0010963707?loc=P_0005_001"]],
     editor:[
       "作者提出一個很有意思的觀點：你幾歲，不是身分證決定的，而是你自己可以主導的狀態。",
       "不是教你抗老化妝術，而是從身心靈三個層面談「永齡長春」——養身的同時也養心。",
@@ -595,6 +629,7 @@ const books = {
   sajiao: {
     title:"如何撒嬌", cat:"生活指導", img:"images/如何撒嬌.jpg",
     tagline:"讓生命更精彩的秘密。",
+    links:[["三民書局", "https://www.sanmin.com.tw/product/index/002632134"], ["iRead 灰熊愛讀書", "https://www.iread.com.tw/Detail/ProdDetail/B000173327?biztype=1"], ["博客來", "https://www.books.com.tw/products/0010518772?loc=P_0005_013"], ["金石堂", "https://www.kingstone.com.tw/basic/2011770832713/?lid=book_publish_press_all_12635"]],
     editor:[
       "別被書名騙了——這其實是一本講人際關係與溝通的書，只是切入點是最被低估的「撒嬌」。",
       "作者主張人和人能不能親近，靠的不是學歷、金錢或道理，而是兩個字：舒服。",
@@ -613,6 +648,7 @@ const books = {
   fumu: {
     title:"如何愛你的父母", cat:"親子", img:"images/如何愛你的父母.jpg",
     tagline:"大人以後才開始學的親子課。",
+    links:[["三民書局", "https://www.sanmin.com.tw/product/index/003087794"], ["iRead 灰熊愛讀書", "https://www.iread.com.tw/Detail/ProdDetail/B000211128?biztype=1"], ["博客來", "https://www.books.com.tw/products/0010559632?loc=P_0005_011"]],
     editor:[
       "角度很特別：它不問「父母為什麼不夠愛我」，而是反過來談「我可以怎麼主動去愛父母」。",
       "書裡把父母分成 12 種類型逐一分析，再給出 11 種子女表達愛的方式，很好對照自己家裡的情況。",
@@ -629,6 +665,7 @@ const books = {
   lihun: {
     title:"離婚黑皮書", cat:"婚姻", img:"images/離婚黑皮書.jpg",
     tagline:"有捨，才有得。能離，才能合。",
+    links:[["三民書局", "https://www.sanmin.com.tw/product/index/002976177"], ["iRead 灰熊愛讀書", "https://www.iread.com.tw/Detail/ProdDetail/B000192238?biztype=2"], ["博客來", "https://www.books.com.tw/products/0010542737?loc=P_0005_012"], ["金石堂", "https://www.kingstone.com.tw/basic/2011770871569/?lid=book_publish_press_all_12635"]],
     editor:[
       "書名的「黑皮」其實是 happy——作者想用豁達、科學的角度，談一件大家都不敢輕鬆談的事。",
       "核心是一種逆向思考：當你能坦然面對「失去」，才可能真正「擁有」一段婚姻。",
@@ -641,6 +678,7 @@ const books = {
   waiyou: {
     title:"遊走刀鋒的外遇", cat:"婚姻", img:"images/遊走刀鋒的外遇.jpg",
     tagline:"了解外遇，才能預防外遇。",
+    links:[["三民書局", "https://www.sanmin.com.tw/product/index/003414606"], ["iRead 灰熊愛讀書", "https://www.iread.com.tw/Detail/ProdDetail/B000218656?biztype=2"], ["博客來", "https://www.books.com.tw/products/0010563150?loc=P_0005_010"]],
     editor:[
       "作者把外遇當成婚姻路上一個「會踩到的地雷」來談：與其害怕，不如先弄懂它在哪、怎麼避。",
       "不只談道德對錯，還剖析各種外遇的心態與理由，甚至性行為與外遇之間的關聯。",
@@ -653,6 +691,7 @@ const books = {
   meipo: {
     title:"世紀大媒婆", cat:"婚姻", img:"images/世紀大媒婆.jpg",
     tagline:"戀愛，是結婚以後的事。",
+    links:[["iRead 灰熊愛讀書", "https://www.iread.com.tw/Detail/ProdDetail/B000167945?biztype=1"]],
     desc:"作者多年來促成對對幸福佳偶，成為「作媒」這門藝術的專家，並且有一套獨特的婚姻哲學。為什麼婚姻不好，人生不會真正好？這本書給你答案。",
     award:"英文版《The Matchmaker of the Century》於 2012 年在美國 Barnes & Noble 榮登婚姻、心靈成長、愛與羅曼史、人際關係、自我幫助、父母家庭等六大類暢銷書第一名。",
     price:"NT$380",
@@ -665,6 +704,7 @@ const books = {
   xinliang: {
     title:"新娘訓練班", cat:"婚姻", img:"images/新娘訓練班.jpg",
     tagline:"女人一生中最重要的課程。",
+    links:[["iRead 灰熊愛讀書", "https://www.iread.com.tw/Detail/ProdDetail/B000131077?biztype=1"]],
     editor:[
       "書裡有 14 位新娘、6 位新郎的真實幸福分享，不是空談理論，而是看得到結果的例子。",
       "由「班主任」親自說明訓練新娘的內容與標準，把擇偶方向和婚姻觀建立起來。",
@@ -681,6 +721,7 @@ const books = {
   xunqing: {
     title:"尋情歷險坊", cat:"兩性", img:"images/尋情歷險坊.jpg",
     tagline:"找出你感情上從未發現的盲點。",
+    links:[["三民書局", "https://www.sanmin.com.tw/product/index/004388971"], ["iRead 灰熊愛讀書", "https://www.iread.com.tw/Detail/ProdDetail/B000276332?biztype=1"], ["博客來", "https://www.books.com.tw/products/0010629850?loc=P_0005_008"]],
     editor:[
       "這本書脫胎自同名工作坊，許多學員上完都說：真希望早十年認識陳顧問。",
       "它會幫你做一張「專屬的對象檢查表」，也點出一般人遲遲無法結婚的盲點。",
@@ -693,6 +734,7 @@ const books = {
   baiquan: {
     title:"敗犬站起來", cat:"兩性", img:"images/敗犬站起來.jpg",
     tagline:"勇敢踏出那道門檻。",
+    links:[["三民書局", "https://www.sanmin.com.tw/product/index/002809417"], ["iRead 灰熊愛讀書", "https://www.iread.com.tw/Detail/ProdDetail/B000189212?biztype=1"], ["金石堂", "https://www.kingstone.com.tw/basic/2011770871439/?lid=book_publish_press_all_12635"]],
     editor:[
       "作者重新定義了「敗犬」——不分性別，也包含婚後適應不良、離婚潛力高的人，範圍比你想的廣。",
       "從淪為敗犬的理由、常用的藉口，到一連串犀利的問答，把這個處境一層層剝開來看。",
@@ -705,6 +747,7 @@ const books = {
   zhuiai: {
     title:"追愛", cat:"兩性", img:"images/追愛.jpg",
     tagline:"一輩子談戀愛的哲學。",
+    links:[["三民書局", "https://www.sanmin.com.tw/product/index/011841015"], ["iRead 灰熊愛讀書", "https://www.iread.com.tw/Detail/ProdDetail/B000764452?biztype=1"], ["博客來", "https://www.books.com.tw/products/0010957973?loc=P_0005_002"]],
     editor:[
       "它把「追」看成一場遊戲——重點不是追到，而是怎麼玩才好玩、才能一直玩下去：追到了，是為了之後繼續經營。",
       "作者點破一個迷思：別只想找「情投意合」的人，而要找願意跟你一起學習、一起進步的人。",
@@ -715,15 +758,6 @@ const books = {
     price:"NT$380"
   }
 };
-
-const storeBtns = `
-  <div class="buy-links">
-    <a class="buy-link" href="https://reurl.cc/Q2A6Wq" target="_blank">博客來</a>
-    <a class="buy-link" href="https://reurl.cc/Z23j1A" target="_blank">三民書局</a>
-    <a class="buy-link" href="https://reurl.cc/K2YrX9" target="_blank">金石堂</a>
-    <a class="buy-link" href="https://reurl.cc/A9mR0Q" target="_blank">iRead 灰熊愛讀書</a>
-    <a class="buy-link primary" href="tel:0287122800">來電訂購 (02) 8712-2800</a>
-  </div>`;
 
 function openBook(id) {
   const b = books[id];
@@ -764,8 +798,10 @@ function openBook(id) {
       <div class="editor-recs">${(b.editor||[]).map(e=>`<div class="editor-rec">${e}</div>`).join('')}</div>
     </div>
     <div id="tab-buy-${id}" class="modal-tab-content">
-      <p style="font-size:14px;color:#555;margin-bottom:4px">可透過以下管道購買：</p>
-      ${storeBtns}
+      ${(b.links && b.links.length) ? `<p style="font-size:14px;color:#555;margin-bottom:8px">可透過以下網路書店購買：</p>
+      <div class="buy-links">${b.links.map(l=>`<a class="buy-link" href="${l[1]}" target="_blank">${l[0]}</a>`).join('')}<a class="buy-link primary" href="tel:0287122800">來電訂購 (02) 8712-2800</a></div>
+      <p style="font-size:12px;color:#993C1D;margin-top:10px">※ 若網路書店無現貨，歡迎直接聯絡出版社 (02) 8712-2800</p>` : `<p style="font-size:14px;color:#555;margin-bottom:8px">本書歡迎來電或轉帳，直接向出版社訂購：</p>
+      <div class="buy-links"><a class="buy-link primary" href="tel:0287122800">來電訂購 (02) 8712-2800</a></div>`}
       ${preorderBtn}
       <p style="font-size:12px;color:#aaa;margin-top:12px">轉帳購書：玉山銀行 808 · 0406-940-003763 · 請來電告知末五碼</p>
     </div>
@@ -818,6 +854,8 @@ function closeModalOutside(e, id) {
   if (e.target === document.getElementById(id)) closeModal(id);
 }
 
+function toggleNav(){document.getElementById('navLinks').classList.toggle('open');}
+function closeNav(){document.getElementById('navLinks').classList.remove('open');}
 document.querySelectorAll('.cat-tab').forEach(tab => {
   tab.addEventListener('click', () => {
     document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
@@ -853,10 +891,11 @@ document.querySelectorAll('.cat-tab').forEach(tab => {
         <h4>陳顧問時間 1</h4>
         <p>很多問題的答案要看問問題的人怎麼問。作者將被諮詢的真實案例收錄成書，讓你發現不同的人問一樣的問題，可能得到不一樣的解答——因為每個人都有屬於自己的答案。</p>
         <div class="buy-links" style="margin-top:12px;flex-wrap:wrap;gap:6px">
-          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/Q2A6Wq" target="_blank">博客來</a>
-          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/Z23j1A" target="_blank">三民</a>
-          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/K2YrX9" target="_blank">金石堂</a>
+          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://www.sanmin.com.tw/product/index/000927181" target="_blank">三民</a>
+          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://www.iread.com.tw/Detail/ProdDetail/B000131078?biztype=2" target="_blank">iRead</a>
+          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://www.kingstone.com.tw/basic/2011770720461/?lid=book_publish_press_all_12635" target="_blank">金石堂</a>
         </div>
+        <div class="buy-note-mini">缺貨請洽出版社 (02)8712-2800</div>
         <div class="series-editor">
           <div class="series-editor-label">編輯推薦</div>
           <div class="editor-rec">系列的起點：收錄 28 位受諮詢者的真實案例，看陳顧問如何與提問者腦力激盪。</div>
@@ -875,10 +914,11 @@ document.querySelectorAll('.cat-tab').forEach(tab => {
         <h4>陳顧問時間 2</h4>
         <p>解決大問題，獲得大幸福；解決小問題，獲得小幸福；沒問題的人，也不會有幸福。人生的重點，不在於你沒問題，而在於你有沒有能力面對問題。</p>
         <div class="buy-links" style="margin-top:12px;flex-wrap:wrap;gap:6px">
-          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/Q2A6Wq" target="_blank">博客來</a>
-          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/Z23j1A" target="_blank">三民</a>
-          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/K2YrX9" target="_blank">金石堂</a>
+          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://www.sanmin.com.tw/product/index/001682732" target="_blank">三民</a>
+          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://www.iread.com.tw/Detail/ProdDetail/B000156629?biztype=1" target="_blank">iRead</a>
+          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://www.kingstone.com.tw/basic/2011770812999/?lid=book_publish_press_all_12635" target="_blank">金石堂</a>
         </div>
+        <div class="buy-note-mini">缺貨請洽出版社 (02)8712-2800</div>
         <div class="series-editor">
           <div class="series-editor-label">編輯推薦</div>
           <div class="editor-rec">一句話點題：沒問題的人，不會有幸福——人生的樂趣，是找到問題再解決它。</div>
@@ -898,10 +938,11 @@ document.querySelectorAll('.cat-tab').forEach(tab => {
         <h4>陳顧問時間 3</h4>
         <p>提供許多Q&A，協助讀者訓練思考邏輯，分辨哪些是自己的問題，哪些是別人的問題。有時候只要一句話，就足以改變了你的一生！</p>
         <div class="buy-links" style="margin-top:12px;flex-wrap:wrap;gap:6px">
-          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/Q2A6Wq" target="_blank">博客來</a>
-          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/Z23j1A" target="_blank">三民</a>
-          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/K2YrX9" target="_blank">金石堂</a>
+          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://www.sanmin.com.tw/product/index/003059410" target="_blank">三民</a>
+          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://www.iread.com.tw/Detail/ProdDetail/B000204933?biztype=1" target="_blank">iRead</a>
+          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://www.kingstone.com.tw/basic/2011770881216/?lid=book_publish_press_all_12635" target="_blank">金石堂</a>
         </div>
+        <div class="buy-note-mini">缺貨請洽出版社 (02)8712-2800</div>
         <div class="series-editor">
           <div class="series-editor-label">編輯推薦</div>
           <div class="editor-rec">涵蓋五大領域、42 個學校沒教的人生大哉問，當成一本隨手翻的工具書很合適。</div>
@@ -931,10 +972,11 @@ document.querySelectorAll('.cat-tab').forEach(tab => {
         <h4>說話的藝術 1</h4>
         <p>在關鍵時刻，講對一句話可以救回一條命，說錯一句話，隨時都要了你的命！作者以二十年以上專業諮詢經歷，分享說話這門功課最寶貴的起點。</p>
         <div class="buy-links" style="margin-top:12px;flex-wrap:wrap;gap:6px">
-          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/Q2A6Wq" target="_blank">博客來</a>
-          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/Z23j1A" target="_blank">三民</a>
-          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/K2YrX9" target="_blank">金石堂</a>
+          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://www.sanmin.com.tw/product/index/004797093" target="_blank">三民</a>
+          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://www.iread.com.tw/Detail/ProdDetail/B000313897?biztype=1" target="_blank">iRead</a>
+          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://www.books.com.tw/products/0010653583?loc=P_0005_004" target="_blank">博客來</a>
         </div>
+        <div class="buy-note-mini">缺貨請洽出版社 (02)8712-2800</div>
         <div class="series-editor">
           <div class="series-editor-label">編輯推薦</div>
           <div class="editor-rec">全系列的起點：用簡單的 Q&A 切入，沒有複雜理論，把日常最常見的說話問題一針見血點出來。</div>
@@ -951,10 +993,11 @@ document.querySelectorAll('.cat-tab').forEach(tab => {
         <h4>說話的藝術 2</h4>
         <p>技巧再高，不能超過真正要表達的心意。本冊深入各種說話練習，包括口齒、聲音語調、肢體語言，乃至心靈與精神層面必須克服的部分。</p>
         <div class="buy-links" style="margin-top:12px;flex-wrap:wrap;gap:6px">
-          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/Q2A6Wq" target="_blank">博客來</a>
-          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/Z23j1A" target="_blank">三民</a>
-          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/K2YrX9" target="_blank">金石堂</a>
+          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://www.sanmin.com.tw/product/index/004797094" target="_blank">三民</a>
+          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://www.iread.com.tw/Detail/ProdDetail/B000313898?biztype=1" target="_blank">iRead</a>
+          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://www.books.com.tw/products/0010653585?loc=P_0005_005" target="_blank">博客來</a>
         </div>
+        <div class="buy-note-mini">缺貨請洽出版社 (02)8712-2800</div>
         <div class="series-editor">
           <div class="series-editor-label">編輯推薦</div>
           <div class="editor-rec">這一集把重點放在「練」：口齒、內容、表情、聲音語調到肢體語言，由淺入深一項項打基本功。</div>
@@ -967,10 +1010,11 @@ document.querySelectorAll('.cat-tab').forEach(tab => {
         <h4>說話的藝術 3</h4>
         <p>特別著重各種狀況與面對不同對象的說話技巧，涵蓋職場、演講、談判等特殊場合。每個人都要找出屬於自己的說話格調——這是值得終生學習的功課。</p>
         <div class="buy-links" style="margin-top:12px;flex-wrap:wrap;gap:6px">
-          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/Q2A6Wq" target="_blank">博客來</a>
-          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/Z23j1A" target="_blank">三民</a>
-          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/K2YrX9" target="_blank">金石堂</a>
+          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://www.sanmin.com.tw/product/index/004797095" target="_blank">三民</a>
+          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://www.iread.com.tw/Detail/ProdDetail/B000313899?biztype=2" target="_blank">iRead</a>
+          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://www.books.com.tw/products/0010653588?loc=P_0005_006" target="_blank">博客來</a>
         </div>
+        <div class="buy-note-mini">缺貨請洽出版社 (02)8712-2800</div>
         <div class="series-editor">
           <div class="series-editor-label">編輯推薦</div>
           <div class="editor-rec">系列收尾之作，專攻實戰：面對不同對象、化解尷尬與衝突，以及職場、演講、談判等特殊場合怎麼說。</div>
@@ -1000,10 +1044,9 @@ document.querySelectorAll('.cat-tab').forEach(tab => {
         <h4>有情人 1｜玩真的，還是玩假的？</h4>
         <p>除了處理結婚的課題，還延伸到兩性之間的範圍。對還沒結婚的人，這本書的目的很簡單，就是要你鼓起勇氣去結婚。藉著這本書，你可以解決許多感情上的問題，找到感情幸福的真諦！</p>
         <div class="buy-links" style="margin-top:12px;flex-wrap:wrap;gap:6px">
-          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/Q2A6Wq" target="_blank">博客來</a>
-          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/Z23j1A" target="_blank">三民</a>
-          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/K2YrX9" target="_blank">金石堂</a>
+          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://www.iread.com.tw/Detail/ProdDetail/B000181176?biztype=1" target="_blank">iRead</a>
         </div>
+        <div class="buy-note-mini">缺貨請洽出版社 (02)8712-2800</div>
         <div class="series-editor">
           <div class="series-editor-label">編輯推薦</div>
           <div class="editor-rec">系列首部曲：對還沒結婚的人，目的很直接——鼓起勇氣去結婚；對新婚的人，則陪你度過磨合期的兵荒馬亂。</div>
@@ -1025,10 +1068,9 @@ document.querySelectorAll('.cat-tab').forEach(tab => {
         <h4>有情人 II｜婚姻大解碼</h4>
         <p>延續前一本的主題，讓你更進一步瞭解婚姻，有機會真正知道你所有想知道的事。如果對愛情的真相了解甚少，你當然會失敗。這本書讓你慢慢抽絲剝繭，找到愛情的真相。</p>
         <div class="buy-links" style="margin-top:12px;flex-wrap:wrap;gap:6px">
-          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/Q2A6Wq" target="_blank">博客來</a>
-          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/Z23j1A" target="_blank">三民</a>
-          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://reurl.cc/K2YrX9" target="_blank">金石堂</a>
+          <a class="buy-link" style="font-size:12px;padding:6px 12px" href="https://www.iread.com.tw/Detail/ProdDetail/B000181177?biztype=1" target="_blank">iRead</a>
         </div>
+        <div class="buy-note-mini">缺貨請洽出版社 (02)8712-2800</div>
         <div class="series-editor">
           <div class="series-editor-label">編輯推薦</div>
           <div class="editor-rec">從《有情人》延伸，這一集把重點推進到婚姻：把愛情、婚姻、外遇的現實與幻想一次解碼。</div>
