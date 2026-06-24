@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>創意出版社｜陳海倫顧問作品・自己站起來新書預購</title>
-<meta name="description" content="創意出版社長期出版陳海倫顧問作品，涵蓋成長、婚姻、溝通與生活管理。最新《自己站起來》預購中。">
-<meta property="og:title" content="創意出版社｜陳海倫顧問作品・自己站起來新書預購">
-<meta property="og:description" content="創意出版社長期出版陳海倫顧問作品，涵蓋成長、婚姻、溝通與生活管理。最新《自己站起來》預購中。">
+<title>創意出版社｜陳海倫顧問作品集</title>
+<meta name="description" content="創意出版社長期出版陳海倫顧問作品，涵蓋成長、婚姻、溝通與生活管理。">
+<meta property="og:title" content="創意出版社｜陳海倫顧問作品集">
+<meta property="og:description" content="創意出版社長期出版陳海倫顧問作品，涵蓋成長、婚姻、溝通與生活管理。">
 <meta property="og:image" content="images/自己站起來.png">
 <meta property="og:type" content="website">
 <script type="application/ld+json">
@@ -14,7 +14,7 @@
   "@context":"https://schema.org",
   "@graph":[
     {"@type":"Organization","name":"創意出版社","url":"https://pia640210.github.io/creative-publisher/","telephone":"+886-2-8712-2800","address":{"@type":"PostalAddress","streetAddress":"復興北路178號2樓","addressLocality":"台北市","addressCountry":"TW"}},
-    {"@type":"Book","name":"自己站起來","author":{"@type":"Person","name":"陳海倫"},"publisher":{"@type":"Organization","name":"創意出版社"},"inLanguage":"zh-TW","offers":{"@type":"Offer","price":"300","priceCurrency":"TWD","availability":"https://schema.org/PreOrder"}}
+    {"@type":"Book","name":"自己站起來","author":{"@type":"Person","name":"陳海倫"},"publisher":{"@type":"Organization","name":"創意出版社"},"inLanguage":"zh-TW","offers":{"@type":"Offer","price":"380","priceCurrency":"TWD","availability":"https://schema.org/InStock"}}
   ]
 }
 </script>
@@ -34,13 +34,6 @@ nav{background:#fff;border-bottom:1px solid #e8e0d0;padding:18px 48px;display:fl
 .nav-links a:hover{color:#BA7517}
 .nav-toggle{display:none;background:none;border:none;font-size:24px;color:#1a1a1a;cursor:pointer;line-height:1;padding:2px 6px}
 @media(max-width:600px){nav{padding:14px 16px;flex-wrap:wrap}.nav-toggle{display:block}.nav-links{display:none;flex-direction:column;gap:0;width:100%;margin-top:8px}.nav-links.open{display:flex}.nav-links a{font-size:15px;padding:12px 2px;border-top:1px solid #f0ebe3}}
-
-/* PREORDER BANNER */
-.new-book-banner{background:#FAEEDA;border-bottom:1px solid #e8c87a;padding:14px 48px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.new-book-banner p{font-size:14px;color:#633806}
-.new-book-banner strong{font-weight:500}
-.new-book-banner a{font-size:13px;padding:7px 18px;background:#BA7517;color:#FAEEDA;border-radius:6px;white-space:nowrap;flex-shrink:0}
-@media(max-width:600px){.new-book-banner{padding:12px 16px;flex-wrap:wrap}.new-book-banner p{font-size:13px}}
 
 /* HERO */
 .hero{background:#fff9f0;padding:56px 48px 48px;border-bottom:1px solid #e8e0d0}
@@ -229,11 +222,6 @@ footer p{font-size:13px;color:#aaa}
 </head>
 <body>
 
-<div class="new-book-banner">
-  <p><strong>【新書預購】</strong>《自己站起來》——一本寫給正在整理人生的人。預購優惠至 2026/6/20，預購價 <strong>NT$300</strong>（原價 380）</p>
-  <a href="https://prteam.hellenchentruegroup.com/" target="_blank">預購《自己站起來》→</a>
-</div>
-
 <nav>
   <div class="nav-logo">創意出版社</div>
   <button class="nav-toggle" aria-label="開啟選單" onclick="toggleNav()">☰</button>
@@ -253,13 +241,11 @@ footer p{font-size:13px;color:#aaa}
     <p>創意出版社專注出版陳海倫顧問關於自我成長、婚姻、溝通與生活管理的系列著作，三十餘本，字字有重量。</p>
     <div class="hero-btns">
       <button class="btn-primary" onclick="document.getElementById('books').scrollIntoView({behavior:'smooth'})">看全部出版作品</button>
-      <button class="btn-outline" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">從這一本認識陳海倫</button>
-      <a href="https://prteam.hellenchentruegroup.com/" target="_blank" class="btn-primary" style="display:inline-flex;align-items:center">預購《自己站起來》</a>
+      <button class="btn-outline" onclick="document.getElementById('start-here').scrollIntoView({behavior:'smooth'})">從這一本認識陳海倫</button>
     </div>
     <div class="quick-links">
       <span class="quick-link" onclick="document.getElementById('books').scrollIntoView({behavior:'smooth'})">📚 全部書目</span>
       <a href="purchase.html" class="quick-link">🛒 哪裡購買</a>
-      <a href="https://prteam.hellenchentruegroup.com/" target="_blank" class="quick-link">🆕 新書預購</a>
       <span class="quick-link" onclick="document.getElementById('activity').scrollIntoView({behavior:'smooth'})">📖 品書時間</span>
     </div>
   </div>
@@ -524,8 +510,7 @@ const books = {
       "適合在感情或人生裡反覆卡住、表面說得過去、心裡卻一直不踏實的人。作者一句話總結：幸福不是運氣，而是一種能力，起點是對自己誠實。"
     ],
     desc:"人生最難的，不是沒有人幫，而是有一天你終於發現：很多路，必須由你自己走；很多情緒，必須由你承擔；所有的選擇，終究也只能由你負責。這本書，陪你走過學習獨立的每一步。",
-    price:"NT$300（預購優惠至 2026 年 6 月 20 日，原價 NT$380）",
-    preorder:"https://prteam.hellenchentruegroup.com/"
+    price:"NT$380"
   },
   zuoji: {
     title:"做自己", cat:"自我探索", img:"images/做自己.jpg",
@@ -769,7 +754,6 @@ function openBook(id) {
     ? allReviews.map(r => `<div class="review-item"><p>${r.text}</p><span>${r.name}${r.date ? ' · ' + r.date : ''}</span></div>`).join('')
     : '<p style="color:#aaa;font-size:13px">還沒有讀者心得，成為第一個分享的人吧！</p>';
 
-  const preorderBtn = b.preorder ? `<a class="buy-link primary" href="${b.preorder}">預購優惠 →</a>` : '';
   document.getElementById('bookModalContent').innerHTML = `
     <div class="modal-top">
       <button class="modal-close-btn" onclick="closeModal('bookModal')">✕</button>
@@ -802,7 +786,6 @@ function openBook(id) {
       <div class="buy-links">${b.links.map(l=>`<a class="buy-link" href="${l[1]}" target="_blank">${l[0]}</a>`).join('')}<a class="buy-link primary" href="tel:0287122800">來電訂購 (02) 8712-2800</a></div>
       <p style="font-size:12px;color:#993C1D;margin-top:10px">※ 若網路書店無現貨，歡迎直接聯絡出版社 (02) 8712-2800</p>` : `<p style="font-size:14px;color:#555;margin-bottom:8px">本書歡迎來電或轉帳，直接向出版社訂購：</p>
       <div class="buy-links"><a class="buy-link primary" href="tel:0287122800">來電訂購 (02) 8712-2800</a></div>`}
-      ${preorderBtn}
       <p style="font-size:12px;color:#aaa;margin-top:12px">轉帳購書：玉山銀行 808 · 0406-940-003763 · 請來電告知末五碼</p>
     </div>
     <div id="tab-review-${id}" class="modal-tab-content">
