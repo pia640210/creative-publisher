@@ -51,6 +51,13 @@ nav{background:#fff;border-bottom:1px solid #e8e0d0;padding:18px 48px;display:fl
 .quick-link:hover{border-color:#BA7517;color:#BA7517}
 @media(max-width:600px){.hero{padding:36px 16px 32px}.hero h1{font-size:26px}}
 
+/* HERO - FEATURED BOOK */
+.hero-inner-split{max-width:980px;display:grid;grid-template-columns:1fr 220px;gap:48px;align-items:center}
+.hero-cover{cursor:pointer;justify-self:end}
+.hero-cover img{width:220px;border-radius:6px;box-shadow:0 14px 36px rgba(0,0,0,0.16);transition:transform 0.2s}
+.hero-cover:hover img{transform:translateY(-4px)}
+@media(max-width:700px){.hero-inner-split{grid-template-columns:1fr;gap:24px}.hero-cover{justify-self:center;order:-1}.hero-cover img{width:160px}}
+
 /* TESTIMONIALS */
 .testimonials{background:#fff;padding:44px 48px;border-bottom:1px solid #e8e0d0}
 .testimonials-inner{max-width:900px;margin:0 auto}
@@ -234,19 +241,23 @@ footer p{font-size:13px;color:#aaa}
   </div>
 </nav>
 
-<div class="hero">
-  <div class="hero-inner">
-    <div class="hero-tag">陳海倫顧問著作出版</div>
-    <h1>讓生活的智慧<br>安靜地落在你手中</h1>
-    <p>創意出版社專注出版陳海倫顧問關於自我成長、婚姻、溝通與生活管理的系列著作，三十餘本，字字有重量。</p>
-    <div class="hero-btns">
-      <button class="btn-primary" onclick="document.getElementById('books').scrollIntoView({behavior:'smooth'})">看全部出版作品</button>
-      <button class="btn-outline" onclick="document.getElementById('start-here').scrollIntoView({behavior:'smooth'})">從這一本認識陳海倫</button>
+<div class="hero hero-featured">
+  <div class="hero-inner hero-inner-split">
+    <div class="hero-text">
+      <div class="hero-tag">陳海倫顧問　最新改版</div>
+      <h1>很多路，<br>必須由你自己走</h1>
+      <p>真正讓人痛苦的，往往不是失敗，而是慢慢失去了自己。《自己站起來》陪你把那些「你以為是自己做的選擇」，一個一個看清楚。</p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="openBook('ziji')">了解這本書</button>
+        <button class="btn-outline" onclick="document.getElementById('books').scrollIntoView({behavior:'smooth'})">看全部出版作品</button>
+      </div>
+      <div class="quick-links">
+        <a href="purchase.html" class="quick-link">🛒 哪裡購買</a>
+        <span class="quick-link" onclick="document.getElementById('activity').scrollIntoView({behavior:'smooth'})">📖 品書時間</span>
+      </div>
     </div>
-    <div class="quick-links">
-      <span class="quick-link" onclick="document.getElementById('books').scrollIntoView({behavior:'smooth'})">📚 全部書目</span>
-      <a href="purchase.html" class="quick-link">🛒 哪裡購買</a>
-      <span class="quick-link" onclick="document.getElementById('activity').scrollIntoView({behavior:'smooth'})">📖 品書時間</span>
+    <div class="hero-cover" onclick="openBook('ziji')">
+      <img src="images/自己站起來.png" alt="自己站起來">
     </div>
   </div>
 </div>
@@ -274,7 +285,7 @@ footer p{font-size:13px;color:#aaa}
 <div class="section recommend" id="start-here">
   <div class="section-inner">
     <div class="sec-label">新手必看</div>
-    <div class="sec-title">📘 第一次認識陳海倫，從這三本開始</div>
+    <div class="sec-title">📘 還可以從這幾本，更認識陳海倫</div>
     <div class="sec-sub">不知道從哪讀起？這三本是最好的入口。</div>
     <div class="situation-row">
       <span class="situation-label">或依你現在的狀況：</span>
@@ -284,9 +295,9 @@ footer p{font-size:13px;color:#aaa}
       <button onclick="openBook('fumu')">想改善親子關係</button>
     </div>
     <div class="recommend-grid">
-      <div class="recommend-card" onclick="openBook('ziji')">
-        <img src="images/自己站起來.png" alt="自己站起來">
-        <div class="rc-info"><span class="rc-num">1</span><p>自己站起來</p><div class="rc-tag">當人生卡住時最值得翻的一本</div></div>
+      <div class="recommend-card" onclick="openModal('chenModal')">
+        <img src="images/陳顧問時間3.jpg" alt="陳顧問時間">
+        <div class="rc-info"><span class="rc-num">1</span><p>陳顧問時間</p><div class="rc-tag">人生有沒有顧問，差很多</div></div>
       </div>
       <div class="recommend-card" onclick="openBook('zuoji')">
         <img src="images/做自己.jpg" alt="做自己">
