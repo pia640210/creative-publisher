@@ -850,16 +850,44 @@ function closeModalOutside(e, id) {
 
 function toggleNav(){document.getElementById('navLinks').classList.toggle('open');}
 function closeNav(){document.getElementById('navLinks').classList.remove('open');}
-document.querySelectorAll('.cat-tab').forEach(tab => {
-  tab.addEventListener('click', () => {
-    document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
-    tab.classList.add('active');
-    const cat = tab.dataset.cat;
-    document.querySelectorAll('.book-card').forEach(card => {
-      card.style.display = (cat === 'all' || card.dataset.cat === cat) ? 'block' : 'none';
-    });
+// 統一的分類篩選函式：點擊分類標籤、網址帶參數、或未來其他按鈕都可呼叫這個函式
+function filterBooks(cat, opts) {
+  opts = opts || {};
+  document.querySelectorAll('.cat-tab').forEach(t => {
+    t.classList.toggle('active', t.dataset.cat === cat);
   });
+  document.querySelectorAll('.book-card').forEach(card => {
+    card.style.display = (cat === 'all' || card.dataset.cat === cat) ? 'block' : 'none';
+  });
+  if (opts.scroll !== false) {
+    const target = document.getElementById('books');
+    if (target) target.scrollIntoView({behavior: 'smooth', block: 'start'});
+  }
+}
+
+document.querySelectorAll('.cat-tab').forEach(tab => {
+  tab.addEventListener('click', () => filterBooks(tab.dataset.cat));
 });
+
+// 網址分類參數自動篩選，例如：
+// https://pia640210.github.io/creative-publisher/?cat=婚姻
+// 開啟後會自動篩選書目並捲動到書目區
+(function applyCategoryFromURL() {
+  var params = new URLSearchParams(window.location.search);
+  var cat = params.get('cat');
+  if (!cat) return;
+
+  cat = decodeURIComponent(cat).trim();
+
+  // 只接受目前實際存在的分類（cat-tab 上的 data-cat），避免帶入不存在的分類時整排書都消失
+  var validCats = Array.from(document.querySelectorAll('.cat-tab')).map(function (t) {
+    return t.dataset.cat;
+  });
+  if (validCats.indexOf(cat) === -1) return;
+
+  // 延遲一點點再篩選＋捲動，避免頁面剛載入時捲動位置被其他版面計算蓋掉
+  setTimeout(function () { filterBooks(cat); }, 100);
+})();
 </script>
 
 <!-- Book modal container -->
