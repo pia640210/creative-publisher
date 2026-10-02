@@ -309,7 +309,7 @@ footer p{font-size:13px;color:#aaa}
         <img src="images/陳顧問時間3.jpg" alt="陳顧問時間">
         <div class="rc-info"><span class="rc-num">1</span><p>陳顧問時間</p><div class="rc-tag">人生有沒有顧問，差很多</div></div>
       </div>
-      <div class="recommend-card" onclick="openBook('zuoji')">
+      <div class="recommend-card" onclick="window.open('https://pia640210.github.io/Be-yourself/','_blank')">
         <img src="images/做自己.jpg" alt="做自己">
         <div class="rc-info"><span class="rc-num">2</span><p>做自己</p><div class="rc-tag">唯有做自己，生命才有色彩</div></div>
       </div>
@@ -346,7 +346,7 @@ footer p{font-size:13px;color:#aaa}
         <img class="book-cover" src="images/自己站起來.png" alt="自己站起來">
         <div class="book-meta"><p>自己站起來</p><div class="book-tagline">當人生卡住時最值得翻的一本</div></div>
       </div>
-      <div class="book-card" data-cat="自我探索" onclick="openBook('zuoji')">
+      <div class="book-card" data-cat="自我探索" onclick="window.open('https://pia640210.github.io/Be-yourself/','_blank')">
         <img class="book-cover" src="images/做自己.jpg" alt="做自己">
         <div class="book-meta"><p>做自己</p><div class="book-tagline">唯有做自己，生命才有色彩</div></div>
       </div>
@@ -910,6 +910,14 @@ document.querySelectorAll('.cat-tab').forEach(tab => {
 
   // 延遲一點點再篩選＋捲動，避免頁面剛載入時捲動位置被其他版面計算蓋掉
   setTimeout(function () { filterBooks(cat); }, 100);
+})();
+
+// 網址帶 ?book=書籍代號 時，開啟該書的介紹視窗，例如：
+// https://books.hellenchentruegroup.com/?book=ziji
+(function openBookFromURL() {
+  var id = new URLSearchParams(window.location.search).get('book');
+  if (!id || !books[id]) return;
+  setTimeout(function () { openBook(id); }, 150);
 })();
 </script>
 
