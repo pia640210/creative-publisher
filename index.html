@@ -21,7 +21,7 @@
     {"@type":"Person","@id":"#helen","name":"陳海倫","jobTitle":"國際管理顧問・暢銷作家"},
     {"@type":"Book","name":"自己站起來","url":"https://pia640210.github.io/standup-by-yourself/","author":{"@id":"#helen"},"publisher":{"@id":"#publisher"},"inLanguage":"zh-TW","offers":{"@type":"Offer","price":"380","priceCurrency":"TWD","availability":"https://schema.org/InStock"}},
     {"@type":"Book","name":"做自己","author":{"@id":"#helen"},"publisher":{"@id":"#publisher"},"inLanguage":"zh-TW"},
-    {"@type":"Book","name":"我是如何失敗的","author":{"@id":"#helen"},"publisher":{"@id":"#publisher"},"inLanguage":"zh-TW"},
+    {"@type":"Book","name":"我是如何失敗的","url":"https://pia640210.github.io/how-did-I-fail/","author":{"@id":"#helen"},"publisher":{"@id":"#publisher"},"inLanguage":"zh-TW"},
     {"@type":"Book","name":"夢想與妄想","author":{"@id":"#helen"},"publisher":{"@id":"#publisher"},"inLanguage":"zh-TW"},
     {"@type":"Book","name":"築夢者之書","author":{"@id":"#helen"},"publisher":{"@id":"#publisher"},"inLanguage":"zh-TW"},
     {"@type":"Book","name":"生活藝術家","author":{"@id":"#helen"},"publisher":{"@id":"#publisher"},"inLanguage":"zh-TW"},
@@ -555,7 +555,7 @@ a.btn-primary,a.btn-outline{display:inline-block}
         <img class="book-cover" loading="lazy" decoding="async" src="images/做自己.jpg" alt="做自己">
         <div class="book-meta"><p>做自己</p><div class="book-tagline">唯有做自己，生命才有色彩</div></div>
       </div>
-      <div class="book-card" role="button" tabindex="0" data-cat="自我探索" onclick="openBook('shibai')">
+      <div class="book-card" role="button" tabindex="0" data-cat="自我探索" onclick="openSite('shibai')">
         <img class="book-cover" loading="lazy" decoding="async" src="images/我是如何失敗的.jpg" alt="我是如何失敗的">
         <div class="book-meta"><p>我是如何失敗的</p><div class="book-tagline">失敗不可怕，不知道為何失敗才可怕</div></div>
       </div>
@@ -1005,7 +1005,8 @@ let lastFocus = null;
 const BOOK_SITES = {
   art:   'https://pia640210.github.io/The-art-of-conversation/',  // 說話的藝術
   zuoji: 'https://pia640210.github.io/Be-yourself/',              // 做自己
-  ziji:  'https://pia640210.github.io/standup-by-yourself/'        // 自己站起來
+  ziji:  'https://pia640210.github.io/standup-by-yourself/',       // 自己站起來
+  shibai:'https://pia640210.github.io/how-did-I-fail/'             // 我是如何失敗的
 };
 function openSite(key) {
   const w = window.open(BOOK_SITES[key], '_blank');
@@ -1149,7 +1150,7 @@ document.addEventListener('keydown', e => {
 const bookActions = {
   ziji:   () => openSite('ziji'),
   zuoji:  () => openSite('zuoji'),
-  shibai: () => openBook('shibai'),
+  shibai: () => openSite('shibai'),
   lihun:  () => openBook('lihun'),
   zhuiai: () => openBook('zhuiai'),
   fumu:   () => openBook('fumu'),
