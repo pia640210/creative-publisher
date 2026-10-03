@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>創意出版社｜陳海倫顧問作品集</title>
-<meta name="description" content="創意出版社長期出版陳海倫顧問作品，涵蓋成長、婚姻、溝通與生活管理。">
+<meta name="description" content="創意出版社以「創意有心，讀者開心」為宗旨，出版心靈成長、人際溝通、生活實踐與生命智慧類書籍，包含陳海倫顧問《說話的藝術》《陳顧問時間》等作品。">
 <meta property="og:title" content="創意出版社｜陳海倫顧問作品集">
-<meta property="og:description" content="創意出版社長期出版陳海倫顧問作品，涵蓋成長、婚姻、溝通與生活管理。">
+<meta property="og:description" content="創意出版社以「創意有心，讀者開心」為宗旨，出版心靈成長、人際溝通、生活實踐與生命智慧類書籍，包含陳海倫顧問《說話的藝術》《陳顧問時間》等作品。">
 <meta property="og:image" content="https://books.hellenchentruegroup.com/images/%E8%87%AA%E5%B7%B1%E7%AB%99%E8%B5%B7%E4%BE%86.png">
 <meta property="og:url" content="https://books.hellenchentruegroup.com/">
 <meta property="og:locale" content="zh_TW">
@@ -320,6 +320,45 @@ a.btn-primary,a.btn-outline{display:inline-block}
 .review-status.err{color:#ea4110}
 .reviews-empty{color:#aaa;font-size:13px}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* ===== 品牌開場 ===== */
+.hero-brand .hero-inner-split{grid-template-columns:1fr 240px;gap:56px}
+.hero-brand p{max-width:540px;margin-bottom:24px}
+.hero-quote{border-left:3px solid #EF9F27;padding:4px 0 4px 18px;margin:0 0 32px;max-width:540px}
+.hero-brand .hero-quote p{font-family:Georgia,serif;font-size:15px;color:#633806;line-height:1.9;margin-bottom:6px;font-style:italic}
+.hero-quote cite{font-size:12px;color:#999;font-style:normal}
+.hero-new{background:#fff;border:1px solid #e8e0d0;border-radius:12px;padding:20px 20px 22px;text-align:center}
+.hero-new-tag{display:table;margin-left:auto;margin-right:auto;font-size:11px;letter-spacing:.12em;color:#854F0B;background:#FAEEDA;padding:3px 12px;border-radius:20px;margin-bottom:16px}
+.hero-new .hero-cover{justify-self:auto;display:block}
+.hero-new .hero-cover img{width:150px}
+.hero-new-title{font-family:Georgia,serif;font-size:17px;color:#1a1a1a;margin:16px 0 4px!important}
+.hero-new-line{font-size:13px!important;color:#888!important;margin:0 0 14px!important}
+.hero-new-btn{font-family:inherit;font-size:13px;padding:8px 18px;border:1px solid #BA7517;background:transparent;color:#BA7517;border-radius:20px;cursor:pointer;transition:all .2s}
+.hero-new-btn:hover{background:#BA7517;color:#FAEEDA}
+@media(max-width:760px){
+  .hero-brand .hero-inner-split{grid-template-columns:1fr;gap:28px}
+  .hero-new{display:grid;grid-template-columns:90px 1fr;gap:4px 16px;text-align:left;align-items:center;order:2}
+  .hero-new-tag{grid-column:2;justify-self:start;margin:0}
+  .hero-new .hero-cover{grid-row:1/5;grid-column:1;order:0}
+  .hero-new .hero-cover img{width:90px}
+  .hero-new-title,.hero-new-line,.hero-new-btn{grid-column:2;justify-self:start}
+  .hero-new-title{margin:6px 0 0!important}
+  .hero-new-line{margin:0 0 6px!important}
+}
+/* ===== 出版主軸＋理念 ===== */
+.mission{background:#fff;padding:56px 48px;border-bottom:1px solid #e8e0d0}
+.pillar-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px}
+.pillar{display:flex;flex-direction:column;gap:6px;background:#fff9f0;border:1px solid #e8e0d0;border-radius:12px;padding:22px 18px;color:inherit;text-decoration:none;transition:border-color .2s,transform .2s}
+.pillar:hover{border-color:#BA7517;transform:translateY(-3px)}
+.pillar-icon{font-size:24px}
+.pillar-name{font-family:Georgia,serif;font-size:17px;color:#1a1a1a}
+.pillar-desc{font-size:14px;color:#555;line-height:1.7}
+.pillar-books{font-size:12px;color:#BA7517;margin-top:auto;padding-top:8px;line-height:1.6}
+.belief-row{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;padding-top:32px;border-top:1px solid #f0e8da}
+.belief h3{font-family:Georgia,serif;font-size:16px;font-weight:500;color:#633806;margin-bottom:6px}
+.belief p{font-size:14px;color:#666;line-height:1.8}
+@media(max-width:860px){.pillar-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.mission{padding:40px 16px}.pillar-grid{gap:10px}.pillar{padding:16px 14px}.belief-row{grid-template-columns:1fr;gap:16px}}
 </style>
 </head>
 <body id="top">
@@ -328,6 +367,7 @@ a.btn-primary,a.btn-outline{display:inline-block}
   <a class="nav-logo" href="#top">創意出版社</a>
   <button class="nav-toggle" aria-label="開啟選單" onclick="toggleNav()">☰</button>
   <div class="nav-links" id="navLinks">
+    <a href="#mission" onclick="closeNav()">出版理念</a>
     <a href="#start-here" onclick="closeNav()">從哪讀起</a>
     <a href="#books" onclick="closeNav()">書目</a>
     <a href="#about" onclick="closeNav()">關於作者</a>
@@ -337,26 +377,83 @@ a.btn-primary,a.btn-outline{display:inline-block}
   </div>
 </nav>
 
-<div class="hero hero-featured">
+<header class="hero hero-brand">
   <div class="hero-inner hero-inner-split">
     <div class="hero-text">
-      <div class="hero-tag">陳海倫顧問　最新改版</div>
-      <h1>很多路，<br>必須由你自己走</h1>
-      <p>真正讓人痛苦的，往往不是失敗，而是慢慢失去了自己。《自己站起來》陪你把那些「你以為是自己做的選擇」，一個一個看清楚。</p>
+      <div class="hero-tag">創意出版社・創意有心，讀者開心</div>
+      <h1>用心說話，<br>用心生活</h1>
+      <p>我們出版關於心靈成長、人際溝通、生活實踐與生命智慧的書。不談虛浮的公式，只給你在職場、家庭與感情裡，真正用得上的解答。</p>
+      <blockquote class="hero-quote">
+        <p>「技巧只是表達心意的技術，凌駕其上的則是真誠的意念與生命力。」</p>
+        <cite>陳海倫・《說話的藝術3》自序</cite>
+      </blockquote>
       <div class="hero-btns">
-        <button class="btn-primary" onclick="openBook('ziji')">了解這本書</button>
-        <button class="btn-outline" onclick="document.getElementById('books').scrollIntoView({behavior:'smooth'})">看全部出版作品</button>
+        <a class="btn-primary" href="#start-here">找一本適合我的書</a>
+        <a class="btn-outline" href="#books">看全部出版作品</a>
       </div>
       <div class="quick-links">
         <a href="purchase.html" class="quick-link">🛒 哪裡購買</a>
         <a href="#activity" class="quick-link">📖 品書時間</a>
       </div>
     </div>
-    <div class="hero-cover" role="button" tabindex="0" aria-label="查看《自己站起來》介紹" onclick="openBook('ziji')">
-      <img src="images/自己站起來.png" alt="自己站起來">
+    <aside class="hero-new" aria-label="最新改版">
+      <div class="hero-new-tag">最新改版</div>
+      <div class="hero-cover" role="button" tabindex="0" aria-label="查看《自己站起來》介紹" onclick="openBook('ziji')">
+        <img src="images/自己站起來.png" alt="自己站起來" width="200">
+      </div>
+      <p class="hero-new-title">自己站起來</p>
+      <p class="hero-new-line">很多路，必須由你自己走。</p>
+      <button type="button" class="hero-new-btn" onclick="openBook('ziji')">了解這本書</button>
+    </aside>
+  </div>
+</header>
+
+<section class="mission" id="mission" aria-labelledby="mission-title">
+  <div class="section-inner">
+    <div class="sec-label">我們的出版主軸</div>
+    <h2 class="sec-title" id="mission-title">四個主軸，陪你走過生活的每個關卡</h2>
+    <div class="pillar-grid">
+      <a class="pillar" href="#start-here" data-pillar="self">
+        <span class="pillar-icon" aria-hidden="true">🌱</span>
+        <span class="pillar-name">心靈成長</span>
+        <span class="pillar-desc">從失敗與迷惘中，重新站起來</span>
+        <span class="pillar-books">自己站起來・做自己・我是如何失敗的</span>
+      </a>
+      <a class="pillar" href="#start-here" data-pillar="talk">
+        <span class="pillar-icon" aria-hidden="true">💬</span>
+        <span class="pillar-name">人際溝通</span>
+        <span class="pillar-desc">把話說對，關係就順了</span>
+        <span class="pillar-books">說話的藝術系列</span>
+      </a>
+      <a class="pillar" href="#start-here" data-pillar="life">
+        <span class="pillar-icon" aria-hidden="true">🏠</span>
+        <span class="pillar-name">生活實踐</span>
+        <span class="pillar-desc">婚姻、家庭、親子，每天都用得到</span>
+        <span class="pillar-books">有情人・如何愛你的父母・離婚黑皮書</span>
+      </a>
+      <a class="pillar" href="#start-here" data-pillar="wisdom">
+        <span class="pillar-icon" aria-hidden="true">✨</span>
+        <span class="pillar-name">生命智慧</span>
+        <span class="pillar-desc">人生有顧問，路會好走很多</span>
+        <span class="pillar-books">陳顧問時間系列</span>
+      </a>
+    </div>
+    <div class="belief-row">
+      <div class="belief">
+        <h3>以心為本</h3>
+        <p>溝通不只是技巧，而是用心、用情、用生命去傳遞溫暖。</p>
+      </div>
+      <div class="belief">
+        <h3>實戰好用</h3>
+        <p>透過 Q&amp;A 和生活化的比喻，讀完馬上能用在日常裡。</p>
+      </div>
+      <div class="belief">
+        <h3>從個人到社會</h3>
+        <p>每個人的關係變好了，社會也會更和諧。</p>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
 <div class="trust-strip">
   <div class="trust-inner">
@@ -604,7 +701,7 @@ a.btn-primary,a.btn-outline{display:inline-block}
         </div>
       </div>
       <a class="act-cta" href="https://hellenchentruegroup.com/optin/heartbridge-book-club/" target="_blank" rel="noopener">報名品書時間</a>
-      <a class="btn-outline act-tel" href="tel:0287122800">來電詢問</a>
+      <a class="btn-outline act-tel" href="tel:0287122800">來電詢問 (02) 8712-2800</a>
     </div>
   </div>
 </div>
@@ -1075,7 +1172,9 @@ const situations = {
   self:   ['ziji', 'zuoji', 'shibai'],
   love:   ['youqing', 'lihun', 'zhuiai'],
   talk:   ['art'],
-  family: ['fumu']
+  family: ['fumu'],
+  life:   ['youqing', 'fumu', 'lihun'],
+  wisdom: ['chen']
 };
 function renderSituation(key) {
   document.querySelectorAll('.situation-row button').forEach(btn => {
@@ -1093,6 +1192,10 @@ function renderSituation(key) {
 }
 document.querySelectorAll('.situation-row button').forEach(btn => {
   btn.addEventListener('click', () => renderSituation(btn.dataset.sit));
+});
+// 出版主軸卡片：帶到選書區並顯示該主軸的書
+document.querySelectorAll('.pillar').forEach(card => {
+  card.addEventListener('click', () => renderSituation(card.dataset.pillar));
 });
 document.getElementById('recGrid').addEventListener('click', e => {
   const card = e.target.closest('[data-book]');
