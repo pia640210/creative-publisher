@@ -19,7 +19,7 @@
   "@graph":[
      {"@type":"Organization","@id":"#publisher","name":"創意出版社","url":"https://books.hellenchentruegroup.com/","telephone":"+886-2-8712-2800","address":{"@type":"PostalAddress","streetAddress":"復興北路178號2樓","addressLocality":"台北市","addressCountry":"TW"}},
     {"@type":"Person","@id":"#helen","name":"陳海倫","jobTitle":"國際管理顧問・暢銷作家"},
-    {"@type":"Book","name":"自己站起來","author":{"@id":"#helen"},"publisher":{"@id":"#publisher"},"inLanguage":"zh-TW","offers":{"@type":"Offer","price":"380","priceCurrency":"TWD","availability":"https://schema.org/InStock"}},
+    {"@type":"Book","name":"自己站起來","url":"https://pia640210.github.io/standup-by-yourself/","author":{"@id":"#helen"},"publisher":{"@id":"#publisher"},"inLanguage":"zh-TW","offers":{"@type":"Offer","price":"380","priceCurrency":"TWD","availability":"https://schema.org/InStock"}},
     {"@type":"Book","name":"做自己","author":{"@id":"#helen"},"publisher":{"@id":"#publisher"},"inLanguage":"zh-TW"},
     {"@type":"Book","name":"我是如何失敗的","author":{"@id":"#helen"},"publisher":{"@id":"#publisher"},"inLanguage":"zh-TW"},
     {"@type":"Book","name":"夢想與妄想","author":{"@id":"#helen"},"publisher":{"@id":"#publisher"},"inLanguage":"zh-TW"},
@@ -398,12 +398,12 @@ a.btn-primary,a.btn-outline{display:inline-block}
     </div>
     <aside class="hero-new" aria-label="最新改版">
       <div class="hero-new-tag">最新改版</div>
-      <div class="hero-cover" role="button" tabindex="0" aria-label="查看《自己站起來》介紹" onclick="openBook('ziji')">
+      <div class="hero-cover" role="button" tabindex="0" aria-label="前往《自己站起來》專屬頁面" onclick="openSite('ziji')">
         <img src="images/自己站起來.png" alt="自己站起來" width="200">
       </div>
       <p class="hero-new-title">自己站起來</p>
       <p class="hero-new-line">很多路，必須由你自己走。</p>
-      <button type="button" class="hero-new-btn" onclick="openBook('ziji')">了解這本書</button>
+      <button type="button" class="hero-new-btn" onclick="openSite('ziji')">了解這本書</button>
     </aside>
   </div>
 </header>
@@ -547,7 +547,7 @@ a.btn-primary,a.btn-outline{display:inline-block}
     </div>
     <div class="books-grid" id="booksGrid">
 
-      <div class="book-card" role="button" tabindex="0" data-cat="自我探索" onclick="openBook('ziji')">
+      <div class="book-card" role="button" tabindex="0" data-cat="自我探索" onclick="openSite('ziji')">
         <img class="book-cover" loading="lazy" decoding="async" src="images/自己站起來.png" alt="自己站起來">
         <div class="book-meta"><p>自己站起來</p><div class="book-tagline">當人生卡住時最值得翻的一本</div></div>
       </div>
@@ -1004,7 +1004,8 @@ let lastFocus = null;
 // 有專屬介紹頁的書：點擊後直接開新分頁前往，不跳出彈窗
 const BOOK_SITES = {
   art:   'https://pia640210.github.io/The-art-of-conversation/',  // 說話的藝術
-  zuoji: 'https://pia640210.github.io/Be-yourself/'               // 做自己
+  zuoji: 'https://pia640210.github.io/Be-yourself/',              // 做自己
+  ziji:  'https://pia640210.github.io/standup-by-yourself/'        // 自己站起來
 };
 function openSite(key) {
   const w = window.open(BOOK_SITES[key], '_blank');
@@ -1146,7 +1147,7 @@ document.addEventListener('keydown', e => {
 
 // ===== 依情境選書 =====
 const bookActions = {
-  ziji:   () => openBook('ziji'),
+  ziji:   () => openSite('ziji'),
   zuoji:  () => openSite('zuoji'),
   shibai: () => openBook('shibai'),
   lihun:  () => openBook('lihun'),
