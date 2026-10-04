@@ -26,7 +26,7 @@
     {"@type":"Book","name":"築夢者之書","author":{"@id":"#helen"},"publisher":{"@id":"#publisher"},"inLanguage":"zh-TW"},
     {"@type":"Book","name":"生活藝術家","author":{"@id":"#helen"},"publisher":{"@id":"#publisher"},"inLanguage":"zh-TW"},
     {"@type":"Book","name":"人生必修10堂課","url":"https://pia640210.github.io/10-Lessons/","author":{"@id":"#helen"},"publisher":{"@id":"#publisher"},"inLanguage":"zh-TW"},
-    {"@type":"Book","name":"今天你幾歲？永齡長春","author":{"@id":"#helen"},"publisher":{"@id":"#publisher"},"inLanguage":"zh-TW"},
+    {"@type":"Book","name":"今天你幾歲？永齡長春","url":"https://pia640210.github.io/forever-young/","author":{"@id":"#helen"},"publisher":{"@id":"#publisher"},"inLanguage":"zh-TW"},
     {"@type":"Book","name":"如何撒嬌","author":{"@id":"#helen"},"publisher":{"@id":"#publisher"},"inLanguage":"zh-TW"},
     {"@type":"Book","name":"如何愛你的父母","author":{"@id":"#helen"},"publisher":{"@id":"#publisher"},"inLanguage":"zh-TW"},
     {"@type":"Book","name":"離婚黑皮書","author":{"@id":"#helen"},"publisher":{"@id":"#publisher"},"inLanguage":"zh-TW"},
@@ -581,7 +581,7 @@ a.btn-primary,a.btn-outline{display:inline-block}
         <img class="book-cover" loading="lazy" decoding="async" src="images/人生必修10堂課.jpg" alt="人生必修10堂課">
         <div class="book-meta"><p>人生必修10堂課</p><div class="book-tagline">學校沒教的最重要的課</div></div>
       </div>
-      <div class="book-card" role="button" tabindex="0" data-cat="生活指導" onclick="openBook('jingtian')">
+      <div class="book-card" role="button" tabindex="0" data-cat="生活指導" onclick="openSite('jingtian')">
         <img class="book-cover" loading="lazy" decoding="async" src="images/今天你幾歲.jpg" alt="今天你幾歲">
         <div class="book-meta"><p>今天你幾歲？</p><div class="book-tagline">你的年齡，由你決定</div></div>
       </div>
@@ -1007,7 +1007,8 @@ const BOOK_SITES = {
   zuoji: 'https://pia640210.github.io/Be-yourself/',              // 做自己
   ziji:  'https://pia640210.github.io/standup-by-yourself/',       // 自己站起來
   shibai:'https://pia640210.github.io/how-did-I-fail/',            // 我是如何失敗的
-  rensheng10:'https://pia640210.github.io/10-Lessons/'          // 人生必修10堂課
+  rensheng10:'https://pia640210.github.io/10-Lessons/',         // 人生必修10堂課
+  jingtian:'https://pia640210.github.io/forever-young/'          // 今天你幾歲？永齡長春
 };
 function openSite(key) {
   const w = window.open(BOOK_SITES[key], '_blank');
