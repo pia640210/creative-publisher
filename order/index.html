@@ -46,7 +46,7 @@
 
 <header class="wrap page-head">
   <h1>線上訂購</h1>
-  <p class="section-lead">勾選想讀的書，我們會自動幫你套用最划算的組合。送出後會收到確認信和匯款資訊。</p>
+  <p class="section-lead">勾選想讀的書，我們會自動幫你套用最划算的組合。送出後會顯示訂單內容和匯款資訊。</p>
 </header>
 
 <form class="wrap order-grid" id="order-form" data-form="order" action="mailto:createbook.press@gmail.com" method="post" enctype="text/plain">
@@ -165,11 +165,11 @@
       <input id="o-name" name="name" autocomplete="name" required>
       <label for="o-phone">手機或電話</label>
       <input id="o-phone" name="phone" type="tel" autocomplete="tel" required>
-      <label for="o-email">Email（確認信會寄到這裡）</label>
+      <label for="o-email">Email</label>
       <input id="o-email" name="email" type="email" autocomplete="email" required>
       <label for="o-address">寄送地址</label>
       <input id="o-address" name="address" autocomplete="street-address" required>
-      <label for="o-last5">匯款帳號末五碼（選填，匯款後回覆確認信告訴我們也可以）</label>
+      <label for="o-last5">匯款帳號末五碼（選填，匯款後再告訴我們也可以）</label>
       <input id="o-last5" name="last5" inputmode="numeric" pattern="[0-9]{5}" maxlength="5">
       <label class="check"><input type="checkbox" name="callback" value="yes"> 我希望專人來電確認訂單</label>
       <label for="o-note">備註（選填）</label>
@@ -186,7 +186,7 @@
       <dt class="sum-total">合計</dt><dd class="sum-total" data-sum-total>NT$0</dd>
     </dl>
     <p class="nudge" data-nudge aria-live="polite"></p>
-    <p class="form-note">付款方式：銀行轉帳。匯款資訊會在送出後顯示，並寄到你的信箱。</p>
+    <div class="bank-mini"><p class="form-note"><strong>付款方式：銀行轉帳</strong></p><p class="form-note">玉山銀行長春分行（代號 808）<br>戶名：創意出版社有限公司<br>帳號：0406-940-003763 <button class="link-btn" type="button" data-copy="0406940003763">複製帳號</button></p><p class="form-note">匯款後，請來電或寄 Email 到 createbook.press@gmail.com 告知帳號末五碼。</p></div>
     <button class="btn btn-primary btn-block" type="submit" data-submit>送出訂單</button>
     <p class="form-status" role="status"></p>
     <p class="form-note">也可以來電訂購 <a href="tel:0287122800" data-track="tel_click">(02) 8712-2800</a></p>

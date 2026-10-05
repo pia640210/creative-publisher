@@ -50,7 +50,7 @@
         if (wasOpen) { result.innerHTML = ''; return; }
         a.setAttribute('aria-expanded', 'true');
         result.innerHTML = '<h3>也許，這幾本書能陪你想一想</h3><ul class="rec-list">' + d.books.map(function (b) {
-          return '<li><a href="' + b.url + '"><span class="cover cover-xs" style="width:64px"><img src="' + b.img + '" alt="" width="64" height="85" loading="lazy"></span><span><strong>' + esc(b.title) + '</strong><span class="rec-hook">' + esc(b.hook) + '</span></span></a></li>';
+          return '<li><a href="' + b.url + '"' + (b.ext ? ' target="_blank" rel="noopener"' : '') + '><span class="cover cover-xs" style="width:64px"><img src="' + b.img + '" alt="" width="64" height="85" loading="lazy"></span><span><strong>' + esc(b.title) + '</strong><span class="rec-hook">' + esc(b.hook) + '</span></span></a></li>';
         }).join('') + '</ul>';
         // 手機上把結果捲進畫面
         if (window.matchMedia('(max-width: 959px)').matches) result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
