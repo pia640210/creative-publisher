@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /order/thank-you/
-Sitemap: https://books.hellenchentruegroup.com/sitemap.xml
