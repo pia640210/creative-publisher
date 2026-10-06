@@ -79,8 +79,10 @@
   function showVoice() {
     var answer = document.getElementById('hero-answer');
     if (!answer || !voice) return;
-    answer.innerHTML = '<figure class="answer-voice"><blockquote><p>「' + esc(voice.text) + '」</p></blockquote>' +
-      '<figcaption><a href="' + voice.url + '"><span class="cover cover-xs"><img src="' + voice.img + '" alt="" width="48" height="64"></span><span>' + esc(voice.name) + '<br>讀《' + esc(voice.title) + '》</span></a></figcaption></figure>';
+    answer.innerHTML = '<figure class="answer-voice">' +
+      '<a class="voice-cover" href="' + voice.url + '" tabindex="-1" aria-hidden="true"><span class="cover"><img src="' + voice.img + '" alt="" width="300" height="400"></span></a>' +
+      '<blockquote><p>「' + esc(voice.text) + '」</p></blockquote>' +
+      '<figcaption>' + esc(voice.name) + '，讀<a href="' + voice.url + '">《' + esc(voice.title) + '》</a></figcaption></figure>';
   }
   showVoice();
 

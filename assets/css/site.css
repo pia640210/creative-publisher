@@ -144,9 +144,9 @@ a:hover { text-decoration-thickness: 2px; }
 @media (min-width: 960px) { .toc-list a { font-size: 1.3125rem; } }
 
 /* ---------- 首頁開場：一條墨線，從翻開的書延伸成目次 ---------- */
-.intro-book { display: block; width: 88px; height: auto; color: var(--ink); margin: 0 0 var(--s3); }
+.intro-book { display: block; width: 72px; height: auto; color: var(--ink); margin: 0 0 var(--s3); }
 .intro-book .ln-gold { stroke: var(--gold); }
-@media (min-width: 960px) { .intro-book { width: 120px; margin-bottom: var(--s4); } }
+@media (min-width: 960px) { .intro-book { width: 96px; margin-bottom: var(--s4); } }
 .toc-title { position: relative; }
 /* 只有加上 .intro（JS 判斷要播放）時才有動畫；否則一律是完成畫面 */
 .intro .intro-book .ln { stroke-dasharray: 1; stroke-dashoffset: 1; animation: ink-draw .5s ease-out forwards; }
@@ -178,11 +178,18 @@ a:hover { text-decoration-thickness: 2px; }
 
 /* ---------- 首頁回應區：讀者的話 → 你的那一本書 ---------- */
 .hero-answer { margin-top: var(--s6); }
-.answer-voice { margin: 0; padding-left: var(--s5); border-left: 3px solid var(--gold); }
-.answer-voice blockquote { margin: 0; }
-.answer-voice p { font-family: var(--serif); font-size: var(--fs-xl); line-height: 1.6; margin-bottom: var(--s4); }
-.answer-voice figcaption a { display: inline-flex; align-items: center; gap: var(--s3); color: var(--ink-2); font-size: var(--fs-s); text-decoration: none; line-height: 1.5; }
-.answer-voice figcaption a:hover span:last-child { text-decoration: underline; }
+.answer-voice { margin: 0; display: grid; grid-template-columns: 96px 1fr; gap: var(--s5); align-items: start; }
+.answer-voice .voice-cover { grid-row: 1 / span 2; }
+.answer-voice .voice-cover .cover { width: 96px; }
+.answer-voice blockquote { margin: 0; padding-left: var(--s4); border-left: 3px solid var(--gold); }
+.answer-voice p { font-family: var(--serif); font-size: var(--fs-l); line-height: 1.7; margin: 0; }
+.answer-voice figcaption { padding-left: calc(var(--s4) + 3px); font-size: var(--fs-s); color: var(--ink-2); line-height: 1.6; }
+.answer-voice figcaption a { color: var(--ink-2); }
+@media (min-width: 960px) {
+  .answer-voice { grid-template-columns: 130px 1fr; gap: var(--s6); }
+  .answer-voice .voice-cover .cover { width: 130px; }
+  .answer-voice p { font-size: var(--fs-xl); }
+}
 .answer-card { animation: answer-in .35s ease-out; }
 .answer-q { font-size: var(--fs-s); color: var(--ink-2); margin-bottom: var(--s4); }
 .answer-main { display: grid; grid-template-columns: 120px 1fr; gap: var(--s5); align-items: start; }
