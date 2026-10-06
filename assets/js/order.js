@@ -110,6 +110,8 @@
     try { order = JSON.parse(sessionStorage.getItem('cp-order')); } catch (err) { /* ignore */ }
     if (order) {
       var text = orderText(order);
+      var vip = document.querySelector('[data-vip]');
+      if (vip && (order.itemKeys || []).indexOf('zhuiai') > -1) { vip.hidden = false; vip.querySelector('[data-vip-id]').textContent = order.id; }
       recap.innerHTML = '<pre class="order-text" style="white-space:pre-wrap;font:inherit;margin:0">' + window.escHtml(text) + '</pre>';
       if (new URLSearchParams(location.search).get('mail')) {
         document.querySelector('[data-thanks-title]').textContent = '訂單內容已經準備好了';
