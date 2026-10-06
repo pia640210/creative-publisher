@@ -143,6 +143,95 @@ a:hover { text-decoration-thickness: 2px; }
 .rec-list a:hover strong { color: var(--gold-ink); }
 @media (min-width: 960px) { .toc-list a { font-size: 1.3125rem; } }
 
+/* ---------- 首頁開場：一條墨線，從翻開的書延伸成目次 ---------- */
+.intro-book { display: block; width: 88px; height: auto; color: var(--ink); margin: 0 0 var(--s3); }
+.intro-book .ln-gold { stroke: var(--gold); }
+@media (min-width: 960px) { .intro-book { width: 120px; margin-bottom: var(--s4); } }
+.toc-title { position: relative; }
+/* 只有加上 .intro（JS 判斷要播放）時才有動畫；否則一律是完成畫面 */
+.intro .intro-book .ln { stroke-dasharray: 1; stroke-dashoffset: 1; animation: ink-draw .5s ease-out forwards; }
+.intro .intro-book .ln1 { animation-delay: .25s; animation-duration: .6s; }
+.intro .intro-book .ln2 { animation-delay: .4s;  animation-duration: .6s; }
+.intro .intro-book .ln3 { animation-delay: .7s;  animation-duration: .3s; }
+.intro .intro-book .ln4 { animation-delay: .85s; animation-duration: .25s; }
+.intro .intro-book .ln5 { animation-delay: .95s; animation-duration: .25s; }
+.intro .intro-book .ln6 { animation-delay: 1.05s; animation-duration: .2s; }
+.intro .intro-book .ln9 { animation-delay: 1.1s; animation-duration: .35s; }
+.intro .intro-book .ln7 { animation-delay: 1.2s; animation-duration: .25s; }
+.intro .intro-book .ln8 { animation-delay: 1.3s; animation-duration: .25s; }
+.intro .hero .toc-title { border-bottom-color: transparent; }
+.intro .hero .toc-title::after { content: ""; position: absolute; left: 0; right: 0; bottom: -2px; height: 2px; background: var(--ink); transform-origin: left; transform: scaleX(0); animation: ink-line .45s ease-out 1.35s forwards; }
+.intro .hero .toc-list li { opacity: 0; animation: toc-in .35s ease-out forwards; }
+.intro .hero .toc-list .toc-dots { transform-origin: left; transform: translateY(-.3em) scaleX(0); animation: toc-dots .5s ease-out forwards; }
+.intro .hero .toc-list li:nth-child(1), .intro .hero .toc-list li:nth-child(1) .toc-dots { animation-delay: 1.6s; }
+.intro .hero .toc-list li:nth-child(2), .intro .hero .toc-list li:nth-child(2) .toc-dots { animation-delay: 1.68s; }
+.intro .hero .toc-list li:nth-child(3), .intro .hero .toc-list li:nth-child(3) .toc-dots { animation-delay: 1.76s; }
+.intro .hero .toc-list li:nth-child(4), .intro .hero .toc-list li:nth-child(4) .toc-dots { animation-delay: 1.84s; }
+.intro .hero .toc-list li:nth-child(5), .intro .hero .toc-list li:nth-child(5) .toc-dots { animation-delay: 1.92s; }
+.intro .hero .toc-list li:nth-child(6), .intro .hero .toc-list li:nth-child(6) .toc-dots { animation-delay: 2s; }
+.intro .hero .toc-list li:nth-child(7), .intro .hero .toc-list li:nth-child(7) .toc-dots { animation-delay: 2.08s; }
+.intro .hero .toc-list li:nth-child(8), .intro .hero .toc-list li:nth-child(8) .toc-dots { animation-delay: 2.16s; }
+@keyframes ink-draw { to { stroke-dashoffset: 0; } }
+@keyframes ink-line { to { transform: scaleX(1); } }
+@keyframes toc-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+@keyframes toc-dots { to { transform: translateY(-.3em) scaleX(1); } }
+
+/* ---------- 首頁回應區：讀者的話 → 你的那一本書 ---------- */
+.hero-answer { margin-top: var(--s6); }
+.answer-voice { margin: 0; padding-left: var(--s5); border-left: 3px solid var(--gold); }
+.answer-voice blockquote { margin: 0; }
+.answer-voice p { font-family: var(--serif); font-size: var(--fs-xl); line-height: 1.6; margin-bottom: var(--s4); }
+.answer-voice figcaption a { display: inline-flex; align-items: center; gap: var(--s3); color: var(--ink-2); font-size: var(--fs-s); text-decoration: none; line-height: 1.5; }
+.answer-voice figcaption a:hover span:last-child { text-decoration: underline; }
+.answer-card { animation: answer-in .35s ease-out; }
+.answer-q { font-size: var(--fs-s); color: var(--ink-2); margin-bottom: var(--s4); }
+.answer-main { display: grid; grid-template-columns: 120px 1fr; gap: var(--s5); align-items: start; }
+.answer-cover .cover { width: 120px; }
+.answer-title { font-family: var(--serif); font-weight: 700; font-size: var(--fs-xl); margin-bottom: var(--s2); }
+.answer-title a { color: var(--ink); text-decoration: none; }
+.answer-hook { color: var(--ink-2); line-height: 1.7; }
+.answer-more { font-size: var(--fs-s); color: var(--ink-2); margin: var(--s5) 0 0; padding-top: var(--s4); border-top: 1px solid var(--line); }
+.toc-result .answer-card { padding: var(--s2) 0; }
+@keyframes answer-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@media (min-width: 960px) {
+  .hero-inner { grid-template-rows: auto auto auto 1fr; }
+  .hero .toc { grid-row: 1 / span 4; }
+  .hero-answer { grid-column: 1; grid-row: 3; margin-top: var(--s4); max-width: 30em; min-height: 260px; }
+  .answer-main { grid-template-columns: 150px 1fr; }
+  .answer-cover .cover { width: 150px; }
+  .hero-alt { grid-row: 4; }
+}
+.intro .hero-answer { opacity: 0; animation: photo-in .8s ease-out 1.9s forwards; }
+@keyframes photo-in { to { opacity: 1; } }
+
+/* ---------- 首頁書架：書背 ---------- */
+.shelf { position: relative; margin-top: var(--s6); }
+.shelf-row { display: flex; align-items: flex-end; gap: 3px; list-style: none; margin: 0; padding: 12px 0 0; border-bottom: 4px solid var(--ink); }
+.shelf-row li { flex: 1 1 34px; min-width: 30px; }
+.shelf-row a { display: flex; justify-content: center; align-items: center; width: 100%; white-space: nowrap; overflow: hidden; height: calc(146px + 28px * var(--hr)); padding: 12px 0 8px; background: var(--bg); color: var(--fg); writing-mode: vertical-rl; font-family: var(--serif); font-weight: 700; font-size: 14px; letter-spacing: .14em; line-height: 1; text-decoration: none; border-radius: 2px 2px 0 0; box-shadow: inset 0 0 0 1px rgba(42,38,34,.14), inset 4px 0 0 rgba(255,255,255,.16), inset -3px 0 0 rgba(0,0,0,.08); transition: transform .2s ease; }
+.shelf-row a:hover, .shelf-row a:focus-visible { transform: translateY(-10px); }
+.shelf-row a:focus-visible { outline-offset: 2px; }
+.shelf-row .tcy { text-combine-upright: all; }
+/* 手機：兩層合成一排，橫向滑動，右側淡出提示還有更多 */
+@media (max-width: 959px) {
+  .shelf { display: flex; overflow-x: auto; scrollbar-width: none; margin-right: calc(var(--s5) * -1); padding-right: var(--s5); }
+  .shelf::-webkit-scrollbar { display: none; }
+  .shelf-row { flex: none; padding-right: 3px; }
+  .shelf-row li { width: 32px; flex: none; }
+}
+/* 電腦：左欄的兩層書架 */
+@media (min-width: 960px) {
+  .hero-inner { grid-template-rows: auto auto auto 1fr; }
+  .hero .toc { grid-row: 1 / span 4; }
+  .shelf { grid-column: 1; grid-row: 3; margin-top: var(--s4); }
+  .shelf-row + .shelf-row { margin-top: var(--s4); }
+  .shelf-row a { height: calc(150px + 30px * var(--hr)); font-size: 15px; padding-top: 14px; }
+  .shelf-row li { max-width: 50px; }
+  .hero-alt { grid-row: 4; }
+}
+.intro .shelf-row li { opacity: 0; transform: translateY(16px); animation: shelf-in .35s ease-out forwards; animation-delay: calc(1.75s + var(--i) * 45ms); }
+@keyframes shelf-in { to { opacity: 1; transform: none; } }
+
 /* ---------- 換個角度 ---------- */
 .angles { background: var(--paper-2); padding: var(--s8) 0; }
 .angle-list { list-style: none; margin: var(--s6) 0 0; padding: 0; display: grid; gap: var(--s6); }

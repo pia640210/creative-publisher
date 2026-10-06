@@ -47,16 +47,43 @@
         var key = a.dataset.q, d = data[key];
         var wasOpen = a.getAttribute('aria-expanded') === 'true';
         links.forEach(function (l) { l.setAttribute('aria-expanded', 'false'); });
-        if (wasOpen) { result.innerHTML = ''; return; }
+        var answer = document.getElementById('hero-answer');
+        var wide = answer && toc.closest('.hero') && window.matchMedia('(min-width: 960px)').matches;
+        if (wasOpen) { result.innerHTML = ''; if (wide) showVoice(); return; }
         a.setAttribute('aria-expanded', 'true');
-        result.innerHTML = '<h3>也許，這幾本書能陪你想一想</h3><ul class="rec-list">' + d.books.map(function (b) {
-          return '<li><a href="' + b.url + '"' + (b.ext ? ' target="_blank" rel="noopener"' : '') + '><span class="cover cover-xs" style="width:64px"><img src="' + b.img + '" alt="" width="64" height="85" loading="lazy"></span><span><strong>' + esc(b.title) + '</strong><span class="rec-hook">' + esc(b.hook) + '</span></span></a></li>';
-        }).join('') + '</ul>';
-        // 手機上把結果捲進畫面
-        if (window.matchMedia('(max-width: 959px)').matches) result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        var html = bookCard(d);
+        if (wide) { result.innerHTML = ''; answer.innerHTML = html; }
+        else {
+          result.innerHTML = html;
+          result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
       });
     });
   }
+  // 推薦書卡：第一本放大，其餘列成「也可以看看」
+  function bookCard(d) {
+    var main = d.books[0], rest = d.books.slice(1);
+    var ext = function (b) { return b.ext ? ' target="_blank" rel="noopener"' : ''; };
+    return '<div class="answer-card">' +
+      '<p class="answer-q">你選了：「' + esc(d.text) + '」</p>' +
+      '<div class="answer-main"><a class="answer-cover" href="' + main.url + '"' + ext(main) + ' tabindex="-1" aria-hidden="true"><span class="cover"><img src="' + main.img + '" alt="" width="300" height="400"></span></a>' +
+      '<div><p class="answer-title"><a href="' + main.url + '"' + ext(main) + '>《' + esc(main.title) + '》</a></p>' +
+      '<p class="answer-hook">' + esc(main.hook) + '</p>' +
+      '<a class="btn btn-primary" href="' + main.url + '"' + ext(main) + ' data-track="book_click" data-book="' + esc(main.title) + '">看這本書</a></div></div>' +
+      (rest.length ? '<p class="answer-more">也可以看看：' + rest.map(function (b) { return '<a href="' + b.url + '"' + ext(b) + '>《' + esc(b.title) + '》</a>'; }).join('、') + '</p>' : '') +
+      '</div>';
+  }
+  // 預設的讀者心得：每次進站隨機一則
+  var voices = []; try { voices = JSON.parse((document.getElementById('voice-data') || {}).textContent || '[]'); } catch (e) {}
+  var voice = voices.length ? voices[Math.floor(Math.random() * voices.length)] : null;
+  function showVoice() {
+    var answer = document.getElementById('hero-answer');
+    if (!answer || !voice) return;
+    answer.innerHTML = '<figure class="answer-voice"><blockquote><p>「' + esc(voice.text) + '」</p></blockquote>' +
+      '<figcaption><a href="' + voice.url + '"><span class="cover cover-xs"><img src="' + voice.img + '" alt="" width="48" height="64"></span><span>' + esc(voice.name) + '<br>讀《' + esc(voice.title) + '》</span></a></figcaption></figure>';
+  }
+  showVoice();
+
   function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
   window.escHtml = esc;
 
