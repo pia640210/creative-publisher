@@ -17,6 +17,7 @@
         back.querySelector('[data-draw-t]').textContent = it.t ? it.t : '';
         back.querySelector('[data-draw-t]').hidden = !it.t;
         back.querySelector('[data-draw-d]').textContent = it.t ? it.d : '「' + it.d + '」';
+        var src = back.querySelector('[data-draw-src]'); if (src) { src.textContent = it.src ? '——《' + it.src + '》' : ''; src.hidden = !it.src; }
         front.hidden = true; back.hidden = false;
       };
       if (reduce) show(); else { card.classList.remove('is-flip'); void card.offsetWidth; card.classList.add('is-flip'); setTimeout(show, 220); }
@@ -258,4 +259,146 @@
     };
     if (document.fonts && document.fonts.load) document.fonts.load('44px "Noto Serif TC"').then(draw, draw); else draw();
   }
+
+  /* ---------- 影片：點了才載入 YouTube ---------- */
+  document.querySelectorAll('[data-yt]').forEach(function (box) {
+    box.querySelector('.yt-cover').addEventListener('click', function () {
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + box.dataset.yt + '?autoplay=1&rel=0';
+      f.title = box.dataset.title; f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen = true;
+      box.innerHTML = ''; box.appendChild(f); f.focus();
+      track('video_play', { q: box.dataset.yt });
+    });
+  });
+
+  /* ---------- 中段 CTA：讀者在模組裡互動之後才出現 ---------- */
+  document.addEventListener('click', function (e) {
+    var hit = e.target.closest('.quiz-opt, .flip, .scene-tab, .fit-box, [data-ck-make], [data-tl-done]');
+    if (!hit) return;
+    var mod = hit.closest('.lp-mod'); if (!mod) return;
+    var cta = mod.querySelector('.lp-mini-cta');
+    if (cta && cta.hidden) setTimeout(function () { cta.hidden = false; }, 350);
+  });
+
+  /* ---------- 觀念切換器 ---------- */
+  document.querySelectorAll('[data-toggle]').forEach(function (box) {
+    var btns = box.querySelectorAll('.tg-switch button');
+    btns.forEach(function (b) {
+      b.addEventListener('click', function () {
+        btns.forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+        box.querySelector('.tg-a').hidden = b.dataset.side !== 'a';
+        box.querySelector('.tg-b').hidden = b.dataset.side !== 'b';
+        box.classList.toggle('is-b', b.dataset.side === 'b');
+        track('toggle_view', { q: b.dataset.side });
+      });
+    });
+  });
+
+  /* ---------- 打字效果（只是視覺，完整文字一開始就在 HTML 裡） ---------- */
+  document.querySelectorAll('[data-typing]').forEach(function (el) {
+    if (reduce) return;
+    var html = el.innerHTML, text = el.textContent, parts = html.split(/<br\s*\/?>/i), i = 0;
+    el.setAttribute('aria-label', text); el.style.minHeight = el.offsetHeight + 'px';
+    var full = parts.map(function (p) { return p.replace(/&amp;/g, '&'); }).join('\n');
+    el.textContent = '';
+    var tick = setInterval(function () {
+      i++; el.innerHTML = esc(full.slice(0, i)).replace(/\n/g, '<br>') + '<span class="caret" aria-hidden="true"></span>';
+      if (i >= full.length) { clearInterval(tick); setTimeout(function () { var c = el.querySelector('.caret'); if (c) c.remove(); }, 1600); }
+    }, 70);
+  });
+
+  /* ---------- 單選診斷 ---------- */
+  document.querySelectorAll('[data-picker]').forEach(function (box) {
+    var opts = box.querySelectorAll('.pick-opt'), ans = box.querySelectorAll('.pick-a');
+    opts.forEach(function (o) {
+      o.addEventListener('click', function () {
+        opts.forEach(function (x) { x.setAttribute('aria-pressed', String(x === o)); });
+        ans.forEach(function (a) { a.hidden = a.dataset.i !== o.dataset.i; });
+        track('quiz_answer', { q: o.textContent });
+      });
+    });
+  });
+
+  /* ---------- 幸福指數 ---------- */
+  document.querySelectorAll('[data-score]').forEach(function (box) {
+    var tiers = JSON.parse(box.querySelector('[data-score-tiers]').textContent), out = box.querySelector('[data-score-result]');
+    var sets = box.querySelectorAll('fieldset'), picks = {};
+    sets.forEach(function (fs, qi) {
+      fs.querySelectorAll('.quiz-opt').forEach(function (o) {
+        o.addEventListener('click', function () {
+          fs.querySelectorAll('.quiz-opt').forEach(function (x) { x.setAttribute('aria-pressed', String(x === o)); });
+          picks[qi] = Number(o.dataset.v);
+          if (Object.keys(picks).length < sets.length) return;
+          var sc = Object.keys(picks).reduce(function (t, k) { return t + picks[k]; }, 0), t = tiers[0];
+          tiers.forEach(function (x) { if (sc >= x.min) t = x; });
+          out.innerHTML = '<p class="score-num">你的幸福指數 <strong>' + sc + '</strong> / ' + sets.length + '</p><p class="dc-title">' + esc(t.title) + '</p><p>' + esc(t.d) + '</p>';
+          out.hidden = false; track('quiz_result', { q: 'score_' + sc });
+        });
+      });
+    });
+  });
+
+  /* ---------- 婚前 vs 婚後 滑桿 ---------- */
+  document.querySelectorAll('[data-compare]').forEach(function (box) {
+    var r = box.querySelector('input[type=range]');
+    var set = function () { box.style.setProperty('--c', (r.value / 100).toFixed(2)); box.classList.toggle('is-after', r.value >= 50); };
+    r.addEventListener('input', set); set();
+    r.addEventListener('change', function () { track('compare_slide', { q: r.value }); });
+  });
+
+  /* ---------- 適讀勾選 ---------- */
+  document.querySelectorAll('[data-fitcheck]').forEach(function (box) {
+    var need = Number(box.dataset.need || 2), out = box.querySelector('[data-fit-yes]');
+    box.addEventListener('change', function () {
+      var n = box.querySelectorAll('input:checked').length; out.hidden = n < need;
+      var cta = box.querySelector('.lp-mini-cta'); if (cta) cta.hidden = n < need;
+      if (n >= need) track('fit_check');
+    });
+  });
+
+  /* ---------- 兩張清單 ---------- */
+  document.querySelectorAll('[data-twolists]').forEach(function (box) {
+    var list = box.querySelector('.tl-items'), tpl = box.querySelector('[data-tl-tpl]'), input = box.querySelector('.tl-add input');
+    list.addEventListener('click', function (e) {
+      var b = e.target.closest('.quiz-opt'); if (!b) return;
+      b.parentNode.querySelectorAll('.quiz-opt').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+      b.closest('.tl-item').dataset.to = b.dataset.to;
+    });
+    var add = function () {
+      var v = input.value.trim(); if (!v) return;
+      var w = document.createElement('ul'); w.innerHTML = tpl.innerHTML.replace(/__/g, esc(v));
+      list.appendChild(w.firstElementChild); input.value = '';
+    };
+    box.querySelector('[data-tl-add]').addEventListener('click', add);
+    input.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); add(); } });
+    box.querySelector('[data-tl-done]').addEventListener('click', function () {
+      var A = [], B = [];
+      list.querySelectorAll('.tl-item').forEach(function (li) { var n = li.querySelector('.tl-name').textContent; if (li.dataset.to === 'a') A.push(n); else if (li.dataset.to === 'b') B.push(n); });
+      var li = function (arr) { return arr.length ? arr.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') : '<li class="muted">（還沒有）</li>'; };
+      box.querySelector('[data-tl-a]').innerHTML = li(A); box.querySelector('[data-tl-b]').innerHTML = li(B);
+      box.querySelector('[data-tl-out]').hidden = false; track('two_lists', { q: A.length + '/' + B.length });
+    });
+  });
+
+  /* ---------- 婚姻修練指數：每題立刻解碼，全部作答後給總分 ---------- */
+  document.querySelectorAll('[data-stars]').forEach(function (box) {
+    var tiers = JSON.parse(box.querySelector('[data-score-tiers]').textContent), out = box.querySelector('[data-score-result]');
+    var qs = box.querySelectorAll('.quiz-q'), picks = {}, max = 5 * qs.length;
+    var starTxt = function (n) { return '★★★★★'.slice(0, n) + '☆☆☆☆☆'.slice(0, 5 - n); };
+    qs.forEach(function (q, qi) {
+      q.querySelectorAll('.quiz-opt').forEach(function (o) {
+        o.addEventListener('click', function () {
+          q.querySelectorAll('.quiz-opt').forEach(function (x) { x.setAttribute('aria-pressed', String(x === o)); });
+          var v = Number(o.dataset.v); picks[qi] = v;
+          q.querySelector('[data-stars-got]').innerHTML = '修練度 <span class="stars" aria-label="' + v + ' 顆星">' + starTxt(v) + '</span>';
+          q.querySelector('.quiz-answer').hidden = false;
+          if (Object.keys(picks).length < qs.length) return;
+          var sc = Object.keys(picks).reduce(function (t, k) { return t + picks[k]; }, 0), t = tiers[0];
+          tiers.forEach(function (x) { if (sc >= x.min) t = x; });
+          out.innerHTML = '<p class="score-num">你的婚姻修練指數 <strong>' + sc + '</strong> / ' + max + '</p><p class="dc-title">' + esc(t.title) + '</p><p>' + esc(t.d) + '</p>';
+          out.hidden = false; track('quiz_result', { q: 'stars_' + sc });
+        });
+      });
+    });
+  });
 })();

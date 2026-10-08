@@ -697,3 +697,98 @@ legend { font-family: var(--serif); font-weight: 700; padding: 0; margin-bottom:
 .lt-starters { display: flex; flex-wrap: wrap; gap: var(--s2); margin-bottom: var(--s3); }
 .lt-starter { font: inherit; font-size: var(--fs-s); padding: var(--s2) var(--s3); border: 1px dashed var(--gold); background: #fff; border-radius: 999px; color: var(--gold-ink); cursor: pointer; }
 .lt-text { background: transparent; font-family: var(--serif); font-size: var(--fs-l); line-height: 36px; }
+
+.doc-video { position: relative; background: #111; border-radius: 6px; overflow: hidden; box-shadow: 0 18px 36px -22px rgba(42,38,34,.6); }
+.yt-cover { position: absolute; inset: 0; width: 100%; height: 100%; padding: 0; border: 0; background: #111; cursor: pointer; }
+.yt-cover img { width: 100%; height: 100%; object-fit: cover; opacity: .88; transition: opacity .2s; }
+.yt-cover:hover img { opacity: 1; }
+.yt-play { position: absolute; left: 50%; top: 50%; width: 76px; height: 54px; transform: translate(-50%, -50%); background: rgba(42,38,34,.82); border-radius: 14px; }
+.yt-play::after { content: ""; position: absolute; left: 31px; top: 15px; border-style: solid; border-width: 12px 0 12px 20px; border-color: transparent transparent transparent #fff; }
+.yt-cover:hover .yt-play, .yt-cover:focus-visible .yt-play { background: var(--gold-ink); }
+.doc-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.doc-link { font-size: var(--fs-s); text-align: right; margin: var(--s2) 0 var(--s5); }
+.doc-after { font-family: var(--serif); font-weight: 700; margin-bottom: 0; }
+
+.all-intro { margin: var(--s3) 0 0; }
+.topic-group { padding: var(--s6) 0 var(--s2); border-bottom: 1px solid var(--line); }
+.topic-group:last-child { border-bottom: 0; }
+.topic-group-h { display: flex; align-items: baseline; gap: var(--s3); font-size: var(--fs-xl); margin-bottom: var(--s5); }
+.topic-group-h a { color: var(--ink); text-decoration: none; border-bottom: 2px solid var(--gold); }
+.topic-group-h a:hover { color: var(--gold-ink); }
+.topic-group-h a::after { content: " ›"; color: var(--gold-ink); }
+.topic-group-h .topic-count { font-family: var(--sans); font-size: var(--fs-s); font-weight: 400; margin-left: 0; }
+
+.doc-videos { display: grid; gap: var(--s5); margin: var(--s5) 0 var(--s6); }
+@media (min-width: 640px) { .doc-videos { grid-template-columns: 1fr 1fr; } }
+.doc-fig { margin: 0; }
+.doc-fig .doc-video { aspect-ratio: 16 / 9; margin: 0 0 var(--s3); }
+.doc-fig figcaption { font-size: var(--fs-s); color: var(--ink-2); line-height: 1.7; }
+.doc-name { display: block; font-family: var(--serif); font-weight: 700; font-size: var(--fs-l); color: var(--ink); margin-bottom: 2px; }
+.doc-fig figcaption a { white-space: nowrap; }
+
+/* 第三批：世紀大媒婆、新娘訓練班、遊走刀鋒的外遇、有情人、陳顧問時間 */
+.lp-harbor { background: linear-gradient(180deg, #F6EEDF 0%, #E4E9E6 100%); }
+.lp-pearl { background: linear-gradient(135deg, #FDF8F6 0%, #F3E6E8 100%); }
+.lp-dusk { background: linear-gradient(160deg, #F1ECE6 0%, #E2DAD6 100%); }
+.lp-mist { background: linear-gradient(160deg, #EFF0EC 0%, #E3E6E0 100%); }
+.tg { width: 100%; max-width: 420px; padding: var(--s5); background: #FFFDF8; border: 1px solid var(--line); border-radius: 6px; box-shadow: 0 18px 34px -22px rgba(42,38,34,.45); transition: background .3s; }
+.tg.is-b { background: #FFF6E6; }
+.tg-switch { display: grid; grid-template-columns: 1fr 1fr; padding: 4px; background: var(--paper-2); border-radius: 999px; margin-bottom: var(--s4); }
+.tg-switch button { font: inherit; font-size: var(--fs-s); padding: var(--s2) var(--s3); border: 0; border-radius: 999px; background: transparent; color: var(--ink-2); cursor: pointer; }
+.tg-switch button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.tg-switch button[data-side="b"][aria-pressed="true"] { background: var(--gold-ink); }
+.tg-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s3); }
+.tg-list li { line-height: 1.75; padding-left: var(--s4); border-left: 2px solid var(--line); animation: answer-in .3s ease-out; }
+.tg-a li { color: var(--ink-2); text-decoration: line-through; text-decoration-color: rgba(186,117,23,.6); }
+.tg-b li { border-left-color: var(--gold); font-family: var(--serif); }
+.pick-opts { display: grid; gap: var(--s2); margin: var(--s4) 0; }
+.score-num { font-size: var(--fs-s); color: var(--ink-2); }
+.score-num strong { font-family: var(--serif); font-size: var(--fs-2xl); color: var(--gold-ink); }
+.score-note { margin-top: var(--s3); }
+.cmp-bar { display: grid; grid-template-columns: auto 1fr auto; gap: var(--s3); align-items: center; font-size: var(--fs-s); color: var(--ink-2); margin: var(--s4) 0; }
+.cmp-bar input { min-height: 0; padding: 0; accent-color: var(--gold-ink); border: 0; }
+.cmp-rows { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s3); }
+.cmp-rows li { position: relative; display: grid; padding: var(--s4) var(--s5); background: #fff; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+.cmp-a, .cmp-b { grid-area: 1 / 1; margin: 0; line-height: 1.75; transition: opacity .2s; }
+.cmp-a { opacity: calc(1 - var(--c) * 1.6); color: var(--ink-2); }
+.cmp-b { opacity: calc(var(--c) * 1.6 - .6); font-family: var(--serif); }
+.is-after .cmp-rows li { border-color: var(--gold); background: #FFF8EC; }
+.cmp-tag { display: block; font-family: var(--sans); font-size: var(--fs-xs); letter-spacing: .1em; color: var(--gold-ink); margin-bottom: var(--s1); }
+.scene-q { font-family: var(--serif); font-size: var(--fs-l); }
+.fit-boxes { display: grid; gap: var(--s2); margin: var(--s4) 0; }
+.fit-box { align-items: flex-start; }
+.lp-typing .caret { display: inline-block; width: 2px; height: 1em; margin-left: 3px; background: var(--gold-ink); vertical-align: -.1em; animation: caret 1s steps(1) infinite; }
+@keyframes caret { 50% { opacity: 0; } }
+/* 中段 CTA */
+.lp-mini-cta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s3) var(--s4); margin: var(--s5) 0 0; padding: var(--s4) var(--s5); background: var(--cloth); color: var(--cloth-ink); border-radius: 6px; animation: answer-in .35s ease-out; }
+.lp-mini-cta[hidden] { display: none; }
+.lp-mini-cta span { font-family: var(--serif); font-size: var(--fs-l); }
+.lp-mini-cta .btn { margin-left: auto; background: var(--cloth-ink); color: var(--cloth); }
+/* 結尾 CTA 補充 */
+.lp-offer { color: var(--cloth-gold); font-size: var(--fs-s); margin: var(--s5) 0 0; }
+.lp-stores { font-size: var(--fs-s); opacity: .9; margin: var(--s4) 0 0; }
+.lp-stores a { color: var(--cloth-gold); }
+
+/* 系列書整合 */
+.lp-vol { display: inline-block; font-size: var(--fs-xs); letter-spacing: .1em; color: var(--paper); background: var(--gold-ink); padding: 2px var(--s3); border-radius: 999px; margin-bottom: var(--s3); }
+.scene2-panel { display: grid; gap: var(--s3); }
+.scene2 { padding: var(--s4) var(--s5); background: var(--paper-2); border-radius: 6px; border-left: 3px solid var(--gold); }
+.scene2 p:last-child { margin-bottom: 0; }
+.scene2-vol { font-size: var(--fs-xs); letter-spacing: .08em; color: var(--gold-ink); margin-bottom: var(--s2); }
+.scene2-vol span { color: var(--ink-2); margin-left: var(--s3); letter-spacing: 0; }
+.draw-src { font-size: var(--fs-s); color: var(--ink-2); margin-top: var(--s3) !important; }
+.tl-items { list-style: none; margin: var(--s4) 0; padding: 0; display: grid; gap: var(--s2); }
+.tl-item { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--s2) var(--s4); padding: var(--s3) var(--s4); background: #fff; border: 1px solid var(--line); border-radius: var(--radius); }
+.tl-name { font-family: var(--serif); font-weight: 700; }
+.tl-btns { display: flex; gap: var(--s2); }
+.tl-btns .quiz-opt { width: auto; padding: var(--s1) var(--s3); font-size: var(--fs-s); }
+.tl-item[data-to="a"] { border-color: var(--gold-ink); background: #FFF8EC; }
+.tl-item[data-to="b"] { opacity: .7; }
+.tl-add { display: flex; gap: var(--s2); }
+.tl-add input { flex: 1; }
+.tl-cols { display: grid; gap: var(--s4); }
+@media (min-width: 640px) { .tl-cols { grid-template-columns: 1fr 1fr; } }
+.tl-cols ul { margin: 0; padding-left: 1.2em; }
+.tl-done { margin: var(--s4) 0 0; padding-top: var(--s3); border-top: 1px dashed var(--line); }
+.stars { color: var(--gold); letter-spacing: 2px; }
+.lp-quotes .rot { max-width: none; margin-top: var(--s3); }
