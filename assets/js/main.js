@@ -91,13 +91,15 @@
 
   /* ---------- 營業時間提示（台北時間） ---------- */
   function isOpenNow() {
-    var parts = new Intl.DateTimeFormat('en-US', { timeZone: 'Asia/Taipei', weekday: 'short', hour: 'numeric', minute: 'numeric', hour12: false }).formatToParts(new Date());
+    var now = new Date();
+    var ymd = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Taipei', year: 'numeric', month: '2-digit', day: '2-digit' }).format(now);
+    if ((S.HOLIDAYS || []).indexOf(ymd) > -1) return false;  // 國定假日
+    var parts = new Intl.DateTimeFormat('en-US', { timeZone: 'Asia/Taipei', weekday: 'short', hour: 'numeric', minute: 'numeric', hour12: false }).formatToParts(now);
     var get = function (t) { return (parts.find(function (p) { return p.type === t; }) || {}).value; };
     var day = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(get('weekday'));
     var h = Number(get('hour')) % 24 + Number(get('minute')) / 60;
     var range = (S.HOURS || {})[day];
     return !!range && h >= range[0] && h < range[1];
-    // 國定假日無法自動判斷，仍會顯示「營業中」
   }
   document.querySelectorAll('[data-hours-note]').forEach(function (n) {
     var open = isOpenNow();
@@ -116,7 +118,12 @@
   }
 
   /* ---------- 表單送出：有設定 FORM_ENDPOINT 就送到 Google Apps Script；沒有就改用 Email ---------- */
+  var PAGE_T = Date.now();
+  // 防垃圾訊息：陷阱欄位被填（機器人才會填）就假裝成功、不送出；另附版本碼與停留時間給伺服器檢查
   function send(payload) {
+    if (payload.website) return Promise.resolve({ mail: false });
+    delete payload.website;
+    payload._v = 'cp1'; payload._t = Date.now() - PAGE_T;
     if (!S.FORM_ENDPOINT) return Promise.resolve({ mail: true });
     return fetch(S.FORM_ENDPOINT, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(payload) })
       .then(function () { return { mail: false }; });

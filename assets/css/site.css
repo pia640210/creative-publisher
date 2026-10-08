@@ -792,3 +792,12 @@ legend { font-family: var(--serif); font-weight: 700; padding: 0; margin-bottom:
 .tl-done { margin: var(--s4) 0 0; padding-top: var(--s3); border-top: 1px dashed var(--line); }
 .stars { color: var(--gold); letter-spacing: 2px; }
 .lp-quotes .rot { max-width: none; margin-top: var(--s3); }
+
+/* 防垃圾訊息的陷阱欄位：畫面外，讀者看不到 */
+.hp { position: absolute !important; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+.pv-note { margin: var(--s2) 0; }
+.pv-table { width: 100%; border-collapse: collapse; font-size: var(--fs-s); margin: var(--s4) 0; display: block; overflow-x: auto; }
+.pv-table th, .pv-table td { text-align: left; vertical-align: top; padding: var(--s3); border-bottom: 1px solid var(--line); }
+.pv-table th { background: var(--paper-2); white-space: nowrap; }
+.privacy h2 { margin-top: var(--s2); }

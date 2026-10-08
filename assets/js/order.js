@@ -81,6 +81,7 @@
       if (!state.items.length) { status.classList.add('is-error'); status.textContent = '請先勾選至少一本書。'; boxes[0].focus(); return; }
       if (!form.reportValidity()) return;
       var fd = new FormData(form);
+      if (fd.get('website')) { location.href = (S.ROOT || '../') + 'order/thank-you/'; return; }  // 機器人
       var order = {
         type: 'order', id: 'W' + Date.now().toString(36).toUpperCase(), date: new Date().toISOString(),
         name: fd.get('name'), phone: fd.get('phone'), email: fd.get('email'), address: fd.get('address'),
