@@ -801,3 +801,20 @@ legend { font-family: var(--serif); font-weight: 700; padding: 0; margin-bottom:
 .pv-table th, .pv-table td { text-align: left; vertical-align: top; padding: var(--s3); border-bottom: 1px solid var(--line); }
 .pv-table th { background: var(--paper-2); white-space: nowrap; }
 .privacy h2 { margin-top: var(--s2); }
+
+/* 首頁：總編輯選書、書架下方的訂購入口 */
+.editor-pick { max-width: var(--narrow); margin: 0 0 var(--s6); padding: var(--s4) 0 var(--s4) var(--s5); border-left: 2px solid var(--gold); }
+.editor-pick-label { margin: 0 0 var(--s2); font-size: var(--fs-xs); letter-spacing: .14em; color: var(--gold-ink); }
+.editor-pick-text { margin: 0 0 var(--s3); font-family: var(--serif); font-size: var(--fs-m); line-height: 1.85; color: var(--ink); }
+.shelf-intro { max-width: var(--narrow); margin: 0 0 var(--s5); color: var(--ink-2); font-size: var(--fs-m); line-height: 1.85; }
+.shelf-cta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s3) var(--s4); margin: var(--s6) 0 0; color: var(--ink-2); font-size: var(--fs-s); }
+
+/* 書籍頁新增互動模組的補充樣式 */
+.lp-mod .rot { margin: var(--s4) auto 0; }
+@media (min-width: 720px) { .flips.flips-4 { grid-template-columns: repeat(2, 1fr); } }
+.lp-chapters { margin: var(--s3) 0 0; border-bottom: 1px solid var(--line); }
+.lp-chapters summary { cursor: pointer; padding: var(--s3) 0; font-family: var(--serif); font-size: var(--fs-l); }
+.lp-chapters ol, .lp-chapters ul { margin: 0 0 var(--s4); padding-left: var(--s5); }
+.lp-chapters li { margin: 0 0 var(--s3); line-height: 1.8; }
+.lp-chapters li strong { display: block; }
+.lp-chapters li span { color: var(--ink-2); font-size: var(--fs-s); }
