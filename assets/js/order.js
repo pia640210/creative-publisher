@@ -2,17 +2,15 @@
 (function () {
   'use strict';
   var S = window.SITE || {};
-  var O = S.OFFERS || { three: 1000, six: 1700, artSet: 1100 };
+  var O = S.OFFERS || { three: 1000, six: 1700 };
   var SHIP = (S.SHIPPING || {}).upTo4 || 70;
   var fmt = function (n) { return 'NT$' + n.toLocaleString('zh-TW'); };
 
   /* 計價：在所有組合方式中找最便宜的。組合優先放較貴的書，剩下的按原價。 */
   function price(items) {
     var best = { total: Infinity };
-    var hasArtSet = ['art1', 'art2', 'art3'].every(function (k) { return items.some(function (i) { return i.key === k; }); });
-    [false, hasArtSet].filter(function (v, i, a) { return a.indexOf(v) === i; }).forEach(function (useArt) {
+    [false].forEach(function () {
       var pool = items.slice(), base = 0, parts = [];
-      if (useArt) { pool = pool.filter(function (i) { return ['art1', 'art2', 'art3'].indexOf(i.key) === -1; }); base = O.artSet; parts.push('說話的藝術套書'); }
       pool.sort(function (a, b) { return b.price - a.price; });
       var n = pool.length;
       for (var k6 = 0; k6 * 6 <= n; k6++) {

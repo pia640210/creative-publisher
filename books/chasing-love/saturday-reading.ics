@@ -14,11 +14,11 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:saturday-chasing-love@books.hellenchentruegroup.com
-DTSTAMP:20261006T135801Z
+DTSTAMP:20261008T031845Z
 DTSTART;TZID=Asia/Taipei:20261010T140000
 DTEND;TZID=Asia/Taipei:20261010T150000
 RRULE:FREQ=WEEKLY;BYDAY=SA
-SUMMARY:週六品書陪伴時光｜《追愛》線上導讀
+SUMMARY:週六品書陪伴時光｜《追愛》導讀（線上／現場）
 DESCRIPTION:每週一小時，由導讀人帶領深度品讀《追愛》，
  在溫暖的交流中找到屬於你的情感解答。\n報名與提問：
  https://books.hellenchentruegroup.com/books/chasing-love/
