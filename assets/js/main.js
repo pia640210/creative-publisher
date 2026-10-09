@@ -71,7 +71,27 @@
       '<p class="answer-hook">' + esc(main.hook) + '</p>' +
       '<a class="btn btn-primary" href="' + main.url + '"' + ext(main) + ' data-track="book_click" data-book="' + esc(main.title) + '">看這本書</a></div></div>' +
       (rest.length ? '<p class="answer-more">也可以看看：' + rest.map(function (b) { return '<a href="' + b.url + '"' + ext(b) + '>《' + esc(b.title) + '》</a>'; }).join('、') + '</p>' : '') +
+      bundle(d.books) +
       '</div>';
+  }
+  // 推薦的書一次加入訂購單：3 本套用任選 3 本 NT$1,000；2 本則提示再挑一本
+  var ORDER = { 'stand-up': ['ziji', 380], 'be-yourself': ['zuoji', 380], 'how-i-failed': ['shibai', 380], 'dream-or-delusion': ['mengxiang', 380],
+    'dream-builder': ['zhumeng', 380], 'ten-lessons': ['rensheng10', 380], 'art-of-conversation': ['art1', 380, '第 1 冊'], 'sajiao': ['sajiao', 450],
+    'love-your-parents': ['fumu', 380], 'lovers': ['youqing1', 380, 'I'], 'on-the-edge': ['waiyou', 380], 'divorce-black-book': ['lihun', 380],
+    'love-adventure': ['xunqing', 380], 'chasing-love': ['zhuiai', 380], 'bride-school': ['xinliang', 380], 'advisor-time': ['chen1', 380, '第 1 冊'],
+    'forever-young': ['jingtian', 380], 'life-artist': ['shenghuo', 380], 'matchmaker': ['meipo', 380], 'underdog-stand-up': ['baiquan', 380] };
+  function bundle(list) {
+    var items = list.map(function (b) { var m = (b.url.match(/books\/([^/]+)\//) || [])[1]; return ORDER[m] ? { t: b.title, o: ORDER[m] } : null; }).filter(Boolean);
+    if (items.length < 2) return '';
+    var keys = items.map(function (x) { return x.o[0]; }).join(','), sum = items.reduce(function (s, x) { return s + x.o[1]; }, 0);
+    var href = (S.ROOT || './') + 'order/?add=' + keys;
+    var names = items.map(function (x) { return '《' + esc(x.t) + '》' + (x.o[2] ? '（' + x.o[2] + '）' : ''); }).join('');
+    var price = items.length >= 3
+      ? '三本一起帶走：<s>NT$' + sum.toLocaleString() + '</s> <strong>NT$1,000</strong>'
+      : '兩本 NT$' + sum.toLocaleString() + '；再挑一本，三本只要 <strong>NT$1,000</strong>';
+    return '<div class="bundle-box"><p class="bundle-t">把這些書一起帶走</p><p class="bundle-names">' + names + '</p>' +
+      '<p class="bundle-price">' + price + '</p>' +
+      '<a class="btn btn-primary" href="' + href + '" data-track="bundle_add" data-book="' + keys + '">' + (items.length >= 3 ? '一次加入訂購單' : '加入這兩本，再挑一本') + '</a></div>';
   }
   // 預設的讀者心得：每次進站隨機一則
   var voices = []; try { voices = JSON.parse((document.getElementById('voice-data') || {}).textContent || '[]'); } catch (e) {}

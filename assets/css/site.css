@@ -858,3 +858,24 @@ legend { font-family: var(--serif); font-weight: 700; padding: 0; margin-bottom:
 .club-q { margin: var(--s5) 0 var(--s3); padding-left: var(--s4); border-left: 3px solid var(--gold); }
 .club-q p { font-family: var(--serif); font-size: var(--fs-xl); line-height: 1.6; margin: 0; }
 .club-q-text { color: var(--ink-2); max-width: 36em; }
+
+/* 為什麼要買這本書：書裡有什麼、品書時間、送禮、推薦組合 */
+.inside-box { margin: var(--s4) 0; padding: var(--s4) var(--s5); background: #fff; border: 1px solid var(--line); border-left: 3px solid var(--gold); border-radius: var(--radius); }
+.inside-t { font-size: var(--fs-xs); letter-spacing: .12em; color: var(--gold-ink); margin-bottom: var(--s2); }
+.inside-box ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s1); }
+.inside-box li { font-family: var(--serif); font-weight: 700; line-height: 1.7; padding-left: 1.1em; position: relative; }
+.inside-box li::before { content: "✓"; position: absolute; left: 0; color: var(--gold-ink); font-family: var(--sans); }
+.club-buy, .gift-line { font-size: var(--fs-s); color: var(--ink-2); margin: var(--s2) 0; }
+.club-buy { color: var(--cloth); font-weight: 700; }
+.session-buy { font-size: var(--fs-s); margin: 2px 0 0; }
+.beyond-buy { font-size: var(--fs-s); opacity: .9; }
+.beyond-buy a { color: var(--cloth-gold); }
+.bundle-box { margin-top: var(--s5); padding: var(--s4) var(--s5); background: #FFF8EC; border: 1px solid var(--gold); border-radius: 6px; }
+.bundle-t { font-size: var(--fs-xs); letter-spacing: .12em; color: var(--gold-ink); margin-bottom: var(--s1); }
+.bundle-names { font-family: var(--serif); font-weight: 700; margin-bottom: var(--s1); }
+.bundle-price { font-size: var(--fs-s); color: var(--ink-2); }
+.bundle-price strong { font-family: var(--serif); font-size: var(--fs-l); color: var(--gold-ink); }
+.gifts { padding-bottom: var(--s8); }
+.gift-group { padding: var(--s6) 0; border-top: 1px solid var(--line); }
+.gift-when { font-size: var(--fs-s); color: var(--ink-2); margin-bottom: var(--s5); }
+.gift-tip { margin-top: var(--s6); padding: var(--s6) var(--s5); background: var(--paper-2); border-radius: 6px; text-align: center; }
