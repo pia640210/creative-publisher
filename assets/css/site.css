@@ -818,3 +818,9 @@ legend { font-family: var(--serif); font-weight: 700; padding: 0; margin-bottom:
 .lp-chapters li { margin: 0 0 var(--s3); line-height: 1.8; }
 .lp-chapters li strong { display: block; }
 .lp-chapters li span { color: var(--ink-2); font-size: var(--fs-s); }
+
+/* 章節／生活面向的摺疊選單：和其他書的摺疊問答一致（右側＋／−） */
+.lp-chapters summary { list-style: none; position: relative; padding-right: var(--s6); }
+.lp-chapters summary::-webkit-details-marker { display: none; }
+.lp-chapters summary::after { content: "+"; position: absolute; right: 4px; top: 50%; transform: translateY(-50%); font-family: var(--sans); color: var(--gold-ink); font-size: 1.3em; }
+.lp-chapters[open] summary::after { content: "−"; }
