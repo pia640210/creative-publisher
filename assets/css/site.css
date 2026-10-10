@@ -879,3 +879,11 @@ legend { font-family: var(--serif); font-weight: 700; padding: 0; margin-bottom:
 .gift-group { padding: var(--s6) 0; border-top: 1px solid var(--line); }
 .gift-when { font-size: var(--fs-s); color: var(--ink-2); margin-bottom: var(--s5); }
 .gift-tip { margin-top: var(--s6); padding: var(--s6) var(--s5); background: var(--paper-2); border-radius: 6px; text-align: center; }
+
+/* 推薦卡：先被說中（你選了），再被帶往方向 */
+.answer-q { margin-bottom: var(--s1); }
+.answer-dir { font-family: var(--serif); font-weight: 700; font-size: var(--fs-l); color: var(--gold-ink); margin-bottom: var(--s4); line-height: 1.5; }
+.answer-dir span { display: block; font-family: var(--sans); font-weight: 400; font-size: var(--fs-xs); letter-spacing: .12em; color: var(--ink-2); margin-bottom: 2px; }
+
+/* 手機：首頁問題字級略縮，讓 16 字的問題維持一行 */
+@media (max-width: 639px) { .toc-list a { font-size: 1rem; gap: var(--s2); } .toc-dots { min-width: 12px; } }

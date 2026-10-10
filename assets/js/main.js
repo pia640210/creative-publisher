@@ -66,6 +66,7 @@
     var ext = function (b) { return b.ext ? ' target="_blank" rel="noopener"' : ''; };
     return '<div class="answer-card">' +
       '<p class="answer-q">你選了：「' + esc(d.text) + '」</p>' +
+      (d.dir ? '<p class="answer-dir"><span>陪你往這裡走</span>' + esc(d.dir) + '</p>' : '') +
       '<div class="answer-main"><a class="answer-cover" href="' + main.url + '"' + ext(main) + ' tabindex="-1" aria-hidden="true"><span class="cover"><img src="' + main.img + '" alt="" width="300" height="400"></span></a>' +
       '<div><p class="answer-title"><a href="' + main.url + '"' + ext(main) + '>《' + esc(main.title) + '》</a></p>' +
       '<p class="answer-hook">' + esc(main.hook) + '</p>' +
