@@ -887,3 +887,21 @@ legend { font-family: var(--serif); font-weight: 700; padding: 0; margin-bottom:
 
 /* 手機：首頁問題字級略縮，讓 16 字的問題維持一行 */
 @media (max-width: 639px) { .toc-list a { font-size: 1rem; gap: var(--s2); } .toc-dots { min-width: 12px; } }
+
+/* 品書時間頁（整合原報名頁） */
+.club-page > section { padding: var(--s6) 0; border-top: 1px solid var(--line); }
+.club-facts { display: grid; grid-template-columns: 4em 1fr; gap: var(--s2) var(--s4); margin: var(--s4) 0; }
+.club-facts dt { color: var(--ink-2); font-size: var(--fs-s); padding-top: .15em; }
+.club-facts dd { margin: 0; }
+.vm-cover { background: linear-gradient(135deg, var(--cloth) 0%, #1F3331 100%); display: grid; place-items: center; }
+.vm-title { position: absolute; left: var(--s4); bottom: var(--s3); font-family: var(--serif); font-weight: 700; color: var(--cloth-ink); font-size: var(--fs-l); text-align: left; }
+.price-list small { font-size: var(--fs-xs); opacity: .85; }
+.club-bank { margin: var(--s4) 0 var(--s3); }
+.club-bank dt, .club-bank dd { color: var(--cloth-ink); }
+.club-bank .link-btn { color: var(--cloth-gold); }
+.club-box .form-note strong { color: var(--cloth-gold); }
+.club-choice { margin: var(--s3) 0 0; padding: var(--s3) var(--s4); border: 1px solid var(--line); border-radius: var(--radius); background: #fff; }
+.club-choice legend { font-family: var(--sans); font-size: var(--fs-s); font-weight: 400; color: var(--ink-2); padding: 0 var(--s1); margin: 0; }
+.club-choice .check { margin: var(--s2) 0; }
+.club-choice input[type=radio] { width: 20px; min-height: 20px; accent-color: var(--gold-ink); }
+.club-choice input[type=checkbox] { accent-color: var(--gold-ink); }
