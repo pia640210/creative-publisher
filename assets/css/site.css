@@ -991,10 +991,35 @@ legend { font-family: var(--serif); font-weight: 700; padding: 0; margin-bottom:
 .toc-list a[aria-expanded="true"]::before { box-shadow: inset 3px 0 0 var(--accent); }
 .toc-list a:hover .toc-dots, .toc-list a[aria-expanded="true"] .toc-dots { border-color: var(--accent); }
 .voice-ctrl button:hover { border-color: var(--accent); color: var(--accent); }
-.toc-ico { flex: none; width: 20px; height: 20px; color: var(--ink-2); align-self: center; transition: color .2s ease, transform .2s ease; }
+.toc-ico { flex: none; width: 24px; height: 24px; color: var(--ink-2); align-self: center; transition: color .2s ease, transform .2s ease; }
 .toc-list a:hover .toc-ico, .toc-list a[aria-expanded="true"] .toc-ico { color: var(--accent); transform: scale(1.08); }
-/* 手機上不顯示圖標，讓問題維持一行（手機也沒有滑鼠懸停的效果） */
-@media (max-width: 639px) { .toc-ico { display: none; } }
+/* 手機：顯示較小的圖標，拿掉問題後面的虛線，讓 8 題都維持一行 */
+@media (max-width: 639px) { .toc-ico { width: 16px; height: 16px; } .toc-dots { display: none; } .toc-count { margin-left: auto; } }
 
 /* 特別窄的手機：數量標籤縮小一點 */
 @media (max-width: 379px) { .toc-count { padding: 1px 6px; letter-spacing: 0; } .toc-dots { min-width: 6px; } .toc-list a { gap: 6px; } }
+
+/* ===== 首頁強化：A 劃線、B 浮現、C 書封、D 作者 ===== */
+/* B：捲動到時輕輕浮現 */
+.motion-ok .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+.motion-ok .reveal.is-in { opacity: 1; transform: none; }
+/* A：「原本以為」被一筆劃掉，接著「換個角度」浮現 */
+.motion-ok .angle.strike-ready .angle-before s { text-decoration: none; background: linear-gradient(var(--accent), var(--accent)) no-repeat 0 58% / 0% 2px; transition: background-size .7s ease; transition-delay: calc(var(--i) * .25s + .2s); }
+.motion-ok .angle.strike-ready.is-in .angle-before s { background-size: 100% 2px; }
+.motion-ok .angle.strike-ready .angle-after, .motion-ok .angle.strike-ready .angle-book { opacity: 0; transform: translateY(8px); transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--i) * .25s + .85s); }
+.motion-ok .angle.strike-ready.is-in .angle-after, .motion-ok .angle.strike-ready.is-in .angle-book { opacity: 1; transform: none; }
+/* C：書封懸停時，像一本書被拿起來 */
+.book-link .cover { transition: transform .35s ease, box-shadow .35s ease; transform-origin: 30% 50%; }
+.book-link:hover .cover, .book-link:focus-visible .cover { transform: perspective(900px) rotateY(-9deg) translateY(-4px); box-shadow: 0 2px 4px rgba(42,38,34,.18), 14px 22px 32px -16px rgba(42,38,34,.55); }
+@media (prefers-reduced-motion: reduce) { .book-link:hover .cover { transform: none; } }
+/* D：作者區塊更有份量 */
+.author-feature { background: var(--paper-2); }
+.author-feature .author-teaser-inner { align-items: center; }
+.author-feature .portrait { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 6px var(--paper), 0 0 0 7px var(--line), 0 18px 34px -18px rgba(42,38,34,.5); }
+@media (min-width: 800px) { .author-feature .author-teaser-inner { grid-template-columns: 240px 1fr; gap: var(--s8); } .author-feature .portrait { width: 240px; height: 240px; } }
+.author-kicker { font-size: var(--fs-xs); letter-spacing: .14em; color: var(--accent); margin-bottom: var(--s2); }
+.author-facts { list-style: none; margin: var(--s5) 0; padding: 0; display: grid; gap: var(--s3); }
+@media (min-width: 640px) { .author-facts { grid-template-columns: repeat(3, 1fr); } }
+.author-facts li { padding: var(--s4); background: var(--paper); border: 1px solid var(--line); border-radius: 6px; }
+.author-facts strong { display: block; font-family: var(--serif); font-size: var(--fs-xl); color: var(--ink); line-height: 1.3; margin-bottom: var(--s1); }
+.author-facts span { font-size: var(--fs-s); color: var(--ink-2); line-height: 1.6; }

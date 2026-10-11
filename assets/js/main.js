@@ -288,3 +288,26 @@
     });
   });
 })();
+
+/* ---------- 首頁：捲動時浮現，以及「換個角度」的劃線動畫 ----------
+   只有支援、且沒有設定減少動態時才啟用；一開始就在畫面裡的內容不會被隱藏 */
+(function () {
+  if (!('IntersectionObserver' in window)) return;
+  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.documentElement.classList.add('motion-ok');
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); } });
+  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.12 });
+  var vh = window.innerHeight;
+  // B：首頁第一屏以下的各區塊
+  if (document.querySelector('.hero')) {
+    document.querySelectorAll('main > section:not(.hero), main > .section, main > div > section').forEach(function (el) {
+      if (el.getBoundingClientRect().top > vh * 0.9) { el.classList.add('reveal'); io.observe(el); }
+    });
+  }
+  // A：「換個角度」逐張劃線
+  document.querySelectorAll('.angle').forEach(function (el, i) {
+    el.style.setProperty('--i', i);
+    if (el.getBoundingClientRect().top > vh * 0.9) { el.classList.add('strike-ready'); io.observe(el); }
+  });
+})();
