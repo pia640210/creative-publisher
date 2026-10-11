@@ -905,3 +905,49 @@ legend { font-family: var(--serif); font-weight: 700; padding: 0; margin-bottom:
 .club-choice .check { margin: var(--s2) 0; }
 .club-choice input[type=radio] { width: 20px; min-height: 20px; accent-color: var(--gold-ink); }
 .club-choice input[type=checkbox] { accent-color: var(--gold-ink); }
+
+/* =========================================================
+   公益送書計畫「讓好書走得更遠」
+   ========================================================= */
+.give-hero { padding: var(--s7) 0; background: linear-gradient(160deg, #EEF2EE 0%, #F7F1E6 100%); border-bottom: 1px solid var(--line); }
+.give-hero-inner { display: grid; gap: var(--s6); align-items: center; }
+@media (min-width: 960px) { .give-hero-inner { grid-template-columns: 1.3fr 1fr; gap: var(--s8); } }
+.give-hero h1 { font-size: clamp(2rem, 7vw, 3.25rem); letter-spacing: .06em; margin-bottom: var(--s4); }
+.give-sub { font-size: var(--fs-l); line-height: 1.85; color: var(--ink-2); max-width: 30em; }
+.give-third a { color: var(--cloth); font-weight: 700; }
+.give-status { font-size: var(--fs-s); color: var(--ink-2); margin-top: var(--s4); }
+.give-status span, .tbd { display: inline-block; font-size: var(--fs-xs); letter-spacing: .08em; padding: 1px var(--s2); border-radius: 999px; background: var(--cloth); color: var(--cloth-ink); margin-right: var(--s2); vertical-align: .1em; }
+.tbd { background: #F3E3C3; color: var(--gold-ink); margin: 0 2px; }
+.give-covers { position: relative; height: 260px; max-width: 360px; margin: 0 auto; width: 100%; }
+.give-cover { position: absolute; width: 150px; top: 20px; box-shadow: 0 18px 34px -18px rgba(42,38,34,.5); }
+.give-c0 { left: 0; transform: rotate(-7deg); } .give-c1 { left: 105px; top: 0; z-index: 2; } .give-c2 { right: 0; transform: rotate(6deg); }
+@media (max-width: 639px) { .give-covers { height: 200px; } .give-cover { width: 110px; } .give-c1 { left: calc(50% - 55px); } }
+.give { padding-bottom: var(--s8); }
+.give-sec { padding: var(--s7) 0; border-bottom: 1px solid var(--line); }
+.give-sec > h2 { font-size: var(--fs-2xl); margin-bottom: var(--s4); }
+.give-sec > p { max-width: 42em; line-height: 1.95; }
+.give-why { display: grid; gap: var(--s4); margin-top: var(--s5); }
+@media (min-width: 800px) { .give-why { grid-template-columns: repeat(3, 1fr); } }
+.give-why > div { padding: var(--s5); background: #fff; border: 1px solid var(--line); border-radius: 6px; }
+.give-why h3 { font-size: var(--fs-l); margin-bottom: var(--s2); }
+.give-why p { color: var(--ink-2); margin: 0; line-height: 1.85; }
+.give-principle { margin-top: var(--s5); padding-left: var(--s4); border-left: 3px solid var(--gold); font-family: var(--serif); font-weight: 700; font-size: var(--fs-l); }
+.give-ways { display: grid; gap: var(--s4); margin-top: var(--s5); }
+@media (min-width: 900px) { .give-ways { grid-template-columns: repeat(3, 1fr); } }
+.give-way { display: flex; flex-direction: column; padding: var(--s5); background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--cloth); border-radius: 6px; }
+.give-way-tag { font-size: var(--fs-xs); letter-spacing: .1em; color: var(--cloth); margin-bottom: var(--s1); }
+.give-way h3 { font-size: var(--fs-xl); margin-bottom: var(--s3); }
+.give-way ol { margin: 0 0 var(--s5); padding-left: 1.3em; color: var(--ink-2); line-height: 1.85; flex: 1; }
+.give-way .btn { align-self: flex-start; }
+.give-books { margin-top: var(--s5); }
+@media (min-width: 640px) { .give-books { grid-template-columns: repeat(3, 1fr); } }
+.give-use { font-size: var(--fs-s); color: var(--ink-2); line-height: 1.7; margin: var(--s2) 0 0; padding-top: var(--s2); border-top: 1px dashed var(--line); }
+.give-use span { display: block; font-size: var(--fs-xs); letter-spacing: .08em; color: var(--cloth); }
+.give-form-sec .give-form { max-width: 36em; margin-top: var(--s4); padding: var(--s5); background: #fff; border: 1px solid var(--line); border-radius: 6px; }
+.give-either { margin-top: calc(var(--s1) * -1); }
+.give-empty { padding: var(--s6) var(--s5); border: 2px dashed var(--line); border-radius: 6px; text-align: center; color: var(--ink-2); }
+.give-empty p:last-child { margin: 0; max-width: 36em; margin-inline: auto; }
+.give-end { margin-top: var(--s7); padding: var(--s7) var(--s5); background: var(--cloth); color: var(--cloth-ink); border-radius: 8px; text-align: center; }
+.give-end h2 { color: var(--cloth-ink); font-size: clamp(1.4rem, 4.4vw, 2rem); line-height: 1.55; }
+.give-end p { max-width: 34em; margin-inline: auto; }
+.give-end .cta-row { justify-content: center; }
