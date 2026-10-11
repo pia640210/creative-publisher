@@ -94,10 +94,23 @@
       '<p class="bundle-price">' + price + '</p>' +
       '<a class="btn btn-primary" href="' + href + '" data-track="bundle_add" data-book="' + keys + '">' + (items.length >= 3 ? '一次加入訂購單' : '加入這兩本，再挑一本') + '</a></div>';
   }
-  // 讀者的話：每次進站從隨機一則開始，之後每 7 秒柔和地換下一則
+  // 讀者的話：隨機順序播放，每 7 秒換一則；26 則全部輪過一次才重新洗牌，不會連續重複
   // 滑鼠停留、鍵盤聚焦或按「暫停」時停止；選了問題時暫停，取消後恢復；設定減少動態時不自動播放
   var voices = []; try { voices = JSON.parse((document.getElementById('voice-data') || {}).textContent || '[]'); } catch (e) {}
-  var vIdx = voices.length ? Math.floor(Math.random() * voices.length) : -1;
+  function shuffle(n, avoidFirst) {
+    var a = []; for (var i = 0; i < n; i++) a.push(i);
+    for (var j = n - 1; j > 0; j--) { var k = Math.floor(Math.random() * (j + 1)); var t = a[j]; a[j] = a[k]; a[k] = t; }
+    if (n > 1 && a[0] === avoidFirst) { var s = a[0]; a[0] = a[1]; a[1] = s; }
+    return a;
+  }
+  var vOrder = shuffle(voices.length, -1), vPos = 0;
+  var vIdx = voices.length ? vOrder[0] : -1;
+  function vStep(dir) {
+    vPos += dir;
+    if (vPos >= vOrder.length) { vOrder = shuffle(voices.length, vIdx); vPos = 0; }
+    if (vPos < 0) vPos = vOrder.length - 1;
+    vIdx = vOrder[vPos];
+  }
   var vPaused = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches, vHover = false, vSuspended = false;
   function voiceHtml(v) {
     return '<figure class="answer-voice">' +
@@ -105,7 +118,7 @@
       '<blockquote><p>「' + esc(v.text) + '」</p></blockquote>' +
       '<figcaption>' + esc(v.name) + '，讀<a href="' + v.url + '">《' + esc(v.title) + '》</a></figcaption></figure>' +
       '<div class="voice-ctrl"><button type="button" data-v="prev" aria-label="上一則讀者心得">‹</button>' +
-      '<span class="voice-n">' + (vIdx + 1) + ' / ' + voices.length + '</span>' +
+      '<span class="voice-n">' + (vPos + 1) + ' / ' + voices.length + '</span>' +
       '<button type="button" data-v="next" aria-label="下一則讀者心得">›</button>' +
       '<button type="button" data-v="pause" class="voice-pause" aria-pressed="' + vPaused + '">' + (vPaused ? '繼續播放' : '暫停') + '</button></div>';
   }
@@ -123,7 +136,7 @@
     answer.addEventListener('click', function (e) {
       var b = e.target.closest('[data-v]'); if (!b) return;
       if (b.dataset.v === 'pause') { vPaused = !vPaused; b.setAttribute('aria-pressed', String(vPaused)); b.textContent = vPaused ? '繼續播放' : '暫停'; return; }
-      vIdx = (vIdx + (b.dataset.v === 'next' ? 1 : voices.length - 1)) % voices.length; showVoice(true);
+      vStep(b.dataset.v === 'next' ? 1 : -1); showVoice(true);
       setTimeout(function () { var nb = answer.querySelector('[data-v="' + b.dataset.v + '"]'); if (nb) nb.focus(); }, 300);
     });
     answer.addEventListener('mouseenter', function () { vHover = true; });
@@ -132,7 +145,7 @@
     answer.addEventListener('focusout', function () { vHover = false; });
     setInterval(function () {
       if (vPaused || vHover || vSuspended || document.hidden || !answer.querySelector('.answer-voice')) return;
-      vIdx = (vIdx + 1) % voices.length; showVoice(true);
+      vStep(1); showVoice(true);
     }, 7000);
   })();
   showVoice();

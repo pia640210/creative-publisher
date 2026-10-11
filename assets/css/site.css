@@ -980,3 +980,21 @@ legend { font-family: var(--serif); font-weight: 700; padding: 0; margin-bottom:
 .voice-ctrl .voice-pause { margin-left: var(--s2); }
 .voice-n { min-width: 4.5em; text-align: center; font-variant-numeric: tabular-nums; }
 @media (prefers-reduced-motion: reduce) { .toc-list a:hover { transform: none; } }
+
+/* ===== 首頁活絡化 第二步：暖色亮點＋清單小圖標 =====
+   暖色只用在：訂購按鈕、問題的數量標籤（懸停／選中）、選中問題的左側線、圖標懸停、輪播控制鈕
+   換顏色只要改 --accent 這一行（磚紅 #B4513A／琥珀 #A65617／玫瑰 #B04A62） */
+:root { --accent: #B4513A; --accent-ink: #FFFFFF; }
+.header-order { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.header-order:hover, .header-order:focus-visible { background: color-mix(in srgb, var(--accent) 86%, #000); border-color: color-mix(in srgb, var(--accent) 86%, #000); color: var(--accent-ink); }
+.toc-list a:hover .toc-count, .toc-list a[aria-expanded="true"] .toc-count { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.toc-list a[aria-expanded="true"]::before { box-shadow: inset 3px 0 0 var(--accent); }
+.toc-list a:hover .toc-dots, .toc-list a[aria-expanded="true"] .toc-dots { border-color: var(--accent); }
+.voice-ctrl button:hover { border-color: var(--accent); color: var(--accent); }
+.toc-ico { flex: none; width: 20px; height: 20px; color: var(--ink-2); align-self: center; transition: color .2s ease, transform .2s ease; }
+.toc-list a:hover .toc-ico, .toc-list a[aria-expanded="true"] .toc-ico { color: var(--accent); transform: scale(1.08); }
+/* 手機上不顯示圖標，讓問題維持一行（手機也沒有滑鼠懸停的效果） */
+@media (max-width: 639px) { .toc-ico { display: none; } }
+
+/* 特別窄的手機：數量標籤縮小一點 */
+@media (max-width: 379px) { .toc-count { padding: 1px 6px; letter-spacing: 0; } .toc-dots { min-width: 6px; } .toc-list a { gap: 6px; } }
