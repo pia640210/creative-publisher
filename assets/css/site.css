@@ -1023,3 +1023,37 @@ legend { font-family: var(--serif); font-weight: 700; padding: 0; margin-bottom:
 .author-facts li { padding: var(--s4); background: var(--paper); border: 1px solid var(--line); border-radius: 6px; }
 .author-facts strong { display: block; font-family: var(--serif); font-size: var(--fs-xl); color: var(--ink); line-height: 1.3; margin-bottom: var(--s1); }
 .author-facts span { font-size: var(--fs-s); color: var(--ink-2); line-height: 1.6; }
+
+/* ===== 書籍頁強化（夢想與妄想）：作者故事、章節預覽、讀者心得、系列組合 ===== */
+.author-story { padding: var(--s6) var(--s5) !important; background: var(--paper-2); border-radius: 8px; margin: var(--s5) 0; }
+.story-kicker { font-size: var(--fs-xs); letter-spacing: .14em; color: var(--accent); margin-bottom: var(--s2); }
+.author-story h2 { font-size: var(--fs-xl); line-height: 1.5; }
+.story-quote { margin: var(--s4) 0 var(--s5); padding-left: var(--s4); border-left: 3px solid var(--accent); }
+.story-quote p { font-family: var(--serif); font-size: var(--fs-l); line-height: 1.85; margin: 0; }
+.story-saw-t { font-size: var(--fs-s); color: var(--ink-2); margin-bottom: var(--s2); }
+.story-saw li { font-size: var(--fs-s); }
+.ch-list { margin: var(--s3) 0 0; padding-left: 1.6em; display: grid; gap: var(--s3); }
+.ch-list li { line-height: 1.75; color: var(--ink-2); }
+.ch-list li::marker { font-family: var(--serif); font-weight: 700; color: var(--accent); }
+.ch-list strong, .ch-list b { color: var(--ink); }
+.ch-more { margin-top: var(--s3); }
+.ed-inline { margin-top: var(--s5); padding: var(--s4) var(--s5); border-left: 3px solid var(--gold); background: #fff; border-radius: 0 6px 6px 0; }
+.ed-inline-t { font-size: var(--fs-xs); letter-spacing: .12em; color: var(--gold-ink); margin-bottom: var(--s2); }
+.ed-inline p:last-child { margin: 0; line-height: 1.9; }
+.reviews-grid { display: grid; gap: var(--s4); }
+@media (min-width: 640px) { .reviews-grid { grid-template-columns: 1fr 1fr; } }
+.rv-share { margin-top: var(--s5); }
+.rv-share summary { font-size: var(--fs-l); }
+.series-box { margin: var(--s6) 0; padding: var(--s6) var(--s5) !important; background: #FFF8EC; border: 1px solid var(--gold); border-radius: 8px; }
+.series-box h2 { font-size: var(--fs-xl); }
+.series-path { list-style: none; margin: var(--s5) 0 var(--s4); padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s3); counter-reset: s; }
+.series-path a { display: grid; gap: var(--s2); color: var(--ink); text-decoration: none; font-size: var(--fs-s); line-height: 1.5; }
+.series-path .cover { width: 100%; max-width: 120px; }
+.series-path strong { display: block; color: var(--accent); font-size: var(--fs-xs); letter-spacing: .06em; }
+.series-path a:hover span:last-child { text-decoration: underline; }
+.series-price { font-size: var(--fs-s); color: var(--ink-2); margin-bottom: var(--s3); }
+.series-price strong { font-family: var(--serif); font-size: var(--fs-xl); color: var(--accent); }
+.series-club { font-size: var(--fs-s); color: var(--ink-2); margin: var(--s4) 0 0; padding-top: var(--s3); border-top: 1px dashed var(--line); }
+.mini-series { color: var(--cloth-gold); font-size: var(--fs-s); order: 3; flex-basis: 100%; }
+.hero-mini-cover { display: none; }
+@media (max-width: 959px) { .hero-mini-cover { display: block; width: 84px; float: right; margin: 0 0 var(--s3) var(--s4); } }
