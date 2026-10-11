@@ -951,3 +951,32 @@ legend { font-family: var(--serif); font-weight: 700; padding: 0; margin-bottom:
 .give-end h2 { color: var(--cloth-ink); font-size: clamp(1.4rem, 4.4vw, 2rem); line-height: 1.55; }
 .give-end p { max-width: 34em; margin-inline: auto; }
 .give-end .cta-row { justify-content: center; }
+
+/* ===== 首頁活絡化 第一步 ===== */
+/* 標題逐行淡入（只在從外面進站時） */
+.intro .ht-line { display: inline-block; opacity: 0; transform: translateY(8px); animation: ht-in .55s ease-out forwards; }
+.intro .ht-line:nth-of-type(2) { animation-delay: .14s; }
+@keyframes ht-in { to { opacity: 1; transform: none; } }
+/* 「你最近在想什麼？」更醒目＋引導句 */
+.hero .toc-title { font-size: var(--fs-xl); }
+.toc-guide { font-size: var(--fs-s); color: var(--ink-2); margin: var(--s2) 0 0; }
+/* 心境清單：懸停時整列微微浮起 */
+/* 懸停底色用 ::before 畫在文字後方，左右多出一點空間，但分隔線維持原本的寬度 */
+.toc-list a { position: relative; isolation: isolate; transition: color .2s ease, transform .2s ease; }
+.toc-list a::before { content: ""; position: absolute; z-index: -1; inset: 3px calc(var(--s3) * -1); border-radius: 6px; background: transparent; transition: background-color .2s ease, box-shadow .2s ease; }
+.toc-list a:hover, .toc-list a:focus-visible { transform: translateY(-1px); }
+.toc-list a:hover::before, .toc-list a:focus-visible::before { background: #fff; box-shadow: 0 6px 18px -12px rgba(42,38,34,.45); }
+.toc-list a[aria-expanded="true"]::before { background: #FFF8EC; box-shadow: inset 3px 0 0 var(--gold); }
+.toc-list a:hover .toc-dots { border-color: var(--gold); }
+/* 「3 本」改成圓角標籤 */
+.toc-count { display: inline-block; padding: 2px 10px; border-radius: 999px; background: var(--paper-2); border: 1px solid var(--line); font-size: var(--fs-xs); line-height: 1.6; white-space: nowrap; transition: background-color .2s, border-color .2s, color .2s; }
+.toc-list a:hover .toc-count, .toc-list a[aria-expanded="true"] .toc-count { background: var(--gold-ink); border-color: var(--gold-ink); color: #fff; }
+/* 讀者的話：柔和切換＋控制鈕 */
+.hero-answer { transition: opacity .28s ease; }
+.hero-answer.is-fading { opacity: 0; }
+.voice-ctrl { display: flex; align-items: center; gap: var(--s2); margin-top: var(--s4); font-size: var(--fs-xs); color: var(--ink-2); }
+.voice-ctrl button { font: inherit; min-width: 32px; min-height: 32px; padding: 0 var(--s2); border: 1px solid var(--line); border-radius: 999px; background: transparent; color: var(--ink-2); cursor: pointer; }
+.voice-ctrl button:hover { border-color: var(--gold); color: var(--gold-ink); }
+.voice-ctrl .voice-pause { margin-left: var(--s2); }
+.voice-n { min-width: 4.5em; text-align: center; font-variant-numeric: tabular-nums; }
+@media (prefers-reduced-motion: reduce) { .toc-list a:hover { transform: none; } }

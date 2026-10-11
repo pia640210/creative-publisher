@@ -52,7 +52,7 @@
         if (wasOpen) { result.innerHTML = ''; if (wide) showVoice(); return; }
         a.setAttribute('aria-expanded', 'true');
         var html = bookCard(d);
-        if (wide) { result.innerHTML = ''; answer.innerHTML = html; }
+        if (wide) { result.innerHTML = ''; answer.innerHTML = html; vSuspended = true; }
         else {
           result.innerHTML = html;
           result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -94,17 +94,47 @@
       '<p class="bundle-price">' + price + '</p>' +
       '<a class="btn btn-primary" href="' + href + '" data-track="bundle_add" data-book="' + keys + '">' + (items.length >= 3 ? '一次加入訂購單' : '加入這兩本，再挑一本') + '</a></div>';
   }
-  // 預設的讀者心得：每次進站隨機一則
+  // 讀者的話：每次進站從隨機一則開始，之後每 7 秒柔和地換下一則
+  // 滑鼠停留、鍵盤聚焦或按「暫停」時停止；選了問題時暫停，取消後恢復；設定減少動態時不自動播放
   var voices = []; try { voices = JSON.parse((document.getElementById('voice-data') || {}).textContent || '[]'); } catch (e) {}
-  var voice = voices.length ? voices[Math.floor(Math.random() * voices.length)] : null;
-  function showVoice() {
-    var answer = document.getElementById('hero-answer');
-    if (!answer || !voice) return;
-    answer.innerHTML = '<figure class="answer-voice">' +
-      '<a class="voice-cover" href="' + voice.url + '" tabindex="-1" aria-hidden="true"><span class="cover"><img src="' + voice.img + '" alt="" width="300" height="400"></span></a>' +
-      '<blockquote><p>「' + esc(voice.text) + '」</p></blockquote>' +
-      '<figcaption>' + esc(voice.name) + '，讀<a href="' + voice.url + '">《' + esc(voice.title) + '》</a></figcaption></figure>';
+  var vIdx = voices.length ? Math.floor(Math.random() * voices.length) : -1;
+  var vPaused = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches, vHover = false, vSuspended = false;
+  function voiceHtml(v) {
+    return '<figure class="answer-voice">' +
+      '<a class="voice-cover" href="' + v.url + '" tabindex="-1" aria-hidden="true"><span class="cover"><img src="' + v.img + '" alt="" width="300" height="400"></span></a>' +
+      '<blockquote><p>「' + esc(v.text) + '」</p></blockquote>' +
+      '<figcaption>' + esc(v.name) + '，讀<a href="' + v.url + '">《' + esc(v.title) + '》</a></figcaption></figure>' +
+      '<div class="voice-ctrl"><button type="button" data-v="prev" aria-label="上一則讀者心得">‹</button>' +
+      '<span class="voice-n">' + (vIdx + 1) + ' / ' + voices.length + '</span>' +
+      '<button type="button" data-v="next" aria-label="下一則讀者心得">›</button>' +
+      '<button type="button" data-v="pause" class="voice-pause" aria-pressed="' + vPaused + '">' + (vPaused ? '繼續播放' : '暫停') + '</button></div>';
   }
+  function showVoice(fade) {
+    var answer = document.getElementById('hero-answer');
+    if (!answer || vIdx < 0) return;
+    vSuspended = false;
+    var render = function () { answer.innerHTML = voiceHtml(voices[vIdx]); answer.classList.remove('is-fading'); };
+    if (fade && !(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) { answer.classList.add('is-fading'); setTimeout(render, 280); }
+    else render();
+  }
+  (function () {
+    var answer = document.getElementById('hero-answer');
+    if (!answer || vIdx < 0) return;
+    answer.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-v]'); if (!b) return;
+      if (b.dataset.v === 'pause') { vPaused = !vPaused; b.setAttribute('aria-pressed', String(vPaused)); b.textContent = vPaused ? '繼續播放' : '暫停'; return; }
+      vIdx = (vIdx + (b.dataset.v === 'next' ? 1 : voices.length - 1)) % voices.length; showVoice(true);
+      setTimeout(function () { var nb = answer.querySelector('[data-v="' + b.dataset.v + '"]'); if (nb) nb.focus(); }, 300);
+    });
+    answer.addEventListener('mouseenter', function () { vHover = true; });
+    answer.addEventListener('mouseleave', function () { vHover = false; });
+    answer.addEventListener('focusin', function () { vHover = true; });
+    answer.addEventListener('focusout', function () { vHover = false; });
+    setInterval(function () {
+      if (vPaused || vHover || vSuspended || document.hidden || !answer.querySelector('.answer-voice')) return;
+      vIdx = (vIdx + 1) % voices.length; showVoice(true);
+    }, 7000);
+  })();
   showVoice();
 
   function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
