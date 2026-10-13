@@ -34,11 +34,11 @@
   }
   window.orderPrice = price; // 方便測試
 
-  function nudge(items, current) {
+  function nudge(items, current, extraPrice) {
     var n = items.length;
     if (!n) return '';
-    var plusOne = price(items.concat([{ key: '_x', price: 380 }]));
-    if (plusOne.total <= current.total) return '再選 1 本，總價反而更便宜：現在 ' + fmt(current.total) + '，' + (n + 1) + ' 本只要 ' + fmt(plusOne.total) + '。';
+    var plusOne = price(items.concat([{ key: '_x', price: extraPrice || 380 }])); // extraPrice：尚未選的書裡最貴的一本，確保提示對任何選擇都成立
+    if (plusOne.total <= current.total) return '再選 1 本，總價反而更便宜：現在 ' + fmt(current.total) + '，' + (n + 1) + ' 本最多 ' + fmt(plusOne.total) + '。';
     if (n < 3) return '再選 ' + (3 - n) + ' 本，3 本只要 ' + fmt(O.three) + '。';
     if (n === 4) return '再選 2 本，買五送一，6 本只要 ' + fmt(O.six) + '。';
     return '';
@@ -59,7 +59,8 @@
       $('[data-sum-ship]').textContent = ship === null ? '—' : (ship === 'later' ? '5 本以上，由專人另行通知' : fmt(ship));
       var total = p.total + (typeof ship === 'number' ? ship : 0);
       $('[data-sum-total]').textContent = fmt(total) + (ship === 'later' ? '＋運費' : '');
-      $('[data-nudge]').textContent = nudge(items, p);
+      var unsel = boxes.filter(function (b) { return !b.checked; }).map(function (b) { return Number(b.dataset.price) || 380; });
+      $('[data-nudge]').textContent = nudge(items, p, unsel.length ? Math.max.apply(null, unsel) : 380);
       var bar = document.querySelector('[data-order-bar]');
       if (bar) { bar.querySelector('[data-bar-count]').textContent = n + ' 本'; bar.querySelector('[data-bar-total]').textContent = fmt(total); bar.classList.toggle('is-visible', n > 0); }
       return { items: items, pricing: p, shipping: ship, total: total };
