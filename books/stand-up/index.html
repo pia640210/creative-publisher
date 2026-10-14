@@ -417,6 +417,9 @@ footer{border-top:1px solid var(--line);padding:32px 0 100px;font-size:13px;colo
 .cp-rv-more summary::after{content:" ＋";color:#B4513A}
 .cp-rv-more[open] summary{display:none}
 .cp-rv-more .cp-rv-grid{margin-top:16px}
+
+/* 修正：圖片標記了寬高後，高度要依設定的比例自動計算（作者照片、其他著作書封） */
+.author-photo,.more-grid img{height:auto}
 </style>
 <style id="cp-shell">
 .cp-top{background:#2A2622;color:#F3EEE4;font:14px/1.4 -apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;position:relative;z-index:60}
