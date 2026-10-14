@@ -1057,3 +1057,7 @@ legend { font-family: var(--serif); font-weight: 700; padding: 0; margin-bottom:
 .mini-series { color: var(--cloth-gold); font-size: var(--fs-s); order: 3; flex-basis: 100%; }
 .hero-mini-cover { display: none; }
 @media (max-width: 959px) { .hero-mini-cover { display: block; width: 84px; float: right; margin: 0 0 var(--s3) var(--s4); } }
+
+/* 系列書各冊介紹：分頁切換時，隱藏的冊別不顯示 */
+section.volume[hidden]{display:none!important}
+.vol-tabs{margin:var(--s4) 0}

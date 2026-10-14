@@ -299,6 +299,21 @@ footer{border-top:1px solid var(--line);padding:32px 0 100px;font-size:13px;colo
 .cp-wrote{font-size:17px;line-height:1.95;max-width:40em;padding-left:18px;border-left:3px solid var(--cp-accent);margin-top:12px}
 .cp-white{background:#fff}
 
+
+/* 三本一起讀（官網共用元件） */
+.cp-series{background:#F6F0E4;padding:64px 20px;font-family:-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;color:#2A2622}
+.cp-series-in{max-width:760px;margin:0 auto}
+.cp-series-k{font-size:13px;letter-spacing:.14em;color:#B4513A;margin:0 0 8px}
+.cp-series h2{font-family:"Noto Serif TC",serif;font-size:clamp(22px,4.6vw,30px);line-height:1.45;margin:0 0 24px;color:#2A2622}
+.cp-series-path{list-style:none;margin:0 0 22px;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:600px}
+.cp-series-path a{display:grid;gap:10px;color:#2A2622;text-decoration:none;font-size:14px;line-height:1.5}
+.cp-series-path img{width:100%;max-width:150px;height:auto;aspect-ratio:3/4;object-fit:cover;border-radius:2px;box-shadow:0 10px 24px -14px rgba(42,38,34,.55);transition:transform .3s}
+.cp-series-path a:hover img{transform:translateY(-4px)}
+.cp-series-path strong{display:block;color:#B4513A;font-size:13px}
+.cp-series-price{font-size:15px;color:#5E574E;margin:0 0 14px}
+.cp-series-price strong{font-family:"Noto Serif TC",serif;font-size:26px;color:#B4513A}
+.cp-series-btn{display:inline-block;background:#B4513A;color:#fff;text-decoration:none;font-weight:700;padding:13px 28px;border-radius:999px}
+.cp-series-btn:hover{background:#9A4430}
 </style>
 <style id="cp-shell">
 .cp-top{background:#2A2622;color:#F3EEE4;font:14px/1.4 -apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;position:relative;z-index:60}
@@ -500,6 +515,12 @@ footer{border-top:1px solid var(--line);padding:32px 0 100px;font-size:13px;colo
 </section>
 
 <!-- 作者 -->
+<section class="cp-series" aria-labelledby="cp-series-t"><div class="cp-series-in">
+<p class="cp-series-k">一起讀，走得更遠</p><h2 id="cp-series-t">把日子過得更好，三本一起讀</h2>
+<ol class="cp-series-path"><li><a href="../life-artist/"><img src="../../assets/img/books/life-artist.webp" alt="" width="300" height="400" loading="lazy"><span><strong>把日子過成藝術</strong>《生活藝術家》</span></a></li><li><a href="./"><img src="../../assets/img/books/forever-young.webp" alt="" width="300" height="400" loading="lazy"><span><strong>不被年齡定義</strong>《今天你幾歲》</span></a></li><li><a href="../advisor-time/"><img src="../../assets/img/books/advisor-time-1.webp" alt="" width="300" height="400" loading="lazy"><span><strong>人生難題有人可問</strong>《陳顧問時間 1》</span></a></li></ol>
+<p class="cp-series-price">三本一起帶走：<s>NT$1,140</s> <strong>NT$1,000</strong></p>
+<a class="cp-series-btn" href="../../order/?add=shenghuo,jingtian,chen1" data-track="bundle_add" data-label="series">一次加入訂購單</a>
+</div></section>
 <section id="author">
   <div class="wrap">
     <h2>關於作者</h2>

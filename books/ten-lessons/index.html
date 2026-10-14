@@ -330,6 +330,26 @@ footer{background:var(--navy);color:#A9B3C6;padding:44px 0 110px;font-size:13px;
 .cp-wrote{font-size:17px;line-height:1.95;max-width:40em;padding-left:18px;border-left:3px solid var(--cp-accent);margin-top:12px}
 .cp-white{background:#fff}
 
+
+/* 三本一起讀（官網共用元件） */
+.cp-series{background:#F6F0E4;padding:64px 20px;font-family:-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;color:#2A2622}
+.cp-series-in{max-width:760px;margin:0 auto}
+.cp-series-k{font-size:13px;letter-spacing:.14em;color:#B4513A;margin:0 0 8px}
+.cp-series h2{font-family:"Noto Serif TC",serif;font-size:clamp(22px,4.6vw,30px);line-height:1.45;margin:0 0 24px;color:#2A2622}
+.cp-series-path{list-style:none;margin:0 0 22px;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:600px}
+.cp-series-path a{display:grid;gap:10px;color:#2A2622;text-decoration:none;font-size:14px;line-height:1.5}
+.cp-series-path img{width:100%;max-width:150px;height:auto;aspect-ratio:3/4;object-fit:cover;border-radius:2px;box-shadow:0 10px 24px -14px rgba(42,38,34,.55);transition:transform .3s}
+.cp-series-path a:hover img{transform:translateY(-4px)}
+.cp-series-path strong{display:block;color:#B4513A;font-size:13px}
+.cp-series-price{font-size:15px;color:#5E574E;margin:0 0 14px}
+.cp-series-price strong{font-family:"Noto Serif TC",serif;font-size:26px;color:#B4513A}
+.cp-series-btn{display:inline-block;background:#B4513A;color:#fff;text-decoration:none;font-weight:700;padding:13px 28px;border-radius:999px}
+.cp-series-btn:hover{background:#9A4430}
+
+.cp-more-row{text-align:center;margin-top:20px}
+.cp-more{font:inherit;font-size:15px;padding:12px 26px;border-radius:999px;border:1px solid #CDBFAA;background:#fff;color:inherit;cursor:pointer}
+#lessons.cp-fold:not(.is-open) #timetable > :nth-child(n+4){display:none}
+#lessons.cp-fold:not(.is-open) .tt-actions{display:none}
 </style>
 <style id="cp-shell">
 .cp-top{background:#2A2622;color:#F3EEE4;font:14px/1.4 -apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;position:relative;z-index:60}
@@ -392,12 +412,13 @@ footer{background:var(--navy);color:#A9B3C6;padding:44px 0 110px;font-size:13px;
   </div>
 </section>
 
-<section id="lessons">
+<section id="lessons" class="cp-fold">
   <div class="wrap">
     <h2>十堂課，學校沒教，但人生一定會考</h2>
     <p class="lead">點一下卡片，看看每一堂課要翻轉的，是哪一種常見的想法。</p>
     <div class="timetable" id="timetable"></div>
     <div class="tt-actions"><button type="button" id="flipAll" aria-pressed="false">全部翻開</button></div>
+<div class="cp-more-row"><button type="button" class="cp-more" data-cp-open="lessons">看全部十堂課</button></div>
   </div>
 </section>
 
@@ -501,6 +522,12 @@ footer{background:var(--navy);color:#A9B3C6;padding:44px 0 110px;font-size:13px;
 </section>
 
 <!-- 作者 -->
+<section class="cp-series" aria-labelledby="cp-series-t"><div class="cp-series-in">
+<p class="cp-series-k">一起讀，走得更遠</p><h2 id="cp-series-t">想把夢想走得更遠？三本一起讀</h2>
+<ol class="cp-series-path"><li><a href="../dream-or-delusion/"><img src="../../assets/img/books/dream-or-delusion.webp" alt="" width="300" height="400" loading="lazy"><span><strong>先分清楚</strong>《夢想與妄想》</span></a></li><li><a href="../dream-builder/"><img src="../../assets/img/books/dream-builder.webp" alt="" width="300" height="400" loading="lazy"><span><strong>再一步步實踐</strong>《築夢者之書》</span></a></li><li><a href="./"><img src="../../assets/img/books/ten-lessons.webp" alt="" width="300" height="400" loading="lazy"><span><strong>補上學校沒教的課</strong>《人生必修10堂課》</span></a></li></ol>
+<p class="cp-series-price">三本一起帶走：<s>NT$1,140</s> <strong>NT$1,000</strong></p>
+<a class="cp-series-btn" href="../../order/?add=mengxiang,zhumeng,rensheng10" data-track="bundle_add" data-label="series">一次加入訂購單</a>
+</div></section>
 <section id="author">
   <div class="wrap">
     <h2>關於作者</h2>
@@ -856,5 +883,6 @@ window.addEventListener('load', () => {
 </script>
 <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
 <footer class="cp-foot">© 2026 創意出版社有限公司｜(02) 8712-2800（週二至週四 09:00–17:00）｜<a href="mailto:createbook.press@gmail.com">createbook.press@gmail.com</a>｜<a href="../../privacy/">隱私權政策</a></footer>
+<script>document.querySelectorAll('[data-cp-open]').forEach(function(b){b.addEventListener('click',function(){var s=document.getElementById(b.dataset.cpOpen);if(s)s.classList.add('is-open');var r=b.closest('.cp-more-row');if(r)r.remove();if(window.gtag)gtag('event','section_expand',{label:b.dataset.cpOpen});});});</script>
 </body>
 </html>

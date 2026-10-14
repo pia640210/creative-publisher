@@ -317,6 +317,37 @@
 .cp-wrote{font-size:17px;line-height:1.95;max-width:40em;padding-left:18px;border-left:3px solid var(--cp-accent);margin-top:12px}
 .cp-white{background:#fff}
 .cp-why{background:var(--paper-card);color:var(--ink);padding:100px 0}.cp-why h2{font-family:var(--serif);font-weight:700;font-size:clamp(24px,3.6vw,32px);margin:14px 0 8px}.cp-why .eyebrow{color:var(--seal-deep)}.cp-why .cp-list li{border-color:var(--paper-soft)}
+
+/* 三本一起讀（官網共用元件） */
+.cp-series{background:#F6F0E4;padding:64px 20px;font-family:-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;color:#2A2622}
+.cp-series-in{max-width:760px;margin:0 auto}
+.cp-series-k{font-size:13px;letter-spacing:.14em;color:#B4513A;margin:0 0 8px}
+.cp-series h2{font-family:"Noto Serif TC",serif;font-size:clamp(22px,4.6vw,30px);line-height:1.45;margin:0 0 24px;color:#2A2622}
+.cp-series-path{list-style:none;margin:0 0 22px;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:600px}
+.cp-series-path a{display:grid;gap:10px;color:#2A2622;text-decoration:none;font-size:14px;line-height:1.5}
+.cp-series-path img{width:100%;max-width:150px;height:auto;aspect-ratio:3/4;object-fit:cover;border-radius:2px;box-shadow:0 10px 24px -14px rgba(42,38,34,.55);transition:transform .3s}
+.cp-series-path a:hover img{transform:translateY(-4px)}
+.cp-series-path strong{display:block;color:#B4513A;font-size:13px}
+.cp-series-price{font-size:15px;color:#5E574E;margin:0 0 14px}
+.cp-series-price strong{font-family:"Noto Serif TC",serif;font-size:26px;color:#B4513A}
+.cp-series-btn{display:inline-block;background:#B4513A;color:#fff;text-decoration:none;font-weight:700;padding:13px 28px;border-radius:999px}
+.cp-series-btn:hover{background:#9A4430}
+
+/* 修正：封面堆疊的圖片依原比例 */
+.cover-stack img{height:auto}
+/* 手機底部購買列 */
+.cp-bar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(251,248,242,.97);border-top:1px solid #E3DACB;box-shadow:0 -6px 18px -12px rgba(0,0,0,.35);font-family:-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif}
+.cp-bar.show{display:flex}
+.cp-bar span{font-family:var(--serif);font-weight:700;color:var(--ink)}
+.cp-bar small{font-family:inherit;font-weight:400;color:var(--ink-grey);margin-left:8px}
+.cp-bar a{background:var(--seal);color:#fff;text-decoration:none;font-weight:700;padding:10px 20px;border-radius:999px}
+@media(min-width:761px){.cp-bar{display:none!important}}
+/* 三冊：分頁切換 */
+.vol-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 24px}
+.vol-tabs button{font:inherit;font-size:15px;padding:10px 18px;border-radius:999px;border:1px solid var(--gold);background:transparent;color:var(--paper);cursor:pointer}
+.vol-tabs button[aria-selected="true"]{background:var(--seal);border-color:var(--seal);color:#fff}
+
+.volume-card[hidden]{display:none!important}
 </style>
 <style id="cp-shell">
 .cp-top{background:#2A2622;color:#F3EEE4;font:14px/1.4 -apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;position:relative;z-index:60}
@@ -700,6 +731,12 @@ html{overflow-x:hidden}body{overflow-x:clip}
 </section>
 
 <!-- ============ 情感收尾 ============ -->
+<section class="cp-series" aria-labelledby="cp-series-t"><div class="cp-series-in">
+<p class="cp-series-k">一起讀，走得更遠</p><h2 id="cp-series-t">想和身邊的人好好相處？三本一起讀</h2>
+<ol class="cp-series-path"><li><a href="./"><img src="../../assets/img/books/art-1.webp" alt="" width="300" height="400" loading="lazy"><span><strong>先學會好好說話</strong>《說話的藝術 1》</span></a></li><li><a href="../sajiao/"><img src="../../assets/img/books/sajiao.webp" alt="" width="300" height="400" loading="lazy"><span><strong>讓相處變得舒服</strong>《如何撒嬌》</span></a></li><li><a href="../love-your-parents/"><img src="../../assets/img/books/love-your-parents.webp" alt="" width="300" height="400" loading="lazy"><span><strong>把愛說給家人聽</strong>《如何愛你的父母》</span></a></li></ol>
+<p class="cp-series-price">三本一起帶走：<s>NT$1,210</s> <strong>NT$1,000</strong></p>
+<a class="cp-series-btn" href="../../order/?add=art1,sajiao,fumu" data-track="bundle_add" data-label="series">一次加入訂購單</a>
+</div></section>
 <section class="farewell">
   <div class="wrap reveal">
     <span class="eyebrow">寫在最後</span>
@@ -780,5 +817,19 @@ html{overflow-x:hidden}body{overflow-x:clip}
 </script>
 
 <footer class="cp-foot">© 2026 創意出版社有限公司｜(02) 8712-2800（週二至週四 09:00–17:00）｜<a href="mailto:createbook.press@gmail.com">createbook.press@gmail.com</a>｜<a href="../../privacy/">隱私權政策</a></footer>
+<div class="cp-bar" id="cpBar"><span>說話的藝術<small>每冊 NT$380</small></span><a href="../../order/?add=art1,art2,art3" data-track="buy_click" data-label="sticky">全 3 冊 NT$1,000</a></div>
+<script>
+(function(){var bar=document.getElementById('cpBar'),hero=document.querySelector('.hero'),ends=document.querySelectorAll('.cta-strip,#cta,.farewell');if(!bar||!hero||!('IntersectionObserver' in window))return;
+var past=false,inCta=0,upd=function(){bar.classList.toggle('show',past&&inCta===0);};
+new IntersectionObserver(function(e){past=!e[0].isIntersecting;upd();}).observe(hero);
+var io=new IntersectionObserver(function(es){es.forEach(function(e){inCta+=e.isIntersecting?1:(e.target._seen?-1:0);e.target._seen=e.isIntersecting;});if(inCta<0)inCta=0;upd();},{threshold:.1});
+ends.forEach(function(el){io.observe(el);});})();
+// 三冊介紹：一次顯示一冊
+(function(){var sec=document.getElementById('volumes');if(!sec)return;var cards=[].slice.call(sec.querySelectorAll('.volume-card'));if(cards.length<2)return;
+var tabs=document.createElement('div');tabs.className='vol-tabs';tabs.setAttribute('role','tablist');tabs.setAttribute('aria-label','選擇冊別');
+cards.forEach(function(c,i){c.id=c.id||('vol-'+(i+1));c.setAttribute('role','tabpanel');var b=document.createElement('button');b.type='button';b.setAttribute('role','tab');b.setAttribute('aria-controls',c.id);b.textContent='第 '+(i+1)+' 冊';
+b.addEventListener('click',function(){cards.forEach(function(x,k){x.hidden=k!==i;tabs.children[k].setAttribute('aria-selected',String(k===i));});if(window.gtag)gtag('event','volume_tab',{label:i+1});});tabs.appendChild(b);});
+cards[0].parentNode.insertBefore(tabs,cards[0]);cards.forEach(function(x,k){x.hidden=k!==0;tabs.children[k].setAttribute('aria-selected',String(k===0));});})();
+</script>
 </body>
 </html>
