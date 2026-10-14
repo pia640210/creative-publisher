@@ -139,12 +139,15 @@
       vStep(b.dataset.v === 'next' ? 1 : -1); showVoice(true);
       setTimeout(function () { var nb = answer.querySelector('[data-v="' + b.dataset.v + '"]'); if (nb) nb.focus(); }, 300);
     });
+    // 讀者往下捲、看不到這一區時暫停，避免心得長短不同造成下方內容跳動
+    var vOff = false;
+    if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { vOff = !es[0].isIntersecting; }).observe(answer);
     answer.addEventListener('mouseenter', function () { vHover = true; });
     answer.addEventListener('mouseleave', function () { vHover = false; });
     answer.addEventListener('focusin', function () { vHover = true; });
     answer.addEventListener('focusout', function () { vHover = false; });
     setInterval(function () {
-      if (vPaused || vHover || vSuspended || document.hidden || !answer.querySelector('.answer-voice')) return;
+      if (vPaused || vHover || vSuspended || vOff || document.hidden || !answer.querySelector('.answer-voice')) return;
       vStep(1); showVoice(true);
     }, 7000);
   })();
