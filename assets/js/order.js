@@ -56,7 +56,7 @@
       var items = selected(), p = price(items), n = items.length, ship = shipping(n);
       $('[data-sum-items]').innerHTML = n ? items.map(function (i) { return '<li><span>' + window.escHtml(i.title) + '</span><span>' + fmt(i.price) + '</span></li>'; }).join('') : '<li class="muted">還沒有選書</li>';
       $('[data-sum-books]').innerHTML = n ? (p.total < p.list ? '<s class="muted">' + fmt(p.list) + '</s> ' : '') + fmt(p.total) + (p.parts.length ? '<br><span class="form-note">' + p.parts.join('＋') + '</span>' : '') : fmt(0);
-      $('[data-sum-ship]').textContent = ship === null ? '—' : (ship === 'later' ? '5 本以上，由專人另行通知' : fmt(ship));
+      $('[data-sum-ship]').textContent = ship === null ? '—' : (ship === 'later' ? '5 本以上依重量計算，確認訂單時通知' : fmt(ship));
       var total = p.total + (typeof ship === 'number' ? ship : 0);
       $('[data-sum-total]').textContent = fmt(total) + (ship === 'later' ? '＋運費' : '');
       var unsel = boxes.filter(function (b) { return !b.checked; }).map(function (b) { return Number(b.dataset.price) || 380; });
@@ -86,10 +86,10 @@
       var order = {
         type: 'order', id: 'W' + Date.now().toString(36).toUpperCase(), date: new Date().toISOString(),
         name: fd.get('name'), phone: fd.get('phone'), email: fd.get('email'), address: fd.get('address'),
-        last5: fd.get('last5') || '', callback: fd.get('callback') === 'yes', note: fd.get('note') || '',
+        last5: fd.get('last5') || '', callback: fd.get('callback') === 'yes', note: [fd.get('note') || '', (fd.get('tax_id') || fd.get('tax_title')) ? '【三聯式發票】抬頭：' + (fd.get('tax_title') || '（未填）') + '／統編：' + (fd.get('tax_id') || '（未填）') : ''].filter(Boolean).join('\n'),
         items: state.items.map(function (i) { return i.title; }), itemKeys: state.items.map(function (i) { return i.key; }),
         bookTotal: state.pricing.total, listTotal: state.pricing.list, combo: state.pricing.parts.join('＋'),
-        shipping: state.shipping === 'later' ? '另行通知' : state.shipping, total: state.total,
+        shipping: state.shipping === 'later' ? '5 本以上依重量計算，確認後通知' : state.shipping, total: state.total,
       };
       var btn = form.querySelector('[data-submit]'); btn.disabled = true; status.textContent = '送出中…';
       window.sendForm(order).then(function (r) {

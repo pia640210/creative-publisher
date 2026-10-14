@@ -1061,3 +1061,21 @@ legend { font-family: var(--serif); font-weight: 700; padding: 0; margin-bottom:
 /* 系列書各冊介紹：分頁切換時，隱藏的冊別不顯示 */
 section.volume[hidden]{display:none!important}
 .vol-tabs{margin:var(--s4) 0}
+
+/* 訂購頁：購買須知、三聯式發票 */
+.buy-terms{margin:var(--s5) 0;padding:var(--s5);background:var(--paper-2);border-radius:6px}
+.buy-terms dl{display:grid;grid-template-columns:3.5em 1fr;gap:var(--s2) var(--s4);margin:var(--s3) 0 0}
+.buy-terms dt{font-weight:700;color:var(--ink)}
+.buy-terms dd{margin:0;color:var(--ink-2);line-height:1.75}
+.tax-box{margin:var(--s4) 0;padding:var(--s3) var(--s4);border:1px dashed var(--line);border-radius:var(--radius)}
+.tax-box summary{cursor:pointer;color:var(--ink-2);font-size:var(--fs-s)}
+.ty-fallback{margin-top:var(--s3);padding:var(--s4);background:var(--paper-2);border-radius:6px}
+.club-pay-note{margin-top:var(--s3);padding:var(--s3) var(--s4);background:#FFF8EC;border-left:3px solid var(--gold);border-radius:0 6px 6px 0}
+
+.buy-terms dd p{margin:0 0 var(--s2)}
+.refund-eg{margin-top:var(--s2);padding:var(--s3) var(--s4);background:#fff;border:1px solid var(--line);border-radius:var(--radius)}
+.refund-eg summary{cursor:pointer;color:var(--gold-ink);font-weight:700}
+.refund-eg .eg{margin-top:var(--s3);padding-left:var(--s3);border-left:3px solid var(--gold);font-size:var(--fs-s);line-height:1.85}
+.refund-eg .eg span{display:inline-block;font-weight:700;color:var(--ink);margin-right:var(--s2)}
+
+.give-ship{display:inline-block;margin:0 0 var(--s3);padding:var(--s2) var(--s4);background:#FFF8EC;border-left:3px solid var(--gold);border-radius:0 6px 6px 0;font-size:var(--fs-s)}

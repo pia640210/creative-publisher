@@ -94,7 +94,7 @@
       '<p class="bundle-price">' + price + '</p>' +
       '<a class="btn btn-primary" href="' + href + '" data-track="bundle_add" data-book="' + keys + '">' + (items.length >= 3 ? '一次加入訂購單' : '加入這兩本，再挑一本') + '</a></div>';
   }
-  // 讀者的話：隨機順序播放，每 7 秒換一則；26 則全部輪過一次才重新洗牌，不會連續重複
+  // 讀者的話：隨機順序播放，每 7 秒換一則；全部輪過一次才重新洗牌，不會連續重複
   // 滑鼠停留、鍵盤聚焦或按「暫停」時停止；選了問題時暫停，取消後恢復；設定減少動態時不自動播放
   var voices = []; try { voices = JSON.parse((document.getElementById('voice-data') || {}).textContent || '[]'); } catch (e) {}
   function shuffle(n, avoidFirst) {
