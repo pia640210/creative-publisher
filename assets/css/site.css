@@ -1079,3 +1079,22 @@ section.volume[hidden]{display:none!important}
 .refund-eg .eg span{display:inline-block;font-weight:700;color:var(--ink);margin-right:var(--s2)}
 
 .give-ship{display:inline-block;margin:0 0 var(--s3);padding:var(--s2) var(--s4);background:#FFF8EC;border-left:3px solid var(--gold);border-radius:0 6px 6px 0;font-size:var(--fs-s)}
+
+/* 手機點擊範圍：輪播小圓點（看起來一樣小，可點範圍加大到 28px）、測驗勾選框 */
+.rot-dots{gap:2px}
+.rot-dots button{width:28px;height:28px;border:0;background:transparent;position:relative}
+.rot-dots button::after{content:"";position:absolute;inset:9px;border-radius:50%;border:1px solid var(--gold-ink)}
+.rot-dots button[aria-pressed="true"]{background:transparent}
+.rot-dots button[aria-pressed="true"]::after{background:var(--gold-ink)}
+.lp-mod input[type=checkbox],.lp-mod input[type=radio]{width:22px;height:22px;flex:none}
+
+/* 送書計畫：表單收合 */
+.give-d{margin-top:var(--s4)}
+.give-d>summary{display:inline-flex;align-items:center;min-height:48px;padding:0 24px;border-radius:999px;background:var(--cloth);color:var(--cloth-ink);font-weight:700;cursor:pointer;list-style:none}
+.give-d>summary::-webkit-details-marker{display:none}
+.give-d>summary::after{content:"＋";margin-left:10px}
+.give-d[open]>summary{background:transparent;color:var(--cloth);border:1px solid var(--cloth)}
+.give-d[open]>summary::after{content:"−"}
+
+/* 滑桿：加高可點範圍 */
+.lp-mod input[type=range]{min-height:32px}
