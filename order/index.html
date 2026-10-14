@@ -32,7 +32,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&display=swap">
-<link rel="stylesheet" href="../assets/css/site.css?v=060d8b26">
+<link rel="stylesheet" href="../assets/css/site.css?v=474f7ce6">
 
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://books.hellenchentruegroup.com/#publisher","name":"創意出版社","url":"https://books.hellenchentruegroup.com/","telephone":"+886-2-8712-2800","faxNumber":"+886-2-8712-2808","email":"createbook.press@gmail.com","address":{"@type":"PostalAddress","streetAddress":"復興北路178號2樓","addressLocality":"台北市","addressCountry":"TW"},"contactPoint":{"@type":"ContactPoint","telephone":"+886-2-8712-2800","contactType":"customer service","availableLanguage":"zh-TW","hoursAvailable":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday"],"opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Friday"],"opens":"13:00","closes":"17:00"}]}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首頁","item":"https://books.hellenchentruegroup.com/"},{"@type":"ListItem","position":2,"name":"線上訂購","item":"https://books.hellenchentruegroup.com/order/"}]}]}</script>
 <script>window.SITE={"HOLIDAYS":["2026-10-09","2026-10-26","2026-12-25","2027-01-01","2027-02-04","2027-02-05","2027-02-08","2027-02-09","2027-02-10","2027-03-01","2027-04-05","2027-04-06","2027-04-30","2027-06-09","2027-09-15","2027-09-28","2027-10-11","2027-10-25","2027-12-24","2027-12-31"],"FORM_ENDPOINT":"https://script.google.com/macros/s/AKfycbxk4QP9hdjztKkFeCckc923b9QIYagXWWJ8spREGABYONRXWpbygn2WQc6fpiuPR2Ex/exec","EMAIL":"createbook.press@gmail.com","PHONE":"(02) 8712-2800","PHONE_TEL":"0287122800","HOURS":{"1":[13,17],"2":[9,17],"3":[9,17],"4":[9,17],"5":[13,17]},"BANK":{"name":"玉山銀行長春分行","code":"808","holder":"創意出版社有限公司","account":"0406-940-003763"},"OFFERS":{"three":1000,"six":1700},"SHIPPING":{"upTo4":70},"ROOT":"../"};</script>
@@ -186,12 +186,38 @@
       <label for="o-last5">匯款帳號末五碼（選填，匯款後再告訴我們也可以）</label>
       <input id="o-last5" name="last5" inputmode="numeric" pattern="[0-9]{5}" maxlength="5">
       <label class="check"><input type="checkbox" name="callback" value="yes"> 我希望專人來電確認訂單</label>
+      <details class="tax-box"><summary>企業、團體訂購：需要三聯式發票</summary>
+      <p class="form-note">供企業、機關或團體團購開立三聯式發票使用，個人訂購不需要填寫。</p>
+      <label for="o-title">公司或單位抬頭</label>
+      <input id="o-title" name="tax_title" autocomplete="organization">
+      <label for="o-taxid">統一編號（8 碼）</label>
+      <input id="o-taxid" name="tax_id" inputmode="numeric" pattern="[0-9]{8}" maxlength="8">
+    </details>
       <label for="o-note">備註（選填）</label>
       <textarea id="o-note" name="note" rows="3"></textarea>
     </fieldset>
   </div>
 
-  <aside class="order-summary" aria-labelledby="sum-t">
+  <section class="buy-terms" aria-labelledby="terms-t">
+      <h2 id="terms-t" class="h3">購買須知</h2>
+      <dl>
+        <dt>出貨</dt><dd>確認收到款項後，<strong>3 個工作天內出貨</strong>。</dd>
+        <dt>運費</dt><dd>1–4 本 NT$70；5 本以上依重量計算，我們會在確認訂單時告訴你運費。</dd>
+        <dt>發票</dt><dd>開立紙本發票，隨書寄出。需要三聯式發票（打統一編號）的企業或團體，請在下方填寫公司抬頭與統一編號。</dd>
+        <dt>退換貨</dt><dd>
+          <p>收到書的隔天起 <strong>7 天內</strong>可以申請退貨。書需保持完整（沒有污損、書寫或折痕），並連同發票一起寄回。退貨前，請先來電或寄 Email 告訴我們。</p>
+          <p><strong>書有缺頁、裝訂錯誤或破損</strong>：我們免費換新，來回運費由出版社負擔。<br><strong>個人因素退貨</strong>：寄回的運費由訂購者負擔。</p>
+          <p>收到退回的書後，<strong>3 個工作天內退款</strong>（遇假日順延）。</p>
+          <details class="refund-eg"><summary>組合優惠只退部分書，怎麼計算？</summary>
+            <p>依<strong>留下來的書</strong>重新計價，退款是「已付的書款」減去「留下的書重新計算的價格」。</p>
+            <p class="eg"><span>例 1</span>任選 3 本付了 NT$1,000，退回 1 本。<br>留下 2 本，不再符合 3 本優惠，以定價計算：NT$380 × 2 ＝ NT$760。<br>退款：NT$1,000 − NT$760 ＝ <strong>NT$240</strong>。</p>
+            <p class="eg"><span>例 2</span>任選 6 本（買五送一）付了 NT$1,700，退回 1 本。<br>留下 5 本，重新計算為「任選 3 本 NT$1,000 ＋ 2 本定價 NT$760」＝ NT$1,760，已經比原本付的 NT$1,700 還多。<br>因此這種情況<strong>沒有可退的金額</strong>，建議把書留下來，或整筆 6 本一起退。</p>
+            <p class="form-note">《如何撒嬌》定價為 NT$450，計算方式相同，金額會依實際書籍調整。</p>
+          </details>
+        </dd>
+      </dl>
+    </section>
+    <aside class="order-summary" aria-labelledby="sum-t">
     <h2 id="sum-t" class="h3">訂單小計</h2>
     <ul class="sum-items" data-sum-items><li class="muted">還沒有選書</li></ul>
     <dl class="sum-lines">
@@ -251,7 +277,7 @@
   </div>
   <div class="wrap footer-base"><p>© 2026 創意出版社有限公司 ｜ <a href="../privacy/">隱私權政策</a></p></div>
 </footer>
-<script src="../assets/js/main.js?v=891f53f5" defer></script>
-<script src="../assets/js/order.js?v=1d1b0320" defer></script>
+<script src="../assets/js/main.js?v=18d66dbf" defer></script>
+<script src="../assets/js/order.js?v=34be76a4" defer></script>
 </body>
 </html>
