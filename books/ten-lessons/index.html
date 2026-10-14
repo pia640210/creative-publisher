@@ -369,6 +369,17 @@ footer{background:var(--navy);color:#A9B3C6;padding:44px 0 110px;font-size:13px;
 .cp-rv-more summary::after{content:" ＋";color:#B4513A}
 .cp-rv-more[open] summary{display:none}
 .cp-rv-more .cp-rv-grid{margin-top:16px}
+
+/* 平板寬度：購買區不再撐出畫面；裝飾圖不超出 */
+.buy-grid>*,.buy-paths>*,.path{min-width:0}
+.buy-info,.path,.path a{overflow-wrap:anywhere}
+svg.rail{max-width:100%}
+/* 手機點擊範圍：官網導覽列、頁尾連結 */
+.cp-top-in{padding-top:0;padding-bottom:0}
+.cp-top a{display:inline-flex;align-items:center;min-height:44px;padding:0 4px}
+footer .footer-links a{display:inline-block;padding:10px 6px}
+
+.cp-foot a{display:inline-block;padding:10px 2px}
 </style>
 <style id="cp-shell">
 .cp-top{background:#2A2622;color:#F3EEE4;font:14px/1.4 -apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;position:relative;z-index:60}
@@ -622,7 +633,7 @@ footer{background:var(--navy);color:#A9B3C6;padding:44px 0 110px;font-size:13px;
       </div>
       <div>
         <h4>相關連結</h4>
-        <p><a href="https://books.hellenchentruegroup.com/">創意出版社官網</a><br><a href="https://books.hellenchentruegroup.com/order/?add=rensheng10">購書說明</a><br><a href="https://books.hellenchentruegroup.com/contact.html">聯絡我們</a><br><a href="mailto:createbook.press@gmail.com">createbook.press@gmail.com</a></p>
+        <p><a href="https://books.hellenchentruegroup.com/">創意出版社官網</a><br><a href="#buy">購書說明</a><br><a href="https://books.hellenchentruegroup.com/contact/">聯絡我們</a><br><a href="mailto:createbook.press@gmail.com">createbook.press@gmail.com</a></p>
       </div>
     </div>
     <p class="foot-copy">© 2026 創意出版社</p>

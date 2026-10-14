@@ -32,7 +32,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&display=swap">
-<link rel="stylesheet" href="../assets/css/site.css?v=474f7ce6">
+<link rel="stylesheet" href="../assets/css/site.css?v=33c87ebb">
 
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://books.hellenchentruegroup.com/#publisher","name":"創意出版社","url":"https://books.hellenchentruegroup.com/","telephone":"+886-2-8712-2800","faxNumber":"+886-2-8712-2808","email":"createbook.press@gmail.com","address":{"@type":"PostalAddress","streetAddress":"復興北路178號2樓","addressLocality":"台北市","addressCountry":"TW"},"contactPoint":{"@type":"ContactPoint","telephone":"+886-2-8712-2800","contactType":"customer service","availableLanguage":"zh-TW","hoursAvailable":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday"],"opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Friday"],"opens":"13:00","closes":"17:00"}]}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首頁","item":"https://books.hellenchentruegroup.com/"},{"@type":"ListItem","position":2,"name":"一本書之外","item":"https://books.hellenchentruegroup.com/editorial/"}]}]}</script>
 <script>window.SITE={"HOLIDAYS":["2026-10-09","2026-10-26","2026-12-25","2027-01-01","2027-02-04","2027-02-05","2027-02-08","2027-02-09","2027-02-10","2027-03-01","2027-04-05","2027-04-06","2027-04-30","2027-06-09","2027-09-15","2027-09-28","2027-10-11","2027-10-25","2027-12-24","2027-12-31"],"FORM_ENDPOINT":"https://script.google.com/macros/s/AKfycbxk4QP9hdjztKkFeCckc923b9QIYagXWWJ8spREGABYONRXWpbygn2WQc6fpiuPR2Ex/exec","EMAIL":"createbook.press@gmail.com","PHONE":"(02) 8712-2800","PHONE_TEL":"0287122800","HOURS":{"1":[13,17],"2":[9,17],"3":[9,17],"4":[9,17],"5":[13,17]},"BANK":{"name":"玉山銀行長春分行","code":"808","holder":"創意出版社有限公司","account":"0406-940-003763"},"OFFERS":{"three":1000,"six":1700},"SHIPPING":{"upTo4":70},"ROOT":"../"};</script>
@@ -171,7 +171,7 @@
     <h2 id="donate-h">登記認捐書籍</h2>
     <p>先留下聯絡方式就好。<strong>登記不需要付款</strong>，出版社會先和你確認書籍、數量、費用與配送安排，確認後才進行。</p>
     <p class="give-ship">認捐金額滿 NT$3,000，寄送到學校的運費由出版社負擔。</p>
-    <form class="stack-form give-form" data-form="contact" data-give id="donate-form">
+    <details class="give-d" id="donate-d"><summary>填寫認捐登記（只要稱呼和聯絡方式）</summary><form class="stack-form give-form" data-form="contact" data-give id="donate-form">
       <div class="hp" aria-hidden="true"><label>請勿填寫此欄<input name="website" tabindex="-1" autocomplete="off"></label></div>
       <input type="hidden" name="topic" value="公益送書｜認捐意願"><input type="hidden" name="message" data-give-msg>
       <label for="dn-name">你的稱呼</label><input id="dn-name" name="name" autocomplete="name" required data-label="稱呼">
@@ -183,13 +183,13 @@
       <p class="form-note pv-note">你的資料只用於這項計畫的聯繫。詳見<a href="../privacy/">隱私權政策</a>。</p>
       <button class="btn btn-primary" type="submit" data-track="give_submit">送出認捐登記</button>
       <p class="form-status" role="status"></p>
-    </form>
+    </form></details>
   </section>
 
   <section class="give-sec give-form-sec" id="school" aria-labelledby="school-h">
     <h2 id="school-h">學校合作需求</h2>
     <p>學校、教師可以直接提出需求；校友、家長或任何人，也可以推薦一所你知道有閱讀需求的學校。</p>
-    <form class="stack-form give-form" data-form="contact" data-give id="school-form">
+    <details class="give-d" id="school-d"><summary>填寫學校合作需求表</summary><form class="stack-form give-form" data-form="contact" data-give id="school-form">
       <div class="hp" aria-hidden="true"><label>請勿填寫此欄<input name="website" tabindex="-1" autocomplete="off"></label></div>
       <input type="hidden" name="topic" value="公益送書｜學校合作需求"><input type="hidden" name="message" data-give-msg>
       <fieldset class="club-choice"><legend>你的身分</legend>
@@ -209,13 +209,13 @@
       <p class="form-note pv-note">送出需求不代表一定能取得書籍；出版社會依書籍的適用性、實際需求與可提供的資源，和你聯繫討論。你的資料只用於這項計畫的聯繫。詳見<a href="../privacy/">隱私權政策</a>。</p>
       <button class="btn btn-primary" type="submit" data-track="give_submit">送出需求</button>
       <p class="form-status" role="status"></p>
-    </form>
+    </form></details>
   </section>
 
   <section class="give-sec give-form-sec" id="partner" aria-labelledby="partner-h">
     <h2 id="partner-h">企業、團體與合作夥伴</h2>
     <p>企業採購贈書、團體認捐、閱讀活動，或能協助學校媒合、物流的夥伴，都歡迎和我們聯繫。也可以直接來電 (02) 8712-2800 或寫信到 <a href="mailto:createbook.press@gmail.com">createbook.press@gmail.com</a>。</p>
-    <form class="stack-form give-form" data-form="contact" data-give id="partner-form">
+    <details class="give-d" id="partner-d"><summary>填寫合作聯繫表</summary><form class="stack-form give-form" data-form="contact" data-give id="partner-form">
       <div class="hp" aria-hidden="true"><label>請勿填寫此欄<input name="website" tabindex="-1" autocomplete="off"></label></div>
       <input type="hidden" name="topic" value="公益送書｜企業團體合作"><input type="hidden" name="message" data-give-msg>
       <label for="pt-org">公司、團體或單位名稱</label><input id="pt-org" name="org" required data-label="單位名稱">
@@ -232,7 +232,7 @@
       <p class="form-note pv-note">你的資料只用於這項計畫的聯繫。詳見<a href="../privacy/">隱私權政策</a>。</p>
       <button class="btn btn-primary" type="submit" data-track="give_submit">送出合作聯繫</button>
       <p class="form-status" role="status"></p>
-    </form>
+    </form></details>
   </section>
 
   <section class="give-sec" aria-labelledby="rec-h">
@@ -345,5 +345,11 @@ document.querySelectorAll('[data-give]').forEach(function (f) {
 </footer>
 <script src="../assets/js/main.js?v=18d66dbf" defer></script>
 
+<script>
+// 送書計畫：表單預設收合；點「我要認捐」「提出需求」「聯繫合作」等連到 #donate、#school、#partner 時，自動展開對應表單
+(function(){function openFor(h){var d=document.getElementById((h||'').replace('#','')+'-d');if(d){d.open=true;}}
+document.querySelectorAll('a[href="#donate"],a[href="#school"],a[href="#partner"]').forEach(function(a){a.addEventListener('click',function(){openFor(a.getAttribute('href'));});});
+if(location.hash)openFor(location.hash);})();
+</script>
 </body>
 </html>
