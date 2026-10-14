@@ -38,6 +38,30 @@
 <script>window.SITE={"HOLIDAYS":["2026-10-09","2026-10-26","2026-12-25","2027-01-01","2027-02-04","2027-02-05","2027-02-08","2027-02-09","2027-02-10","2027-03-01","2027-04-05","2027-04-06","2027-04-30","2027-06-09","2027-09-15","2027-09-28","2027-10-11","2027-10-25","2027-12-24","2027-12-31"],"FORM_ENDPOINT":"https://script.google.com/macros/s/AKfycbxk4QP9hdjztKkFeCckc923b9QIYagXWWJ8spREGABYONRXWpbygn2WQc6fpiuPR2Ex/exec","EMAIL":"createbook.press@gmail.com","PHONE":"(02) 8712-2800","PHONE_TEL":"0287122800","HOURS":{"1":[13,17],"2":[9,17],"3":[9,17],"4":[9,17],"5":[13,17]},"BANK":{"name":"玉山銀行長春分行","code":"808","holder":"創意出版社有限公司","account":"0406-940-003763"},"OFFERS":{"three":1000,"six":1700},"SHIPPING":{"upTo4":70},"ROOT":"../../"};</script>
 
 
+<style>
+/* 讀者手寫心得（點了才展開） */
+.hw-more{margin-top:24px;font-family:-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif}
+.hw-more summary{display:inline-block;cursor:pointer;list-style:none;font-size:15px;padding:12px 24px;border-radius:999px;border:1px solid #CDBFAA;background:#fff;color:#2A2622}
+.hw-more summary::-webkit-details-marker{display:none}
+.hw-more summary::before{content:"✍ "}
+.hw-more summary::after{content:" ＋";color:#B4513A}
+.hw-more[open] summary::after{content:" −"}
+.hw-grid{display:grid;gap:18px;margin-top:18px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.hw{margin:0;background:#fff;border:1px solid #E7DFD1;border-radius:8px;padding:12px;color:#2A2622}
+.hw-img{display:block;position:relative;border-radius:4px;overflow:hidden}
+.hw-img img{display:block;width:100%;height:auto;transition:transform .3s}
+.hw-img:hover img{transform:scale(1.02)}
+.hw figcaption{padding:10px 4px 2px;font-size:14px;line-height:1.75}
+.hw-text{display:block;color:#4A443C}
+.hw-by{display:block;margin-top:6px;font-size:13px;color:#8A8176}
+.hw-by::before{content:"— "}
+.hw-pair{grid-column:1/-1}
+.hw-pair-imgs{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:start}
+.hw-pair .hw-img{display:flex;flex-direction:column;gap:6px;overflow:visible}
+.hw-n{order:-1;align-self:flex-start;background:#2A2622;color:#fff;font-size:12px;padding:2px 10px;border-radius:999px}
+.hw-pair .hw-img img{border-radius:4px}
+.hw-note{display:block;font-weight:700;color:#B4513A;margin-bottom:4px}
+</style>
 </head>
 <body class="has-sticky has-banner">
 <aside class="top-banner" data-banner aria-label="活動公告">
@@ -253,9 +277,17 @@
 
     
 
-    <section aria-labelledby="rv-t" class="rv-empty">
-      <h2 id="rv-t" class="h3">讀者的話</h2>
-      <details class="lp-chapters rv-share"><summary>讀過這本書嗎？成為第一個分享讀後感的人</summary><form class="review-form" data-form="review" data-book="追愛">
+    <section aria-labelledby="rv-t">
+      <h2 id="rv-t">讀者的話</h2>
+      <div class="reviews reviews-grid"><figure class="review"><blockquote><p>作者直擊感情中的各種投機迷思，提醒我們告白與溝通，都是需要天天實作的基本功。</p></blockquote><figcaption>新竹，宋小姐</figcaption></figure><figure class="review"><blockquote><p>當我們願意花時間互相磨合、挖掘彼此內心的寶藏，婚姻就能成為談一輩子戀愛的起點。</p></blockquote><figcaption>基隆，戴小姐</figcaption></figure><figure class="review"><blockquote><p>提醒我別再當看紅燈就停下的感情機器人，被動等待只會讓關係歸於荒蕪。</p></blockquote><figcaption>桃園，馬先生</figcaption></figure></div>
+      <details class="lp-chapters rv-more"><summary>再看 5 則讀者心得</summary><div class="reviews reviews-grid"><figure class="review"><blockquote><p>本書打破「追到手就結束」的心態，愛應該是一場永不落幕的靈魂共舞。</p></blockquote><figcaption>新北，陸先生</figcaption></figure><figure class="review"><blockquote><p>愛的本質是個人能力的修練與展現，而非盲目指責或強迫對方改變。</p></blockquote><figcaption>台南，曾小姐</figcaption></figure><figure class="review"><blockquote><p>「追」的過程如歲月釀酒，越老越顯香醇，在時光的瑣碎裡為彼此細心打扮、留存一份不老的童心。</p></blockquote><figcaption>台北，江先生</figcaption></figure><figure class="review"><blockquote><p>我們朝著同一個靈魂夢想攜手前行，讓愛在日常的牽手與關懷中漫步至終點。</p></blockquote><figcaption>台北，姚小姐</figcaption></figure><figure class="review"><blockquote><p>本書把經營感情當成一場長期的夥伴創業，不能抱持不勞而獲的心態，更不能在「結婚簽約」後就停止經營。唯有雙方建立清晰邊界、設定共同目標，並持續透過溝通調整，才能創造永續的親密關係。</p></blockquote><figcaption>苗栗，鐘先生</figcaption></figure></div></details>
+      <details class="hw-more"><summary>看讀者的手寫心得（4 位讀者）</summary><div class="hw-grid"><figure class="hw"><a class="hw-img" href="../../assets/img/readers/ca-1.webp" target="_blank" rel="noopener" aria-label="放大看手寫心得"><img src="../../assets/img/readers/ca-1.webp" alt="讀者手寫便利貼：推薦在世界各個角落想要追求愛情，得到幸福的你一本寶典祕笈「追愛」，看了讓你可以找到幸福。" width="900" height="805" loading="lazy" decoding="async"></a><figcaption><span class="hw-text">推薦在世界各個角落想要追求愛情，得到幸福的你一本寶典祕笈「追愛」，看了讓你可以找到幸福。</span><span class="hw-by">讀者手寫</span></figcaption></figure><figure class="hw"><a class="hw-img" href="../../assets/img/readers/ca-3.webp" target="_blank" rel="noopener" aria-label="放大看手寫心得"><img src="../../assets/img/readers/ca-3.webp" alt="讀者手寫便利貼：追愛：這本書看似在講如何交男女朋友，但其實我從裡面學到如何實現目標！" width="900" height="840" loading="lazy" decoding="async"></a><figcaption><span class="hw-text">追愛：這本書看似在講如何交男女朋友，但其實我從裡面學到如何實現目標！</span><span class="hw-by">讀者手寫</span></figcaption></figure><figure class="hw"><a class="hw-img" href="../../assets/img/readers/ca-4.webp" target="_blank" rel="noopener" aria-label="放大看手寫心得"><img src="../../assets/img/readers/ca-4.webp" alt="讀者手寫便利貼：追愛：看完這本書之後，我學習到如何怎麼愛自己；當一個男人想追求一個女生，必須懂得對方喜歡什麼、想要什麼，才會讓對方喜歡你～" width="900" height="820" loading="lazy" decoding="async"></a><figcaption><span class="hw-text">追愛：看完這本書之後，我學習到如何怎麼愛自己；當一個男人想追求一個女生，必須懂得對方喜歡什麼、想要什麼，才會讓對方喜歡你～</span><span class="hw-by">宛安</span></figcaption></figure><figure class="hw hw-pair">
+<div class="hw-pair-imgs">
+<a class="hw-img" href="../../assets/img/readers/ca-2a.webp" target="_blank" rel="noopener" aria-label="放大看第 1 張"><img src="../../assets/img/readers/ca-2a.webp" alt="同一位讀者的手寫便利貼，第 1 張" width="900" height="890" loading="lazy" decoding="async"><span class="hw-n">第 1 張</span></a>
+<a class="hw-img" href="../../assets/img/readers/ca-2b.webp" target="_blank" rel="noopener" aria-label="放大看第 2 張"><img src="../../assets/img/readers/ca-2b.webp" alt="同一位讀者的手寫便利貼，第 2 張" width="900" height="652" loading="lazy" decoding="async"><span class="hw-n">第 2 張</span></a>
+</div>
+<figcaption><span class="hw-note">同一位讀者，分兩張便利貼寫成（請由第 1 張讀到第 2 張）</span><span class="hw-text">有一本書我取名為「教科書」，帶著我去了解過往的感情，探索愛情的內容，學習怎麼讓愛會更好，在兩個人世界裡相愛相殺，建立良好的關係，在愛情裡「越練越勇」。</span><span class="hw-by">讀者手寫</span></figcaption></figure></div></details>
+      <details class="lp-chapters rv-share"><summary>讀過這本書嗎？分享你的讀後感</summary><form class="review-form" data-form="review" data-book="追愛">
   <div class="hp" aria-hidden="true"><label>請勿填寫此欄<input name="website" tabindex="-1" autocomplete="off"></label></div>
   
   <p class="form-note">送出後由編輯審核，刊登時只顯示你填的稱呼。</p>
@@ -367,7 +399,7 @@
   </div>
   <div class="wrap footer-base"><p>© 2026 創意出版社有限公司 ｜ <a href="../../privacy/">隱私權政策</a></p></div>
 </footer>
-<script src="../../assets/js/main.js?v=5eb5e48e" defer></script>
+<script src="../../assets/js/main.js?v=891f53f5" defer></script>
 <script src="../../assets/js/landing.js?v=cb43206c" defer></script>
 </body>
 </html>

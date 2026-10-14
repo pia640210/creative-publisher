@@ -398,6 +398,25 @@ footer{border-top:1px solid var(--line);padding:32px 0 100px;font-size:13px;colo
 
 /* 修正：圖片加了寬高標記後，高度要跟著等比縮放 */
 .cover,.buy-cover{height:auto}
+
+/* 讀者的話（官網共用元件） */
+.cp-reviews{background:#FBF8F2;padding:64px 20px;font-family:-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;color:#2A2622}
+.cp-reviews-in{max-width:960px;margin:0 auto}
+.cp-reviews-k{font-size:13px;letter-spacing:.14em;color:#B4513A;margin:0 0 8px}
+.cp-reviews h2{font-family:"Noto Serif TC",serif;font-size:clamp(22px,4.6vw,30px);line-height:1.45;margin:0 0 24px;color:#2A2622}
+.cp-rv-grid{display:grid;gap:16px}
+@media(min-width:760px){.cp-rv-grid{grid-template-columns:repeat(3,1fr)}}
+.cp-rv{margin:0;padding:22px 22px 18px;background:#fff;border:1px solid #E7DFD1;border-radius:8px;display:flex;flex-direction:column;justify-content:space-between}
+.cp-rv blockquote{margin:0}
+.cp-rv p{font-family:"Noto Serif TC",serif;font-size:16px;line-height:1.85;margin:0 0 12px;color:#2A2622}
+.cp-rv p::before{content:"「";color:#B4513A}.cp-rv p::after{content:"」";color:#B4513A}
+.cp-rv figcaption{font-size:13px;color:#7A7166}
+.cp-rv-more{margin-top:16px}
+.cp-rv-more summary{display:inline-block;cursor:pointer;list-style:none;font-size:15px;padding:12px 24px;border-radius:999px;border:1px solid #CDBFAA;background:#fff;color:#2A2622}
+.cp-rv-more summary::-webkit-details-marker{display:none}
+.cp-rv-more summary::after{content:" ＋";color:#B4513A}
+.cp-rv-more[open] summary{display:none}
+.cp-rv-more .cp-rv-grid{margin-top:16px}
 </style>
 <style id="cp-shell">
 .cp-top{background:#2A2622;color:#F3EEE4;font:14px/1.4 -apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;position:relative;z-index:60}
@@ -598,6 +617,7 @@ footer{border-top:1px solid var(--line);padding:32px 0 100px;font-size:13px;colo
 </section>
 
 <!-- 購書 -->
+<section class="cp-reviews" aria-labelledby="cp-rv-t"><div class="cp-reviews-in"><p class="cp-reviews-k">讀者分享</p><h2 id="cp-rv-t">讀過的人這樣說</h2><div class="cp-rv-grid"><figure class="cp-rv"><blockquote><p>書中一針見血地指出，人生反覆出現的困境幾乎都不是外在造成的，而是源於我們看待自我與做選擇的內在模式。</p></blockquote><figcaption>屏東，謝先生</figcaption></figure><figure class="cp-rv"><blockquote><p>這本書讓我感受到幸福從來就不是碰運氣的機率問題，而是一項需要透過自我覺察與學習來培養的能力。</p></blockquote><figcaption>宜蘭，陳先生</figcaption></figure><figure class="cp-rv"><blockquote><p>真的，別再把「工作太忙」或「一個人比較自由」當成逃避的藉口，因為你以為的原因其實都只是結果。</p></blockquote><figcaption>台北，張小姐</figcaption></figure></div><details class="cp-rv-more"><summary>再看 2 則讀者心得</summary><div class="cp-rv-grid"><figure class="cp-rv"><blockquote><p>讀著這本書，心裡最深沉的共鳴是：原來最令人心疼的不是挫折，而是在忙碌與疲憊中慢慢失去了自己。</p></blockquote><figcaption>台北，陳小姐</figcaption></figure><figure class="cp-rv"><blockquote><p>這是一本極具實踐價值的自我覺察指南，直接點出「幸福是一種能力，起點是對自己的誠實」。</p></blockquote><figcaption>新北市，劉先生</figcaption></figure></div></details></div></section>
 <section class="buy-sec" id="buy">
   <div class="wrap">
     <h2>把這本書帶回家</h2>

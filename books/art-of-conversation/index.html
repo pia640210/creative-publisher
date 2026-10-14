@@ -348,6 +348,37 @@
 .vol-tabs button[aria-selected="true"]{background:var(--seal);border-color:var(--seal);color:#fff}
 
 .volume-card[hidden]{display:none!important}
+
+/* 讀者見證：更多心得（點了才展開） */
+.test-more{margin-top:24px}
+.test-more summary{display:inline-block;cursor:pointer;list-style:none;font-size:15px;padding:12px 24px;border-radius:999px;border:1px solid var(--gold);color:var(--ink);background:transparent}
+.test-more summary::-webkit-details-marker{display:none}
+.test-more summary::after{content:" ＋";color:var(--seal)}
+.test-more[open] summary{display:none}
+.test-more .test-grid{margin-top:18px}
+
+/* 讀者手寫心得（點了才展開） */
+.hw-more{margin-top:24px;font-family:-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif}
+.hw-more summary{display:inline-block;cursor:pointer;list-style:none;font-size:15px;padding:12px 24px;border-radius:999px;border:1px solid #CDBFAA;background:#fff;color:#2A2622}
+.hw-more summary::-webkit-details-marker{display:none}
+.hw-more summary::before{content:"✍ "}
+.hw-more summary::after{content:" ＋";color:#B4513A}
+.hw-more[open] summary::after{content:" −"}
+.hw-grid{display:grid;gap:18px;margin-top:18px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.hw{margin:0;background:#fff;border:1px solid #E7DFD1;border-radius:8px;padding:12px;color:#2A2622}
+.hw-img{display:block;position:relative;border-radius:4px;overflow:hidden}
+.hw-img img{display:block;width:100%;height:auto;transition:transform .3s}
+.hw-img:hover img{transform:scale(1.02)}
+.hw figcaption{padding:10px 4px 2px;font-size:14px;line-height:1.75}
+.hw-text{display:block;color:#4A443C}
+.hw-by{display:block;margin-top:6px;font-size:13px;color:#8A8176}
+.hw-by::before{content:"— "}
+.hw-pair{grid-column:1/-1}
+.hw-pair-imgs{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:start}
+.hw-pair .hw-img{display:flex;flex-direction:column;gap:6px;overflow:visible}
+.hw-n{order:-1;align-self:flex-start;background:#2A2622;color:#fff;font-size:12px;padding:2px 10px;border-radius:999px}
+.hw-pair .hw-img img{border-radius:4px}
+.hw-note{display:block;font-weight:700;color:#B4513A;margin-bottom:4px}
 </style>
 <style id="cp-shell">
 .cp-top{background:#2A2622;color:#F3EEE4;font:14px/1.4 -apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;position:relative;z-index:60}
@@ -653,6 +684,22 @@ html{overflow-x:hidden}body{overflow-x:clip}
         <div class="test-author">企業經理人</div>
       </div>
     </div>
+    <details class="test-more"><summary>再看 7 則讀者心得</summary>
+    <div class="test-grid">
+      <div class="test-card"><p class="test-quote">「真金不怕火煉，只怕你從來都不練！」沒錯！我一直以為說話全靠天份，原來從音質、語速到態度都需要扎實蹲馬步啊！</p><div class="test-author">桃園，馮先生</div></div>
+      <div class="test-card"><p class="test-quote">這套書給了我深刻的心靈震撼——原來傾聽不能只聽字面，更要讀懂對方未說出口的真正需求。</p><div class="test-author">台北，李小姐</div></div>
+      <div class="test-card"><p class="test-quote">這不是教人套公式的普通工具書，而是教導在職場與衝突中優雅生存的實戰心法。</p><div class="test-author">新竹，張先生</div></div>
+      <div class="test-card"><p class="test-quote">「誠意，永遠在技巧之上。」這本書的文字質樸卻深刻，也提醒我們，言語是靈魂的載體，而溝通不過是為了完全的了解。</p><div class="test-author">台南，汪小姐</div></div>
+      <div class="test-card"><p class="test-quote">看完這套書才明白，真正的溝通不是繁複的話術，而是先向內撫慰自己的心靈。</p><div class="test-author">台北，陳小姐</div></div>
+      <div class="test-card"><p class="test-quote">讓我徹底改寫了自己的社交互動與情緒管理方式。</p><div class="test-author">台北，王先生</div></div>
+      <div class="test-card"><p class="test-quote">少一點防衛與套路，多一點真心，話自然能溫柔地直達對方心坎裡。</p><div class="test-author">台南，郭先生</div></div>
+    </div></details>
+    <details class="hw-more"><summary>看讀者的手寫心得（4 位讀者）</summary><div class="hw-grid"><figure class="hw"><a class="hw-img" href="../../assets/img/readers/art-h1.webp" target="_blank" rel="noopener" aria-label="放大看手寫心得"><img src="../../assets/img/readers/art-h1.webp" alt="讀者手寫便利貼：看了《說話的藝術》才知道，會溝通的生活不會不快樂。生活中所累積的情緒，是因為沒有與人溝通。溝通的頻率夠多、夠好，就會改變，所以我現在越來越快樂。" width="900" height="887" loading="lazy" decoding="async"></a><figcaption><span class="hw-text">看了《說話的藝術》才知道，會溝通的生活不會不快樂。生活中所累積的情緒，是因為沒有與人溝通。溝通的頻率夠多、夠好，就會改變，所以我現在越來越快樂。</span><span class="hw-by">張育菁</span></figcaption></figure><figure class="hw"><a class="hw-img" href="../../assets/img/readers/art-h2.webp" target="_blank" rel="noopener" aria-label="放大看手寫心得"><img src="../../assets/img/readers/art-h2.webp" alt="讀者手寫便利貼：說話的藝術：持續的說話，讓對方了解你，久而久之就能卸下對方的心防；什麼都不說，就會變成互相猜忌。" width="900" height="849" loading="lazy" decoding="async"></a><figcaption><span class="hw-text">說話的藝術：持續的說話，讓對方了解你，久而久之就能卸下對方的心防；什麼都不說，就會變成互相猜忌。</span><span class="hw-by">Eko</span></figcaption></figure><figure class="hw"><a class="hw-img" href="../../assets/img/readers/art-h4.webp" target="_blank" rel="noopener" aria-label="放大看手寫心得"><img src="../../assets/img/readers/art-h4.webp" alt="讀者手寫便利貼：說話的藝術 2：可以給你怎麼說明，在何情境要如何練，可參照。" width="900" height="877" loading="lazy" decoding="async"></a><figcaption><span class="hw-text">說話的藝術 2：可以給你怎麼說明，在何情境要如何練，可參照。</span><span class="hw-by">Kevin T.</span></figcaption></figure><figure class="hw hw-pair">
+<div class="hw-pair-imgs">
+<a class="hw-img" href="../../assets/img/readers/art-h3a.webp" target="_blank" rel="noopener" aria-label="放大看第 1 張"><img src="../../assets/img/readers/art-h3a.webp" alt="同一位讀者的手寫便利貼，第 1 張" width="900" height="850" loading="lazy" decoding="async"><span class="hw-n">第 1 張</span></a>
+<a class="hw-img" href="../../assets/img/readers/art-h3b.webp" target="_blank" rel="noopener" aria-label="放大看第 2 張"><img src="../../assets/img/readers/art-h3b.webp" alt="同一位讀者的手寫便利貼，第 2 張" width="900" height="591" loading="lazy" decoding="async"><span class="hw-n">第 2 張</span></a>
+</div>
+<figcaption><span class="hw-note">同一位讀者，分兩張便利貼寫成（請由第 1 張讀到第 2 張）</span><span class="hw-text">《說話的藝術》從基本的底層邏輯，到練習，到實際例子，讓自己講話更順；搭配《陳顧問時間》，幫我朋友解決了不少困惑和懷疑。這裡的書每一本都裝著滿滿的寶物，每一次讀都有不同的想法湧出，不知不覺就一下帶走好幾本 XDDD!!</span><span class="hw-by">楊家錫</span></figcaption></figure></div></details>
   </div>
 </section>
 

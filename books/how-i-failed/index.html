@@ -349,6 +349,29 @@ footer{border-top:1px solid var(--line);padding:32px 0 100px;font-size:13px;colo
 .cp-series-btn:hover{background:#9A4430}
 
 .cp-cont{letter-spacing:.3em;opacity:.6}
+
+/* 讀者手寫心得（點了才展開） */
+.hw-more{margin-top:24px;font-family:-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif}
+.hw-more summary{display:inline-block;cursor:pointer;list-style:none;font-size:15px;padding:12px 24px;border-radius:999px;border:1px solid #CDBFAA;background:#fff;color:#2A2622}
+.hw-more summary::-webkit-details-marker{display:none}
+.hw-more summary::before{content:"✍ "}
+.hw-more summary::after{content:" ＋";color:#B4513A}
+.hw-more[open] summary::after{content:" −"}
+.hw-grid{display:grid;gap:18px;margin-top:18px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.hw{margin:0;background:#fff;border:1px solid #E7DFD1;border-radius:8px;padding:12px;color:#2A2622}
+.hw-img{display:block;position:relative;border-radius:4px;overflow:hidden}
+.hw-img img{display:block;width:100%;height:auto;transition:transform .3s}
+.hw-img:hover img{transform:scale(1.02)}
+.hw figcaption{padding:10px 4px 2px;font-size:14px;line-height:1.75}
+.hw-text{display:block;color:#4A443C}
+.hw-by{display:block;margin-top:6px;font-size:13px;color:#8A8176}
+.hw-by::before{content:"— "}
+.hw-pair{grid-column:1/-1}
+.hw-pair-imgs{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:start}
+.hw-pair .hw-img{display:flex;flex-direction:column;gap:6px;overflow:visible}
+.hw-n{order:-1;align-self:flex-start;background:#2A2622;color:#fff;font-size:12px;padding:2px 10px;border-radius:999px}
+.hw-pair .hw-img img{border-radius:4px}
+.hw-note{display:block;font-weight:700;color:#B4513A;margin-bottom:4px}
 </style>
 <style id="cp-shell">
 .cp-top{background:#2A2622;color:#F3EEE4;font:14px/1.4 -apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;position:relative;z-index:60}
@@ -560,6 +583,7 @@ footer{border-top:1px solid var(--line);padding:32px 0 100px;font-size:13px;colo
       <figure class="reader"><blockquote>「很慶幸自己不是在垂垂老矣的年紀，才學習到人生中如此驚為天人的資料！」</blockquote><figcaption>李先生</figcaption></figure>
       <figure class="reader"><blockquote>「我認識作者本人，看完才知道，原來像她這麼厲害的人，也有失敗過這麼多的事情啊！」</blockquote><figcaption>大妹</figcaption></figure>
     </div>
+<details class="hw-more"><summary>看讀者的手寫心得（4 張）</summary><div class="hw-grid"><figure class="hw"><a class="hw-img" href="../../assets/img/readers/hif-1.webp" target="_blank" rel="noopener" aria-label="放大看手寫心得"><img src="../../assets/img/readers/hif-1.webp" alt="讀者手寫便利貼：「我是如何失敗的」依體質對症下藥：① 迷之自信 ② 病急亂投醫。有以上症狀，服這帖。" width="897" height="900" loading="lazy" decoding="async"></a><figcaption><span class="hw-text">「我是如何失敗的」依體質對症下藥：① 迷之自信 ② 病急亂投醫。有以上症狀，服這帖。</span><span class="hw-by">讀者手寫，2025/11/05</span></figcaption></figure><figure class="hw"><a class="hw-img" href="../../assets/img/readers/hif-2.webp" target="_blank" rel="noopener" aria-label="放大看手寫心得"><img src="../../assets/img/readers/hif-2.webp" alt="讀者手寫便利貼：「我是如何失敗的」讓我知道我為什麼不順，也讓我有機會和方向，練習基本功，把幸福一年接一年補上 ^^" width="900" height="804" loading="lazy" decoding="async"></a><figcaption><span class="hw-text">「我是如何失敗的」讓我知道我為什麼不順，也讓我有機會和方向，練習基本功，把幸福一年接一年補上 ^^</span><span class="hw-by">Yves</span></figcaption></figure><figure class="hw"><a class="hw-img" href="../../assets/img/readers/hif-3.webp" target="_blank" rel="noopener" aria-label="放大看手寫心得"><img src="../../assets/img/readers/hif-3.webp" alt="讀者手寫便利貼：「我是如何失敗的」這樣的書在我們的文化不常見，如果去讀西方的自傳，常會有闡述自己失敗的經歷與內省，這是本習慣不同觀點的書。" width="900" height="846" loading="lazy" decoding="async"></a><figcaption><span class="hw-text">「我是如何失敗的」這樣的書在我們的文化不常見，如果去讀西方的自傳，常會有闡述自己失敗的經歷與內省，這是本習慣不同觀點的書。</span><span class="hw-by">Lance</span></figcaption></figure><figure class="hw"><a class="hw-img" href="../../assets/img/readers/hif-4.webp" target="_blank" rel="noopener" aria-label="放大看手寫心得"><img src="../../assets/img/readers/hif-4.webp" alt="讀者手寫便利貼：《我是如何失敗的》是我看的第一本陳顧問的書，也是至今有看完的唯一一本♡ 好看！有趣！！讀起來沒有壓力，也沒有教條👍 清楚看到生活中哪裡「喬」一下就變順～順～順～" width="900" height="868" loading="lazy" decoding="async"></a><figcaption><span class="hw-text">《我是如何失敗的》是我看的第一本陳顧問的書，也是至今有看完的唯一一本♡ 好看！有趣！！讀起來沒有壓力，也沒有教條👍 清楚看到生活中哪裡「喬」一下就變順～順～順～</span><span class="hw-by">Carmen</span></figcaption></figure></div></details>
   </div>
 </section>
 

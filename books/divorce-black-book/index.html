@@ -38,6 +38,30 @@
 <script>window.SITE={"HOLIDAYS":["2026-10-09","2026-10-26","2026-12-25","2027-01-01","2027-02-04","2027-02-05","2027-02-08","2027-02-09","2027-02-10","2027-03-01","2027-04-05","2027-04-06","2027-04-30","2027-06-09","2027-09-15","2027-09-28","2027-10-11","2027-10-25","2027-12-24","2027-12-31"],"FORM_ENDPOINT":"https://script.google.com/macros/s/AKfycbxk4QP9hdjztKkFeCckc923b9QIYagXWWJ8spREGABYONRXWpbygn2WQc6fpiuPR2Ex/exec","EMAIL":"createbook.press@gmail.com","PHONE":"(02) 8712-2800","PHONE_TEL":"0287122800","HOURS":{"1":[13,17],"2":[9,17],"3":[9,17],"4":[9,17],"5":[13,17]},"BANK":{"name":"玉山銀行長春分行","code":"808","holder":"創意出版社有限公司","account":"0406-940-003763"},"OFFERS":{"three":1000,"six":1700},"SHIPPING":{"upTo4":70},"ROOT":"../../"};</script>
 
 
+<style>
+/* 讀者手寫心得（點了才展開） */
+.hw-more{margin-top:24px;font-family:-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif}
+.hw-more summary{display:inline-block;cursor:pointer;list-style:none;font-size:15px;padding:12px 24px;border-radius:999px;border:1px solid #CDBFAA;background:#fff;color:#2A2622}
+.hw-more summary::-webkit-details-marker{display:none}
+.hw-more summary::before{content:"✍ "}
+.hw-more summary::after{content:" ＋";color:#B4513A}
+.hw-more[open] summary::after{content:" −"}
+.hw-grid{display:grid;gap:18px;margin-top:18px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.hw{margin:0;background:#fff;border:1px solid #E7DFD1;border-radius:8px;padding:12px;color:#2A2622}
+.hw-img{display:block;position:relative;border-radius:4px;overflow:hidden}
+.hw-img img{display:block;width:100%;height:auto;transition:transform .3s}
+.hw-img:hover img{transform:scale(1.02)}
+.hw figcaption{padding:10px 4px 2px;font-size:14px;line-height:1.75}
+.hw-text{display:block;color:#4A443C}
+.hw-by{display:block;margin-top:6px;font-size:13px;color:#8A8176}
+.hw-by::before{content:"— "}
+.hw-pair{grid-column:1/-1}
+.hw-pair-imgs{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:start}
+.hw-pair .hw-img{display:flex;flex-direction:column;gap:6px;overflow:visible}
+.hw-n{order:-1;align-self:flex-start;background:#2A2622;color:#fff;font-size:12px;padding:2px 10px;border-radius:999px}
+.hw-pair .hw-img img{border-radius:4px}
+.hw-note{display:block;font-weight:700;color:#B4513A;margin-bottom:4px}
+</style>
 </head>
 <body class="has-sticky">
 
@@ -168,9 +192,12 @@
 
     
 
-    <section aria-labelledby="rv-t" class="rv-empty">
-      <h2 id="rv-t" class="h3">讀者的話</h2>
-      <details class="lp-chapters rv-share"><summary>讀過這本書嗎？成為第一個分享讀後感的人</summary><form class="review-form" data-form="review" data-book="離婚黑皮書">
+    <section aria-labelledby="rv-t">
+      <h2 id="rv-t">讀者的話</h2>
+      <div class="reviews reviews-grid"><figure class="review"><blockquote><p>讀完這本書會發現，分開不一定是失敗，而是「放愛一條生路」的溫柔成全。</p></blockquote><figcaption>新北市，廖小姐</figcaption></figure><figure class="review"><blockquote><p>封面上的「能離，才能合」是很深的學問。能坦然面對「失去」，才是真正「擁有」美滿婚姻的起點。</p></blockquote><figcaption>高雄，卓小姐</figcaption></figure><figure class="review"><blockquote><p>我喜歡「愛情本是一杯純粹的白開水」的比喻，不該滲入面子與世俗條件的雜質。</p></blockquote><figcaption>台北市，賴小姐</figcaption></figure></div>
+      <details class="lp-chapters rv-more"><summary>再看 2 則讀者心得</summary><div class="reviews reviews-grid"><figure class="review"><blockquote><p>作者將婚姻經營巧妙比擬為企業管理，強調兩人之間必須建立緊密且通暢的「溝通線路」，這一點我很有體會。</p></blockquote><figcaption>桃園，洪先生</figcaption></figure><figure class="review"><blockquote><p>我認同書中提及婚姻危機往往不是對方的毛病，而是個人缺乏溝通與自我修正能力的警訊。離婚並不可怕，盲目執著於受害者情緒而不願進步成長才是真正的陷阱。</p></blockquote><figcaption>台北市，游先生</figcaption></figure></div></details>
+      <details class="hw-more"><summary>看讀者的手寫心得（2 張）</summary><div class="hw-grid"><figure class="hw"><a class="hw-img" href="../../assets/img/readers/dv-1.webp" target="_blank" rel="noopener" aria-label="放大看手寫心得"><img src="../../assets/img/readers/dv-1.webp" alt="讀者手寫便利貼：原本以為離婚代表世界末日，沒想到《離婚黑皮書》重新點燃我的希望，給我一盞明燈，明白到離婚也是很能幫助自己的「生存」^^" width="900" height="862" loading="lazy" decoding="async"></a><figcaption><span class="hw-text">原本以為離婚代表世界末日，沒想到《離婚黑皮書》重新點燃我的希望，給我一盞明燈，明白到離婚也是很能幫助自己的「生存」^^</span><span class="hw-by">Danica</span></figcaption></figure><figure class="hw"><a class="hw-img" href="../../assets/img/readers/dv-2.webp" target="_blank" rel="noopener" aria-label="放大看手寫心得"><img src="../../assets/img/readers/dv-2.webp" alt="讀者手寫便利貼：《離婚黑皮書》這本書看完後顛覆了我很多的想法。人要無時無刻和自己、和另一半、和朋友、和家人談戀愛。有時在平凡無味的生活中灑上戀愛的調味，會讓生活變得更美好。" width="900" height="877" loading="lazy" decoding="async"></a><figcaption><span class="hw-text">《離婚黑皮書》這本書看完後顛覆了我很多的想法。人要無時無刻和自己、和另一半、和朋友、和家人談戀愛。有時在平凡無味的生活中灑上戀愛的調味，會讓生活變得更美好。</span><span class="hw-by">文捷，2025/11/05</span></figcaption></figure></div></details>
+      <details class="lp-chapters rv-share"><summary>讀過這本書嗎？分享你的讀後感</summary><form class="review-form" data-form="review" data-book="離婚黑皮書">
   <div class="hp" aria-hidden="true"><label>請勿填寫此欄<input name="website" tabindex="-1" autocomplete="off"></label></div>
   
   <p class="form-note">送出後由編輯審核，刊登時只顯示你填的稱呼。</p>
@@ -282,7 +309,7 @@
   </div>
   <div class="wrap footer-base"><p>© 2026 創意出版社有限公司 ｜ <a href="../../privacy/">隱私權政策</a></p></div>
 </footer>
-<script src="../../assets/js/main.js?v=5eb5e48e" defer></script>
+<script src="../../assets/js/main.js?v=891f53f5" defer></script>
 <script src="../../assets/js/landing.js?v=cb43206c" defer></script>
 </body>
 </html>
