@@ -314,3 +314,27 @@
     if (el.getBoundingClientRect().top > vh * 0.9) { el.classList.add('strike-ready'); io.observe(el); }
   });
 })();
+
+/* ---------- 書籍頁測驗：一次只出現一題，答完才出現下一題 ---------- */
+(function () {
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('.quiz-list').forEach(function (list) {
+    var qs = [].slice.call(list.children).filter(function (li) { return li.classList.contains('quiz-q'); });
+    if (qs.length < 2) return;
+    qs.forEach(function (q, i) {
+      var tag = document.createElement('p');
+      tag.className = 'q-step'; tag.textContent = '第 ' + (i + 1) + ' / ' + qs.length + ' 題';
+      q.insertBefore(tag, q.firstChild);
+      if (i > 0) q.hidden = true;
+      q.addEventListener('click', function (e) {
+        if (!e.target.closest('button, input, label')) return;
+        var next = qs[i + 1];
+        if (!next || !next.hidden) return;
+        setTimeout(function () {
+          next.hidden = false; next.classList.add('q-in');
+          next.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'nearest' });
+        }, 350);
+      });
+    });
+  });
+})();

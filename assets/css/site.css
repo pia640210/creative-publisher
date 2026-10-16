@@ -1098,3 +1098,10 @@ section.volume[hidden]{display:none!important}
 
 /* 滑桿：加高可點範圍 */
 .lp-mod input[type=range]{min-height:32px}
+
+/* 測驗：一次一題 */
+.quiz-q[hidden]{display:none!important}
+.q-step{font-size:var(--fs-xs);letter-spacing:.1em;color:var(--gold-ink);margin:0 0 var(--s2)}
+.q-in{animation:q-in .45s ease-out}
+@keyframes q-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){.q-in{animation:none}}
