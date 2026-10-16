@@ -1116,3 +1116,12 @@ section.volume[hidden]{display:none!important}
 .cal-add{display:flex;flex-wrap:wrap;align-items:center;gap:4px 14px;margin:6px 0 0;font-size:var(--fs-s)}
 .cal-add span{color:var(--ink-2)}
 .cal-add a{display:inline-flex;align-items:center;min-height:36px}
+
+/* 團購洽詢（官網共用元件） */
+.cp-group{padding:28px 20px;background:#FBF8F2;font-family:-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif}
+.cp-group-in{max-width:760px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px 22px;border:1px dashed #C8C0B0;border-radius:10px;background:#fff;color:#2A2622}
+.cp-group h3{font-size:16px;font-weight:700;margin:0 0 6px;color:#2A2622;font-family:inherit;letter-spacing:.02em}
+.cp-group p{font-size:14px;line-height:1.8;color:#5E574E;margin:0}
+.cp-group-btn{flex:none;display:inline-flex;align-items:center;min-height:44px;padding:0 22px;border:1px solid #B4513A;border-radius:999px;color:#B4513A;text-decoration:none;font-weight:700;font-size:15px;background:#fff}
+.cp-group-btn:hover{background:#B4513A;color:#fff}
+@media(max-width:640px){.cp-group-in{flex-direction:column;align-items:stretch}.cp-group-btn{justify-content:center}}
