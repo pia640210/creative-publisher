@@ -56,6 +56,30 @@
 
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Event", "name": "心橋精選品書時間｜週三", "description": "每週週三的讀書會，目前讀《築夢者之書》。線上或現場參加都可以。", "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode", "organizer": {"@id": "https://books.hellenchentruegroup.com/#publisher"}, "eventSchedule": {"@type": "Schedule", "byDay": "https://schema.org/Wednesday", "startTime": "19:30", "endTime": "20:30", "repeatFrequency": "P1W", "scheduleTimezone": "Asia/Taipei"}, "location": [{"@type": "Place", "name": "創意出版社", "address": {"@type": "PostalAddress", "streetAddress": "復興北路178號2樓", "addressLocality": "台北市", "addressCountry": "TW"}}, {"@type": "VirtualLocation", "url": "https://books.hellenchentruegroup.com/book-club/"}], "offers": {"@type": "Offer", "price": "300", "priceCurrency": "TWD", "url": "https://books.hellenchentruegroup.com/book-club/#signup"}}, {"@type": "Event", "name": "心橋精選品書時間｜週六", "description": "每週週六的讀書會，目前讀《追愛》。線上或現場參加都可以。", "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode", "organizer": {"@id": "https://books.hellenchentruegroup.com/#publisher"}, "eventSchedule": {"@type": "Schedule", "byDay": "https://schema.org/Saturday", "startTime": "14:00", "endTime": "15:00", "repeatFrequency": "P1W", "scheduleTimezone": "Asia/Taipei"}, "location": [{"@type": "Place", "name": "創意出版社", "address": {"@type": "PostalAddress", "streetAddress": "復興北路178號2樓", "addressLocality": "台北市", "addressCountry": "TW"}}, {"@type": "VirtualLocation", "url": "https://books.hellenchentruegroup.com/book-club/"}], "offers": {"@type": "Offer", "price": "300", "priceCurrency": "TWD", "url": "https://books.hellenchentruegroup.com/book-club/#signup"}}]}</script>
+<style>
+.club-motto{margin:var(--s5) 0 0;padding:var(--s5);background:var(--paper-2);border-left:3px solid var(--gold);border-radius:0 6px 6px 0}
+.club-motto-lead{font-family:var(--serif);font-size:clamp(20px,4.6vw,26px);line-height:1.6;color:var(--ink);margin:0 0 var(--s3)}
+.club-motto ul{list-style:none;margin:0;padding:0;display:grid;gap:6px;color:var(--ink-2)}
+.club-motto li::before{content:"・";color:var(--gold-ink)}
+.club-stories-t{margin:var(--s6) 0 var(--s4);font-size:var(--fs-l)}
+.club-stories{display:grid;gap:var(--s5)}
+.club-story{padding:var(--s5);background:#fff;border:1px solid var(--line);border-radius:8px}
+.club-story-pull{font-family:var(--serif);font-size:clamp(19px,4.4vw,23px);line-height:1.7;color:var(--ink);margin:0 0 var(--s4)}
+.club-story-open p,.club-story-body p{margin:0 0 var(--s3);line-height:1.95;color:var(--ink-2)}
+.club-story-more>summary{display:inline-flex;align-items:center;min-height:44px;cursor:pointer;color:var(--gold-ink);font-weight:700;list-style:none}
+.club-story-more>summary::-webkit-details-marker{display:none}
+.club-story-more>summary::after{content:" ＋";margin-left:6px}
+.club-story-more[open]>summary{display:none}
+.club-story-cta{margin:var(--s4) 0 0}
+.club-story-cta a{font-weight:700;color:var(--cloth)}
+.club-story-by{margin:var(--s3) 0 0;font-size:var(--fs-s);color:var(--ink-3, #7A7166)}
+.club-worth{margin:var(--s6) 0 var(--s5)}
+.club-worth-lead{font-family:var(--serif);font-size:clamp(19px,4.4vw,23px);color:var(--ink)}
+.club-worth-list{list-style:none;margin:var(--s4) 0;padding:0;display:grid;gap:10px}
+.club-worth-list li{padding:12px 16px;background:var(--paper-2);border-radius:6px}
+.club-worth-list li::before{content:"✓ ";color:var(--gold-ink);font-weight:700}
+.club-worth-end{font-weight:700;color:var(--ink)}
+</style>
 </head>
 <body class="">
 
@@ -108,6 +132,14 @@
     <h2 id="diff-t">和一般讀書會不一樣的地方</h2>
     <p>讀書會的本質不在於書，而在於「人」。不是每個人都有機會出書，但每個來參加的人，都可以試著說出自己的看法。透過人與人的討論與分享，讀書不再是你和作者之間的單向思考，而是各種觀點的即時交流。</p>
     <p>品書時間由<strong>出版社總編輯</strong>與<strong>心橋的專業諮詢員</strong>帶領導讀，深入淺出地說明書中的觀念，以及怎麼用在生活裡。不管你來是為了興趣、認識朋友，還是練習邏輯思考與表達，都能有所收穫。</p>
+    <div class="club-motto">
+      <p class="club-motto-lead">一般讀書會討論書，品書時間討論人生。</p>
+      <ul>
+        <li>不是看完一本書，而是看懂一個問題。</li>
+        <li>讀書不是目的，改變才是目的。</li>
+        <li>一本書的價值，不在讀完，而在活出來。</li>
+      </ul>
+    </div>
   </section>
 
   <section aria-labelledby="video-t">
@@ -138,6 +170,50 @@
       <figure class="review"><blockquote><p>可以透過和不同的人做練習，因為有新夥伴，所以可以練到不同的東西，讚！</p></blockquote><figcaption>陳先生，電子工程師</figcaption></figure>
       <figure class="review"><blockquote><p>每次參加，對於生活中正在發生的事，都會意外地注入一股清流，讓我有一種確實被點到的感覺，心中充滿了力量！</p></blockquote><figcaption>鄭小姐，服務業</figcaption></figure>
     </div>
+
+    <h3 class="club-stories-t">三位參與者的完整分享</h3>
+    <div class="club-stories">
+      <article class="club-story" id="story-1">
+        <p class="club-story-pull">「那天回家的路上，我突然覺得手上這本書，好重啊！」</p>
+        <div class="club-story-open"><p>參加品書時間後，我對讀書和書，改觀了。</p><p>一直以來，我喜歡看書，喜歡在書中尋找人生問題的解答。但是，我喜歡一個人看，我覺得這樣才能體會了解書中的道理。</p></div>
+        <details class="club-story-more"><summary>讀完整篇心得</summary>
+          <div class="club-story-body"><p>一開始嘗試參加品書時間，意外的發現，這和自己一個人靜靜閱讀體會沉澱，很不一樣。</p><p>每一個同學，都是獨一無二的，帶著自己閱歷、經驗所交織出來的人生，用屬於他們獨一無二的角度，一同分享對主題的看法想法，激盪出更多的視野。這種互動，不僅對作者傳遞的知識有更深入的感受，吸收也更好了，感覺書中的內容和我有了關聯，真的融入了自己的生活。</p><p>我發現，我開始喜歡品書時間。這些經驗讓我覺得很新鮮很神奇。後來，我又陸續參加，每次總能為我生活中的困難或皺眉的事，找到希望和出口。</p><p>生活中，總有一些想要解決改變的事：大大小小的、讓你皺眉的、想要突破的，也許是最近的，或許深藏心中很多年了。</p><p>在參加品書時間這段日子，常常意外的得到了答案，而且感覺很奇妙：這句話，我明明看過很多次啊！</p><p>原來，它一直在這裡等我，想要幫我，只是我對它沒有感覺、看不見也聽不到它的存在。</p><p>一個小時的品書時間，時間很短，但是卻總能讓我感受到在心中有某些東西發酵了，也在後來我的生命中持續發酵著。</p><p>古人說，書中自有黃金屋。以前，我一直不懂，黃金屋在哪裡？</p><p>前陣子，有一天在品書時間結束回家的路上，我突然感覺手上這本書，好重啊！才突然發現，它不只是我認知裡，大家都說好，幾百元價值、幾百張紙重量的一本書。</p><p>在書本中的字裡行間傳達的觀念與想法，都是作者送給讀者的一份厚重大禮物。只是以前的我，沒有真的懂，就只看到一堆字和一堆道理，透過品書時間，就像拿到了這本書的鑰匙，打開了盒子，讓我看見了書中一個又一個改變我生命的禮物。</p><p>而讓我能有機會體驗到這個無價禮物的品書時間，是需要用心陪伴我們感受和了解的導讀人。很謝謝創意出版社的總編輯，每次的品書時間，就像一群人展開一趟書中探索和深度之旅，讓我總是帶著滿滿的收穫和力量回家。</p></div>
+          <p class="club-story-cta"><a href="#signup" data-track="bookclub_cta" data-label="story-1">想親自體驗看看？報名下一場 →</a></p>
+        </details>
+        <p class="club-story-by">— I.F. Yang，出版業</p>
+      </article>
+      <article class="club-story" id="story-2">
+        <p class="club-story-pull">「書就像一個拉炮；參加品書時間，就是把它拉開——「碰！」」</p>
+        <div class="club-story-open"><p>我叫 H.Y. Chen，是一位太陽能產品研發工程師，喜歡看書，也會看一些分享讀書心得的節目。</p><p>我對節目裡的一句話印象深刻，就是：「人生一切難題，知識給你答案」。而我通常是用看書的方式來得到想要的答案。</p></div>
+        <details class="club-story-more"><summary>讀完整篇心得</summary>
+          <div class="club-story-body"><p>在接觸到心橋的時候，當時在工作上有很嚴重的問題，那對我的打擊很大。被帶上來介紹課程跟做測試的時候，我都聽不太懂。在解說的過程中，有提到前面展示櫃裡放的書。然後，我就黏在書櫃前面一直看。</p><p>因為對自己的理解力還蠻有自信的，所以，本來只想買書回去看就好了，這樣就不用花錢上課。我很慶幸，還好當時沒這麼做──這又是另外的故事了。</p><p>直接拉回主題。</p><p>我想要重點分享讀一本《說話的藝術1》的經歷，這本書我半年多前就看完了。裡面是對說話問題的問答集。想要知道甚麼狀況要說甚麼話應對，有沒有其他手段來達成你要的效果，吵架要說甚麼可以把對方堵死嗎？這本書幾乎沒有。</p><p>就在看完書過了一段時間，這次品書時間剛好帶到這本書，我就來參加看看。總編輯帶的品書時間過一段時間後，我才發現自己的讀書方法有點問題：就是沒花時間去整理重點，而是直接接受書的訊息，自己試都沒試就相信書的結論。後來才發覺，這樣子很容易被別人牽著走。</p><p>參加品書時間，能準確了解書中的意思。像是：為什麼要寫這一段，為甚麼要這樣表達？而且在生活中碰到相關問題，還可以直接提問。或是讀到某段，突然有：「哦！這個我會！」也可以把想法講出來跟大家分享，不怕碰到沒人可以聊的狀況；就算沒看過書，也可以加入學習分享經驗。</p><p>一開始看書上某些例子，會覺得：「這是在說甚麼鬼？」</p><p>而在跟夥伴練習、調整後，慢慢的能把書上的東西用在生活上了。而我在寫逐字稿的時候，還可以把這本書當教科書看！</p><p>我覺得書跟品書時間，就好像拉炮一樣──你買拉炮回去，可以知道內容物是甚麼，彩帶跟亮片是甚麼顏色。但是，參加品書時間就好像把拉炮拉開，「碰！」直到引爆，才知道拉炮的聲音、火藥的味道、彩帶怎麼飛……</p><p>在品書時間討論中，還可能爆出意料之外、沒有寫在書上的想法。這是自己讀書不會體驗到的。以上是我參加品書時間跟玩拉炮的心得分享，謝謝大家。</p></div>
+          <p class="club-story-cta"><a href="#signup" data-track="bookclub_cta" data-label="story-2">想親自體驗看看？報名下一場 →</a></p>
+        </details>
+        <p class="club-story-by">— H.Y. Chen，太陽能工程師</p>
+      </article>
+      <article class="club-story" id="story-3">
+        <p class="club-story-pull">「我想告訴小時候那個躲考試的自己：你希望的學習環境出現了。」</p>
+        <div class="club-story-open"><p>我是一個遇到考試、老師要求成績就會頭痛曠課的學生。早期為了逃避學校的學習，我總是會故意去醫院報到，那時去看診用的健保卡還是蓋格子的，印象中好像一張有六格，我可以在半年內從 A 蓋到 J（蓋滿十張，六十次），總之，我就是很討厭讀書考試。</p></div>
+        <details class="club-story-more"><summary>讀完整篇心得</summary>
+          <div class="club-story-body"><p>從小我們追求成績的目的，無非也是希望將來長大可以過上自己想要的生活，實現自己的夢想。不過，依照我吊車尾的成績，我的人生應該是希望渺茫了。</p><p>但是，我卻很喜歡閱讀跟考試無關的書籍。我常幻想，如果學習可以用一種聊天的方式進行的話，我的成績應該會很好，因為我連去看醫生，都可以跟醫生聊起生命價值的話題。</p><p>上帝是恩寵的，因為我不學無術，卻意外的歪打正著，我從事的是電影的創作工作。我是一個說故事的人，我必須對人有很大量的觀察與了解，同時又必須帶領團隊合作。我經常面臨腸枯思竭的窘境，與不知道該如何溝通的困境。</p><p>這時候，創意出版社的品書時間出現了。</p><p>這是一個不需要準備、不需要考試的學習活動。我只需要配合講師的引導去討論，或是有不了解的地方提出來，不會有人投以異樣眼光，更多時候在與其他人的互動當中，我更了解別人，也更了解自己的優點與長處。</p><p>很多人在跟我相處時，會覺得我很強勢不好溝通，這點我一直深受其擾──明明我是細心，我經常發現細節中的魔鬼，怎麼到了最後，我反而變成別人眼中的魔鬼？在最近一次參與品書時間的過程中，幫助我找到了適合我的觀點。</p><p>我其實是一個很會溝通的人，經常別人的溝通表達不完整，我都有辦法協助引導到他表達出完整的想法。若以打球為例，我是一個會接壞球、打好球的選手，像我這樣的人，如果不能發揮長才是一件非常可惜，對不起人類世界和平的。</p><p>我很意外在品書時間的過程中，我竟然自己幫自己扭轉了觀念。</p><p>又有一次，在我很低潮挫折時，總編輯邀請我參加品書時間。當時我覺得，人生已經走到死胡同了，要怎麼轉啊！</p><p>結果，驚喜的是我卻解開了過去對我家人的不諒解──頓時之間，我看見自己不夠負責任的地方，我把自己的生命主導交在別人手中，卻忘記自己才是主宰者。</p><p>我已經陸續參加品書時間有兩年的時間了。這段時光裡，有太多這種驚奇的時刻，讓我覺得生命的美好。這讓我想起小時候收集健保卡蓋章的那個自己──如果有時光機可以回到過去，我希望告訴那個自己：在未來，你不用再躲藏，不用害怕考試，因為你希望的學習環境出現了。</p></div>
+          <p class="club-story-cta"><a href="#signup" data-track="bookclub_cta" data-label="story-3">想親自體驗看看？報名下一場 →</a></p>
+        </details>
+        <p class="club-story-by">— W. Hsu，影像工作者，參加兩年</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="club-worth" aria-labelledby="worth-t">
+    <h2 id="worth-t">讀書會為什麼要收 300 元？</h2>
+    <p class="club-worth-lead">其實更值得問的是：這 300 元，換到了什麼？</p>
+    <ul class="club-worth-list">
+      <li>換到一個願意讓自己停下來思考的晚上。</li>
+      <li>換到一本好書的重要觀點。</li>
+      <li>換到不同人生經驗的交流。</li>
+      <li>換到一次重新整理自己的機會。</li>
+    </ul>
+    <p>300 元，可以買一杯咖啡和一塊蛋糕，幾個小時後，味道留在記憶裡。300 元，也可以來一次品書時間：用一個小時，讀懂一本書最精華的內容，聽見不同的人生故事，整理自己正在面對的課題。</p>
+    <p class="club-worth-end">很多時候，真正昂貴的不是 300 元，而是日復一日過著同樣的生活，卻沒有給自己一次停下來看看的機會。</p>
   </section>
 
   <section class="club-box" aria-labelledby="fee-t">
