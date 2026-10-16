@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Creative Publisher//Book Club//ZH-TW
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Asia/Taipei
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0800
+TZOFFSETTO:+0800
+TZNAME:CST
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:wednesday-dream-builder@books.hellenchentruegroup.com
+DTSTAMP:20261008T073647Z
+DTSTART;TZID=Asia/Taipei:20261021T193000
+DTEND;TZID=Asia/Taipei:20261021T203000
+RRULE:FREQ=WEEKLY;BYDAY=WE
+SUMMARY:週三品書時間｜《築夢者之書》導讀（線上／現場）
+DESCRIPTION:每週一小時，由導讀人帶領深度品讀《築夢者之書》，
+ 一起把夢想一步步落實在生活裡。\n報名與提問：
+ https://books.hellenchentruegroup.com/book-club/
+URL:https://books.hellenchentruegroup.com/book-club/
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:週三品書時間 15 分鐘後開始
+END:VALARM
+END:VEVENT
+END:VCALENDAR

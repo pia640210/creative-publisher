@@ -321,6 +321,20 @@ svg.rail{max-width:100%}
 footer .footer-links a{display:inline-block;padding:10px 6px}
 
 .cp-foot a{display:inline-block;padding:10px 2px}
+
+/* 影片（點了才載入 YouTube） */
+.cp-video{padding:64px 20px;background:#F6F0E4;font-family:-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;color:#2A2622}
+.cp-video-in{max-width:760px;margin:0 auto}
+.cp-video-k{font-size:13px;letter-spacing:.14em;color:#B4513A;margin:0 0 8px}
+.cp-video h2{font-family:"Noto Serif TC",serif;font-size:clamp(22px,4.6vw,30px);margin:0 0 20px;color:#2A2622}
+.cp-yt{position:relative;aspect-ratio:16/9;background:#111;border-radius:8px;overflow:hidden;box-shadow:0 18px 36px -22px rgba(0,0,0,.5)}
+.cp-yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.cp-yt-cover{position:absolute;inset:0;padding:0;border:0;background:#000;cursor:pointer}
+.cp-yt-cover img{width:100%;height:100%;object-fit:cover;opacity:.88}
+.cp-yt-play{position:absolute;left:50%;top:50%;width:72px;height:50px;margin:-25px 0 0 -36px;border-radius:12px;background:#B4513A}
+.cp-yt-play::after{content:"";position:absolute;left:29px;top:15px;border-left:18px solid #fff;border-top:10px solid transparent;border-bottom:10px solid transparent}
+.cp-video-cap{font-size:14px;color:#5E574E;margin:12px 0 0}
+.cp-video-cap a{margin-left:8px;color:#B4513A}
 </style>
 <style id="cp-shell">
 .cp-top{background:#2A2622;color:#F3EEE4;font:14px/1.4 -apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;position:relative;z-index:60}
@@ -551,6 +565,14 @@ footer .footer-links a{display:inline-block;padding:10px 6px}
 <p class="cp-series-price">三本一起帶走：<s>NT$1,140</s> <strong>NT$1,000</strong></p>
 <a class="cp-series-btn" href="../../order/?add=ziji,zuoji,shibai" data-track="bundle_add" data-label="series">一次加入訂購單</a>
 </div></section>
+<section class="cp-video" aria-labelledby="cp-video-t"><div class="cp-video-in">
+  <p class="cp-video-k">影片</p>
+  <h2 id="cp-video-t">看影片，認識《做自己》</h2>
+  <div class="cp-yt" data-yt="surWV-G3JnI" data-title="《做自己》影片">
+    <button type="button" class="cp-yt-cover" aria-label="播放影片：《做自己》"><img src="https://i.ytimg.com/vi/surWV-G3JnI/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async"><span class="cp-yt-play" aria-hidden="true"></span></button>
+  </div>
+  <p class="cp-video-cap"><a href="https://www.youtube.com/watch?v=surWV-G3JnI" target="_blank" rel="noopener" data-track="video_youtube">在 YouTube 觀看</a></p>
+</div></section>
 <section class="section alt" id="author">
   <div class="wrap">
     <h2 class="sec-title">關於作者</h2>
@@ -778,5 +800,8 @@ document.querySelectorAll('[data-collapsible]').forEach(function(box){
 </script>
 <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
 <footer class="cp-foot">© 2026 創意出版社有限公司｜(02) 8712-2800（週二至週四 09:00–17:00）｜<a href="mailto:createbook.press@gmail.com">createbook.press@gmail.com</a>｜<a href="../../privacy/">隱私權政策</a></footer>
+<script>
+document.querySelectorAll('.cp-yt').forEach(function(box){box.querySelector('.cp-yt-cover').addEventListener('click',function(){var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+box.dataset.yt+'?autoplay=1&rel=0'+(box.dataset.start?'&start='+box.dataset.start:'');f.title=box.dataset.title;f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.allowFullscreen=true;box.innerHTML='';box.appendChild(f);if(window.gtag)gtag('event','video_play',{q:box.dataset.yt});});});
+</script>
 </body>
 </html>
