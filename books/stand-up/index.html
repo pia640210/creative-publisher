@@ -448,6 +448,15 @@ svg.rail{max-width:100%}
 footer .footer-links a{display:inline-block;padding:10px 6px}
 
 .cp-foot a{display:inline-block;padding:10px 2px}
+
+/* 團購洽詢（官網共用元件） */
+.cp-group{padding:28px 20px;background:#FBF8F2;font-family:-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif}
+.cp-group-in{max-width:760px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px 22px;border:1px dashed #C8C0B0;border-radius:10px;background:#fff;color:#2A2622}
+.cp-group h3{font-size:16px;font-weight:700;margin:0 0 6px;color:#2A2622;font-family:inherit;letter-spacing:.02em}
+.cp-group p{font-size:14px;line-height:1.8;color:#5E574E;margin:0}
+.cp-group-btn{flex:none;display:inline-flex;align-items:center;min-height:44px;padding:0 22px;border:1px solid #B4513A;border-radius:999px;color:#B4513A;text-decoration:none;font-weight:700;font-size:15px;background:#fff}
+.cp-group-btn:hover{background:#B4513A;color:#fff}
+@media(max-width:640px){.cp-group-in{flex-direction:column;align-items:stretch}.cp-group-btn{justify-content:center}}
 </style>
 <style id="cp-shell">
 .cp-top{background:#2A2622;color:#F3EEE4;font:14px/1.4 -apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;position:relative;z-index:60}
@@ -684,6 +693,11 @@ footer .footer-links a{display:inline-block;padding:10px 6px}
     </div>
   </div>
 </section>
+<section class="cp-group" aria-label="學校、企業團購"><div class="cp-group-in">
+  <div><h3>學校、企業團購</h3><p>歡迎大專院校諮商中心、生命教育授課教師，或企業 HR，洽詢團購優惠。也可以來電 (02) 8712-2800，或傳真 (02) 8712-2808。</p></div>
+  <a class="cp-group-btn" href="mailto:createbook.press@gmail.com?subject=%E3%80%8A%E8%87%AA%E5%B7%B1%E7%AB%99%E8%B5%B7%E4%BE%86%E3%80%8B%E5%9C%98%E8%B3%BC%E6%B4%BD%E8%A9%A2" data-track="group_inquiry" data-label="email">來信洽詢團購</a>
+</div></section>
+
 
 <!-- 作者 -->
 <section class="su-series" aria-labelledby="su-series-t">
