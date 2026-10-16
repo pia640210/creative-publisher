@@ -1105,3 +1105,14 @@ section.volume[hidden]{display:none!important}
 .q-in{animation:q-in .45s ease-out}
 @keyframes q-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion: reduce){.q-in{animation:none}}
+
+.set-btns{display:flex;flex-wrap:wrap;gap:4px 16px;margin-top:6px}
+
+/* 首頁：點問題後，右側推薦卡淡入並短暫高光 */
+#hero-answer.is-swapped{animation:ans-in .5s ease-out}
+#hero-answer.is-swapped .answer-card{box-shadow:0 0 0 2px var(--accent),0 12px 28px -18px rgba(0,0,0,.35);transition:box-shadow .9s}
+@keyframes ans-in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+.cal-add{display:flex;flex-wrap:wrap;align-items:center;gap:4px 14px;margin:6px 0 0;font-size:var(--fs-s)}
+.cal-add span{color:var(--ink-2)}
+.cal-add a{display:inline-flex;align-items:center;min-height:36px}

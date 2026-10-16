@@ -51,12 +51,12 @@
     var $ = function (sel) { return document.querySelector(sel); };
     var selected = function () { return boxes.filter(function (b) { return b.checked; }).map(function (b) { return { key: b.value, title: b.dataset.title, price: Number(b.dataset.price) }; }); };
 
-    function shipping(n) { return n === 0 ? null : (n <= 4 ? SHIP : 'later'); }
+    function shipping(n) { return n === 0 ? null : (n <= 4 ? SHIP : 0); }
     function render() {
       var items = selected(), p = price(items), n = items.length, ship = shipping(n);
       $('[data-sum-items]').innerHTML = n ? items.map(function (i) { return '<li><span>' + window.escHtml(i.title) + '</span><span>' + fmt(i.price) + '</span></li>'; }).join('') : '<li class="muted">還沒有選書</li>';
       $('[data-sum-books]').innerHTML = n ? (p.total < p.list ? '<s class="muted">' + fmt(p.list) + '</s> ' : '') + fmt(p.total) + (p.parts.length ? '<br><span class="form-note">' + p.parts.join('＋') + '</span>' : '') : fmt(0);
-      $('[data-sum-ship]').textContent = ship === null ? '—' : (ship === 'later' ? '5 本以上依重量計算，確認訂單時通知' : fmt(ship));
+      $('[data-sum-ship]').textContent = ship === null ? '—' : (ship === 0 ? '免運（5 本以上）' : fmt(ship));
       var total = p.total + (typeof ship === 'number' ? ship : 0);
       $('[data-sum-total]').textContent = fmt(total) + (ship === 'later' ? '＋運費' : '');
       var unsel = boxes.filter(function (b) { return !b.checked; }).map(function (b) { return Number(b.dataset.price) || 380; });

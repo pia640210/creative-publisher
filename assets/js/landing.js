@@ -264,7 +264,7 @@
   document.querySelectorAll('[data-yt]').forEach(function (box) {
     box.querySelector('.yt-cover').addEventListener('click', function () {
       var f = document.createElement('iframe');
-      f.src = 'https://www.youtube-nocookie.com/embed/' + box.dataset.yt + '?autoplay=1&rel=0';
+      f.src = 'https://www.youtube-nocookie.com/embed/' + box.dataset.yt + '?autoplay=1&rel=0' + (box.dataset.start ? '&start=' + box.dataset.start : '');
       f.title = box.dataset.title; f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen = true;
       box.innerHTML = ''; box.appendChild(f); f.focus();
       track('video_play', { q: box.dataset.yt });

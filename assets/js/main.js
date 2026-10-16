@@ -52,7 +52,11 @@
         if (wasOpen) { result.innerHTML = ''; if (wide) showVoice(); return; }
         a.setAttribute('aria-expanded', 'true');
         var html = bookCard(d);
-        if (wide) { result.innerHTML = ''; answer.innerHTML = html; vSuspended = true; }
+        if (wide) {
+          result.innerHTML = ''; vSuspended = true;
+          if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) answer.innerHTML = html;
+          else { answer.classList.add('is-fading'); setTimeout(function () { answer.innerHTML = html; answer.classList.remove('is-fading'); answer.classList.add('is-swapped'); setTimeout(function () { answer.classList.remove('is-swapped'); }, 900); }, 220); }
+        }
         else {
           result.innerHTML = html;
           result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
