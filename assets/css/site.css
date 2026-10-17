@@ -1125,3 +1125,10 @@ section.volume[hidden]{display:none!important}
 .cp-group-btn{flex:none;display:inline-flex;align-items:center;min-height:44px;padding:0 22px;border:1px solid #B4513A;border-radius:999px;color:#B4513A;text-decoration:none;font-weight:700;font-size:15px;background:#fff}
 .cp-group-btn:hover{background:#B4513A;color:#fff}
 @media(max-width:640px){.cp-group-in{flex-direction:column;align-items:stretch}.cp-group-btn{justify-content:center}}
+
+/* 媒體專訪標籤（點了跳到影片） */
+.media-badge{margin:var(--s2) 0 var(--s3)}
+.media-badge a{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:4px 14px;border:1px solid var(--gold);border-radius:999px;background:#FFF8EC;color:var(--ink);font-size:var(--fs-s);font-weight:700;text-decoration:none}
+.media-badge a:hover{background:var(--gold);color:#fff}
+
+.media-badge{display:flex;flex-wrap:wrap;gap:8px}
