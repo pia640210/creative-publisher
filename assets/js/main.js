@@ -328,7 +328,7 @@
     if (qs.length < 2) return;
     qs.forEach(function (q, i) {
       var tag = document.createElement('p');
-      tag.className = 'q-step'; tag.textContent = '第 ' + (i + 1) + ' / ' + qs.length + ' 題';
+      tag.className = 'q-step'; tag.textContent = list.closest('[lang="en"]') ? 'Question ' + (i + 1) + ' of ' + qs.length : '第 ' + (i + 1) + ' / ' + qs.length + ' 題';
       q.insertBefore(tag, q.firstChild);
       if (i > 0) q.hidden = true;
       q.addEventListener('click', function (e) {
