@@ -1132,3 +1132,45 @@ section.volume[hidden]{display:none!important}
 .media-badge a:hover{background:var(--gold);color:#fff}
 
 .media-badge{display:flex;flex-wrap:wrap;gap:8px}
+
+/* 訂購頁：限量典藏版 */
+.pick-special .pick-item{background:#FBF1EE;border-color:#D9B6AE}
+.cover-sq img{aspect-ratio:1/1;height:auto}
+
+/* 《我愛，故我在》典藏版入口 */
+.wa-feature-wrap{margin:var(--s6) auto}
+.wa-feature{margin:var(--s5) 0}
+.wa-feature-in{display:grid;grid-template-columns:150px 1fr;gap:var(--s5);align-items:center;padding:var(--s4);background:#FBF6EE;border:1px solid #B08A4A;outline:1px solid #B08A4A;outline-offset:-7px;color:#231815;text-decoration:none;max-width:760px}
+.wa-feature-in img{width:100%;height:auto;aspect-ratio:1/1;box-shadow:8px 12px 24px -16px rgba(60,20,20,.55)}
+.wa-feature-text{display:grid;gap:6px}
+.wa-feature-tag{justify-self:start;padding:2px 10px;background:#8E1F2B;color:#fff;font-size:13px;letter-spacing:.16em}
+.wa-feature-text strong{font-family:var(--serif);font-size:clamp(22px,3.4vw,28px);letter-spacing:.06em}
+.wa-feature-text span{color:#4a3d36;line-height:1.8}
+.wa-feature-go{color:#8E1F2B!important;font-weight:700}
+.wa-feature-in:hover{background:#F6ECDD}
+.cover-sq img{aspect-ratio:1/1!important;object-fit:cover}
+@media(max-width:560px){.wa-feature-in{grid-template-columns:96px 1fr;gap:var(--s3)}}
+
+/* 只在出版社販售的書 */
+.only-pub{margin:var(--s2) 0;padding:8px 12px;background:#FBF1EE;border-left:3px solid var(--accent);font-size:var(--fs-s);color:var(--ink)}
+.cover-qs{padding:var(--s5);background:rgba(255,255,255,.72);border-radius:6px}
+.cover-qs ul{list-style:none;margin:var(--s3) 0 0;padding:0;display:grid;gap:8px}
+.cover-qs li{font-family:var(--serif);font-size:17px;line-height:1.6;padding-left:1.2em;position:relative}
+.cover-qs li::before{content:"？";position:absolute;left:0;color:var(--accent)}
+.cover-blurb{margin:0;padding:var(--s5);background:rgba(255,255,255,.72);border-radius:6px}
+.cover-blurb p{font-family:var(--serif);font-size:17px;line-height:2;margin:0}
+.cover-blurb footer{margin-top:var(--s3);color:var(--ink-2);font-size:var(--fs-s)}
+.persona-tabs{flex-wrap:wrap}
+.persona-pain{color:var(--ink-2);line-height:1.85;margin:6px 0 10px}
+.quote-line{font-family:var(--serif);font-size:19px;line-height:1.8}
+.story-cards{display:grid;gap:var(--s4)}
+@media(min-width:760px){.story-cards{grid-template-columns:1fr 1fr}}
+.story-card{margin:0;padding:var(--s5);background:#fff;border:1px solid var(--line);border-radius:8px}
+.story-tag{font-size:var(--fs-s);color:var(--gold-ink);margin:0 0 var(--s3)}
+.story-card blockquote{margin:0}
+.story-card blockquote p{font-family:var(--serif);font-size:18px;line-height:1.85;margin:0}
+.story-card figcaption{margin-top:var(--s3);color:var(--ink-2);font-size:var(--fs-s)}
+.qbox{padding:var(--s5);background:var(--paper-2);border-radius:8px;text-align:center}
+.qbox-q{font-family:var(--serif);font-size:clamp(19px,3.4vw,24px);line-height:1.8;margin:0 0 var(--s2);min-height:3.6em;display:flex;align-items:center;justify-content:center}
+.qbox-q.is-in{animation:q-in .45s ease-out}
+.qbox-src{color:var(--gold-ink);font-size:var(--fs-s);margin:0 0 var(--s4)}

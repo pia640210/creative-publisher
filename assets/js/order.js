@@ -9,8 +9,11 @@
   /* 計價：在所有組合方式中找最便宜的。組合優先放較貴的書，剩下的按原價。 */
   function price(items) {
     var best = { total: Infinity };
+    var solo = items.filter(function (i) { return i.solo; });
+    var soloSum = solo.reduce(function (s, i) { return s + i.price; }, 0);
+    items = items.filter(function (i) { return !i.solo; });
     [false].forEach(function () {
-      var pool = items.slice(), base = 0, parts = [];
+      var pool = items.slice(), base = soloSum, parts = solo.length ? solo.map(function (i) { return '《' + i.title + '》不適用組合優惠'; }) : [];
       pool.sort(function (a, b) { return b.price - a.price; });
       var n = pool.length;
       for (var k6 = 0; k6 * 6 <= n; k6++) {
@@ -28,14 +31,14 @@
         }
       }
     });
-    if (!items.length) best = { total: 0, parts: [] };
-    best.list = items.reduce(function (s, i) { return s + i.price; }, 0);
+    if (!items.length) best = { total: soloSum, parts: solo.length ? solo.map(function (i) { return '《' + i.title + '》不適用組合優惠'; }) : [] };
+    best.list = items.reduce(function (s, i) { return s + i.price; }, 0) + soloSum;
     return best;
   }
   window.orderPrice = price; // 方便測試
 
   function nudge(items, current, extraPrice) {
-    var n = items.length;
+    var n = items.filter(function (i) { return !i.solo; }).length;
     if (!n) return '';
     var plusOne = price(items.concat([{ key: '_x', price: extraPrice || 380 }])); // extraPrice：尚未選的書裡最貴的一本，確保提示對任何選擇都成立
     if (plusOne.total <= current.total) return '再選 1 本，總價反而更便宜：現在 ' + fmt(current.total) + '，' + (n + 1) + ' 本最多 ' + fmt(plusOne.total) + '。';
@@ -49,7 +52,7 @@
   if (form) {
     var boxes = Array.prototype.slice.call(form.querySelectorAll('input[name="book"]'));
     var $ = function (sel) { return document.querySelector(sel); };
-    var selected = function () { return boxes.filter(function (b) { return b.checked; }).map(function (b) { return { key: b.value, title: b.dataset.title, price: Number(b.dataset.price) }; }); };
+    var selected = function () { return boxes.filter(function (b) { return b.checked; }).map(function (b) { return { key: b.value, title: b.dataset.title, price: Number(b.dataset.price), solo: b.dataset.solo === '1' }; }); };
 
     function shipping(n) { return n === 0 ? null : (n <= 4 ? SHIP : 0); }
     function render() {
@@ -59,7 +62,7 @@
       $('[data-sum-ship]').textContent = ship === null ? '—' : (ship === 0 ? '免運（5 本以上）' : fmt(ship));
       var total = p.total + (typeof ship === 'number' ? ship : 0);
       $('[data-sum-total]').textContent = fmt(total) + (ship === 'later' ? '＋運費' : '');
-      var unsel = boxes.filter(function (b) { return !b.checked; }).map(function (b) { return Number(b.dataset.price) || 380; });
+      var unsel = boxes.filter(function (b) { return !b.checked && b.dataset.solo !== '1'; }).map(function (b) { return Number(b.dataset.price) || 380; });
       $('[data-nudge]').textContent = nudge(items, p, unsel.length ? Math.max.apply(null, unsel) : 380);
       var bar = document.querySelector('[data-order-bar]');
       if (bar) { bar.querySelector('[data-bar-count]').textContent = n + ' 本'; bar.querySelector('[data-bar-total]').textContent = fmt(total); bar.classList.toggle('is-visible', n > 0); }

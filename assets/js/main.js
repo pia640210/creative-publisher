@@ -252,8 +252,9 @@
       var get = function (t) { return (parts.find(function (p) { return p.type === t; }) || {}).value; };
       var day = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(get('weekday'));
       var nowMin = day * 1440 + (Number(get('hour')) % 24) * 60 + Number(get('minute'));
-      var start = Number(cd.dataset.day) * 1440 + Number(cd.dataset.start);
-      var end = Number(cd.dataset.day) * 1440 + Number(cd.dataset.end);
+      var startMin = Number(cd.dataset.start || 840), endMin = Number(cd.dataset.end || startMin + 60);
+      var start = Number(cd.dataset.day || 6) * 1440 + startMin;
+      var end = Number(cd.dataset.day || 6) * 1440 + endMin;
       var label = cd.querySelector('[data-cd-label]'), time = cd.querySelector('[data-cd-time]');
       if (nowMin >= start && nowMin < end) {
         cd.classList.add('is-live'); label.textContent = '本週導讀正在進行中';
