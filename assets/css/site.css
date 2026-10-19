@@ -1182,3 +1182,5 @@ section.volume[hidden]{display:none!important}
 .en-quote p{font-style:italic}
 .pick-set{border:0;padding:0;margin:0}
 .pick-set legend{font-weight:700;margin-bottom:var(--s3)}
+
+.nowrap{white-space:nowrap}
