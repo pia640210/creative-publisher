@@ -416,6 +416,62 @@ footer .footer-links a{display:inline-block;padding:10px 6px}
 .cp-group-btn{flex:none;display:inline-flex;align-items:center;min-height:44px;padding:0 22px;border:1px solid #B4513A;border-radius:999px;color:#B4513A;text-decoration:none;font-weight:700;font-size:15px;background:#fff}
 .cp-group-btn:hover{background:#B4513A;color:#fff}
 @media(max-width:640px){.cp-group-in{flex-direction:column;align-items:stretch}.cp-group-btn{justify-content:center}}
+
+/* ===== 互動強化：測驗、情境翻牌卡、金句工具 ===== */
+.hero-quiz-link{margin-top:14px}
+.hero-quiz-link a{color:var(--paper);font-weight:700;text-decoration:underline;text-underline-offset:4px}
+.aq{background:var(--paper-card);padding:88px 0;color:var(--ink)}
+.aq-in{max-width:760px}
+.aq h2{font-family:var(--serif);font-size:clamp(28px,5vw,40px);margin:8px 0 10px;color:var(--ink)}
+.aq-intro{color:var(--ink-grey);margin:0 0 28px}
+.aq-box{background:#fff;border:1px solid var(--paper-soft);border-radius:14px;padding:clamp(22px,4vw,36px);box-shadow:0 20px 40px -30px rgba(24,20,15,.5)}
+.aq-step{font-size:14px;letter-spacing:.12em;color:var(--seal);margin:0 0 8px;font-weight:700}
+.aq-q{font-family:var(--serif);font-size:clamp(20px,3.4vw,24px);line-height:1.6;margin:0 0 18px;outline:none}
+.aq-opts{display:grid;gap:10px}
+.aq [hidden],.ac [hidden]{display:none!important}
+.aq-opt{display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;font:inherit;font-size:16px;line-height:1.7;padding:14px 16px;border:1px solid var(--paper-soft);border-radius:10px;background:var(--paper-card);color:var(--ink);cursor:pointer;transition:border-color .2s,background .2s,transform .15s}
+.aq-opt:hover{border-color:var(--seal);background:#fff;transform:translateY(-1px)}
+.aq-opt:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.aq-key{flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:var(--paper);font-weight:700;font-size:14px}
+.aq-bar{height:4px;background:var(--paper-soft);border-radius:4px;margin:0 0 18px;overflow:hidden}
+.aq-bar span{display:block;height:100%;background:var(--seal);transition:width .4s}
+.aq-result h3{font-family:var(--serif);font-size:clamp(22px,3.6vw,28px);color:var(--seal);margin:0 0 10px}
+.aq-result p{line-height:1.85;margin:0 0 14px}
+.aq-rec{display:grid;grid-template-columns:92px 1fr;gap:16px;align-items:center;padding:16px;border-radius:10px;background:var(--paper-card);margin:16px 0}
+.aq-rec img{width:100%;height:auto;box-shadow:0 10px 20px -12px rgba(0,0,0,.5)}
+.aq-rec strong{display:block;font-family:var(--serif);font-size:17px;line-height:1.6}
+.aq-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.aq-buy{display:inline-flex;align-items:center;min-height:48px;padding:0 22px;border-radius:999px;background:var(--seal);color:#fff;font-weight:700;text-decoration:none}
+.aq-buy:hover{background:var(--seal-deep)}
+.aq-buy.ghost{background:transparent;color:var(--seal);border:1px solid var(--seal)}
+.aq-save{font-size:14px;color:var(--ink-grey);margin:10px 0 0}
+.aq-redo{margin-top:14px;font:inherit;font-size:14px;background:none;border:0;color:var(--ink-grey);text-decoration:underline;cursor:pointer;min-height:44px}
+.aq-in-anim{animation:aqIn .4s ease-out}
+@keyframes aqIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.ac{background:var(--ink);color:var(--paper);padding:88px 0}
+.ac h2{font-family:var(--serif);font-size:clamp(28px,5vw,40px);margin:8px 0 10px;color:var(--paper)}
+.ac-intro{color:var(--paper-soft);margin:0 0 28px}
+.ac-grid{list-style:none;margin:0;padding:0;display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.ac-card{width:100%;min-height:200px;text-align:left;font:inherit;color:var(--ink);background:var(--paper-card);border:0;border-radius:12px;padding:22px;cursor:pointer;display:flex;transition:transform .25s,box-shadow .25s}
+.ac-card:hover{transform:translateY(-3px);box-shadow:0 18px 30px -20px rgba(0,0,0,.8)}
+.ac-card:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.ac-card[aria-pressed="true"]{background:#fff;border-top:4px solid var(--seal)}
+.ac-front,.ac-back{display:flex;flex-direction:column;gap:12px;width:100%}
+.ac-front[hidden],.ac-back[hidden]{display:none!important}
+.ac-tag{align-self:flex-start;font-size:13px;letter-spacing:.1em;padding:3px 10px;border-radius:999px;background:var(--seal);color:#fff}
+.ac-q{font-family:var(--serif);font-size:19px;line-height:1.65;flex:1}
+.ac-hint{font-size:13px;color:var(--gold);font-weight:700}
+.ac-steps{display:grid;gap:8px;font-size:15px;line-height:1.75}
+.ac-step{padding-left:14px;border-left:2px solid var(--gold)}
+.ac-src{font-size:13px;color:var(--ink-grey)}
+.ac-card.is-flip{animation:acFlip .45s ease-out}
+@keyframes acFlip{from{transform:rotateY(70deg);opacity:.3}to{transform:none;opacity:1}}
+.buy-link-pub{background:var(--seal)!important;color:#fff!important;border-color:var(--seal)!important}
+.quote-tools{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:22px}
+.qt-btn{min-width:44px;min-height:44px;padding:0 14px;border-radius:999px;border:1px solid var(--gold);background:transparent;color:var(--paper);font:inherit;font-size:15px;cursor:pointer}
+.qt-btn:hover{background:var(--gold);color:var(--ink)}
+.qt-status{text-align:center;min-height:1.4em;color:var(--paper-soft);font-size:14px;margin:10px 0 0}
+@media (prefers-reduced-motion: reduce){.aq-in-anim,.ac-card.is-flip{animation:none}.ac-card:hover,.aq-opt:hover{transform:none}}
 </style>
 <style id="cp-shell">
 .cp-top{background:#2A2622;color:#F3EEE4;font:14px/1.4 -apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;position:relative;z-index:60}
@@ -444,6 +500,7 @@ html{overflow-x:hidden}body{overflow-x:clip}
       <p class="lede">活著，本身就是一場藝術。而表達，是生命力最迷人的展現。</p>
       <a href="https://books.hellenchentruegroup.com/order/?add=art1,art2,art3" class="seal-button hero-cta">立即收藏《說話的藝術》全三冊</a>
       <p class="hero-cta-note">全套三冊優惠價 NT$1,000　・　<a href="#volumes" class="inline-link-light">或單本於網路書店選購</a></p>
+<p class="hero-quiz-link"><a href="#art-quiz" data-track="section_expand" data-label="hero_quiz">不知道從哪一冊開始？先做 3 題檢測 →</a></p>
     </div>
     <div class="cover-stack">
       <img class="cover-3" src="cover-3.webp" alt="《說話的藝術3：你怎樣說話，決定你是怎樣的人！》書封">
@@ -455,18 +512,19 @@ html{overflow-x:hidden}body{overflow-x:clip}
 </section>
 
 <!-- ============ 痛點 ============ -->
-<section class="pain">
-  <div class="wrap">
-    <div class="pain-intro reveal">
-      <span class="eyebrow">靈魂拷問</span>
-      <h2>你是否也曾遇過這些困境？</h2>
+<section class="aq" id="art-quiz" aria-labelledby="aq-t">
+  <div class="wrap aq-in">
+    <span class="eyebrow">3 題快速檢測</span>
+    <h2 id="aq-t">你的溝通盲點，在哪裡？</h2>
+    <p class="aq-intro">回答三個問題，看看你該從哪一冊開始讀。</p>
+    <div class="aq-box" data-aq>
+      <p class="aq-step" data-aq-step></p>
+      <p class="aq-q" data-aq-q tabindex="-1"></p>
+      <div class="aq-opts" data-aq-opts role="group" aria-labelledby="aq-t"></div>
+      <div class="aq-result" data-aq-result hidden aria-live="polite"></div>
     </div>
-    <div class="bubble-row reveal"><div class="bubble">明明是一番好意，卻總是「言者無心，聽者有意」，被人誤解？</div></div>
-    <div class="bubble-row from-right reveal"><div class="bubble">遇到心儀的對象或重要客戶，總是腦袋空白、找不到話題，聊沒幾句就冷場？</div></div>
-    <div class="bubble-row reveal"><div class="bubble">面對別人講話很衝、喜歡找碴或咄咄逼人，你總是毫無招架之力，只能生悶氣？</div></div>
-    <div class="bubble-row from-right reveal"><div class="bubble">在職場上努力做事，卻因為不會跟老闆、同事溝通，導致升遷受阻、懷才不遇？</div></div>
-    <p class="pain-close reveal">在交友、戀愛、工作、做生意甚至家庭關係中，只要沒有把話說好的能力，幾乎沒有任何勝算——不會說話的痛苦，就像隨時陷在焦慮與被誤解的地獄裡。</p>
   </div>
+  <script type="application/json" id="aq-data">{"questions": [{"q": "在社交場合，別人講話拐彎抹角或客套時，你通常會？", "o": [["只聽字面上的意思，結果常常誤解對方的真心", "A"], ["緊張得不知如何回應，容易讓氣氛冷掉", "B"], ["急著想講自己的話，不小心打斷或搶話", "C"]]}, {"q": "在職場或生活中，突然面對別人的言語挑釁，你的反應是？", "o": [["暴跳如雷或委屈流淚，無法冷靜面對", "C"], ["不知所措，只能默默忍受，事後生悶氣", "A"], ["說話結巴不順暢，無法清楚為自己站台", "B"]]}, {"q": "開口說話前，你會先注意自己的身心狀態嗎？", "o": [["從不注意，常常帶著負面情緒或緊繃的狀態開口", "A"], ["很想講好，但音量、口齒與速度的基本功不夠", "B"], ["常常拿捏不好「做自己」和「沒禮貌」的分寸", "C"]]}], "results": {"A": {"title": "你需要的是：內心覺察與深層傾聽", "d": "加強「說話前先跟自己溝通」與「察言觀色」的內功，就不會只聽字面意思而產生誤解。", "vol": 1, "name": "《說話的藝術 1》講對話讓你上天堂，說錯話讓你見閻王！"}, "B": {"title": "你需要的是：說話的基本功", "d": "你的關鍵在於鍛鍊音質、口齒、音量與順暢度，並掌握說話的速度與停頓留白。", "vol": 2, "name": "《說話的藝術 2》真金不怕火煉，只怕你從來都不練！"}, "C": {"title": "你需要的是：實戰應對與情境破解", "d": "學會說話的「球賽動作」：開球、救球、送球，在衝突中冷靜為自己站台、劃清界線。", "vol": 3, "name": "《說話的藝術 3》你怎樣說話，決定你是怎樣的人！"}}}</script>
 </section>
 
 <!-- ============ 核心價值 ============ -->
@@ -580,6 +638,26 @@ html{overflow-x:hidden}body{overflow-x:clip}
 </section>
 
 <!-- ============ 三冊 ============ -->
+<section class="ac" id="art-cases" aria-labelledby="ac-t">
+  <div class="wrap">
+    <span class="eyebrow">情境練習</span>
+    <h2 id="ac-t">這些時候，你會怎麼說？</h2>
+    <p class="ac-intro">先想想你會怎麼做，再翻開卡片，看看書裡怎麼說。</p>
+    <ul class="ac-grid" role="list"><li><button type="button" class="ac-card" aria-pressed="false">
+  <span class="ac-front"><span class="ac-tag">衝突破解</span><span class="ac-q">面對別人的言語挑釁或羞辱，該如何應對？</span><span class="ac-hint">點一下，看書中的解法</span></span>
+  <span class="ac-back" hidden><span class="ac-tag">應對羞辱的四個基本動作</span><span class="ac-steps"><span class="ac-step">能夠察覺：判斷對方的意圖，不隨假動作起舞。</span><span class="ac-step">能夠面對：保持思緒清晰冷靜，不暴跳如雷，也不流淚。</span><span class="ac-step">有所回應：決定要不要揮棒，可以用幽默或四兩撥千斤回應。</span><span class="ac-step">為自己站台：堅定表達自己的立場與界線。</span></span><span class="ac-src">出自《說話的藝術》第三冊</span></span>
+</button></li><li><button type="button" class="ac-card" aria-pressed="false">
+  <span class="ac-front"><span class="ac-tag">化解尷尬</span><span class="ac-q">談話卡住、冷場，或遇到不適當的話題，怎麼化解？</span><span class="ac-hint">點一下，看書中的解法</span></span>
+  <span class="ac-back" hidden><span class="ac-tag">化解尷尬場合的三個妙招</span><span class="ac-steps"><span class="ac-step">開門見山：直接表明態度，順勢結束不適當的話題。</span><span class="ac-step">四兩撥千斤：巧妙轉移焦點，帶大家進入新話題。</span><span class="ac-step">結束並轉移：處之泰然，不硬找話講，給彼此一點緩衝。</span></span><span class="ac-src">出自《說話的藝術》第三冊</span></span>
+</button></li><li><button type="button" class="ac-card" aria-pressed="false">
+  <span class="ac-front"><span class="ac-tag">傾聽心法</span><span class="ac-q">怎麼避免「言者無心，聽者有意」的誤解？</span><span class="ac-hint">點一下，看書中的解法</span></span>
+  <span class="ac-back" hidden><span class="ac-tag">成功的傾聽與表達</span><span class="ac-steps"><span class="ac-step">不只聽字面：觀察對方的眼神、動作、表情與當下的氣氛。</span><span class="ac-step">多補兩句話：錢可以省著用，話不能省著講，主動把心意說清楚。</span><span class="ac-step">對焦並回應：給予專注的眼神與適時的回饋，讓對方感到被理解。</span></span><span class="ac-src">出自《說話的藝術》第一冊</span></span>
+</button></li><li><button type="button" class="ac-card" aria-pressed="false">
+  <span class="ac-front"><span class="ac-tag">職場說話</span><span class="ac-q">向主管報告、或有求於人時，怎麼說才得體？</span><span class="ac-hint">點一下，看書中的解法</span></span>
+  <span class="ac-back" hidden><span class="ac-tag">報告與請求的四個原則</span><span class="ac-steps"><span class="ac-step">先從好消息開始講，讓人聽起來舒服。</span><span class="ac-step">據實相告：說實情不隱瞞，不囉嗦，講重點。</span><span class="ac-step">先徵求同意，並告知需要多少時間，展現尊重。</span><span class="ac-step">清楚說明需求與後續安排，心懷感激。</span></span><span class="ac-src">出自《說話的藝術》第三冊</span></span>
+</button></li></ul>
+  </div>
+</section>
 <section class="volumes" id="volumes">
   <span class="ghost-char" aria-hidden="true">話</span>
   <div class="wrap">
@@ -593,15 +671,9 @@ html{overflow-x:hidden}body{overflow-x:clip}
       <div class="volume-body">
         <span class="tag">卷一・內功養成篇</span>
         <h3>講對話讓你上天堂，說錯話讓你見閻王！</h3>
-        <p class="vol-outcome">學會先理解自己</p>
-        <span class="learn-label">讀完後你將能夠</span>
-        <ul>
-          <li>更了解自己的情緒</li>
-          <li>更清楚自己的表達模式</li>
-          <li>減少衝動與誤解</li>
-        </ul>
+        <p class="vol-outcome">從「說話前先跟自己溝通」開始，掌握說話的基本守則與深層傾聽。</p> <span class="learn-label">這一冊的重點</span> <ul><li>說話的五個基本守則：有趣、處理事情、表達情意、感動、講理</li><li>說話的四個觀念：傳達與互動、結果責任、情緒受控、速度節奏</li><li>核心心法：誠意，永遠在技巧之上</li></ul>
         <div class="volume-foot"><span>ISBN 978-986-89796-2-8</span><span>NT$380</span></div>
-        <div class="buy-links">
+        <div class="buy-links"> <a class="buy-link buy-link-pub" href="https://books.hellenchentruegroup.com/order/?add=art1" data-track="add_to_order" data-book="art1">向出版社訂購</a>
           <a class="buy-link" href="https://www.sanmin.com.tw/product/index/004797093" target="_blank" rel="noopener">三民</a>
           <a class="buy-link" href="https://www.iread.com.tw/Detail/ProdDetail/B000313897?biztype=1" target="_blank" rel="noopener">iRead</a>
           <a class="buy-link" href="https://www.books.com.tw/products/0010653583?loc=P_0005_004" target="_blank" rel="noopener">博客來</a>
@@ -615,15 +687,9 @@ html{overflow-x:hidden}body{overflow-x:clip}
       <div class="volume-body">
         <span class="tag">卷二・技巧實戰篇</span>
         <h3>真金不怕火煉，只怕你從來都不練！</h3>
-        <p class="vol-outcome">讓別人更願意聽你說話</p>
-        <span class="learn-label">讀完後你將能夠</span>
-        <ul>
-          <li>提升說服力</li>
-          <li>讓別人願意聽你說話</li>
-          <li>表達更有自信</li>
-        </ul>
+        <p class="vol-outcome">強調「非練不可」：從音質、咬字到察言觀色與公眾演講的鍛鍊。</p> <span class="learn-label">這一冊的重點</span> <ul><li>入門基本功：音質、口齒、音量、順暢度</li><li>進階基本功：懂、準、控制、圓滿</li><li>掌握發言主動權，與說話的留白節奏</li></ul>
         <div class="volume-foot"><span>ISBN 978-986-89796-3-5</span><span>NT$380</span></div>
-        <div class="buy-links">
+        <div class="buy-links"> <a class="buy-link buy-link-pub" href="https://books.hellenchentruegroup.com/order/?add=art2" data-track="add_to_order" data-book="art2">向出版社訂購</a>
           <a class="buy-link" href="https://www.sanmin.com.tw/product/index/004797094" target="_blank" rel="noopener">三民</a>
           <a class="buy-link" href="https://www.iread.com.tw/Detail/ProdDetail/B000313898?biztype=1" target="_blank" rel="noopener">iRead</a>
           <a class="buy-link" href="https://www.books.com.tw/products/0010653585?loc=P_0005_005" target="_blank" rel="noopener">博客來</a>
@@ -637,15 +703,9 @@ html{overflow-x:hidden}body{overflow-x:clip}
       <div class="volume-body">
         <span class="tag">卷三・情境破解篇</span>
         <h3>你怎樣說話，決定你是怎樣的人！</h3>
-        <p class="vol-outcome">面對難搞的人也不再害怕</p>
-        <span class="learn-label">讀完後你將能夠</span>
-        <ul>
-          <li>面對衝突更冷靜</li>
-          <li>提高談判能力</li>
-          <li>維持關係又守住立場</li>
-        </ul>
+        <p class="vol-outcome">聚焦複雜情境，用「球賽基本動作」拆解開球、救球、護球與衝突應對。</p> <span class="learn-label">這一冊的重點</span> <ul><li>說話的球賽動作：開球、救球（補話）、送球與護球、切入與融入</li><li>衝突與羞辱應對：察覺、面對、回應、為自己站台</li><li>職場向上報告、面對難搞的人、在談判中化解僵局</li></ul>
         <div class="volume-foot"><span>ISBN 978-986-89796-4-2</span><span>NT$380</span></div>
-        <div class="buy-links">
+        <div class="buy-links"> <a class="buy-link buy-link-pub" href="https://books.hellenchentruegroup.com/order/?add=art3" data-track="add_to_order" data-book="art3">向出版社訂購</a>
           <a class="buy-link" href="https://www.sanmin.com.tw/product/index/004797095" target="_blank" rel="noopener">三民</a>
           <a class="buy-link" href="https://www.iread.com.tw/Detail/ProdDetail/B000313899?biztype=2" target="_blank" rel="noopener">iRead</a>
           <a class="buy-link" href="https://www.books.com.tw/products/0010653588?loc=P_0005_006" target="_blank" rel="noopener">博客來</a>
@@ -666,36 +726,7 @@ html{overflow-x:hidden}body{overflow-x:clip}
 </section>
 
 <!-- ============ 適合誰／不適合誰 ============ -->
-<section class="fit">
-  <div class="wrap">
-    <div class="reveal">
-      <span class="eyebrow">先確認一下</span>
-      <h2>這套書適合誰？</h2>
-    </div>
-    <div class="fit-grid reveal">
-      <div class="fit-col fit-yes">
-        <h3>這套書適合你，如果你⋯</h3>
-        <ul>
-          <li>想改善人際關係</li>
-          <li>想提升表達能力</li>
-          <li>容易被誤解</li>
-          <li>想改善親子關係</li>
-          <li>想提升職場影響力</li>
-          <li>想學習傾聽</li>
-        </ul>
-      </div>
-      <div class="fit-col fit-no">
-        <h3>這套書可能不適合你，如果你⋯</h3>
-        <ul>
-          <li>只想學話術</li>
-          <li>不願意練習</li>
-          <li>期待速成技巧</li>
-          <li>不願意理解他人</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <!-- ============ 讀者見證 ============ -->
 <section class="testimonials">
@@ -741,24 +772,7 @@ html{overflow-x:hidden}body{overflow-x:clip}
 </section>
 
 <!-- ============ 讀者成果區 ============ -->
-<section class="outcomes">
-  <span class="ghost-char" aria-hidden="true">變</span>
-  <div class="wrap">
-    <div class="reveal">
-      <span class="eyebrow">讀完之後</span>
-      <h2>你可能會得到的改變</h2>
-      <p class="outcomes-intro">不管你是想把話說得更真誠、更精準，還是想在職場與社交場合更從容自在——這套書，是為每一個想把日子過得更順、把關係處得更好的人準備的。</p>
-    </div>
-    <ul class="outcomes-grid reveal">
-      <li>更容易表達自己的想法</li>
-      <li>更容易聽懂別人的需求</li>
-      <li>減少人際誤解</li>
-      <li>提升工作與家庭溝通品質</li>
-      <li>面對衝突更有信心</li>
-      <li>建立更深的人際連結</li>
-    </ul>
-  </div>
-</section>
+
 
 <!-- ============ CTA 3 ============ -->
 <section class="cta-strip">
@@ -785,6 +799,8 @@ html{overflow-x:hidden}body{overflow-x:clip}
       <p class="quote-item">人生最可貴之處，在於「進步成長」。只要你能進步，一切的問題最後都會有答案。</p>
     </div>
     <div class="quote-dots" id="quoteDots"></div>
+<div class="quote-tools"><button type="button" class="qt-btn" data-qt="prev" aria-label="上一則">←</button><button type="button" class="qt-btn" data-qt="next" aria-label="下一則">→</button><button type="button" class="qt-btn qt-wide" data-qt="copy">複製這句話</button><button type="button" class="qt-btn qt-wide" data-qt="line">分享到 LINE</button></div>
+<p class="qt-status" data-qt-status role="status"></p>
   </div>
 </section>
 
@@ -920,6 +936,67 @@ var tabs=document.createElement('div');tabs.className='vol-tabs';tabs.setAttribu
 cards.forEach(function(c,i){c.id=c.id||('vol-'+(i+1));c.setAttribute('role','tabpanel');var b=document.createElement('button');b.type='button';b.setAttribute('role','tab');b.setAttribute('aria-controls',c.id);b.textContent='第 '+(i+1)+' 冊';
 b.addEventListener('click',function(){cards.forEach(function(x,k){x.hidden=k!==i;tabs.children[k].setAttribute('aria-selected',String(k===i));});if(window.gtag)gtag('event','volume_tab',{label:i+1});});tabs.appendChild(b);});
 cards[0].parentNode.insertBefore(tabs,cards[0]);cards.forEach(function(x,k){x.hidden=k!==0;tabs.children[k].setAttribute('aria-selected',String(k===0));});})();
+</script>
+<script>
+/* 溝通盲點測驗：一次一題，答完推薦冊別 */
+(function () {
+  var box = document.querySelector('[data-aq]'); if (!box) return;
+  var D = JSON.parse(document.getElementById('aq-data').textContent), i = 0, ans = [];
+  var step = box.querySelector('[data-aq-step]'), q = box.querySelector('[data-aq-q]'), opts = box.querySelector('[data-aq-opts]'), res = box.querySelector('[data-aq-result]');
+  var ORDER = 'https://books.hellenchentruegroup.com/order/?add=';
+  function show() {
+    var Q = D.questions[i];
+    step.innerHTML = '第 ' + (i + 1) + ' / ' + D.questions.length + ' 題<span class="aq-bar" aria-hidden="true" style="display:block;margin-top:10px"><span style="width:' + (i / D.questions.length * 100) + '%"></span></span>';
+    q.textContent = Q.q; opts.innerHTML = '';
+    Q.o.forEach(function (o, k) {
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'aq-opt';
+      b.innerHTML = '<span class="aq-key">' + 'ABC'[k] + '</span><span></span>'; b.lastChild.textContent = o[0];
+      b.addEventListener('click', function () { ans.push(o[1]); i++; if (i < D.questions.length) { show(); q.focus({ preventScroll: true }); } else finish(); });
+      opts.appendChild(b);
+    });
+    [q, opts].forEach(function (el) { el.classList.remove('aq-in-anim'); void el.offsetWidth; el.classList.add('aq-in-anim'); });
+  }
+  function finish() {
+    var c = { A: 0, B: 0, C: 0 }; ans.forEach(function (a) { c[a]++; });
+    var t = ['A', 'B', 'C'].sort(function (x, y) { return c[y] - c[x]; })[0], R = D.results[t];
+    step.hidden = true; q.hidden = true; opts.hidden = true; res.hidden = false;
+    res.innerHTML = '<h3></h3><p></p><div class="aq-rec"><img alt="" width="300" height="420"><div><span>建議你先讀</span><strong></strong></div></div>' +
+      '<div class="aq-actions"><a class="aq-buy" data-track="add_to_order" data-label="quiz_vol">加入這一冊 NT$380</a><a class="aq-buy ghost" data-track="bundle_add" data-label="quiz_set" href="' + ORDER + 'art1,art2,art3">全套三冊 NT$1,000</a></div>' +
+      '<p class="aq-save">三冊設計成完整的修練系統，全套比單買省 NT$140。</p><button type="button" class="aq-redo">重新檢測</button>';
+    res.querySelector('h3').textContent = R.title; res.querySelector('p').textContent = R.d;
+    res.querySelector('strong').textContent = R.name; res.querySelector('img').src = 'cover-' + R.vol + '.webp';
+    res.querySelector('.aq-buy').href = ORDER + 'art' + R.vol;
+    res.querySelector('.aq-redo').addEventListener('click', function () { i = 0; ans = []; res.hidden = true; step.hidden = false; q.hidden = false; opts.hidden = false; show(); });
+    res.classList.remove('aq-in-anim'); void res.offsetWidth; res.classList.add('aq-in-anim');
+    if (window.gtag) gtag('event', 'quiz_result', { q: 'art_' + t });
+  }
+  show();
+})();
+/* 情境翻牌卡 */
+document.querySelectorAll('.ac-card').forEach(function (c) {
+  c.addEventListener('click', function () {
+    var on = c.getAttribute('aria-pressed') !== 'true';
+    c.setAttribute('aria-pressed', String(on)); c.querySelector('.ac-front').hidden = on; c.querySelector('.ac-back').hidden = !on;
+    c.classList.remove('is-flip'); void c.offsetWidth; c.classList.add('is-flip');
+    if (on && window.gtag) gtag('event', 'section_expand', { label: 'art_case' });
+  });
+});
+/* 金句：上一則／下一則、複製、分享 */
+(function () {
+  var stage = document.getElementById('quoteStage'); if (!stage) return;
+  var items = [].slice.call(stage.querySelectorAll('.quote-item')), st = document.querySelector('[data-qt-status]');
+  var cur = function () { return Math.max(0, items.findIndex(function (x) { return x.classList.contains('active'); })); };
+  var go = function (n) { var dots = document.querySelectorAll('#quoteDots button'); if (dots[n]) dots[n].click(); else { items.forEach(function (x, k) { x.classList.toggle('active', k === n); }); } };
+  var text = function () { return items[cur()].textContent.trim() + '——陳海倫《說話的藝術》'; };
+  document.querySelectorAll('[data-qt]').forEach(function (b) { b.addEventListener('click', function () {
+    var a = b.dataset.qt, n = cur();
+    if (a === 'prev') go((n - 1 + items.length) % items.length);
+    if (a === 'next') go((n + 1) % items.length);
+    if (a === 'copy' && navigator.clipboard) navigator.clipboard.writeText(text() + '\n' + location.href.split('#')[0]).then(function () { st.textContent = '已複製這句話。'; });
+    if (a === 'line') window.open('https://social-plugins.line.me/lineit/share?url=' + encodeURIComponent(location.href.split('#')[0]) + '&text=' + encodeURIComponent(text()), '_blank', 'noopener');
+    if ((a === 'copy' || a === 'line') && window.gtag) gtag('event', 'quote_share', { method: a });
+  }); });
+})();
 </script>
 </body>
 </html>
