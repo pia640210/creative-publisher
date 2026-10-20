@@ -993,7 +993,7 @@ document.querySelectorAll('.ac-card').forEach(function (c) {
     if (a === 'prev') go((n - 1 + items.length) % items.length);
     if (a === 'next') go((n + 1) % items.length);
     if (a === 'copy' && navigator.clipboard) navigator.clipboard.writeText(text() + '\n' + location.href.split('#')[0]).then(function () { st.textContent = '已複製這句話。'; });
-    if (a === 'line') window.open('https://social-plugins.line.me/lineit/share?url=' + encodeURIComponent(location.href.split('#')[0]) + '&text=' + encodeURIComponent(text()), '_blank', 'noopener');
+    if (a === 'line') window.open('https://social-plugins.line.me/lineit/share?url=' + encodeURIComponent(location.origin + location.pathname + '?utm_source=line&utm_medium=share&utm_campaign=art-quote') + '&text=' + encodeURIComponent(text()), '_blank', 'noopener');
     if ((a === 'copy' || a === 'line') && window.gtag) gtag('event', 'quote_share', { method: a });
   }); });
 })();

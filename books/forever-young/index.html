@@ -505,7 +505,7 @@ footer .footer-links a{display:inline-block;padding:10px 6px}
         <div class="draw-actions">
           <button type="button" class="btn btn-main" id="drawBtn">抽取今日靈感</button>
           <button type="button" class="small" id="saveCard" disabled>儲存成圖片</button>
-          <button type="button" class="small" id="copyCard" disabled>複製文字</button>
+          <button type="button" class="small" id="copyCard" disabled>複製文字</button> <button type="button" id="lineCard" class="small" disabled>用 LINE 分享</button>
         </div>
         <p class="copied" id="copied" role="status"></p>
         <form class="lead-box" id="leadForm" novalidate>
@@ -843,7 +843,7 @@ $('#drawBtn').addEventListener('click', () => {
   $('#insightText').textContent = `「${current}」`;
   card.classList.remove('flip'); void card.offsetWidth; card.classList.add('flip');
   $('#drawBtn').textContent = '再抽一張';
-  $('#saveCard').disabled = false; $('#copyCard').disabled = false;
+  $('#saveCard').disabled = false; $('#copyCard').disabled = false; $('#lineCard').disabled = false;
   $('#copied').textContent = '';
   track('insight_draw');
 });
@@ -851,7 +851,7 @@ $('#copyCard').addEventListener('click', () => {
   const text = `今日永齡靈感：「${current}」\n——《今天你幾歲？永齡長春》\n${location.href.split('#')[0]}`;
   copyText(text); track('insight_share', { method: 'copy' });
 });
-$('#saveCard').addEventListener('click', async () => {
+$('#lineCard').addEventListener('click', () => { const url = location.origin + location.pathname + '?utm_source=line&utm_medium=share&utm_campaign=forever-young-card'; window.open('https://social-plugins.line.me/lineit/share?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent('今日永齡靈感：「' + current + '」——《今天你幾歲？永齡長春》'), '_blank', 'noopener'); track('insight_share', { method: 'line' }); }); $('#saveCard').addEventListener('click', async () => {
   const blob = await renderCard(current);
   const file = new File([blob], '今日永齡靈感.png', { type: 'image/png' });
   if (navigator.canShare && navigator.canShare({ files: [file] })) {

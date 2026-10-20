@@ -971,7 +971,7 @@ function showResult() {
         <a class="btn btn-main" href="#buy" data-track="buy_click" data-label="quiz_result">${r.cta}</a>
         <div class="res-small">
           <button type="button" id="copyRes">複製我的結果</button>
-          <a href="https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(pageUrl + '#quiz')}" target="_blank" rel="noopener">用 LINE 分享</a>
+          <a href="https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(pageUrl.split('?')[0] + '?utm_source=line&utm_medium=share&utm_campaign=how-i-failed-quiz#quiz')}" target="_blank" rel="noopener">用 LINE 分享</a>
           <button type="button" id="retry">重新檢測</button>
         </div>
         <p class="copied" id="copied" role="status"></p>
