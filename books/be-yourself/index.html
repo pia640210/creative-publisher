@@ -556,6 +556,14 @@ footer .footer-links a{display:inline-block;padding:10px 6px}
   </div>
 </section>
 
+
+<section class="lr-sec" aria-label="讀者心得"><div class="lr-sec-in"><div class="lr-wrap" data-live-reviews data-slug="be-yourself" data-book="做自己" hidden aria-live="polite"></div><details class="lr-share"><summary>讀過這本書嗎？分享你的讀後感</summary>
+<form class="lr-form" data-book="做自己"> <p class="lr-note">送出後由編輯審核，刊登時只顯示你填的稱呼。</p>
+<label class="lr-hp" aria-hidden="true">請勿填寫此欄<input name="website" tabindex="-1" autocomplete="off"></label>
+<label for="lr-text-be-yourself">這本書對你的影響或感受</label><textarea id="lr-text-be-yourself" name="text" rows="4" required></textarea>
+<label for="lr-name-be-yourself">稱呼（選填，例如：王小姐，台北）</label><input id="lr-name-be-yourself" name="name" autocomplete="nickname">
+<p class="lr-note">詳見<a href="../../privacy/">隱私權政策</a>。</p>
+<button type="submit">送出讀後感</button><p class="lr-status" role="status"></p></form></details></div></section>
 <section class="section" id="buy">
   <div class="wrap buy">
     <h2 class="sec-title">向出版社訂購</h2>
@@ -821,5 +829,6 @@ document.querySelectorAll('[data-collapsible]').forEach(function(box){
 <script>
 document.querySelectorAll('.cp-yt').forEach(function(box){box.querySelector('.cp-yt-cover').addEventListener('click',function(){var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+box.dataset.yt+'?autoplay=1&rel=0'+(box.dataset.start?'&start='+box.dataset.start:'');f.title=box.dataset.title;f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.allowFullscreen=true;box.innerHTML='';box.appendChild(f);if(window.gtag)gtag('event','video_play',{q:box.dataset.yt});});});
 </script>
+<script src="../../assets/js/live-reviews.js?v=d6170aec" defer></script>
 </body>
 </html>
