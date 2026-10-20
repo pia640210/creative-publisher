@@ -457,6 +457,28 @@ footer .footer-links a{display:inline-block;padding:10px 6px}
 .cp-group-btn{flex:none;display:inline-flex;align-items:center;min-height:44px;padding:0 22px;border:1px solid #B4513A;border-radius:999px;color:#B4513A;text-decoration:none;font-weight:700;font-size:15px;background:#fff}
 .cp-group-btn:hover{background:#B4513A;color:#fff}
 @media(max-width:640px){.cp-group-in{flex-direction:column;align-items:stretch}.cp-group-btn{justify-content:center}}
+
+/* Podcast 專訪（點了才載入 YouTube） */
+.su-media{margin:10px 0 6px}
+.su-media a{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:4px 14px;border:1px solid #C9A86A;border-radius:999px;background:#FFF8EC;color:#2A2622;font-size:14px;font-weight:700;text-decoration:none}
+.su-media a:hover{background:#C9A86A;color:#fff}
+.su-pod{padding:72px 0;background:#F6F0E4}
+.su-pod-k{font-size:13px;letter-spacing:.14em;color:#B4513A;margin:0 0 8px}
+.su-pod h2{font-family:var(--serif);font-size:clamp(24px,4.4vw,32px);margin:0 0 10px}
+.su-pod-intro{color:#5E574E;margin:0 0 24px}
+.su-pod-grid{display:grid;gap:24px}
+@media(min-width:760px){.su-pod-grid{grid-template-columns:1fr 1fr}}
+.su-pod-fig{margin:0}
+.su-yt{position:relative;aspect-ratio:16/9;background:#111;border-radius:8px;overflow:hidden;box-shadow:0 16px 30px -22px rgba(0,0,0,.55)}
+.su-yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.su-yt-cover{position:absolute;inset:0;padding:0;border:0;background:#000;cursor:pointer}
+.su-yt-cover img{width:100%;height:100%;object-fit:cover;opacity:.88}
+.su-yt-play{position:absolute;left:50%;top:50%;width:68px;height:48px;margin:-24px 0 0 -34px;border-radius:12px;background:#B4513A}
+.su-yt-play::after{content:"";position:absolute;left:27px;top:14px;border-left:17px solid #fff;border-top:10px solid transparent;border-bottom:10px solid transparent}
+.su-yt-cover:focus-visible{outline:3px solid #C9A86A;outline-offset:3px}
+.su-pod-fig figcaption{margin-top:12px;font-size:15px;line-height:1.75;color:#2A2622}
+.su-pod-ep{display:inline-block;margin-right:8px;padding:1px 8px;border-radius:4px;background:#2A2622;color:#fff;font-size:12px;font-weight:700}
+.su-pod-fig figcaption a{color:#B4513A;margin-left:4px;white-space:nowrap}
 </style>
 <style id="cp-shell">
 .cp-top{background:#2A2622;color:#F3EEE4;font:14px/1.4 -apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;position:relative;z-index:60}
@@ -494,6 +516,7 @@ footer .footer-links a{display:inline-block;padding:10px 6px}
     <div class="hero-text">
       <p class="su-new"><span>2026 全新改寫</span>原《敗犬站起來》</p>
 <p class="hero-book">陳海倫 著｜寫給在感情與人生裡反覆卡住的你</p>
+<p class="su-media"><a href="#podcast" data-track="media_badge"><span aria-hidden="true">🎧</span>加菲坐副駕 Podcast 專訪</a></p>
       <h1><span class="su-h1-book">《自己站起來》</span><span class="ph">當沒有人能替你的人生負責時，</span><span class="ph">你是否願意，</span><span class="ph">溫柔地重新把自己找回來？</span></h1>
       <p class="hero-sub">最讓人心疼的，從不是外在的失敗；而是在歲月的長河裡，我們慢慢失去了自己。</p>
       <p class="hero-tagline">放下逃避的表面藉口，誠實面對盲點，把自己找回來。</p>
@@ -657,6 +680,22 @@ footer .footer-links a{display:inline-block;padding:10px 6px}
 </section>
 
 <!-- 購書 -->
+<section class="su-pod" id="podcast" aria-labelledby="su-pod-t"><div class="wrap">
+  <p class="su-pod-k">Podcast 專訪</p>
+  <h2 id="su-pod-t">加菲坐副駕 Podcast 專訪《自己站起來》</h2>
+  <p class="su-pod-intro">通勤、做家事的時候，也可以用聽的認識這本書。</p>
+  <div class="su-pod-grid"><figure class="su-pod-fig">
+  <div class="su-yt" data-yt="jmdkA_FdNwc" data-title="加菲坐副駕 Podcast 專訪《自己站起來》EP01">
+    <button type="button" class="su-yt-cover" aria-label="播放：加菲坐副駕 Podcast EP01"><img src="https://i.ytimg.com/vi/jmdkA_FdNwc/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async"><span class="su-yt-play" aria-hidden="true"></span></button>
+  </div>
+  <figcaption><span class="su-pod-ep">EP01</span>職場無往不利，生活卻遇上「隱形關卡」？給聰明人的關係覺醒書 <a href="https://www.youtube.com/watch?v=jmdkA_FdNwc" target="_blank" rel="noopener" data-track="video_youtube">在 YouTube 收聽</a></figcaption>
+</figure><figure class="su-pod-fig">
+  <div class="su-yt" data-yt="XgUhgI9gzv4" data-title="加菲坐副駕 Podcast 專訪《自己站起來》EP4">
+    <button type="button" class="su-yt-cover" aria-label="播放：加菲坐副駕 Podcast EP4"><img src="https://i.ytimg.com/vi/XgUhgI9gzv4/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async"><span class="su-yt-play" aria-hidden="true"></span></button>
+  </div>
+  <figcaption><span class="su-pod-ep">EP4</span>「哪個人不會站啊？」——如果生活沒問題，為什麼你總是憋屈到連一句真心話都說不出口？ <a href="https://www.youtube.com/watch?v=XgUhgI9gzv4" target="_blank" rel="noopener" data-track="video_youtube">在 YouTube 收聽</a></figcaption>
+</figure></div>
+</div></section>
 <section class="cp-reviews" aria-labelledby="cp-rv-t"><div class="cp-reviews-in"><p class="cp-reviews-k">讀者分享</p><h2 id="cp-rv-t">讀過的人這樣說</h2><div class="cp-rv-grid"><figure class="cp-rv"><blockquote><p>書中一針見血地指出，人生反覆出現的困境幾乎都不是外在造成的，而是源於我們看待自我與做選擇的內在模式。</p></blockquote><figcaption>屏東，謝先生</figcaption></figure><figure class="cp-rv"><blockquote><p>這本書讓我感受到幸福從來就不是碰運氣的機率問題，而是一項需要透過自我覺察與學習來培養的能力。</p></blockquote><figcaption>宜蘭，陳先生</figcaption></figure><figure class="cp-rv"><blockquote><p>真的，別再把「工作太忙」或「一個人比較自由」當成逃避的藉口，因為你以為的原因其實都只是結果。</p></blockquote><figcaption>台北，張小姐</figcaption></figure></div><details class="cp-rv-more"><summary>再看 2 則讀者心得</summary><div class="cp-rv-grid"><figure class="cp-rv"><blockquote><p>讀著這本書，心裡最深沉的共鳴是：原來最令人心疼的不是挫折，而是在忙碌與疲憊中慢慢失去了自己。</p></blockquote><figcaption>台北，陳小姐</figcaption></figure><figure class="cp-rv"><blockquote><p>這是一本極具實踐價值的自我覺察指南，直接點出「幸福是一種能力，起點是對自己的誠實」。</p></blockquote><figcaption>新北市，劉先生</figcaption></figure></div></details></div></section>
 <section class="buy-sec" id="buy">
   <div class="wrap">
@@ -1194,6 +1233,17 @@ window.addEventListener('load', () => {
 <script>
 // 長區塊：先顯示一部分，點「看全部」再展開
 document.querySelectorAll('[data-su-open]').forEach(function(b){b.addEventListener('click',function(){var sec=document.getElementById(b.dataset.suOpen);if(!sec)return;sec.classList.add('is-open');var row=b.closest('.su-more-row');if(row)row.remove();if(typeof track==='function')track('section_expand',{label:b.dataset.suOpen});else if(window.gtag)gtag('event','section_expand',{label:b.dataset.suOpen});});});
+</script>
+<script>
+document.querySelectorAll('.su-yt').forEach(function (box) {
+  box.querySelector('.su-yt-cover').addEventListener('click', function () {
+    var f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/' + box.dataset.yt + '?autoplay=1&rel=0';
+    f.title = box.dataset.title; f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen = true;
+    box.innerHTML = ''; box.appendChild(f);
+    if (window.gtag) gtag('event', 'video_play', { q: box.dataset.yt });
+  });
+});
 </script>
 </body>
 </html>
