@@ -36,6 +36,12 @@
     }).catch(function () { /* 讀不到就不顯示，不影響頁面 */ });
   });
 
+  // 網址帶 #share-review 時：直接打開讀後感表單並捲到那裡（邀請讀者寫心得用）
+  if (location.hash === '#share-review') {
+    var d = document.getElementById('share-review');
+    if (d) { d.open = true; setTimeout(function () { d.scrollIntoView({ block: 'start' }); var t = d.querySelector('textarea'); if (t) t.focus({ preventScroll: true }); }, 300); }
+  }
+
   // 2) 送出新的讀後感（只處理 .lr-form；一般書頁的表單由 main.js 處理）
   document.querySelectorAll('form.lr-form').forEach(function (form) {
     form.addEventListener('submit', function (e) {

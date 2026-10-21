@@ -180,7 +180,7 @@
 
   /* ---------- 書籍頁：手機底部購買列 ---------- */
   var sticky = document.querySelector('[data-sticky-buy]');
-  var heroCta = document.querySelector('.book-buy .cta-row, .book-buy .cta-dual');
+  var heroCta = document.querySelector('.book-buy .cta-row, .book-buy .cta-dual, [data-sticky-anchor]');
   if (sticky && heroCta) {
     var ticking = false;
     var update = function () { sticky.classList.toggle('is-visible', heroCta.getBoundingClientRect().bottom < 0); ticking = false; };
