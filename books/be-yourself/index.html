@@ -347,6 +347,47 @@ footer .footer-links a{display:inline-block;padding:10px 6px}
 
 .cp-media{margin:10px 0 14px}
 .cp-media a{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:4px 14px;border:1px solid #C9A86A;border-radius:999px;background:rgba(255,248,236,.92);color:#2A2622;font-size:14px;font-weight:700;text-decoration:none;font-family:-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif}
+
+/* 讀者心得（與自己站起來相同的樣式） */
+
+
+/* 讀者的話（官網共用元件） */
+.cp-reviews{background:#FBF8F2;padding:64px 20px;font-family:-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;color:#2A2622}
+
+.cp-reviews-in{max-width:960px;margin:0 auto}
+
+.cp-reviews-k{font-size:13px;letter-spacing:.14em;color:#B4513A;margin:0 0 8px}
+
+.cp-reviews h2{font-family:"Noto Serif TC",serif;font-size:clamp(22px,4.6vw,30px);line-height:1.45;margin:0 0 24px;color:#2A2622}
+
+.cp-rv-grid{display:grid;gap:16px}
+@media(min-width:760px){.cp-rv-grid{grid-template-columns:repeat(3,1fr)}}
+
+.cp-rv{margin:0;padding:22px 22px 18px;background:#fff;border:1px solid #E7DFD1;border-radius:8px;display:flex;flex-direction:column;justify-content:space-between}
+
+.cp-rv blockquote{margin:0}
+
+.cp-rv p{font-family:"Noto Serif TC",serif;font-size:16px;line-height:1.85;margin:0 0 12px;color:#2A2622}
+
+.cp-rv p::before{content:"「";color:#B4513A}
+.cp-rv p::after{content:"」";color:#B4513A}
+
+.cp-rv figcaption{font-size:13px;color:#7A7166}
+
+.cp-rv-more{margin-top:16px}
+
+.cp-rv-more summary{display:inline-block;cursor:pointer;list-style:none;font-size:15px;padding:12px 24px;border-radius:999px;border:1px solid #CDBFAA;background:#fff;color:#2A2622}
+
+.cp-rv-more summary::-webkit-details-marker{display:none}
+
+.cp-rv-more summary::after{content:" ＋";color:#B4513A}
+
+.cp-rv-more[open] summary{display:none}
+
+.cp-rv-more .cp-rv-grid{margin-top:16px}
+
+/* 底部購買列不蓋住頁尾 */
+@media (max-width: 960px){ body{ padding-bottom: 88px; } }
 </style>
 <style id="cp-shell">
 .cp-top{background:#2A2622;color:#F3EEE4;font:14px/1.4 -apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;position:relative;z-index:60}
@@ -364,7 +405,7 @@ footer .footer-links a{display:inline-block;padding:10px 6px}
 <div class="cp-top"><div class="cp-top-in"><a class="cp-brand" href="../../">← 創意出版社</a><nav aria-label="官網"><a href="../../books/">找一本書</a><a class="cp-hide" href="../../book-club/">品書時間</a><a href="../../order/">線上訂購</a></nav></div></div>
 
 <nav class="nav">
-  <a class="nav-logo" href="https://books.hellenchentruegroup.com/">創意出版社</a>
+  <a class="nav-logo" href="#" aria-label="回到本頁頂端">《做自己》</a>
   <button class="nav-toggle" aria-label="開啟選單" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
   <div class="nav-links" id="navLinks" onclick="this.classList.remove('open')">
     <a href="#intro">書籍簡介</a>
@@ -557,7 +598,8 @@ footer .footer-links a{display:inline-block;padding:10px 6px}
 </section>
 
 
-<section class="lr-sec" aria-label="讀者心得"><div class="lr-sec-in"><div class="lr-wrap" data-live-reviews data-slug="be-yourself" data-book="做自己" hidden aria-live="polite"></div><details class="lr-share"><summary>讀過這本書嗎？分享你的讀後感</summary>
+<section class="cp-reviews" aria-labelledby="cp-rv-t"><div class="cp-reviews-in"><p class="cp-reviews-k">讀者分享</p><h2 id="cp-rv-t">讀過的人這樣說</h2><div class="cp-rv-grid"><figure class="cp-rv"><blockquote><p>當看見自己那一刻，心很痛。過去都不是做自己。這是一條荊棘叢生的道路，也是一條通往自由的路。</p></blockquote><figcaption>台北，葉先生</figcaption></figure><figure class="cp-rv"><blockquote><p>讀這本書像是一場讓靈魂溫柔歸零的旅程，提醒我們每個人都是天下無雙的獨特存在。</p></blockquote><figcaption>桃園，黃小姐</figcaption></figure><figure class="cp-rv"><blockquote><p>當我們不再忙著討好他人或扮演親近之人的影子，就能學會做自己最堅實的知己與朋友。</p></blockquote><figcaption>台北，陳小姐</figcaption></figure></div><details class="cp-rv-more"><summary>再看 9 則讀者心得</summary><div class="cp-rv-grid"><figure class="cp-rv"><blockquote><p>作者將「做自己」定義為精準的生命定位，如同發射火箭的初角與相機的對焦。</p></blockquote><figcaption>新北，劉先生</figcaption></figure><figure class="cp-rv"><blockquote><p>本書打破了隨興任性的迷思，指出氣話與負面情緒皆非真實自我，真正的自我源於理智下的極致誠實與理性決策。</p></blockquote><figcaption>台北，巫小姐</figcaption></figure><figure class="cp-rv"><blockquote><p>這是一套結構嚴密、強調透過不斷進步來提升生命水準的自我重塑論述。</p></blockquote><figcaption>苗栗，陳先生</figcaption></figure><figure class="cp-rv"><blockquote><p>你以為自己在生活，其實不過是在無意間複製長輩的壞脾氣與惡習、演著別人的布袋戲。</p></blockquote><figcaption>羅東，陳先生</figcaption></figure><figure class="cp-rv"><blockquote><p>別再用各種冠冕堂皇的藉口掩蓋對現實的逃避，不敢誠實面對問題只會讓小蛀牙惡化成吞噬人生的大恐龍。</p></blockquote><figcaption>台中，吳小姐</figcaption></figure><figure class="cp-rv"><blockquote><p>當我們剝離附著在身上的荒涼影子，終於能以最本真的模樣，安居於天下無雙的生命風景裡。</p></blockquote><figcaption>台南，林小姐</figcaption></figure><figure class="cp-rv"><blockquote><p>本書將抽象的心靈探索轉化為具體的處世藝術，打破了「做自己等同於自私」的刻板印象。</p></blockquote><figcaption>彰化，張先生</figcaption></figure><figure class="cp-rv"><blockquote><p>作者以武術巧妙比喻人際溝通中的「以進為退」與「以退為進」，教導讀者在團隊協作中拿捏彈性分寸。</p></blockquote><figcaption>台中，李先生</figcaption></figure><figure class="cp-rv"><blockquote><p>這是一本能直接落實於職場與家庭、兼具自我尊嚴與人際智慧的實務指南。</p></blockquote><figcaption>台北，謝先生</figcaption></figure></div></details></div></section>
+<section class="lr-sec" aria-label="讀者心得"><div class="lr-sec-in"><div class="lr-wrap" data-live-reviews data-slug="be-yourself" data-book="做自己" hidden aria-live="polite"></div><details class="lr-share" id="share-review"><summary>讀過這本書嗎？分享你的讀後感</summary>
 <form class="lr-form" data-book="做自己"> <p class="lr-note">送出後由編輯審核，刊登時只顯示你填的稱呼。</p>
 <label class="lr-hp" aria-hidden="true">請勿填寫此欄<input name="website" tabindex="-1" autocomplete="off"></label>
 <label for="lr-text-be-yourself">這本書對你的影響或感受</label><textarea id="lr-text-be-yourself" name="text" rows="4" required></textarea>
@@ -829,6 +871,6 @@ document.querySelectorAll('[data-collapsible]').forEach(function(box){
 <script>
 document.querySelectorAll('.cp-yt').forEach(function(box){box.querySelector('.cp-yt-cover').addEventListener('click',function(){var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+box.dataset.yt+'?autoplay=1&rel=0'+(box.dataset.start?'&start='+box.dataset.start:'');f.title=box.dataset.title;f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.allowFullscreen=true;box.innerHTML='';box.appendChild(f);if(window.gtag)gtag('event','video_play',{q:box.dataset.yt});});});
 </script>
-<script src="../../assets/js/live-reviews.js?v=d6170aec" defer></script>
+<script src="../../assets/js/live-reviews.js?v=064e05ac" defer></script>
 </body>
 </html>

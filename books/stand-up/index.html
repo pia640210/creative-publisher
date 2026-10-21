@@ -479,6 +479,9 @@ footer .footer-links a{display:inline-block;padding:10px 6px}
 .su-pod-fig figcaption{margin-top:12px;font-size:15px;line-height:1.75;color:#2A2622}
 .su-pod-ep{display:inline-block;margin-right:8px;padding:1px 8px;border-radius:4px;background:#2A2622;color:#fff;font-size:12px;font-weight:700}
 .su-pod-fig figcaption a{color:#B4513A;margin-left:4px;white-space:nowrap}
+
+/* 底部購買列不蓋住頁尾 */
+@media (max-width: 960px){ body{ padding-bottom: 88px; } }
 </style>
 <style id="cp-shell">
 .cp-top{background:#2A2622;color:#F3EEE4;font:14px/1.4 -apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;position:relative;z-index:60}
@@ -496,7 +499,7 @@ footer .footer-links a{display:inline-block;padding:10px 6px}
 
 <header class="nav">
   <div class="wrap nav-inner">
-    <a class="nav-brand" href="https://books.hellenchentruegroup.com/">《自己站起來》</a>
+    <a class="nav-brand" href="#" aria-label="回到本頁頂端">《自己站起來》</a>
     <button class="nav-toggle" aria-label="開啟選單" aria-expanded="false" onclick="toggleNav(this)">☰</button>
     <nav class="nav-links" id="navLinks">
       <a href="#excuses">11 個藉口</a>
@@ -697,7 +700,7 @@ footer .footer-links a{display:inline-block;padding:10px 6px}
 </figure></div>
 </div></section>
 <section class="cp-reviews" aria-labelledby="cp-rv-t"><div class="cp-reviews-in"><p class="cp-reviews-k">讀者分享</p><h2 id="cp-rv-t">讀過的人這樣說</h2><div class="cp-rv-grid"><figure class="cp-rv"><blockquote><p>書中一針見血地指出，人生反覆出現的困境幾乎都不是外在造成的，而是源於我們看待自我與做選擇的內在模式。</p></blockquote><figcaption>屏東，謝先生</figcaption></figure><figure class="cp-rv"><blockquote><p>這本書讓我感受到幸福從來就不是碰運氣的機率問題，而是一項需要透過自我覺察與學習來培養的能力。</p></blockquote><figcaption>宜蘭，陳先生</figcaption></figure><figure class="cp-rv"><blockquote><p>真的，別再把「工作太忙」或「一個人比較自由」當成逃避的藉口，因為你以為的原因其實都只是結果。</p></blockquote><figcaption>台北，張小姐</figcaption></figure></div><details class="cp-rv-more"><summary>再看 2 則讀者心得</summary><div class="cp-rv-grid"><figure class="cp-rv"><blockquote><p>讀著這本書，心裡最深沉的共鳴是：原來最令人心疼的不是挫折，而是在忙碌與疲憊中慢慢失去了自己。</p></blockquote><figcaption>台北，陳小姐</figcaption></figure><figure class="cp-rv"><blockquote><p>這是一本極具實踐價值的自我覺察指南，直接點出「幸福是一種能力，起點是對自己的誠實」。</p></blockquote><figcaption>新北市，劉先生</figcaption></figure></div></details></div></section>
-<section class="lr-sec" aria-label="讀者心得"><div class="lr-sec-in"><div class="lr-wrap" data-live-reviews data-slug="stand-up" data-book="自己站起來" hidden aria-live="polite"></div><details class="lr-share"><summary>讀過這本書嗎？分享你的讀後感</summary>
+<section class="lr-sec" aria-label="讀者心得"><div class="lr-sec-in"><div class="lr-wrap" data-live-reviews data-slug="stand-up" data-book="自己站起來" hidden aria-live="polite"></div><details class="lr-share" id="share-review"><summary>讀過這本書嗎？分享你的讀後感</summary>
 <form class="lr-form" data-book="自己站起來"> <p class="lr-note">送出後由編輯審核，刊登時只顯示你填的稱呼。</p>
 <label class="lr-hp" aria-hidden="true">請勿填寫此欄<input name="website" tabindex="-1" autocomplete="off"></label>
 <label for="lr-text-stand-up">這本書對你的影響或感受</label><textarea id="lr-text-stand-up" name="text" rows="4" required></textarea>
@@ -1253,6 +1256,6 @@ document.querySelectorAll('.su-yt').forEach(function (box) {
   });
 });
 </script>
-<script src="../../assets/js/live-reviews.js?v=d6170aec" defer></script>
+<script src="../../assets/js/live-reviews.js?v=064e05ac" defer></script>
 </body>
 </html>
