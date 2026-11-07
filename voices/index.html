@@ -125,6 +125,29 @@
 .vc-bank-note { margin: var(--s3) 0 0; font-size: var(--fs-s); color: var(--ink-2); }
 .vc-two { display: grid; gap: var(--s4); }
 @media (min-width: 600px) { .vc-two { grid-template-columns: 1fr 1fr; } }
+
+.vc-voice { display: grid; gap: var(--s5); margin: var(--s7) 0 0; padding: clamp(18px, 3vw, 32px); border-radius: 14px; background: var(--paper-2); align-items: center; scroll-margin-top: calc(var(--header-h) + 16px); }
+@media (min-width: 820px) { .vc-voice { grid-template-columns: 300px 1fr; gap: var(--s7); } }
+.vc-voice-video { max-width: 300px; width: 100%; margin: 0 auto; }
+.vc-yt { position: relative; aspect-ratio: 9 / 16; border-radius: 12px; overflow: hidden; background: #111; box-shadow: 0 16px 30px -20px rgba(0, 0, 0, .55); }
+.vc-yt iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.vc-yt-cover { position: absolute; inset: 0; padding: 0; border: 0; background: #111; cursor: pointer; }
+.vc-yt-cover img { width: 100%; height: 100%; object-fit: cover; opacity: .9; }
+.vc-yt-play { position: absolute; left: 50%; top: 50%; width: 68px; height: 48px; margin: -24px 0 0 -34px; border-radius: 12px; background: #B4513A; }
+.vc-yt-play::after { content: ""; position: absolute; left: 27px; top: 14px; border-left: 17px solid #fff; border-top: 10px solid transparent; border-bottom: 10px solid transparent; }
+.vc-yt-cover:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+.vc-yt-link { margin: var(--s2) 0 0; text-align: center; font-size: var(--fs-s); }
+.vc-voice-k { margin: 0 0 var(--s2); font-size: 13px; letter-spacing: .14em; color: #A4481F; font-weight: 700; }
+.vc-voice-title { font-family: var(--serif); font-size: clamp(22px, 3.4vw, 30px); line-height: 1.4; margin: 0 0 var(--s2); }
+.vc-voice-by { margin: 0 0 var(--s5); color: var(--ink-2); }
+.vc-voice-points { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s4); }
+.vc-voice-points li { line-height: 1.85; padding-left: var(--s4); border-left: 3px solid var(--gold); }
+.vc-voice-points b { display: block; font-family: var(--serif); }
+.vc-up-voice { display: flex; align-items: center; gap: 12px; margin: var(--s4) 0 var(--s3); padding: 8px; border: 1px solid var(--line); border-radius: 10px; text-decoration: none; color: var(--ink); background: #fff; }
+.vc-up-voice:hover { border-color: #A4481F; }
+.vc-up-voice img { width: 54px; height: 96px; object-fit: cover; border-radius: 6px; flex: none; background: #111; }
+.vc-up-voice span { font-size: var(--fs-s); color: var(--ink-2); line-height: 1.6; }
+.vc-up-voice b { display: block; color: #A4481F; font-size: var(--fs-m); }
 </style>
 <style>
 /* 創意大小聲：即將舉行的活動（樣式寫在本頁，不影響其他頁） */
@@ -216,6 +239,9 @@
               <a class="btn btn-primary" href="#signup" data-track="section_expand" data-label="voices_gratitude_form">線上報名與匯款</a>
               <a class="btn btn-quiet" href="tel:0277012846" data-track="tel_click" data-label="voices_gratitude_signup">來電報名 (02) 7701-2846</a>
             </div>
+            <a class="vc-up-voice" href="#hw26-voice" data-vc-play="P5wdn6vXzv8" data-track="section_expand" data-label="voices_interview_mini">
+              <img src="https://i.ytimg.com/vi/P5wdn6vXzv8/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async"><span><b>▶ 上一場參加的爸爸怎麼說</b>俊培和兒子參加萬聖節踩街後的分享</span>
+            </a>
             <p class="vc-up-note">邀請親友一起來？可以把這一頁傳給他們：<a href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Fbooks.hellenchentruegroup.com%2Fvoices%2F%3Futm_source%3Dline%26utm_medium%3Dshare%26utm_campaign%3Dvoices-gratitude&amp;text=%E3%80%8C%E5%89%B5%E6%84%8F%E5%A4%A7%E5%B0%8F%E8%81%B2%E3%80%8D%E9%82%80%E8%AB%8B%E4%BD%A0%EF%BC%9A%E8%AE%93%E3%80%8C%E7%90%86%E6%89%80%E7%95%B6%E7%84%B6%E3%80%8D%E8%AE%8A%E6%88%90%E3%80%8C%E5%B9%B8%E7%A6%8F%E6%84%9F%E8%AC%9D%E3%80%8D%EF%BC%8C11%2F21%EF%BC%88%E5%85%AD%EF%BC%89" target="_blank" rel="noopener" data-track="share_line" data-label="voices_gratitude">用 LINE 分享</a></p>
           </div>
         </div>
@@ -294,6 +320,24 @@
             <p class="vc-recap-links"><a class="btn btn-quiet" href="#hw26-photos">看活動照片（19 張）</a></p>
           </div>
         </div>
+        <section class="vc-voice" id="hw26-voice" aria-labelledby="hw26-voice-t">
+          <div class="vc-voice-video">
+            <div class="vc-yt" data-yt="P5wdn6vXzv8" data-title="俊培父子分享參加萬聖節變裝踩街的心得">
+              <button type="button" class="vc-yt-cover" aria-label="播放影片：俊培分享參加萬聖節變裝踩街的心得"><img src="https://i.ytimg.com/vi/P5wdn6vXzv8/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async"><span class="vc-yt-play" aria-hidden="true"></span></button>
+            </div>
+            <p class="vc-yt-link"><a href="https://www.youtube.com/shorts/P5wdn6vXzv8" target="_blank" rel="noopener" data-track="video_youtube">在 YouTube 觀看</a></p>
+          </div>
+          <div class="vc-voice-text">
+            <p class="vc-voice-k">參加者怎麼說</p>
+            <h4 id="hw26-voice-t" class="vc-voice-title">四十幾歲，第一次變裝踩街</h4>
+            <p class="vc-voice-by">俊培（和兒子一起參加）</p>
+            <ul class="vc-voice-points">
+              <li><b>第一次體驗萬聖節踩街</b>四十幾歲第一次變裝、踩街，走進巷弄裡的店家 Trick or Treat，覺得非常有趣，也很有參與感。</li>
+              <li><b>孩子與書的結合</b>孩子不只是變裝，還拿著創意出版社的書，向店家老闆介紹。在一旁看著孩子不知不覺就能清楚表達、專注推廣，是很棒的收穫。</li>
+              <li><b>店家的熱情</b>孩子最期待店家發糖果、搶糖果。老闆們熱情地說「等你們好久了」，還主動邀大家一起合照。</li>
+            </ul>
+          </div>
+        </section>
         <h4 id="hw26-photos" class="vc-gal-h">活動照片</h4>
         <ul class="vc-gallery" role="list"><li><a class="vc-ph" href="../assets/img/events/halloween-2026/02.webp" data-full="../assets/img/events/halloween-2026/02.webp" data-w="1600" data-h="902"><img src="../assets/img/events/halloween-2026/02-s.webp" alt="參加者在咖啡館「父母」門口合照，店員端出一盤糖果" loading="lazy" decoding="async" width="640" height="361"></a></li><li><a class="vc-ph" href="../assets/img/events/halloween-2026/03.webp" data-full="../assets/img/events/halloween-2026/03.webp" data-w="1600" data-h="902"><img src="../assets/img/events/halloween-2026/03-s.webp" alt="變裝的大人和孩子在房屋仲介店內合照" loading="lazy" decoding="async" width="640" height="361"></a></li><li><a class="vc-ph" href="../assets/img/events/halloween-2026/04.webp" data-full="../assets/img/events/halloween-2026/04.webp" data-w="1044" data-h="1392"><img src="../assets/img/events/halloween-2026/04-s.webp" alt="玩具店老闆把糖果放進孩子的南瓜提籃" loading="lazy" decoding="async" width="480" height="640"></a></li><li><a class="vc-ph" href="../assets/img/events/halloween-2026/05.webp" data-full="../assets/img/events/halloween-2026/05.webp" data-w="1600" data-h="902"><img src="../assets/img/events/halloween-2026/05-s.webp" alt="參加者在小潘水果店裡合照" loading="lazy" decoding="async" width="640" height="361"></a></li><li><a class="vc-ph" href="../assets/img/events/halloween-2026/06.webp" data-full="../assets/img/events/halloween-2026/06.webp" data-w="1044" data-h="1392"><img src="../assets/img/events/halloween-2026/06-s.webp" alt="小女孩在餛飩店裡翻開書，和老闆娘一起看" loading="lazy" decoding="async" width="480" height="640"></a></li><li><a class="vc-ph" href="../assets/img/events/halloween-2026/07.webp" data-full="../assets/img/events/halloween-2026/07.webp" data-w="1600" data-h="902"><img src="../assets/img/events/halloween-2026/07-s.webp" alt="夜晚在韓式料理店門口的大合照" loading="lazy" decoding="async" width="640" height="361"></a></li><li><a class="vc-ph" href="../assets/img/events/halloween-2026/08.webp" data-full="../assets/img/events/halloween-2026/08.webp" data-w="1600" data-h="902"><img src="../assets/img/events/halloween-2026/08-s.webp" alt="變裝的孩子們在西服店裡開心合照" loading="lazy" decoding="async" width="640" height="361"></a></li><li><a class="vc-ph" href="../assets/img/events/halloween-2026/09.webp" data-full="../assets/img/events/halloween-2026/09.webp" data-w="1600" data-h="1200"><img src="../assets/img/events/halloween-2026/09-s.webp" alt="帶隊的大人舉著手牌，和變裝的孩子在街頭與路人互動" loading="lazy" decoding="async" width="640" height="480"></a></li><li><a class="vc-ph" href="../assets/img/events/halloween-2026/10.webp" data-full="../assets/img/events/halloween-2026/10.webp" data-w="1600" data-h="902"><img src="../assets/img/events/halloween-2026/10-s.webp" alt="參加者在洗衣店門口合照" loading="lazy" decoding="async" width="640" height="361"></a></li><li class="vc-more" hidden><a class="vc-ph" href="../assets/img/events/halloween-2026/11.webp" data-full="../assets/img/events/halloween-2026/11.webp" data-w="1600" data-h="902"><img src="../assets/img/events/halloween-2026/11-s.webp" alt="參加者在咖啡甜點店門口合照" loading="lazy" decoding="async" width="640" height="361"></a></li><li class="vc-more" hidden><a class="vc-ph" href="../assets/img/events/halloween-2026/12.webp" data-full="../assets/img/events/halloween-2026/12.webp" data-w="1600" data-h="1200"><img src="../assets/img/events/halloween-2026/12-s.webp" alt="孩子們走進店裡，店員拿起手機幫大家拍照" loading="lazy" decoding="async" width="640" height="480"></a></li><li class="vc-more" hidden><a class="vc-ph" href="../assets/img/events/halloween-2026/13.webp" data-full="../assets/img/events/halloween-2026/13.webp" data-w="1600" data-h="1200"><img src="../assets/img/events/halloween-2026/13-s.webp" alt="參加者走進手機配件行，和店員互動" loading="lazy" decoding="async" width="640" height="480"></a></li><li class="vc-more" hidden><a class="vc-ph" href="../assets/img/events/halloween-2026/14.webp" data-full="../assets/img/events/halloween-2026/14.webp" data-w="1108" data-h="1477"><img src="../assets/img/events/halloween-2026/14-s.webp" alt="化了萬聖節妝容的參加者自拍" loading="lazy" decoding="async" width="480" height="640"></a></li><li class="vc-more" hidden><a class="vc-ph" href="../assets/img/events/halloween-2026/15.webp" data-full="../assets/img/events/halloween-2026/15.webp" data-w="1600" data-h="1200"><img src="../assets/img/events/halloween-2026/15-s.webp" alt="參加者在街邊餐廳門口合照" loading="lazy" decoding="async" width="640" height="480"></a></li><li class="vc-more" hidden><a class="vc-ph" href="../assets/img/events/halloween-2026/16.webp" data-full="../assets/img/events/halloween-2026/16.webp" data-w="1600" data-h="902"><img src="../assets/img/events/halloween-2026/16-s.webp" alt="變裝的大人和孩子在服飾店裡合照" loading="lazy" decoding="async" width="640" height="361"></a></li><li class="vc-more" hidden><a class="vc-ph" href="../assets/img/events/halloween-2026/17.webp" data-full="../assets/img/events/halloween-2026/17.webp" data-w="1600" data-h="902"><img src="../assets/img/events/halloween-2026/17-s.webp" alt="參加者在服飾品牌門市裡合照" loading="lazy" decoding="async" width="640" height="361"></a></li><li class="vc-more" hidden><a class="vc-ph" href="../assets/img/events/halloween-2026/18.webp" data-full="../assets/img/events/halloween-2026/18.webp" data-w="1600" data-h="902"><img src="../assets/img/events/halloween-2026/18-s.webp" alt="參加者和鞋店的店員一起合照" loading="lazy" decoding="async" width="640" height="361"></a></li><li class="vc-more" hidden><a class="vc-ph" href="../assets/img/events/halloween-2026/19.webp" data-full="../assets/img/events/halloween-2026/19.webp" data-w="1600" data-h="902"><img src="../assets/img/events/halloween-2026/19-s.webp" alt="變裝的大人和孩子在另一家房屋仲介店裡合照" loading="lazy" decoding="async" width="640" height="361"></a></li></ul>
         <p class="vc-gal-more"><button type="button" class="btn btn-quiet" data-vc-more>再看 9 張照片</button></p>
@@ -452,6 +496,30 @@
         if (window.gtag) gtag('event', 'event_signup', { label: 'gratitude-2026', value: amt });
       })
       .catch(function () { st.className = 'vc-status is-err'; st.textContent = '送出失敗，請稍後再試，或來電 (02) 7701-2846。'; btn.disabled = false; });
+  });
+})();
+</script>
+<script>
+/* 參加者受訪影片：點了才載入 YouTube；報名區的小入口會捲到影片並直接播放 */
+(function () {
+  function play(box) {
+    if (!box || box.querySelector('iframe')) return;
+    var f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/' + box.dataset.yt + '?autoplay=1&playsinline=1&rel=0';
+    f.title = box.dataset.title; f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen = true;
+    box.innerHTML = ''; box.appendChild(f);
+    if (window.gtag) gtag('event', 'video_play', { q: box.dataset.yt });
+  }
+  document.querySelectorAll('.vc-yt').forEach(function (box) {
+    box.querySelector('.vc-yt-cover').addEventListener('click', function () { play(box); });
+  });
+  document.querySelectorAll('[data-vc-play]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var box = document.querySelector('.vc-yt[data-yt="' + a.dataset.vcPlay + '"]'); if (!box) return;
+      e.preventDefault();
+      document.getElementById('hw26-voice').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setTimeout(function () { play(box); }, 450);
+    });
   });
 })();
 </script>
