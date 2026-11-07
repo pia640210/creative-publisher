@@ -2,6 +2,7 @@
    可以放在任何書頁，不依賴其他程式。 */
 (function () {
   'use strict';
+  var PAGE_T = Date.now();   // 和網站其他表單一樣：附上版本碼與停留時間，Google 小程式才會收下
   var ENDPOINT = 'https://script.google.com/macros/s/AKfycbxk4QP9hdjztKkFeCckc923b9QIYagXWWJ8spREGABYONRXWpbygn2WQc6fpiuPR2Ex/exec';
   var css = '.lr-wrap{margin:24px 0 8px}.lr-h{font-size:18px;font-weight:700;margin:0 0 12px;letter-spacing:.04em}' +
     '.lr-list{display:grid;gap:12px;margin:0;padding:0;list-style:none}@media(min-width:760px){.lr-list{grid-template-columns:1fr 1fr}}' +
@@ -50,6 +51,7 @@
       if (String(fd.get('website') || '')) return;   // 機器人
       var text = String(fd.get('text') || '').trim(); if (!text) { status.textContent = '請先寫下你的讀後感。'; return; }
       var payload = { type: 'review', date: new Date().toISOString(), page: location.pathname, book: form.dataset.book, name: String(fd.get('name') || '').trim(), text: text };
+      payload._v = 'cp1'; payload._t = Date.now() - PAGE_T;
       status.textContent = '送出中…';
       fetch(ENDPOINT, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(payload) })
         .then(function () { status.textContent = '謝謝你！讀後感已送出，編輯審核後就會刊登。'; form.reset(); if (window.gtag) gtag('event', 'review_submit'); })
