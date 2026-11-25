@@ -1,0 +1,10 @@
+創意出版社網站「累積更新包」（2026-11-25）
+
+用法：解壓縮後，把裡面的檔案依相同的資料夾路徑上傳到 GitHub repo，覆蓋同名檔案即可。
+這個包已包含先前所有更新，只要傳這一個，不必再傳其他小更新包。
+
+另外請在 GitHub 上手動刪除這 3 個檔案（本包不含）：
+- about/desktop.ini
+- topics/know-yourself/desktop.ini
+- books/dream-or-delusion/desktop.ini
+（preorder.html 你已經刪除。）
